@@ -1,0 +1,8 @@
+.idea
+.git
+node_modules
+resources
+desktop.ini
+*.zip
+*.psd
+
