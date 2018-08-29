@@ -3815,57 +3815,104 @@ function factory(window, EventEmitter, eventie) {
     }
 
 })(window);
-/* -- Filter Plugin -- */
-(function ($) {
-    'use strict';
-    $.fn.masonryFilter = function (options) {
-        //reload masonry
-        var reload = function ($container) {
-            setTimeout(function () {
-                $container.masonry("layout");
-            }, 100);
-        };
+(function($){
+  'use strict';
+  $.fn.multipleFilterMasonry = function(options){
+    var cache=[];
+    var filters = [];
 
-        var process = function ($container) {
-            var items = $container.masonry("getAllItems"),
-                revealItems = [],
-                hideItems = [];
+    if(options.selectorType === 'list') {
+      $(options.filtersGroupSelector).children().each(function() {
+        filters.push($(this).data('filter'));
+      });
+    }
 
-            $.each(items, function(i) {
-                var item = items[i];
-                var elm = $(item.element),
-                    shouldShow = options.filter && options.filter.call(elm);
-
-                if (shouldShow) {
-                    if (item.isHidden) {
-                        // -- Have to set this property so masonry does
-                        //    not include hidden items when calling "layout"
-                        item.isIgnored = false;
-                        revealItems.push(item);
-                    }
-                } else {
-                    if (!item.isHidden) {                        
-                        // -- Easier to set this property directy rather than
-                        //    using the "ignore" method, as it takes in a DOM
-                        //    element rather than the masonry item object.
-                        item.isIgnored = true;
-                        hideItems.push(item);
-                    }
-                }
-            });
-
-            $container.masonry('hide', hideItems);
-            $container.masonry('reveal', revealItems);
-
-            reload($container);
-        };
-
-        return this.each(function () {
-            var self = $(this);
-            process(self);
-        });
+    //the main job of the function is to cache the item,because we are going to filter the items later
+    var init = function($container){
+      $container.find(options.itemSelector).each(function(){
+        cache.push($(this));
+      });
+      $container.masonry(options);
     };
+
+    //filter items in cache
+    var filterItems = function(selector){
+      var result=[];
+      $(cache).each(function(item){
+        $(selector).each(function(index,sel) {
+          if(cache[item].is(sel)){
+            if($.inArray(cache[item], result) === -1) result.push(cache[item]);
+          }
+        });
+      });
+      return result;
+    };
+
+    //reload masonry
+    var reload = function($container,items){
+      $container.empty();
+      $(items).each(function(){
+        $($container).append($(this));
+      });
+      $container.masonry('reloadItems');
+      $container.masonry();
+    };
+
+    // Hash filter
+    var hashFilter = function($container) {
+      var hash = window.location.hash.replace("#", "");
+      if($.inArray(hash, filters) !== -1) {
+        reload($container, $('.' + hash));
+      }
+    };
+
+    var proc = function($container){
+      $(options.filtersGroupSelector).find('input[type=checkbox]').each(function(){
+        $(this).change(function(){
+          var selector = [];
+          $(options.filtersGroupSelector).find('input[type=checkbox]').each( function() {
+            if ( $(this).is(':checked') ) {
+              selector.push( '.' + $(this).val() );
+            }
+          });
+          var items = cache;
+          if (selector.length > 0) {
+            items = filterItems(selector);
+          }
+          reload($container,items);
+        });
+      });
+    };
+
+    var procUL = function($container){
+      $(options.filtersGroupSelector).children().each(function(){
+        $(this).click(function(){
+          $(options.filtersGroupSelector).children().removeClass('selected');
+          window.location.hash = $(this).data('filter');
+          var selector = [];
+          selector.push( '.' + $(this).data('filter') );
+          $(this).addClass('selected');
+          var items = cache;
+          if (selector.length > 0) {
+            items = filterItems(selector);
+          }
+          reload($container,items);
+        });
+      });
+
+      hashFilter($container);
+      $(options.filtersGroupSelector).children().removeClass('selected');
+      $('.filters li[data-filter='+window.location.hash.replace("#", "")+']').addClass('selected');
+    };
+
+    return this.each(function() {
+      var $$ = $(this);
+      init($$);
+      options.selectorType === 'list' ? procUL($$) : proc($$);
+    });
+  };
 }(window.jQuery));
+
 /*! js-Offcanvas - v1.2.2 - 2018-02-11
 jQuery Accesible Offcanvas Panels
  * https://github.com/vmitsaras/js-offcanvas
