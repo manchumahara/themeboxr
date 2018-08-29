@@ -2,7 +2,6 @@
 (function ($) {
     "use strict";
 
-
 	function bootstrapHoverMenu (bp) {
 
 		// close all dropdowns that are open

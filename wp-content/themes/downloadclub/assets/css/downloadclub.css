@@ -1031,6 +1031,8 @@ h6,
 .h5,
 .h6 {
   font-family: 'Roboto', sans-serif;
+  color: #0a1825;
+  font-weight: 700;
 }
 h1 span,
 h2 span,
@@ -1098,14 +1100,12 @@ h2,
   font-size: 36px;
   font-size: 3.6rem;
   line-height: 1.5;
-  font-weight: 700;
 }
 h3,
 .h3 {
   font-size: 30px;
   font-size: 3rem;
   line-height: 1.5;
-  font-weight: 700;
 }
 h4,
 .h4 {
@@ -1119,14 +1119,12 @@ h5,
   font-size: 20px;
   font-size: 2rem;
   line-height: 1.5;
-  font-weight: 700;
 }
 h6,
 .h6 {
-  font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.5;
-  font-weight: 700;
 }
 ul,
 ol {
@@ -1142,6 +1140,9 @@ ol {
 p {
   margin-bottom: 10px;
 }
+figure {
+  margin: 0;
+}
 a,
 a:hover,
 a:focus {
@@ -1149,6 +1150,7 @@ a:focus {
   text-decoration: none;
   outline: none;
   box-shadow: none;
+  transition: all 0.3s ease-out;
 }
 strong {
   font-weight: 700;
@@ -1169,14 +1171,14 @@ ul {
 }
 .unorderlist li a {
   color: #999999;
-  font-size: 12px;
-  font-size: 1.2rem;
+  font-size: 13px;
+  font-size: 1.3rem;
   line-height: 1.5;
-  transition: all 0.2s ease-out;
+  transition: all 0.3s ease-out;
   text-transform: capitalize;
 }
 .unorderlist li a:hover {
-  color: #3a3b3c;
+  color: #0197c3;
 }
 .section-padding {
   padding: 100px 0;
@@ -1199,7 +1201,7 @@ ul {
 .btn-brand {
   background-color: #edf4f8;
   border-radius: 50px;
-  color: #0b1e27;
+  color: #0a1825;
   font-weight: 700;
   font-size: 16px;
   font-size: 1.6rem;
@@ -1278,7 +1280,7 @@ ul {
   color: #5edafe;
 }
 #header-area.fixed {
-  background-color: #0b1e27;
+  background-color: #0a1825;
   padding: 10px 0;
 }
 .c-offcanvas--overlay {
@@ -1430,6 +1432,7 @@ ul {
 }
 #banner-area .banner-content-wrap h1 {
   font-weight: 300;
+  color: #fff;
 }
 #banner-area .banner-content-wrap h1 span {
   font-weight: 700;
@@ -1453,6 +1456,82 @@ ul {
   transform: scale(1.7);
 }
 /*--== Banner Area Start ==--*/
+/*== Products Area Start ==*/
+#products-area .products-filter-menu {
+  background-color: #fff;
+}
+#products-area .products-filter-menu .filter-navbar ul {
+  justify-content: space-between;
+}
+#products-area .products-filter-menu .filter-navbar ul li {
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  line-height: 1.2;
+  font-weight: 500;
+  padding: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+#products-area .products-filter-menu .filter-navbar ul li:hover {
+  background: rgba(218, 230, 237, 0.8);
+}
+#products-area .products-filter-menu .filter-navbar ul li.current {
+  background: rgba(218, 230, 237, 0.8);
+}
+#products-area .products-content-wrap {
+  background-color: #dae6ed;
+}
+#products-area .products-content-wrap #productsContent {
+  margin-top: -30px;
+}
+#products-area .products-content-wrap #productsContent .single-product-wrap {
+  background-color: #fff;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-top: 30px;
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+}
+#products-area .products-content-wrap #productsContent .single-product-wrap:hover {
+  transform: translateY(-5px);
+}
+#products-area .products-content-wrap #productsContent .single-product-wrap .product-thumb {
+  height: 250px;
+  overflow: hidden;
+}
+#products-area .products-content-wrap #productsContent .single-product-wrap .product-thumb img {
+  height: 100%;
+}
+#products-area .products-content-wrap #productsContent .single-product-wrap .product-meta {
+  padding: 16px 20px 17px;
+}
+#products-area .products-content-wrap #productsContent .single-product-wrap .product-meta h2 {
+  margin-bottom: 17px;
+}
+#products-area .products-content-wrap #productsContent .single-product-wrap .product-meta .product-sub-meta {
+  align-items: center;
+  border-top: 1px solid #dae6ed;
+  padding-top: 20px;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  line-height: 1.2;
+  font-weight: 700;
+}
+#products-area .products-content-wrap #productsContent .single-product-wrap .product-meta .product-sub-meta a {
+  color: #0a1825;
+}
+#products-area .products-content-wrap #productsContent .single-product-wrap .product-meta .product-sub-meta a:hover {
+  color: #12c9fe;
+}
+#products-area .products-content-wrap #productsContent .single-product-wrap .product-meta .product-sub-meta .product-price {
+  color: #12c9fe;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+/*== Products Area End ==*/
 /*--== Footer Area Start ==-*/
 #footer-area .footer-widgets-area {
   color: #999999;
@@ -1465,7 +1544,7 @@ ul {
   margin-top: 25px;
 }
 #footer-area .footer-widgets-area .single-footer-widgets .about-widgets .social-icons a {
-  color: #0b1e27;
+  color: #0a1825;
   margin-right: 30px;
   transition: all 0.2s ease-out;
   font-size: 16px;
@@ -1495,7 +1574,7 @@ ul {
   line-height: 1.5;
   font-weight: 700;
   text-transform: uppercase;
-  color: #0b1e27;
+  color: #0a1825;
   letter-spacing: 1.5px;
   padding-bottom: 40px;
 }
@@ -1510,13 +1589,13 @@ ul {
   font-size: 11px;
   font-size: 1.1rem;
   line-height: 1.5;
-  color: #0b1e27;
+  color: #0a1825;
 }
 #footer-area .footer-bottom-area .copyright-area p {
   margin-bottom: 0;
 }
 #footer-area .footer-bottom-area .copyright-area a {
-  color: #0b1e27;
+  color: #0a1825;
 }
 /*--== Footer Area End ==-*/
 /*RESPONSIVE STYLE */

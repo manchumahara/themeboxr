@@ -18,6 +18,8 @@ body {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: @font-family;
+  color: @black-soft;
+  .font-weight(700);
 
   span {
     color: @yellow;
@@ -49,12 +51,10 @@ h1, .h1 {
 
 h2, .h2 {
   .font-size(36);
-  font-weight: 700;
 }
 
 h3, .h3 {
   .font-size(30);
-  font-weight: 700;
 }
 
 h4, .h4 {
@@ -64,12 +64,10 @@ h4, .h4 {
 
 h5, .h5 {
   .font-size(20);
-  font-weight: 700;
 }
 
 h6, .h6 {
-  .font-size(18);
-  font-weight: 700;
+  .font-size(16);
 }
 
 ul, ol {
@@ -84,7 +82,10 @@ ul, ol {
 
 p {
   margin-bottom: 10px;
+}
 
+figure{
+  margin: 0;
 }
 
 a, a:hover, a:focus {
@@ -92,6 +93,7 @@ a, a:hover, a:focus {
   text-decoration: none;
   outline: none;
   .box-shadow(none);
+  .transition(0.3s);
 }
 
 strong {
@@ -114,12 +116,12 @@ ul {
     }
     a {
       color: @body-color-alt;
-      .font-size(12);
-      .transition();
+      .font-size(13);
+      .transition(0.3s);
       text-transform: capitalize;
 
       &:hover {
-        color: @body-color;
+        color: @brand-color-dark;
       }
     }
   }
