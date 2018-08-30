@@ -70,7 +70,7 @@ jQuery Accesible Offcanvas Panels
 		$(window).on('scroll', function () {
 			// Header Fix Bg Class
 			var top = $(window).scrollTop();
-			if (top >= 200) {
+			if (top >= 150) {
 				$('#header-area').addClass('fixed');
 			} else {
 				$('#header-area').removeClass('fixed');

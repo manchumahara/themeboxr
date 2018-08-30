@@ -1,0 +1,29 @@
+/*== About Page Start ==*/
+#about-page-wrap{
+  .about-video-wrap{
+    position: relative;
+
+    &:after{
+      background-color: @brand-color;
+      content: '';
+      position: absolute;
+      .opacity(0.5);
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .video-content{
+      z-index: 1;
+
+      .btn-play{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        .transform(translate(-50%, -50%));
+      }
+    }
+  }
+}
+/*== About Page End ==*/

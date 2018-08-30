@@ -12,7 +12,7 @@
 				<div class="col-lg-12 text-center">
 					<div class="banner-content-wrap">
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-						<h2>Sub title here</h2>
+						<h2 class="h6">Design these templete thinking about categories, color, typography and latest treand</h2>
 					</div>
 				</div>
 			</div>
