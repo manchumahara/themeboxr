@@ -51,12 +51,12 @@
                 <div class="col-lg-12">
                     <nav class="filter-navbar">
                         <ul class="d-flex">
-                            <li>All Item</li>
-                            <li class="current">New Released</li>
-                            <li>Populer Item </li>
-                            <li>Trending</li>
-                            <li>WordPress</li>
-                            <li>Featured</li>
+                            <li class="fil-cat current" data-rel="all">All Item</li>
+                            <li class="fil-cat" data-rel="new">New Released</li>
+                            <li class="fil-cat" data-rel="pop">Populer Item </li>
+                            <li class="fil-cat" data-rel="trend">Trending</li>
+                            <li class="fil-cat" data-rel="wp">WordPress</li>
+                            <li class="fil-cat" data-rel="feature">Featured</li>
                         </ul>
                     </nav>
                 </div>
@@ -70,8 +70,8 @@
         <div class="container">
             <div id="productsContent" class="row">
                 <!-- Single Product Start -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-product-wrap">
+                <div class="product-item scale-amn col-lg-4 col-md-6 all pop trend">
+                    <div class="single-product-wrap ">
                         <figure class="product-thumb">
                             <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-1.jpg" alt="Home" class="img-fluid" /></a>
                         </figure>
@@ -89,7 +89,7 @@
                 <!-- Single Product End -->
 
                 <!-- Single Product Start -->
-                <div class="col-lg-4 col-md-6">
+                <div class="product-item scale-amn col-lg-4 col-md-6 all wp new feature">
                     <div class="single-product-wrap">
                         <figure class="product-thumb">
                             <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-2.jpg" alt="Home" class="img-fluid" /></a>
@@ -108,7 +108,7 @@
                 <!-- Single Product End -->
 
                 <!-- Single Product Start -->
-                <div class="col-lg-4 col-md-6">
+                <div class="product-item scale-amn col-lg-4 col-md-6 all pop">
                     <div class="single-product-wrap">
                         <figure class="product-thumb">
                             <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-3.jpg" alt="Home" class="img-fluid" /></a>
@@ -127,7 +127,7 @@
                 <!-- Single Product End -->
 
                 <!-- Single Product Start -->
-                <div class="col-lg-4 col-md-6">
+                <div class="product-item scale-amn col-lg-4 col-md-6 all trend wp">
                     <div class="single-product-wrap">
                         <figure class="product-thumb">
                             <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-2.jpg" alt="Home" class="img-fluid" /></a>
@@ -146,7 +146,7 @@
                 <!-- Single Product End -->
 
                 <!-- Single Product Start -->
-                <div class="col-lg-4 col-md-6">
+                <div class="product-item scale-amn col-lg-4 col-md-6 all pop new">
                     <div class="single-product-wrap">
                         <figure class="product-thumb">
                             <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-3.jpg" alt="Home" class="img-fluid" /></a>
@@ -165,7 +165,7 @@
                 <!-- Single Product End -->
 
                 <!-- Single Product Start -->
-                <div class="col-lg-4 col-md-6">
+                <div class="product-item scale-amn col-lg-4 col-md-6 all pop wp">
                     <div class="single-product-wrap">
                         <figure class="product-thumb">
                             <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-1.jpg" alt="Home" class="img-fluid" /></a>

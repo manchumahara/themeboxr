@@ -479,6 +479,13 @@ ul {
 #products-area .products-content-wrap #productsContent {
   margin-top: -30px;
 }
+#products-area .products-content-wrap #productsContent .product-item {
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+#products-area .products-content-wrap #productsContent .product-item.scale-amn {
+  transform: scale(1);
+}
 #products-area .products-content-wrap #productsContent .single-product-wrap {
   background-color: #fff;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
@@ -594,7 +601,7 @@ ul {
 /*--== Footer Area End ==-*/
 /*RESPONSIVE STYLE */
 /* Small Devices (Portrait Phones, 575px and Down) */
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 320px) and (max-width: 575px) {
   .is_admin_bar_showing {
     top: 46px;
   }
@@ -607,6 +614,19 @@ ul {
   #banner-area .banner-content-wrap .btn-brand {
     margin: 20px 0 0;
   }
+  #products-area .products-filter-menu {
+    padding: 10px 0;
+  }
+  #products-area .products-filter-menu .filter-navbar ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #products-area .products-filter-menu .filter-navbar ul li {
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding: 5px 10px;
+  }
   #footer-area .footer-bottom-area {
     padding-bottom: 20px;
   }
@@ -618,6 +638,16 @@ ul {
   }
   #banner-area .banner-content-wrap .btn-brand {
     margin: 20px 0 0;
+  }
+  #products-area .products-filter-menu .filter-navbar ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #products-area .products-filter-menu .filter-navbar ul li {
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    padding: 15px 10px;
   }
   #footer-area .footer-bottom-area {
     padding-bottom: 20px;
@@ -635,6 +665,16 @@ ul {
   }
   #banner-area .banner-content-wrap .btn-brand {
     margin: 60px 0 90px;
+  }
+  #products-area .products-filter-menu .filter-navbar ul {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+  #products-area .products-filter-menu .filter-navbar ul li {
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    padding: 30px;
   }
   #footer-area .footer-bottom-area {
     padding-bottom: 40px;

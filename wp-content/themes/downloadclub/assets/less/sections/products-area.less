@@ -32,6 +32,16 @@
 
     #productsContent{
       margin-top: -30px;
+
+      .product-item{
+        .transform(scale(0));
+        .transition(0.4s, ease);
+
+       &.scale-amn{
+          .transform(scale(1));
+        }
+      }
+
       .single-product-wrap {
         background-color: @white;
         .box-shadow(0px 2px 2px 0px rgba(0, 0, 0, 0.1));

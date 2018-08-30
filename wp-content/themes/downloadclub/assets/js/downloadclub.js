@@ -3985,6 +3985,25 @@ jQuery Accesible Offcanvas Panels
 			animateOut: 'fadeOut',
 			animateIn: 'fadeIn'
 		});
+
+        //03. Products Filter
+        var selectedClass = '',
+            filItem = '.fil-cat';
+
+        $(filItem).click(function(){
+            $(filItem).removeClass('current');
+            $(this).addClass('current');
+
+            selectedClass = $(this).attr("data-rel");
+            $("#productsContent").fadeTo(100, 0.1);
+            $("#productsContent .product-item").not("."+selectedClass).fadeOut().removeClass('scale-amn');
+            setTimeout(function() {
+                $("."+selectedClass).fadeIn().addClass('scale-amn');
+                $("#productsContent").fadeTo(300, 1);
+            }, 300);
+
+        });
+
     });
 
 }(jQuery));
