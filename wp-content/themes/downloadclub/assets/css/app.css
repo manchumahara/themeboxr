@@ -242,6 +242,9 @@ ul {
 }
 .section-title-wrap {
   margin-bottom: 80px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.5;
 }
 .section-title-wrap h2 {
   margin-top: -12px;
@@ -614,6 +617,89 @@ ul {
   margin-bottom: 15px;
 }
 /*== We Are Best Area End ==*/
+/*== Latest Blog Area Start ==*/
+#latest-blog-area {
+  background-color: #dae6ed;
+}
+#latest-blog-area .latest-blog-container {
+  margin-top: -30px;
+}
+#latest-blog-area .latest-blog-container .single-blog-item {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+  margin-top: 30px;
+  color: #0a1825;
+}
+#latest-blog-area .latest-blog-container .single-blog-item:hover {
+  transform: translateY(-5px);
+}
+#latest-blog-area .latest-blog-container .single-blog-item .blog-header {
+  position: relative;
+}
+#latest-blog-area .latest-blog-container .single-blog-item .blog-header .blog-thumb {
+  max-height: 230px;
+  overflow: hidden;
+}
+#latest-blog-area .latest-blog-container .single-blog-item .blog-header .post-author {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  transform: translateY(50%);
+}
+#latest-blog-area .latest-blog-container .single-blog-item .blog-header .post-author img {
+  border-radius: 50%;
+  border: 3px solid #12c9fe;
+  height: 60px;
+  width: 60px;
+}
+#latest-blog-area .latest-blog-container .single-blog-item .blog-content {
+  padding: 51px 20px 16px;
+}
+#latest-blog-area .latest-blog-container .single-blog-item .blog-content .post-date {
+  display: block;
+  font-size: 13px;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #aeaeae;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+#latest-blog-area .latest-blog-container .single-blog-item .blog-content h2 {
+  margin-bottom: 10px;
+}
+#latest-blog-area .latest-blog-container .single-blog-item .blog-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 21px;
+}
+#latest-blog-area .latest-blog-container .single-blog-item .blog-footer .btn-readmore {
+  color: #0a1825;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+#latest-blog-area .latest-blog-container .single-blog-item .blog-footer .blog-meta a {
+  color: #3a3b3c;
+  margin-left: 15px;
+  font-size: 13px;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+#latest-blog-area .latest-blog-container .single-blog-item .blog-footer .blog-meta a:first-child {
+  margin-left: 0;
+}
+#latest-blog-area .latest-blog-container .single-blog-item a:hover {
+  color: #12c9fe !important;
+}
+#latest-blog-area .latest-blog-container .single-blog-item p {
+  margin: 0;
+}
+/*== Latest Blog Area End ==*/
 /*--== Footer Area Start ==-*/
 #footer-area .footer-widgets-area {
   color: #999999;
