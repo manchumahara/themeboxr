@@ -95,6 +95,30 @@ h2,
   font-size: 3.6rem;
   line-height: 1.5;
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  h2,
+  .h2 {
+    font-size: 26px;
+    font-size: 2.6rem;
+    line-height: 1.5;
+  }
+}
+@media screen and (min-width: 768px) {
+  h2,
+  .h2 {
+    font-size: 32px;
+    font-size: 3.2rem;
+    line-height: 1.5;
+  }
+}
+@media screen and (min-width: 992px) {
+  h2,
+  .h2 {
+    font-size: 36px;
+    font-size: 3.6rem;
+    line-height: 1.5;
+  }
+}
 h3,
 .h3 {
   font-size: 30px;
@@ -107,6 +131,30 @@ h4,
   font-size: 2.4rem;
   line-height: 1.5;
   font-weight: 700;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  h4,
+  .h4 {
+    font-size: 20px;
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+}
+@media screen and (min-width: 768px) {
+  h4,
+  .h4 {
+    font-size: 22px;
+    font-size: 2.2rem;
+    line-height: 1.5;
+  }
+}
+@media screen and (min-width: 992px) {
+  h4,
+  .h4 {
+    font-size: 24px;
+    font-size: 2.4rem;
+    line-height: 1.5;
+  }
 }
 h5,
 .h5 {
@@ -550,15 +598,19 @@ ul {
 }
 /*== Products Area End ==*/
 /*== We Are Best Area Start ==*/
-#we-are-best-area .single-we-best-item {
+#we-are-best-area .we-best-content-wrap {
+  margin-top: -30px;
+}
+#we-are-best-area .we-best-content-wrap .single-we-best-item {
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.5;
+  margin-top: 30px;
 }
-#we-are-best-area .single-we-best-item .feature-logo {
+#we-are-best-area .we-best-content-wrap .single-we-best-item .feature-logo {
   margin-bottom: 28px;
 }
-#we-are-best-area .single-we-best-item h3 {
+#we-are-best-area .we-best-content-wrap .single-we-best-item h3 {
   margin-bottom: 15px;
 }
 /*== We Are Best Area End ==*/
@@ -693,6 +745,11 @@ ul {
   #products-area .products-content-wrap .product-loadmore-btn {
     margin-top: 50px;
   }
+  #we-are-best-area .we-best-content-wrap .single-we-best-item {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
 }
 /* Large Devices (Desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
@@ -718,6 +775,11 @@ ul {
   }
   #products-area .products-content-wrap .product-loadmore-btn {
     margin-top: 80px;
+  }
+  #we-are-best-area .we-best-content-wrap .single-we-best-item {
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.5;
   }
   #footer-area .footer-bottom-area {
     padding-bottom: 40px;

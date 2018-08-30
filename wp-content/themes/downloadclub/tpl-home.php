@@ -224,37 +224,39 @@ get_header();
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-lg-4 text-center">
-                    <div class="single-we-best-item">
-                        <figure class="feature-logo">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/satisfication.png" alt="Themeboxr" />
-                        </figure>
+            <div class="we-best-content-wrap">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="single-we-best-item">
+                            <figure class="feature-logo">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/satisfication.png" alt="Themeboxr" />
+                            </figure>
 
-                        <h3 class="h4">100% Satisfaction</h3>
-                        <p>We provide best services in this field, so we belived that you are fully  satisfied on our service and wishes us good luck.</p>
+                            <h3 class="h4">100% Satisfaction</h3>
+                            <p>We provide best services in this field, so we belived that you are fully  satisfied on our service and wishes us good luck.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-lg-4 text-center">
-                    <div class="single-we-best-item">
-                        <figure class="feature-logo">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/support.png" alt="Themeboxr" />
-                        </figure>
+                    <div class="col-md-4 text-center">
+                        <div class="single-we-best-item">
+                            <figure class="feature-logo">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/support.png" alt="Themeboxr" />
+                            </figure>
 
-                        <h3 class="h4">Best Support</h3>
-                        <p>We provide best services in this field, so we belived that you are fully  satisfied on our service and wishes us good luck.</p>
+                            <h3 class="h4">Best Support</h3>
+                            <p>We provide best services in this field, so we belived that you are fully  satisfied on our service and wishes us good luck.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-lg-4 text-center">
-                    <div class="single-we-best-item">
-                        <figure class="feature-logo">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/square.png" alt="Themeboxr" />
-                        </figure>
+                    <div class="col-md-4 text-center">
+                        <div class="single-we-best-item">
+                            <figure class="feature-logo">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/square.png" alt="Themeboxr" />
+                            </figure>
 
-                        <h3 class="h4">Fully Squared</h3>
-                        <p>We provide best services in this field, so we belived that you are fully  satisfied on our service and wishes us good luck.</p>
+                            <h3 class="h4">Fully Squared</h3>
+                            <p>We provide best services in this field, so we belived that you are fully  satisfied on our service and wishes us good luck.</p>
+                        </div>
                     </div>
                 </div>
             </div>

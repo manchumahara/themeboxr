@@ -51,6 +51,18 @@ h1, .h1 {
 
 h2, .h2 {
   .font-size(36);
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    .font-size(26);
+  }
+
+  @media screen and (min-width: 768px) {
+    .font-size(32);
+  }
+
+  @media screen and (min-width: 992px) {
+    .font-size(36);
+  }
 }
 
 h3, .h3 {
@@ -60,6 +72,18 @@ h3, .h3 {
 h4, .h4 {
   .font-size(24);
   font-weight: 700;
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    .font-size(20);
+  }
+
+  @media screen and (min-width: 768px) {
+    .font-size(22);
+  }
+
+  @media screen and (min-width: 992px) {
+    .font-size(24);
+  }
 }
 
 h5, .h5 {
