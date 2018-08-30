@@ -14,9 +14,9 @@ get_header();
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<div class="banner-content-wrap">
-						<?php
-							the_archive_title( '<h1 class="page-title">', '</h1>' );
-							the_archive_description( '<h2 class="archive-description">', '</h2>' );
+						<?php //the_title( '<h1 class="entry-title">', '</h1>' );
+						the_archive_title( '<h1 class="page-title">', '</h1>' );
+						the_archive_description( '<h2 class="archive-description">', '</h2>' );
 						?>
 					</div>
 				</div>
@@ -33,7 +33,9 @@ get_header();
 
 				<?php if ( have_posts() ) : ?>
 
-					<?php
+
+
+			<?php
 					/* Start the Loop */
 					while ( have_posts() ) :
 						the_post();
@@ -49,20 +51,20 @@ get_header();
 
 					the_posts_navigation();
 
-				else :
+					else :
 
-					get_template_part( 'template-parts/content', 'none' );
+						get_template_part( 'template-parts/content', 'none' );
 
-				endif;
+					endif;
 				?>
 
 			</main><!-- #main -->
-			<?php if(is_active_sidebar( 'sidebar-1' )): ?>
-				<div class="col-md-4">
-					<?php get_sidebar();  ?>
-				</div>
-			<?php endif; ?>
 		</div><!-- #primary -->
+		<?php if(is_active_sidebar( 'sidebar-1' )): ?>
+			<div class="col-md-4">
+				<?php get_sidebar();  ?>
+			</div>
+		<?php endif; ?>
 	</div>
 <?php
 	downloadclub_page_wrapper_end();

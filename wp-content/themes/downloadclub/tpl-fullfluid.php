@@ -12,6 +12,7 @@ get_header();
 				<div class="col-lg-12 text-center">
 					<div class="banner-content-wrap">
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+						<h2>Sub title here</h2>
 					</div>
 				</div>
 			</div>

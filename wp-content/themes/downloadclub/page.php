@@ -27,10 +27,12 @@ get_header();
 </div><!-- .entry-header -->
 <?php
 downloadclub_page_wrapper_start();
+	$main_col_x = is_active_sidebar( 'sidebar-1' ) ? 'col-md-8':'col-md-12';
+
 ?>
 	<div class="container">
 		<div id="primary" class="content-area row">
-			<div id="main" class="site-main col-md-8">
+			<div id="main" class="site-main <?php echo esc_attr($main_col_x); ?>">
 				<?php
 					while ( have_posts() ) :
 						the_post();
@@ -46,9 +48,11 @@ downloadclub_page_wrapper_start();
 				?>
 
 			</div><!-- #main -->
+			<?php if(is_active_sidebar( 'sidebar-1' )): ?>
 			<div class="col-md-4">
 				<?php get_sidebar();  ?>
 			</div>
+			<?php endif; ?>
 		</div><!-- #primary -->
 	</div>
 <?php
