@@ -655,7 +655,7 @@ ul {
   width: 60px;
 }
 #latest-blog-area .latest-blog-container .single-blog-item .blog-content {
-  padding: 51px 20px 16px;
+  padding: 51px 20px 26px;
 }
 #latest-blog-area .latest-blog-container .single-blog-item .blog-content .post-date {
   display: block;
@@ -664,7 +664,7 @@ ul {
   line-height: 1;
   color: #aeaeae;
   text-transform: capitalize;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 #latest-blog-area .latest-blog-container .single-blog-item .blog-content h2 {
   margin-bottom: 10px;
@@ -700,6 +700,66 @@ ul {
   margin: 0;
 }
 /*== Latest Blog Area End ==*/
+/*== Newsletter Area Start ==*/
+#newsletter-area {
+  background-color: #12c9fe;
+  color: #fff;
+  padding: 60px 0;
+}
+#newsletter-area h2 {
+  color: #fff;
+  margin: 0;
+}
+#newsletter-area .newsletter-form form {
+  position: relative;
+}
+#newsletter-area .newsletter-form form input {
+  background-color: #0197c3;
+  border: none;
+  border-radius: 150px;
+  font-size: 13px;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #fff;
+  padding: 15px 155px 15px 30px;
+  outline: none;
+  width: 100%;
+}
+#newsletter-area .newsletter-form form button {
+  background-color: #fff;
+  border-radius: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+  padding: 15px 40px;
+  font-size: 11px;
+  font-size: 1.1rem;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.4s ease-out;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+#newsletter-area .newsletter-form form button:hover {
+  background-color: #0a1825;
+  color: #fff;
+}
+#newsletter-area ::-webkit-input-placeholder {
+  color: #fff;
+}
+#newsletter-area :-ms-input-placeholder {
+  color: #fff;
+}
+#newsletter-area ::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+#newsletter-area :-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+/*== Newsletter Area End ==*/
 /*--== Footer Area Start ==-*/
 #footer-area .footer-widgets-area {
   color: #999999;
@@ -796,6 +856,9 @@ ul {
   }
   #products-area .products-content-wrap .product-loadmore-btn {
     margin-top: 30px;
+  }
+  #newsletter-area .newsletter-form form button {
+    padding: 15px 20px;
   }
   #footer-area .footer-bottom-area {
     padding-bottom: 20px;

@@ -367,6 +367,31 @@ get_header();
     </section>
     <!--== Latest Blog Area End ==-->
 
+    <!--== Newsletter Area Start ==-->
+    <section id="newsletter-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 m-auto">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6 m-auto text-center text-md-left">
+                            <h2 class="h4">Subcribes to Update With Us</h2>
+                        </div>
+
+                        <div class="col-lg-7 col-md-6 mt-5 mt-md-0">
+                            <div class="newsletter-form">
+                                <form action="#">
+                                    <input type="email" placeholder="Your Email Address" required />
+                                    <button class="btn">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--== Newsletter Area End ==-->
+
 
 <?php
 while ( have_posts() ) :
