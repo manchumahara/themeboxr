@@ -192,6 +192,12 @@ ul {
     padding: 100px 0;
   }
 }
+.section-title-wrap {
+  margin-bottom: 80px;
+}
+.section-title-wrap h2 {
+  margin-top: -12px;
+}
 .btn-brand {
   background-color: #edf4f8;
   border-radius: 50px;
@@ -229,6 +235,13 @@ ul {
   .btn-brand {
     padding: 15px 55px;
   }
+}
+.btn-load {
+  border-radius: 5px;
+  background-color: #0a1825;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 22px 60px;
 }
 /*--== Hedaer Area Start ==--*/
 #header-area {
@@ -532,7 +545,23 @@ ul {
   font-size: 1.6rem;
   line-height: 1;
 }
+#products-area .products-content-wrap .product-loadmore-btn {
+  margin-top: 80px;
+}
 /*== Products Area End ==*/
+/*== We Are Best Area Start ==*/
+#we-are-best-area .single-we-best-item {
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+#we-are-best-area .single-we-best-item .feature-logo {
+  margin-bottom: 28px;
+}
+#we-are-best-area .single-we-best-item h3 {
+  margin-bottom: 15px;
+}
+/*== We Are Best Area End ==*/
 /*--== Footer Area Start ==-*/
 #footer-area .footer-widgets-area {
   color: #999999;
@@ -627,6 +656,9 @@ ul {
     line-height: 1.5;
     padding: 5px 10px;
   }
+  #products-area .products-content-wrap .product-loadmore-btn {
+    margin-top: 30px;
+  }
   #footer-area .footer-bottom-area {
     padding-bottom: 20px;
   }
@@ -649,11 +681,19 @@ ul {
     line-height: 1.5;
     padding: 15px 10px;
   }
+  #products-area .products-content-wrap .product-loadmore-btn {
+    margin-top: 30px;
+  }
   #footer-area .footer-bottom-area {
     padding-bottom: 20px;
   }
 }
 /* Medium Devices (Tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  #products-area .products-content-wrap .product-loadmore-btn {
+    margin-top: 50px;
+  }
+}
 /* Large Devices (Desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .is_admin_bar_showing,
@@ -675,6 +715,9 @@ ul {
     font-size: 1.8rem;
     line-height: 1.5;
     padding: 30px;
+  }
+  #products-area .products-content-wrap .product-loadmore-btn {
+    margin-top: 80px;
   }
   #footer-area .footer-bottom-area {
     padding-bottom: 40px;
