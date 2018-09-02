@@ -22,6 +22,60 @@
         top: 50%;
         left: 50%;
         .transform(translate(-50%, -50%));
+        z-index: 1;
+      }
+    }
+  }
+
+  .about-right-content{
+    .font-size(16);
+
+    h2{
+      margin-top: -11px;
+      margin-bottom: 10px;
+    }
+
+    .aboutlist{
+      margin-top: 25px;
+      .font-size(16);
+      li{
+        margin-bottom: 10px;
+
+        span{
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .btn-brand{
+      background-color: @brand-color;
+      color: @white;
+      margin-top: 17px;
+
+      &:hover{
+        background-color: @black-soft;
+      }
+    }
+  }
+}
+
+#technical-person{
+  background-color: @section-bg;
+  .font-size(16);
+  &.section-padding{
+    padding-bottom: 0;
+  }
+
+  .technical-support{
+    .btn{
+      background-color: @brand-color;
+      color: @white;
+      margin-top: 25px;
+      margin-bottom: 35px;
+      padding: 20px 55px;
+
+      &:hover{
+        background-color: @black-soft;
       }
     }
   }

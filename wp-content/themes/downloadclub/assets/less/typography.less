@@ -258,3 +258,41 @@ ul {
   }
 }
 
+.mfp-content {
+  margin: 50px 0;
+  .mfp-close {
+    width: 40px;
+    height: 40px;
+    background-color: @brand-color;
+    .border-radius(50%);
+    .opacity(1);
+    text-align: center;
+    padding: 0;
+    .transition(0.4s);
+    top: -3px;
+    right: -3px;
+    outline: none;
+
+    &:hover {
+      background-color: @brand-color-dark;
+      cursor: pointer;
+    }
+  }
+
+  .mfp-iframe {
+    border: 10px solid @brand-color;
+    padding: 0;
+    .border-radius(10px);
+  }
+
+  .mfp-figure {
+    figure {
+      img, iframe {
+        border: 10px solid @brand-color;
+        padding: 0;
+        .border-radius(10px);
+      }
+    }
+  }
+}
+

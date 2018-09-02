@@ -28,6 +28,7 @@ elixir((mix) => {
 		asset_path + 'vendors/bootstrap/css/bootstrap.min.css',
 		asset_path + 'vendors/owl-carousel2/assets/owl.carousel.min.css',
 		asset_path + 'vendors/owl-carousel2/assets/owl.theme.default.min.css',
+		asset_path + 'vendors/magnific-popup/magnific-popup.css',
 		asset_path + 'css/wordpress.css',
 		asset_path + 'css/app.css'
 	], asset_path + 'css/downloadclub.css')
@@ -36,6 +37,7 @@ elixir((mix) => {
 		asset_path + 'vendors/bootstrap/js/bootstrap.bundle.min.js',
 		asset_path + 'vendors/owl-carousel2/owl.carousel.min.js',
 		asset_path + 'vendors/jquery-smooth-scroll/jquery.smooth-scroll.min.js',
+		asset_path + 'vendors/magnific-popup/jquery.magnific-popup.min.js',
 		//asset_path + 'js/skip-link-focus-fix.js',
 		asset_path + 'vendors/js-offcanvas/js/js-offcanvas.pkgd.min.js',
 		asset_path + 'js/theme-main.js'
