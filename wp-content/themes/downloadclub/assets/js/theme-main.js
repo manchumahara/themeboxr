@@ -83,10 +83,21 @@
 
         });
 
-        // Video Popup
+        // 04. Video Popup
 		$('.video-popup').magnificPopup({
 			type: 'iframe'
 		});
+
+		// 05. Owl Carousel testimonial
+        $('#testimonialContent').owlCarousel({
+            items:3,
+            loop:true,
+			margin: 30,
+			dots: false,
+			nav: true,
+            navClass: ['owl-nav-item owl-prev', 'owl-nav-item owl-next'],
+            navText: ['<i class="fa fa-long-arrow-left">', 'Next']
+        });
 
     });
 

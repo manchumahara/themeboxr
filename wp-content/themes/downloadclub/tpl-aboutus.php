@@ -91,7 +91,7 @@ downloadclub_page_wrapper_start();
                         <p>Theay are ready to provide you batter service, if you nedd any kind of help or if you feel you are in a problem,  just feel free to noticed us, you get 100% premium support from them. happy web designing</p>
 
                         <a href="#" class="btn btn-brand">Get Premium Support</a>
-                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo-team.png" alt="Themeboxr"/></a>
+                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo-team.png" alt="Themeboxr" class="img-fluid" /></a>
                     </div>
                 </div>
             </div>
@@ -111,15 +111,54 @@ downloadclub_page_wrapper_start();
             </div>
 
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 text-center">
                     <div class="testimonial-content-wrap">
-                        <div id="testimonialContent">
+                        <div id="testimonialContent" class="owl-carousel">
                             <div class="single-testimonial-item">
                                 <i class="fa fa-quote-left"></i>
                                 <p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
-                                <div class="client-info">
-                                    <h3 class="h6">Prischilla Chan</h3>
-                                    <span class="client-degi">CEO at Mediumsoft</span>
+                                <div class="client-area d-flex">
+                                    <a href="#" class="client-pro-pic"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg" class="img-fluid" alt="Themeboxr"/></a>
+                                    <div class="client-info">
+                                        <h3 class="h6">Prischilla Chan</h3>
+                                        <span class="client-degi">CEO at Mediumsoft</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="single-testimonial-item">
+                                <i class="fa fa-quote-left"></i>
+                                <p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
+                                <div class="client-area d-flex">
+                                    <a href="#" class="client-pro-pic"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg" class="img-fluid" alt="Themeboxr"/></a>
+                                    <div class="client-info">
+                                        <h3 class="h6">Prischilla Chan</h3>
+                                        <span class="client-degi">CEO at Mediumsoft</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="single-testimonial-item">
+                                <i class="fa fa-quote-left"></i>
+                                <p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
+                                <div class="client-area d-flex">
+                                    <a href="#" class="client-pro-pic"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg" class="img-fluid" alt="Themeboxr"/></a>
+                                    <div class="client-info">
+                                        <h3 class="h6">Prischilla Chan</h3>
+                                        <span class="client-degi">CEO at Mediumsoft</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="single-testimonial-item">
+                                <i class="fa fa-quote-left"></i>
+                                <p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
+                                <div class="client-area d-flex">
+                                    <a href="#" class="client-pro-pic"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg" class="img-fluid" alt="Themeboxr"/></a>
+                                    <div class="client-info">
+                                        <h3 class="h6">Prischilla Chan</h3>
+                                        <span class="client-degi">CEO at Mediumsoft</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
