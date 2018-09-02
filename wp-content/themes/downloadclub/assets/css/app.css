@@ -1026,6 +1026,29 @@ ul {
   line-height: 1;
   font-weight: 600;
 }
+#testimonial-area .testimonial-content-wrap #testimonialContent .owl-nav {
+  margin-top: 40px;
+}
+#testimonial-area .testimonial-content-wrap #testimonialContent .owl-nav .owl-nav-item {
+  outline: none;
+  background-color: #12c9fe;
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  padding: 25px 40px !important;
+  transition: all 0.4s ease-out;
+}
+#testimonial-area .testimonial-content-wrap #testimonialContent .owl-nav .owl-nav-item:hover,
+#testimonial-area .testimonial-content-wrap #testimonialContent .owl-nav .owl-nav-item:active {
+  background-color: #0197c3;
+}
+#testimonial-area .testimonial-content-wrap #testimonialContent .owl-nav .owl-nav-item.owl-prev {
+  border-radius: 100px 0 0 100px;
+}
+#testimonial-area .testimonial-content-wrap #testimonialContent .owl-nav .owl-nav-item.owl-next {
+  border-radius: 0 100px 100px 0;
+}
 /*== About Page End ==*/
 /*RESPONSIVE STYLE */
 /* Small Devices (Portrait Phones, 575px and Down) */

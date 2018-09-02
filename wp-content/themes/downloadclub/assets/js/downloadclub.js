@@ -123,7 +123,7 @@ jQuery Accesible Offcanvas Panels
 			dots: false,
 			nav: true,
             navClass: ['owl-nav-item owl-prev', 'owl-nav-item owl-next'],
-            navText: ['<i class="fa fa-long-arrow-left">', 'Next']
+            navText: ['<i class="fa fa-arrow-left">', '<i class="fa fa-arrow-right">']
         });
 
     });

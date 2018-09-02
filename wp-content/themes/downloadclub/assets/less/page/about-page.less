@@ -126,6 +126,31 @@
         }
       }
     }
+
+    #testimonialContent{
+      .owl-nav{
+        margin-top: 40px;
+        .owl-nav-item{
+          outline: none;
+          background-color: @brand-color;
+          .font-noline(20);
+          color: @white;
+          padding: 25px 40px !important;
+          .transition(0.4s);
+
+          &:hover,&:active{
+            background-color: @brand-color-dark;
+          }
+
+          &.owl-prev{
+            .border-radius(100px 0 0 100px);
+          }
+          &.owl-next{
+            .border-radius(0 100px 100px 0);
+          }
+        }
+      }
+    }
   }
 }
 
