@@ -2540,6 +2540,28 @@ ul {
 #testimonial-area .testimonial-content-wrap #testimonialContent .owl-nav .owl-nav-item.owl-next {
   border-radius: 0 100px 100px 0;
 }
+#we-featured {
+  background-color: #dae6ed;
+  padding: 60px 0;
+}
+#we-featured .single-feature-item {
+  background-color: #fff;
+  height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  transition: all 0.3s ease-out;
+}
+#we-featured .single-feature-item:hover {
+  box-shadow: 1px 8px 14px 0px rgba(0, 0, 0, 0.2);
+}
+#we-featured .single-feature-item a {
+  display: block;
+}
+#we-featured .single-feature-item img {
+  max-width: 110px;
+}
 /*== About Page End ==*/
 /*RESPONSIVE STYLE */
 /* Small Devices (Portrait Phones, 575px and Down) */

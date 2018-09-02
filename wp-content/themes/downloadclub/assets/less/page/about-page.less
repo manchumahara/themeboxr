@@ -154,4 +154,31 @@
   }
 }
 
+#we-featured{
+  background-color: @section-bg;
+  padding: 60px 0;
+
+  .single-feature-item{
+    background-color: @white;
+    height: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    .transition(0.3s);
+
+    &:hover{
+      .box-shadow(1px 8px 14px 0px rgba(0, 0, 0, 0.2));
+    }
+
+    a{
+      display: block;
+    }
+
+    img{
+      max-width: 110px;
+    }
+  }
+}
+
 /*== About Page End ==*/

@@ -88,10 +88,13 @@ downloadclub_page_wrapper_start();
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="technical-support">
-                        <p>Theay are ready to provide you batter service, if you nedd any kind of help or if you feel you are in a problem,  just feel free to noticed us, you get 100% premium support from them. happy web designing</p>
+                        <p>Theay are ready to provide you batter service, if you nedd any kind of help or if you feel
+                            you are in a problem, just feel free to noticed us, you get 100% premium support from them.
+                            happy web designing</p>
 
                         <a href="#" class="btn btn-brand">Get Premium Support</a>
-                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo-team.png" alt="Themeboxr" class="img-fluid" /></a>
+                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo-team.png"
+                                         alt="Themeboxr" class="img-fluid"/></a>
                     </div>
                 </div>
             </div>
@@ -99,7 +102,7 @@ downloadclub_page_wrapper_start();
     </section>
     <!--== Technical Person End ==-->
 
-    <!--== Testimonial Start ==-->
+    <!--== Testimonial Area Start ==-->
     <div id="testimonial-area" class="section-padding">
         <div class="container">
             <div class="row">
@@ -116,9 +119,13 @@ downloadclub_page_wrapper_start();
                         <div id="testimonialContent" class="owl-carousel">
                             <div class="single-testimonial-item">
                                 <i class="fa fa-quote-left"></i>
-                                <p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
+                                <p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt
+                                    ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut
+                                    aliquip</p>
                                 <div class="client-area d-flex">
-                                    <a href="#" class="client-pro-pic"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg" class="img-fluid" alt="Themeboxr"/></a>
+                                    <a href="#" class="client-pro-pic"><img
+                                                src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg"
+                                                class="img-fluid" alt="Themeboxr"/></a>
                                     <div class="client-info">
                                         <h3 class="h6">Prischilla Chan</h3>
                                         <span class="client-degi">CEO at Mediumsoft</span>
@@ -128,9 +135,13 @@ downloadclub_page_wrapper_start();
 
                             <div class="single-testimonial-item">
                                 <i class="fa fa-quote-left"></i>
-                                <p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
+                                <p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt
+                                    ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut
+                                    aliquip</p>
                                 <div class="client-area d-flex">
-                                    <a href="#" class="client-pro-pic"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg" class="img-fluid" alt="Themeboxr"/></a>
+                                    <a href="#" class="client-pro-pic"><img
+                                                src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg"
+                                                class="img-fluid" alt="Themeboxr"/></a>
                                     <div class="client-info">
                                         <h3 class="h6">Prischilla Chan</h3>
                                         <span class="client-degi">CEO at Mediumsoft</span>
@@ -140,9 +151,13 @@ downloadclub_page_wrapper_start();
 
                             <div class="single-testimonial-item">
                                 <i class="fa fa-quote-left"></i>
-                                <p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
+                                <p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt
+                                    ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut
+                                    aliquip</p>
                                 <div class="client-area d-flex">
-                                    <a href="#" class="client-pro-pic"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg" class="img-fluid" alt="Themeboxr"/></a>
+                                    <a href="#" class="client-pro-pic"><img
+                                                src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg"
+                                                class="img-fluid" alt="Themeboxr"/></a>
                                     <div class="client-info">
                                         <h3 class="h6">Prischilla Chan</h3>
                                         <span class="client-degi">CEO at Mediumsoft</span>
@@ -152,9 +167,13 @@ downloadclub_page_wrapper_start();
 
                             <div class="single-testimonial-item">
                                 <i class="fa fa-quote-left"></i>
-                                <p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
+                                <p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt
+                                    ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut
+                                    aliquip</p>
                                 <div class="client-area d-flex">
-                                    <a href="#" class="client-pro-pic"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg" class="img-fluid" alt="Themeboxr"/></a>
+                                    <a href="#" class="client-pro-pic"><img
+                                                src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg"
+                                                class="img-fluid" alt="Themeboxr"/></a>
                                     <div class="client-info">
                                         <h3 class="h6">Prischilla Chan</h3>
                                         <span class="client-degi">CEO at Mediumsoft</span>
@@ -167,7 +186,52 @@ downloadclub_page_wrapper_start();
             </div>
         </div>
     </div>
-    <!--== Testimonial End ==-->
+    <!--== Testimonial Area End ==-->
+
+    <!--== Featured Area Start ==-->
+    <section id="we-featured">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title-wrap">
+                        <h2>We are Featured</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="featuredCarousel" class="owl-carousel">
+                        <a href="#" class="single-feature-item">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-1.png" alt="Themeboxr" class="img-fluid"/>
+                        </a>
+                        <a href="#" class="single-feature-item">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-2.png" alt="Themeboxr" class="img-fluid"/>
+                        </a>
+                        <a href="#" class="single-feature-item">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-3.png" alt="Themeboxr" class="img-fluid"/>
+                        </a>
+                        <a href="#" class="single-feature-item">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-1.png" alt="Themeboxr" class="img-fluid"/>
+                        </a>
+                        <a href="#" class="single-feature-item">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-2.png" alt="Themeboxr" class="img-fluid"/>
+                        </a>
+                        <a href="#" class="single-feature-item">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-3.png" alt="Themeboxr" class="img-fluid"/>
+                        </a>
+                        <a href="#" class="single-feature-item">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-2.png" alt="Themeboxr" class="img-fluid"/>
+                        </a>
+                        <a href="#" class="single-feature-item">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-3.png" alt="Themeboxr" class="img-fluid"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--== Featured Area End ==-->
 
     <!--== We Are Best Area Start ==-->
     <section id="we-are-best-area" class="section-padding">
