@@ -100,9 +100,29 @@ add_action( 'after_setup_theme', 'downloadclub_content_width', 0 );
  */
 function downloadclub_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'downloadclub' ),
+		'name'          => esc_html__( 'Sidebar Right', 'downloadclub' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'downloadclub' ),
+		'description'   => esc_html__( 'Add widget in sidebar Right', 'downloadclub' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar Left', 'downloadclub' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widget in sidebar Left', 'downloadclub' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar Blog', 'downloadclub' ),
+		'id'            => 'sidebar-blog',
+		'description'   => esc_html__( 'Add widget in Blog sidebar', 'downloadclub' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
