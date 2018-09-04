@@ -219,7 +219,7 @@ downloadclub_page_wrapper_start();
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="section-title-wrap">
-                            <h2>What's Use This Theme</h2>
+                            <h2>What's Use This Template</h2>
                         </div>
                     </div>
                 </div>
