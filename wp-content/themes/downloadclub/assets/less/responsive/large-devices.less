@@ -48,13 +48,38 @@
       padding-bottom: 40px;
     }
   }
+
+  .products-header-wrap {
+    padding-top: 200px;
+
+    .product-header-content {
+      p {
+        max-width: 60%;
+      }
+    }
+
+    .product-thumbnail-carousel{
+      margin-top: 80px;
+    }
+  }
+
+  .product-description{
+    .product-description-wrap{
+      &:after{
+        margin-top: 0;
+        position: absolute;
+        height: 100%;
+        width: 50%;
+      }
+    }
+  }
 }
 
 //end media quaries
 
 /*Extra Large Devices (Desktops, 992px and up) */
 @media only screen and (min-width: 1400px) {
-  html, body, #banner-area, #banner-area div {
+  html, body, #banner-area, #banner-area div{
     height: 100%;
   }
 

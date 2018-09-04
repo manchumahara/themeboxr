@@ -30,7 +30,8 @@ downloadclub_page_wrapper_start();
 	$main_col_x = is_active_sidebar( 'sidebar-1' ) ? 'col-md-8':'col-md-12';
 
 ?>
-	<div class="container section-padding">
+	<div class="section-padding">
+	    <div class="container ">
 		<div id="primary" class="content-area row">
 			<div id="main" class="site-main <?php echo esc_attr($main_col_x); ?>">
 	                <?php
@@ -53,6 +54,7 @@ downloadclub_page_wrapper_start();
 			</div>
 			<?php endif; ?>
 		</div><!-- #primary -->
+	</div>
 	</div>
 <?php
 	downloadclub_page_wrapper_end();

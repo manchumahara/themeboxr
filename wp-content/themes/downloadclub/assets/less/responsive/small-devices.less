@@ -1,11 +1,13 @@
 /* Small Devices (Portrait Phones, 575px and Down) */
-@media only screen and (min-width: 320px) and (max-width: 575px)  {
-  .is_admin_bar_showing{
+@media only screen and (min-width: 320px) and (max-width: 575px) {
+  .is_admin_bar_showing {
     top: 46px;
   }
-  .is_admin_bar_showing.fixed{
+
+  .is_admin_bar_showing.fixed {
     top: 0px;
   }
+
   #banner-area {
     padding-top: 150px;
 
@@ -16,14 +18,14 @@
     }
   }
 
-  #products-area{
-    .products-filter-menu{
+  #products-area {
+    .products-filter-menu {
       padding: 10px 0;
-      .filter-navbar{
-        ul{
+      .filter-navbar {
+        ul {
           justify-content: center;
           flex-wrap: wrap;
-          li{
+          li {
             .font-size(12);
             padding: 5px 10px;
           }
@@ -31,17 +33,17 @@
       }
     }
 
-    .products-content-wrap{
-      .product-loadmore-btn{
+    .products-content-wrap {
+      .product-loadmore-btn {
         margin-top: 30px;
       }
     }
   }
 
-  #newsletter-area{
-    .newsletter-form{
-      form{
-        button{
+  #newsletter-area {
+    .newsletter-form {
+      form {
+        button {
           padding: 15px 20px;
         }
       }
@@ -51,6 +53,58 @@
   #footer-area {
     .footer-bottom-area {
       padding-bottom: 20px;
+    }
+  }
+
+  .products-header-wrap {
+    padding-top: 150px;
+
+    .product-header-content {
+      p {
+        max-width: 100%;
+      }
+
+      .brand-btn-group {
+        width: 60%;
+        margin:36px auto 0;
+        .btn-brand {
+          margin-right: 0;
+          margin-bottom: 10px;
+          display: block;
+
+          &:last-child{
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    .product-thumbnail-carousel{
+      margin-top: 0;
+    }
+  }
+
+  .single-product-info{
+    .product-information{
+      flex-wrap: wrap;
+      margin-top: -30px;
+      justify-content: center;
+
+      .information-item{
+        margin-top: 30px;
+        width: 100%;
+      }
+    }
+  }
+
+  .product-description{
+    .product-description-wrap{
+      &:after{
+        margin-top: 30px;
+        position: static;
+        height: 350px;
+        width: 100%;
+      }
     }
   }
 }
