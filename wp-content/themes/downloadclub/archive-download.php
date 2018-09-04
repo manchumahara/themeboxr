@@ -42,7 +42,7 @@ get_header();
 									the_post();
 									?>
 									<!-- Single Product Start -->
-									<div class="product-item scale-amn col-lg-4 col-md-6 all pop trend">
+									<div class="product-item scale-amn col-md-6 all pop trend">
 										<div class="single-product-wrap ">
 											<figure class="product-thumb">
 												<a href="#"><img
