@@ -23,6 +23,7 @@ get_header();
 			</div>
 		</div>
 	</div><!-- .entry-header -->
+
 <?php
 	downloadclub_page_wrapper_start();
 	$main_col_x = is_active_sidebar( 'sidebar-1' ) ? 'col-md-8':'col-md-12';
