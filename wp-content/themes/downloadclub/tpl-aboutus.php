@@ -52,7 +52,7 @@ downloadclub_page_wrapper_start();
                     </figure>
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-6 mt-5 mt-lg-0">
                     <div class="about-right-content">
                         <h2>What Is Inside This Themes?</h2>
                         <p>Biz Zone is a responsive theme. It is compatible with all types of browsers and devices.
