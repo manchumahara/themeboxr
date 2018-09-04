@@ -27,11 +27,11 @@ get_header();
 	</div><!-- .entry-header -->
 <?php
 	downloadclub_page_wrapper_start();
-	$main_col_x = is_active_sidebar( 'sidebar-1' ) ? 'col-md-8':'col-md-12';
+	//$main_col_x = is_active_sidebar( 'sidebar-1' ) ? 'col-md-8':'col-md-12';
 ?>
 	<div class="container">
 		<div id="primary" class="content-area row">
-			<main id="main" class="site-main <?php echo esc_attr($main_col_x); ?>">
+			<main id="main" class="site-main col-md-12">
 				<!-- Products Content Start -->
 				<div class="products-content-wrap section-padding">
 					<div class="container">
@@ -84,11 +84,6 @@ get_header();
 				</div>
 			</main><!-- #main -->
 		</div><!-- #primary -->
-		<?php if(is_active_sidebar( 'sidebar-1' )): ?>
-			<div class="col-md-4">
-				<?php get_sidebar();  ?>
-			</div>
-		<?php endif; ?>
 	</div>
 <?php
 	downloadclub_page_wrapper_end();
