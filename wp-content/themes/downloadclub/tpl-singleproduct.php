@@ -8,8 +8,6 @@ get_header();
 
 downloadclub_page_wrapper_start();
 ?>
-
-
     <!--== Single Product Page Start ===-->
     <div id="single-product-page">
         <div class="products-header-wrap">
@@ -309,66 +307,64 @@ downloadclub_page_wrapper_start();
                 </div>
             </div>
         </div>
-
-        <div id="we-are-best-area" class="section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="section-title-wrap">
-                            <h2>Why We Are Best </h2>
-                            <p>Here we listed some some reasone of why we are best</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="we-best-content-wrap">
-                    <div class="row">
-                        <div class="col-md-4 text-center">
-                            <div class="single-we-best-item">
-                                <figure class="feature-logo">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/satisfication.png"
-                                         alt="Themeboxr"/>
-                                </figure>
-
-                                <h3 class="h4">100% Satisfaction</h3>
-                                <p>We provide best services in this field, so we belived that you are fully satisfied on our
-                                    service and wishes us good luck.</p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 text-center">
-                            <div class="single-we-best-item">
-                                <figure class="feature-logo">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/support.png"
-                                         alt="Themeboxr"/>
-                                </figure>
-
-                                <h3 class="h4">Best Support</h3>
-                                <p>We provide best services in this field, so we belived that you are fully satisfied on our
-                                    service and wishes us good luck.</p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 text-center">
-                            <div class="single-we-best-item">
-                                <figure class="feature-logo">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/square.png"
-                                         alt="Themeboxr"/>
-                                </figure>
-
-                                <h3 class="h4">Fully Squared</h3>
-                                <p>We provide best services in this field, so we belived that you are fully satisfied on our
-                                    service and wishes us good luck.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <!--== Single Product Page End ===-->
 
-    <!--== Newsletter Area Start ==-->
+	<div id="we-are-best-area" class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<div class="section-title-wrap">
+						<h2>Why We Are Best </h2>
+						<p>Here we listed some some reasone of why we are best</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="we-best-content-wrap">
+				<div class="row">
+					<div class="col-md-4 text-center">
+						<div class="single-we-best-item">
+							<figure class="feature-logo">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/satisfication.png"
+									 alt="Themeboxr"/>
+							</figure>
+
+							<h3 class="h4">100% Satisfaction</h3>
+							<p>We provide best services in this field, so we belived that you are fully satisfied on our
+								service and wishes us good luck.</p>
+						</div>
+					</div>
+
+					<div class="col-md-4 text-center">
+						<div class="single-we-best-item">
+							<figure class="feature-logo">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/support.png"
+									 alt="Themeboxr"/>
+							</figure>
+
+							<h3 class="h4">Best Support</h3>
+							<p>We provide best services in this field, so we belived that you are fully satisfied on our
+								service and wishes us good luck.</p>
+						</div>
+					</div>
+
+					<div class="col-md-4 text-center">
+						<div class="single-we-best-item">
+							<figure class="feature-logo">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/square.png"
+									 alt="Themeboxr"/>
+							</figure>
+
+							<h3 class="h4">Fully Squared</h3>
+							<p>We provide best services in this field, so we belived that you are fully satisfied on our
+								service and wishes us good luck.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
     <section id="newsletter-area">
         <div class="container">
             <div class="row">
@@ -391,9 +387,6 @@ downloadclub_page_wrapper_start();
             </div>
         </div>
     </section>
-    <!--== Newsletter Area End ==-->
-
-
 <?php
 downloadclub_page_wrapper_end();
 get_footer();

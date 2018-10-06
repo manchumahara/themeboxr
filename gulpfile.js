@@ -29,7 +29,8 @@ elixir((mix) => {
 		asset_path + 'vendors/owl-carousel2/assets/owl.carousel.min.css',
 		asset_path + 'vendors/owl-carousel2/assets/owl.theme.default.min.css',
 		asset_path + 'vendors/magnific-popup/magnific-popup.css',
-		asset_path + 'css/wordpress.css',
+		//asset_path + 'css/wordpress.css',
+		//asset_path + 'css/woocommerce.css',
 		asset_path + 'css/app.css'
 	], asset_path + 'css/downloadclub.css')
 	.scripts([

@@ -1,6 +1,6 @@
 <?php
 	/*
-	Template Name: Two Col
+	Template Name: Page Two Sidebar
 	*/
 ?>
 <?php

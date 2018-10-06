@@ -1,6 +1,6 @@
 <?php
 	/*
-	Template Name: Full Fluid
+	Template Name: Page Full Fluid
 	*/
 ?>
 <?php

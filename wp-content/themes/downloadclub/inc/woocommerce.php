@@ -45,7 +45,7 @@ function downloadclub_woocommerce_scripts() {
 
 	wp_add_inline_style( 'downloadclub-woocommerce-style', $inline_font );
 }
-add_action( 'wp_enqueue_scripts', 'downloadclub_woocommerce_scripts' );
+//add_action( 'wp_enqueue_scripts', 'downloadclub_woocommerce_scripts' );
 
 /**
  * Disable the default WooCommerce stylesheet.
@@ -148,6 +148,7 @@ add_action( 'woocommerce_after_shop_loop', 'downloadclub_woocommerce_product_col
  */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
 if ( ! function_exists( 'downloadclub_woocommerce_wrapper_before' ) ) {
 	/**
@@ -158,9 +159,26 @@ if ( ! function_exists( 'downloadclub_woocommerce_wrapper_before' ) ) {
 	 * @return void
 	 */
 	function downloadclub_woocommerce_wrapper_before() {
+		$main_col_x = is_active_sidebar( 'shop' ) ? 'col-md-8' : 'col-md-12';
 		?>
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
+		<div class="entry-header-cover entry-header" id="banner-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<div class="banner-content-wrap">
+							<?php
+							//the_title( '<h1 class="entry-title">', '</h1>' );
+							?>
+							<h1 class="entry-title"><?php woocommerce_page_title(); ?></h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section-padding">
+		<div class="container ">
+			<div id="primary" class="content-area row">
+				<div id="main" class="site-main <?php echo esc_attr( $main_col_x ); ?>" role="main">
 			<?php
 	}
 }
@@ -176,8 +194,10 @@ if ( ! function_exists( 'downloadclub_woocommerce_wrapper_after' ) ) {
 	 */
 	function downloadclub_woocommerce_wrapper_after() {
 			?>
-			</main><!-- #main -->
-		</div><!-- #primary -->
+				</main><!-- #main -->
+			</div><!-- #primary -->
+		</div><!-- .container -->
+		</div><!-- .section-padding -->
 		<?php
 	}
 }
