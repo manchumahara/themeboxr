@@ -29,6 +29,7 @@ get_header();
 	downloadclub_page_wrapper_start();
 	//$main_col_x = is_active_sidebar( 'sidebar-1' ) ? 'col-md-8':'col-md-12';
 ?>
+	++++++++++++++++
 	<div class="container">
 		<div id="primary" class="content-area row">
 			<main id="main" class="site-main col-md-12">

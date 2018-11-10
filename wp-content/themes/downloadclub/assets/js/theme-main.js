@@ -29,6 +29,29 @@
     }
 
     $(document).ready(function ($) {
+
+        $('.woocommerce-products-header').remove();
+        $('.woocommerce-products-wrapper').each(function (index, element) {
+           var $element = $(element);
+
+			$element.find('ul.products').wrap('<div class="row products"/>').contents().unwrap();
+			$element.find('li.product').each(function (index, element) {
+			    var $class = $(element).attr('class');
+
+			    //col-md-4 col-sm-6 col-xs-12
+				$(element).wrap('<div class="col-md-4 col-sm-6 col-xs-12"><div class="'+$class+'"></div></div>').contents().unwrap();
+			});
+
+
+			//$('.woocommerce-products-wrapper ul.products').wrap('<div class="row"/>').contents().unwrap();
+			//$('.woocommerce-products-wrapper li.product').wrap('<div class="col-md-4 col-sm-6 col-xs-12 "/>').contents().unwrap();
+
+		});
+
+        $('.woocommerce-ordering').find('.orderby').addClass('.form-control form-control-lg')
+
+
+
         var is_admin_bar_showing = 0;
         if ($('#wpadminbar').length > 0) {
             is_admin_bar_showing = 1;
@@ -36,10 +59,10 @@
 
         //add the off canvas
 
-        $(".navbar-nav").clone().prependTo("#off-canvas .offcanvaswrap_menus");
+        /*$(".navbar-nav").clone().prependTo("#off-canvas .offcanvaswrap_menus");
         $(function () {
             $(document).trigger("enhance");
-        });
+        });*/
         //end add offcanvas
 
 
