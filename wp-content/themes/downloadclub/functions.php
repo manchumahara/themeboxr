@@ -142,7 +142,7 @@ function downloadclub_scripts() {
 
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
-	$inline_font = '@font-face {
+	/*$inline_font = '@font-face {
 			font-family: "star";
 			src: url("' . $font_path . 'star.eot");
 			src: url("' . $font_path . 'star.eot?#iefix") format("embedded-opentype"),
@@ -151,7 +151,7 @@ function downloadclub_scripts() {
 				url("' . $font_path . 'star.svg#star") format("svg");
 			font-weight: normal;
 			font-style: normal;
-		}';
+		}';*/
 
 
 
@@ -174,7 +174,7 @@ function downloadclub_scripts() {
 	wp_enqueue_script( 'downloadclub-core', get_template_directory_uri() . '/assets/js/downloadclub.js', array('jquery'), $version, true );
 	wp_localize_script( 'downloadclub-core', 'downloadclub', $downloadclub_js_vars );
 
-	wp_add_inline_style( 'downloadclub-core', $inline_font );
+	//wp_add_inline_style( 'downloadclub-core', $inline_font );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
