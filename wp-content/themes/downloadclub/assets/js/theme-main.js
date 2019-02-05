@@ -30,6 +30,8 @@
 
     $(document).ready(function ($) {
 
+
+
         $('.woocommerce-products-header').remove();
         $('.woocommerce-products-wrapper').each(function (index, element) {
            var $element = $(element);
@@ -59,10 +61,11 @@
 
         //add the off canvas
 
-        /*$(".navbar-nav").clone().prependTo("#off-canvas .offcanvaswrap_menus");
+        $(".navbar-nav").clone().prependTo("#off-canvas .offcanvaswrap_menus");
         $(function () {
             $(document).trigger("enhance");
-        });*/
+        });
+		$('#off-canvas').attr('style', '');
         //end add offcanvas
 
 
