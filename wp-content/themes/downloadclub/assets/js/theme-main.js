@@ -29,9 +29,6 @@
     }
 
     $(document).ready(function ($) {
-
-
-
         $('.woocommerce-products-header').remove();
         $('.woocommerce-products-wrapper').each(function (index, element) {
            var $element = $(element);
