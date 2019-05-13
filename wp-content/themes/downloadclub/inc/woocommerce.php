@@ -17,9 +17,9 @@
  */
 function downloadclub_woocommerce_setup() {
 	add_theme_support( 'woocommerce' );
-	add_theme_support( 'wc-product-gallery-zoom' );
-	add_theme_support( 'wc-product-gallery-lightbox' );
-	add_theme_support( 'wc-product-gallery-slider' );
+	//add_theme_support( 'wc-product-gallery-zoom' );
+	//add_theme_support( 'wc-product-gallery-lightbox' );
+	//add_theme_support( 'wc-product-gallery-slider' );
 }
 add_action( 'after_setup_theme', 'downloadclub_woocommerce_setup' );
 
@@ -187,6 +187,34 @@ remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_l
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_price', 10 );
 add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_rating', 10 );
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+add_action( 'woocommerce_after_shop_loop_item', 'downloadclub_woocommerce_template_loop_add_category', 10);
+
+
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
+remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+remove_action( 'woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 30 );
+remove_action( 'woocommerce_grouped_add_to_cart', 'woocommerce_grouped_add_to_cart', 30 );
+remove_action( 'woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 30 );
+remove_action( 'woocommerce_external_add_to_cart', 'woocommerce_external_add_to_cart', 30 );
+remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
+remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20 );
+
+add_action('woocommerce_before_single_product_summary', 'downloadclub_woocommerce_before_single_product_summary');
 
 if ( ! function_exists( 'downloadclub_woocommerce_wrapper_before' ) ) {
 	/**
@@ -198,8 +226,9 @@ if ( ! function_exists( 'downloadclub_woocommerce_wrapper_before' ) ) {
 	 */
 	function downloadclub_woocommerce_wrapper_before() {
 		$main_col_x = is_active_sidebar( 'shop' ) ? 'col-md-8' : 'col-md-12';
+		if(!is_singular('product')):
 		?>
-		<div class="entry-header-cover entry-header" id="banner-area">
+			<div class="entry-header-cover entry-header" id="banner-area">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 text-center">
@@ -226,10 +255,16 @@ if ( ! function_exists( 'downloadclub_woocommerce_wrapper_before' ) ) {
 				</div>
 			</div>
 		</div>
+		<?php endif; ?>
 		<div id="page" class="site clearfix"><div id="content" class="site-content">
-		<div class="section-padding section-bg-color">
+		<?php
+			if(is_singular('product')){
+				get_template_part( 'template-parts/sections/product', 'header' );
+			}
 
-			<?php
+			if(!is_singular('product')):
+				echo '<div class="section-padding section-bg-color">';
+			endif;
 	}
 }
 add_action( 'woocommerce_before_main_content', 'downloadclub_woocommerce_wrapper_before', 9 );
@@ -243,9 +278,11 @@ if ( ! function_exists( 'downloadclub_woocommerce_wrapper_after' ) ) {
 	 * @return void
 	 */
 	function downloadclub_woocommerce_wrapper_after() {
-
+			if(!is_singular('product')):
+				echo '</div>';
+			endif;
 			?>
-		</div></div>
+		</div>
 		<?php
 	}
 }
@@ -341,9 +378,52 @@ if ( ! function_exists( 'downloadclub_woocommerce_header_cart' ) ) {
 /**
  * Change the placeholder image
  */
-add_filter('woocommerce_placeholder_img_src', 'downloadclub_woocommerce_placeholder_img_src');
-if(!function_exists('downloadclub_woocommerce_placeholder_img_src')){
+
+
+
+	add_filter('woocommerce_placeholder_img_src', 'downloadclub_woocommerce_placeholder_img_src', 10, 1);
 	function downloadclub_woocommerce_placeholder_img_src( $src ) {
-		return WP_CONTENT_URL . '/themes/downloadclub/assets/img/default_thumb.png';
+		return get_template_directory_uri() . '/assets/img/default_thumb.png';
 	}
-}
+
+	add_filter('woocommerce_placeholder_img', 'downloadclub_woocommerce_placeholder_img', 10, 3);
+	function downloadclub_woocommerce_placeholder_img($image_html, $size, $dimensions){
+		$image      = wc_placeholder_img_src( $size );
+		$image_html = '<img src="' . esc_attr( $image ) . '" alt="' . esc_attr__( 'Placeholder', 'woocommerce' ) . '" width="' . esc_attr( $dimensions['width'] ) . '" class="woocommerce-placeholder wp-post-image" height="' . esc_attr( $dimensions['height'] ) . '" />';
+
+		return $image_html;
+	}
+
+	function downloadclub_woocommerce_template_loop_add_category(){
+		global $product;
+		$terms = get_the_terms( $product->get_id(), 'product_cat' );
+
+		$links = array();
+		if ( !is_wp_error( $terms )  && !empty($terms)) {
+			foreach ( $terms as $term ) {
+				$link = get_term_link( $term, 'product_cat' );
+				if ( is_wp_error( $link ) ) {
+					return '';
+				}
+				$links[] = '<a href="' . esc_url( $link ) . '" rel="tag">' . $term->name . '</a>';
+				break;
+			}
+		}
+
+		echo '<span class="posted_in"><i class="fa fa-tags"></i>' . join( ',', $links ) . '</span>';
+	}
+
+
+	function downloadclub_woocommerce_before_single_product_summary(){
+		echo '<div id="single-product-page">';
+		get_template_part( 'template-parts/sections/product', 'description' );
+		echo '</div>';
+	}
+
+	add_filter('woocommerce_post_class', 'downloadclub_woocommerce_post_class_details', 10, 2);
+	function downloadclub_woocommerce_post_class_details($classes, $product){
+		if(is_singular('product')){
+			$classes[] = 'single-product-page-wrapper';
+		}
+		return $classes;
+	}

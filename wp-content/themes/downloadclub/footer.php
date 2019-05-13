@@ -10,7 +10,17 @@
  */
 
 ?>
-
+<?php
+	if(is_home() || is_front_page()){
+		get_template_part( 'template-parts/sections/latestblogs', '' );
+	}
+?>
+<?php
+	get_template_part( 'template-parts/sections/wearethebest', '' );
+?>
+<?php
+	get_template_part( 'template-parts/sections/newsletter', '' );
+?>
 	<footer id="footer-area" class="site-footer">
 		<div class="footer-widgets-area section-padding">
 			<div class="container">
@@ -24,10 +34,8 @@
 								</a>
 								<p>Text of the printing and typesetting industry. Lorem Ipsum has been the indus try's standard dummy text ever  when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 								<div class="social-icons">
-									<!--<a href="#"><i class="fab fa-facebook-f"></i></a>-->
-									<a href="https://twitter.com/themeboxr" target="_blank" rel="external"><i class="fab fa-twitter"></i></a>
-									<a href="https://dribbble.com/themeboxr" target="_blank"><i class="fab fa-dribbble"></i></a>
-									<!--<a href="#"><i class="fab fa-linkedin"></i></a>-->
+									<a href="https://twitter.com/themeboxr" target="_blank" rel="external"><i class="fa fa-twitter"></i></a>
+									<a href="https://facebook.com/codeboxr" target="_blank"><i class="fa fa-facebook"></i></a>
 								</div>
 							</div>
 						</div>
@@ -92,24 +100,30 @@
 			</div>
 		</div>
 
+		<?php
+
+			$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
+			$cart_url = get_permalink(wc_get_page_id( 'cart' ));
+			$myaccount_page_url = get_permalink( wc_get_page_id( 'myaccount' ) );
+			$checkout_url = get_permalink(wc_get_page_id( 'checkout' ));
+		?>
+
 		<div class="footer-bottom-area">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-8 d-none d-lg-block">
 						<nav class="footer-menu">
 							<ul>
-								<li><a href="#">Home</a></li>
-								<li><a href="#">about</a></li>
-								<li><a href="#">blog</a></li>
-								<li><a href="#">terms</a></li>
-								<li><a href="#">contact</a></li>
+								<li><a href="<?php echo esc_url(get_home_url()); ?>">Home</a></li>
+								<li><a href="#">Privacy</a></li>
+								<li><a href="#">Terms</a></li>
+								<li><a href="#">Contact</a></li>
 							</ul>
 						</nav>
 					</div>
-
 					<div class="col-lg-4 m-auto text-center text-lg-right">
 						<div class="copyright-area">
-							<p>All rights reserved to <a href="index.html">&copy; THEMEBOXR <?php echo date('Y'); ?></a></p>
+							<p><?php esc_html_e('All rights reserved', 'downloadclub'); ?> <a href="index.html">&copy; THEMEBOXR <?php echo date('Y'); ?></a></p>
 						</div>
 					</div>
 				</div>

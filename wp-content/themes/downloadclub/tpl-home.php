@@ -5,7 +5,9 @@ Template Name: Homepage
 
 get_header();
 ?>
-
+	<?php
+	$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
+	?>
     <section id="banner-area">
         <div class="container">
             <div class="row">
@@ -13,7 +15,7 @@ get_header();
                     <div class="banner-content-wrap">
                         <h1>2700+ <span>Premium</span> Theme & Templete for Websites <br>
                             That Perfectly Fit Your Business</h1>
-                        <a href="#" class="btn btn-brand"><?php esc_html_e( 'Buy a theme', 'downloadclub' ); ?></a>
+                        <a href="<?php echo esc_url($shop_page_url); ?>" class="btn btn-brand"><?php esc_html_e( 'Buy a theme', 'downloadclub' ); ?></a>
 
                         <!-- Feature Product Area Start -->
                         <div class="featured-products-area">
@@ -202,7 +204,7 @@ get_header();
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="product-loadmore-btn">
-                            <a href="#" class="btn btn-brand btn-load">Load More</a>
+                            <a href="<?php echo esc_url($shop_page_url); ?>" class="btn btn-brand btn-load"><?php esc_html_e('All Themes', 'downloadclub'); ?></a>
                         </div>
                     </div>
                 </div>
@@ -212,187 +214,10 @@ get_header();
     </section>
     <!--== Products Area End ==-->
 
-    <!--== We Are Best Area Start ==-->
-    <section id="we-are-best-area" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-title-wrap">
-                        <h2>Why We Are Best </h2>
-                        <p>Here we listed some some reasone of why we are best</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="we-best-content-wrap">
-                <div class="row">
-                    <div class="col-md-4 text-center">
-                        <div class="single-we-best-item">
-                            <figure class="feature-logo">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/satisfication.png" alt="Themeboxr" />
-                            </figure>
-
-                            <h3 class="h4">100% Satisfaction</h3>
-                            <p>We provide best services in this field, so we belived that you are fully  satisfied on our service and wishes us good luck.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 text-center">
-                        <div class="single-we-best-item">
-                            <figure class="feature-logo">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/support.png" alt="Themeboxr" />
-                            </figure>
-
-                            <h3 class="h4">Best Support</h3>
-                            <p>We provide best services in this field, so we belived that you are fully  satisfied on our service and wishes us good luck.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 text-center">
-                        <div class="single-we-best-item">
-                            <figure class="feature-logo">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/square.png" alt="Themeboxr" />
-                            </figure>
-
-                            <h3 class="h4">Fully Squared</h3>
-                            <p>We provide best services in this field, so we belived that you are fully  satisfied on our service and wishes us good luck.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--== We Are Best Area End ==-->
-
-    <!--== Latest Blog Area Start ==-->
-    <section id="latest-blog-area" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-title-wrap">
-                        <h2>Latest Blog</h2>
-                        <p>Here we listed some some reasone of why we are best</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="latest-blog-container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <article class="single-blog-item">
-                            <header class="blog-header">
-                                <figure class="blog-thumb">
-                                    <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/blog-1.jpg" alt="Themeboxr" /></a>
-                                </figure>
-
-                                <a href="#" class="post-author"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/author.jpg" alt="Themeboxr" /></a>
-                            </header>
-
-                            <section class="blog-content">
-                                <h2 class="h6"><a href="#">Best Wordpress Theme in This Year</a></h2>
-                                <a href="#" class="post-date">2 july 2015</a>
-
-                                <p>Printing and typesetting industry lorem Ipsum has been an stand dummy ever since printer printing </p>
-                            </section>
-
-                            <footer class="blog-footer">
-                                <a href="#" class="btn-readmore">More</a>
-
-                                <div class="blog-meta">
-                                    <a href="#"><i class="fa fa-comments"></i> 25</a>
-                                    <a href="#"><i class="fa fa-heart"></i> 125</a>
-                                </div>
-                            </footer>
-                        </article>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <article class="single-blog-item">
-                            <header class="blog-header">
-                                <figure class="blog-thumb">
-                                    <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/blog-2.jpg" alt="Themeboxr" /></a>
-                                </figure>
-
-                                <a href="#" class="post-author"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/author.jpg" alt="Themeboxr" /></a>
-                            </header>
-
-                            <section class="blog-content">
-                                <h2 class="h6"><a href="#">Best Wordpress Theme in This Year</a></h2>
-                                <a href="#" class="post-date">2 july 2015</a>
-
-                                <p>Printing and typesetting industry lorem Ipsum has been an stand dummy ever since printer printing </p>
-                            </section>
-
-                            <footer class="blog-footer">
-                                <a href="#" class="btn-readmore">More</a>
-
-                                <div class="blog-meta">
-                                    <a href="#"><i class="fa fa-comments"></i> 25</a>
-                                    <a href="#"><i class="fa fa-heart"></i> 125</a>
-                                </div>
-                            </footer>
-                        </article>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <article class="single-blog-item">
-                            <header class="blog-header">
-                                <figure class="blog-thumb">
-                                    <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/blog-1.jpg" alt="Themeboxr" /></a>
-                                </figure>
-
-                                <a href="#" class="post-author"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/author.jpg" alt="Themeboxr" /></a>
-                            </header>
-
-                            <section class="blog-content">
-                                <h2 class="h6"><a href="#">Best Wordpress Theme in This Year</a></h2>
-                                <a href="#" class="post-date">2 july 2015</a>
-
-                                <p>Printing and typesetting industry lorem Ipsum has been an stand dummy ever since printer printing </p>
-                            </section>
-
-                            <footer class="blog-footer">
-                                <a href="#" class="btn-readmore">More</a>
-
-                                <div class="blog-meta">
-                                    <a href="#"><i class="fa fa-comments"></i> 25</a>
-                                    <a href="#"><i class="fa fa-heart"></i> 125</a>
-                                </div>
-                            </footer>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--== Latest Blog Area End ==-->
-
-    <!--== Newsletter Area Start ==-->
-    <section id="newsletter-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 m-auto">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-6 m-auto text-center text-md-left">
-                            <h2 class="h4">Subcribes to Update With Us</h2>
-                        </div>
-
-                        <div class="col-lg-7 col-md-6 mt-5 mt-md-0">
-                            <div class="newsletter-form">
-                                <form action="#">
-                                    <input type="email" placeholder="Your Email Address" required />
-                                    <button class="btn">Subscribe</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--== Newsletter Area End ==-->
-
-
+<?php
+	//include the template section "we are featured"
+	//get_template_part( 'template-parts/sections/wearefeatured', '' );
+?>
 <?php
 while ( have_posts() ) :
 	the_post();

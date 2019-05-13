@@ -47,7 +47,10 @@
 
 		});
 
-        $('.woocommerce-ordering').find('.orderby').addClass('.form-control form-control-lg')
+        $('.woocommerce-ordering').find('.orderby').addClass('.form-control form-control-lg');
+
+        $('.single-product-page-wrapper').find('.summary.entry-summary').remove();
+		$('p:empty').remove();
 
 
 
