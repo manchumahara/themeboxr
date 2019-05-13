@@ -61,8 +61,16 @@ $table_prefix  = 'tb_';
 
 
 	define('WP_DEBUG', true);
-	define( 'WP_DEBUG_DISPLAY', true);
-	define( 'WP_DEBUG_LOG', true);
+define( 'WP_DEBUG_DISPLAY', true);
+define( 'WP_DEBUG_LOG', true);
+define( 'SCRIPT_DEBUG', true );
+
+//need these two to debug for email send and failure
+define( 'CBXWPWRITELOG_EMAIL_SENT', false );
+define( 'CBXWPWRITELOG_EMAIL_FAILED', false );
+
+define('WP_HOME','http://themeboxr.local/');
+define('WP_SITEURL','http://themeboxr.local/');
 
 /* That's all, stop editing! Happy blogging. */
 
