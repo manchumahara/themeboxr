@@ -5,7 +5,9 @@ Template Name: Homepage
 
 get_header();
 ?>
-
+	<?php
+	$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
+	?>
     <section id="banner-area">
         <div class="container">
             <div class="row">
@@ -13,7 +15,7 @@ get_header();
                     <div class="banner-content-wrap">
                         <h1>2700+ <span>Premium</span> Theme & Templete for Websites <br>
                             That Perfectly Fit Your Business</h1>
-                        <a href="#" class="btn btn-brand"><?php esc_html_e( 'Buy a theme', 'downloadclub' ); ?></a>
+                        <a href="<?php echo esc_url($shop_page_url); ?>" class="btn btn-brand"><?php esc_html_e( 'Buy a theme', 'downloadclub' ); ?></a>
 
                         <!-- Feature Product Area Start -->
                         <div class="featured-products-area">
@@ -46,7 +48,8 @@ get_header();
     </section>
 
     <!--== Products Area Start ==-->
-    <!--section id="products-area">
+    <section id="products-area">
+        <!-- Products Filter Menu Start -->
         <div class="products-filter-menu">
             <div class="container">
                 <div class="row">
@@ -65,9 +68,13 @@ get_header();
                 </div>
             </div>
         </div>
+        <!-- Products Filter Menu End -->
+
+        <!-- Products Content Start -->
         <div class="products-content-wrap section-padding">
             <div class="container">
                 <div id="productsContent" class="row">
+                    <!-- Single Product Start -->
                     <div class="product-item scale-amn col-lg-4 col-md-6 all pop trend">
                         <div class="single-product-wrap ">
                             <figure class="product-thumb">
@@ -86,6 +93,9 @@ get_header();
                             </div>
                         </div>
                     </div>
+                    <!-- Single Product End -->
+
+                    <!-- Single Product Start -->
                     <div class="product-item scale-amn col-lg-4 col-md-6 all wp new feature">
                         <div class="single-product-wrap">
                             <figure class="product-thumb">
@@ -104,7 +114,9 @@ get_header();
                             </div>
                         </div>
                     </div>
+                    <!-- Single Product End -->
 
+                    <!-- Single Product Start -->
                     <div class="product-item scale-amn col-lg-4 col-md-6 all pop">
                         <div class="single-product-wrap">
                             <figure class="product-thumb">
@@ -123,7 +135,9 @@ get_header();
                             </div>
                         </div>
                     </div>
+                    <!-- Single Product End -->
 
+                    <!-- Single Product Start -->
                     <div class="product-item scale-amn col-lg-4 col-md-6 all trend wp">
                         <div class="single-product-wrap">
                             <figure class="product-thumb">
@@ -142,7 +156,9 @@ get_header();
                             </div>
                         </div>
                     </div>
+                    <!-- Single Product End -->
 
+                    <!-- Single Product Start -->
                     <div class="product-item scale-amn col-lg-4 col-md-6 all pop new">
                         <div class="single-product-wrap">
                             <figure class="product-thumb">
@@ -161,7 +177,9 @@ get_header();
                             </div>
                         </div>
                     </div>
+                    <!-- Single Product End -->
 
+                    <!-- Single Product Start -->
                     <div class="product-item scale-amn col-lg-4 col-md-6 all pop wp">
                         <div class="single-product-wrap">
                             <figure class="product-thumb">
@@ -180,38 +198,26 @@ get_header();
                             </div>
                         </div>
                     </div>
-
+                    <!-- Single Product End -->
                 </div>
 
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="product-loadmore-btn">
-                            <a href="#" class="btn btn-brand btn-load">Load More</a>
+                            <a href="<?php echo esc_url($shop_page_url); ?>" class="btn btn-brand btn-load"><?php esc_html_e('All Themes', 'downloadclub'); ?></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section-->
-    <!-- Products Area End -->
+        <!-- Products Content End -->
+    </section>
+    <!--== Products Area End ==-->
 
 <?php
-//include the template section "we are the best"
-get_template_part( 'template-parts/sections/wearethebest', '' );
+	//include the template section "we are featured"
+	//get_template_part( 'template-parts/sections/wearefeatured', '' );
 ?>
-
-<?php
-//include the template section "news letter"
-get_template_part( 'template-parts/sections/latestblogs', '' );
-?>
-
-
-<?php
-//include the template section "news letter"
-get_template_part( 'template-parts/sections/newsletter', '' );
-?>
-
-
 <?php
 while ( have_posts() ) :
 	the_post();

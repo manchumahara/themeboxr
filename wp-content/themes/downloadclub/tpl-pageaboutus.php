@@ -195,12 +195,12 @@
 
 <?php
 	//include the template section "we are the best"
-	get_template_part( 'template-parts/sections/wearethebest', '' );
+	//get_template_part( 'template-parts/sections/wearethebest', '' );
 ?>
 
 <?php
 	//include the template section "news letter"
-	get_template_part( 'template-parts/sections/newsletter', '' );
+	//get_template_part( 'template-parts/sections/newsletter', '' );
 ?>
 
 

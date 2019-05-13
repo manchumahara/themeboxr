@@ -73,14 +73,14 @@
 		</div>
 	</div>
 </header>
-<!--<aside class="js-offcanvas" data-offcanvas-options='{ "modifiers": "right,overlay", "closeButtonClass": "js-offcanvas-close" }' id="off-canvas">
+<aside class="js-offcanvas" data-offcanvas-options='{ "modifiers": "right,overlay", "closeButtonClass": "js-offcanvas-close" }' id="off-canvas" style="display: none;">
 	<div class="offcanvaswrap">
-		<a class="navbar-brand" href="<?php /*echo esc_url( home_url( '/' ) ); */?>">
-			<img class="brandlogo" src="<?php /*echo get_template_directory_uri(); */?>/assets/img/logo-color.png" alt="Home" />
+		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<img class="brandlogo" src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-color.png" alt="Home" />
 		</a>
 		<div class="offcanvaswrap_menus">
 
 		</div>
 	</div>
 	<button class="js-offcanvas-close btn btn-block" data-button-options='{"modifiers":"blue,hard,close-right"}'>Close</button>
-</aside>-->
+</aside>

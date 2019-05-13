@@ -25,7 +25,6 @@ elixir((mix) => {
 	.styles([
 		asset_path + 'vendors/js-offcanvas/css/js-offcanvas.css',
 		//asset_path + 'vendors/font-awesome5/css/all.min.css',
-		asset_path + 'vendors/line-awesome/css/line-awesome.min.css',
 		asset_path + 'vendors/line-awesome/css/line-awesome-font-awesome.min.css',
 		asset_path + 'vendors/bootstrap/css/bootstrap.min.css',
 		asset_path + 'vendors/owl-carousel2/assets/owl.carousel.min.css',
