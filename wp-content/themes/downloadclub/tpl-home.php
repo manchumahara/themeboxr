@@ -56,11 +56,9 @@ get_header();
                     <div class="col-lg-12">
                         <nav class="filter-navbar">
                             <ul class="d-flex">
-                                <li class="fil-cat current" data-rel="all">All Item</li>
-                                <li class="fil-cat" data-rel="new">New Released</li>
-                                <li class="fil-cat" data-rel="pop">Populer Item</li>
-                                <li class="fil-cat" data-rel="trend">Trending</li>
-                                <li class="fil-cat" data-rel="wp">WordPress</li>
+                                <li class="fil-cat current" data-rel="all">New Released</li>
+                                <li class="fil-cat" data-rel="wordpress">WordPress</li>
+                                <li class="fil-cat" data-rel="html">Html</li>
                                 <li class="fil-cat" data-rel="feature">Featured</li>
                             </ul>
                         </nav>
