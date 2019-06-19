@@ -12,8 +12,7 @@
 				<div class="col-lg-12 text-center">
 					<div class="banner-content-wrap">
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-						<h2 class="h6">Design these templete thinking about categories, color, typography and latest
-							treand</h2>
+						<h2 class="h6">Design these templete thinking about categories, color, typography and latest treand</h2>
 					</div>
 				</div>
 			</div>
@@ -54,9 +53,7 @@
 				<div class="col-lg-6 mt-5 mt-lg-0">
 					<div class="about-right-content">
 						<h2>What Is Inside This Themes?</h2>
-						<p>Biz Zone is a responsive theme. It is compatible with all types of browsers and devices.
-							Similarly, it provides some prebuilt functionality like contact page, projects aryou don’t
-							need to add some plugins. It’ll any business.</p>
+						<p>Biz Zone is a responsive theme. It is compatible with all types of browsers and devices. Similarly, it provides some prebuilt functionality like contact page, projects aryou don’t need to add some plugins. It’ll any business.</p>
 
 						<ul class="aboutlist">
 							<li><span>#</span> Let’s take a look at the core features of the free WordPress theme</li>
@@ -87,9 +84,7 @@
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<div class="technical-support">
-						<p>Theay are ready to provide you batter service, if you nedd any kind of help or if you feel
-							you are in a problem, just feel free to noticed us, you get 100% premium support from them.
-							happy web designing</p>
+						<p>Theay are ready to provide you batter service, if you nedd any kind of help or if you feel you are in a problem, just feel free to noticed us, you get 100% premium support from them. happy web designing</p>
 
 						<a href="#" class="btn btn-brand">Get Premium Support</a>
 						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo-team.png"
@@ -118,9 +113,7 @@
 						<div id="testimonialContent" class="owl-carousel">
 							<div class="single-testimonial-item">
 								<i class="fa fa-quote-left"></i>
-								<p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt
-									ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut
-									aliquip</p>
+								<p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
 								<div class="client-area d-flex">
 									<a href="#" class="client-pro-pic"><img
 											src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg"
@@ -134,9 +127,7 @@
 
 							<div class="single-testimonial-item">
 								<i class="fa fa-quote-left"></i>
-								<p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt
-									ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut
-									aliquip</p>
+								<p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
 								<div class="client-area d-flex">
 									<a href="#" class="client-pro-pic"><img
 											src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg"
@@ -150,9 +141,7 @@
 
 							<div class="single-testimonial-item">
 								<i class="fa fa-quote-left"></i>
-								<p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt
-									ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut
-									aliquip</p>
+								<p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
 								<div class="client-area d-flex">
 									<a href="#" class="client-pro-pic"><img
 											src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg"
@@ -166,9 +155,7 @@
 
 							<div class="single-testimonial-item">
 								<i class="fa fa-quote-left"></i>
-								<p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt
-									ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut
-									aliquip</p>
+								<p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
 								<div class="client-area d-flex">
 									<a href="#" class="client-pro-pic"><img
 											src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg"

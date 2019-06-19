@@ -41,7 +41,7 @@
 
 ?>
 
-<header id="header-area" class="fixed-top <?php echo esc_attr($is_admin_bar_showing); ?>">
+<header id="header-area" class="fixed-top <?php echo esc_attr( $is_admin_bar_showing ); ?>">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -51,7 +51,7 @@
 					</a>
 
 					<button class="navbar-toggler js-offcanvas-trigger" type="button" data-toggle="collapse" data-target="#navMian" aria-controls="navMian" aria-expanded="false" aria-label="Toggle navigation" data-offcanvas-trigger="off-canvas">
-						<i class="fas fa-bars"></i>
+						<i class="fa fa-bars"></i>
 					</button>
 
 					<div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -75,6 +75,7 @@
 </header>
 <aside class="js-offcanvas" data-offcanvas-options='{ "modifiers": "right,overlay", "closeButtonClass": "js-offcanvas-close" }' id="off-canvas" style="display: none;">
 	<div class="offcanvaswrap">
+		<a href="#" class="js-offcanvas-close" data-button-options='{"modifiers":"blue,hard,close-right"}'><i class="fa fa-times" aria-hidden="true"></i></a>
 		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img class="brandlogo" src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-color.png" alt="Home" />
 		</a>
@@ -82,5 +83,5 @@
 
 		</div>
 	</div>
-	<button class="js-offcanvas-close btn btn-block" data-button-options='{"modifiers":"blue,hard,close-right"}'>Close</button>
+
 </aside>

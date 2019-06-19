@@ -3,7 +3,7 @@
 	/**
 	 * If this file is called directly, abort.
 	 */
-	if ( !defined( 'ABSPATH' ) ) {
+	if ( ! defined( 'ABSPATH' ) ) {
 		die( 'Direct access is forbidden.' );
 	}
 
@@ -21,7 +21,7 @@
 	 * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 	 */
 	/* Check if Class Exists. */
-	if ( !class_exists( 'Downloadclub_Bootstrap_Navwalker' ) ) {
+	if ( ! class_exists( 'Downloadclub_Bootstrap_Navwalker' ) ) {
 
 		/**
 		 * WP_Bootstrap_Navwalker class
@@ -48,7 +48,7 @@
 			 *
 			 * @since       1.0.0
 			 *
-			 * @see Walker::start_lvl()
+			 * @see         Walker::start_lvl()
 			 *
 			 * @param string   $output Passed by reference. Used to append additional content.
 			 * @param int      $depth  Depth of menu item. Used for padding.
@@ -72,7 +72,7 @@
 			 *
 			 * @since       1.0.0
 			 *
-			 * @see Walker::end_lvl()
+			 * @see         Walker::end_lvl()
 			 *
 			 * @param string   $output Passed by reference. Used to append additional content.
 			 * @param int      $depth  Depth of menu item. Used for padding.
@@ -96,7 +96,7 @@
 			 *
 			 * @since 1.0.0
 			 *
-			 * @see Walker::start_el()
+			 * @see   Walker::start_el()
 			 *
 			 * @param string   $output Passed by reference. Used to append additional content.
 			 * @param WP_Post  $item   Menu item data object.
@@ -117,9 +117,11 @@
 
 				if ( 0 === strcasecmp( $item->attr_title, 'divider' ) && $this->dropdown ) {
 					$output .= $indent . '<div class="dropdown-divider"></div>' . $n;
+
 					return;
 				} elseif ( 0 === strcasecmp( $item->title, 'divider' ) && $this->dropdown ) {
 					$output .= $indent . '<div class="dropdown-divider"></div>' . $n;
+
 					return;
 				}
 
@@ -174,15 +176,15 @@
 				$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
 				$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-				if ( !$this->dropdown ) {
+				if ( ! $this->dropdown ) {
 					$output .= $indent . '<li' . $id . $class_names . '>' . $n . $indent . $t;
 				}
 
 				$atts           = array();
-				$atts['title']  = !empty( $item->attr_title ) ? $item->attr_title : '';
-				$atts['target'] = !empty( $item->target ) ? $item->target : '';
-				$atts['rel']    = !empty( $item->xfn ) ? $item->xfn : '';
-				$atts['href']   = !empty( $item->url ) ? $item->url : '';
+				$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
+				$atts['target'] = ! empty( $item->target ) ? $item->target : '';
+				$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
+				$atts['href']   = ! empty( $item->url ) ? $item->url : '';
 
 				/**
 				 * Filters the HTML attributes applied to a menu item's anchor element.
@@ -190,17 +192,18 @@
 				 * @since 3.6.0
 				 * @since 4.1.0 The `$depth` parameter was added.
 				 *
-				 * @param array $atts {
-				 *     The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
+				 * @param array    $atts   {
+				 *                         The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
 				 *
-				 *     @type string $title  Title attribute.
-				 *     @type string $target Target attribute.
-				 *     @type string $rel    The rel attribute.
-				 *     @type string $href   The href attribute.
+				 * @type string    $title  Title attribute.
+				 * @type string    $target Target attribute.
+				 * @type string    $rel    The rel attribute.
+				 * @type string    $href   The href attribute.
 				 * }
-				 * @param WP_Post  $item  The current menu item.
-				 * @param stdClass $args  An object of wp_nav_menu() arguments.
-				 * @param int      $depth Depth of menu item. Used for padding.
+				 *
+				 * @param WP_Post  $item   The current menu item.
+				 * @param stdClass $args   An object of wp_nav_menu() arguments.
+				 * @param int      $depth  Depth of menu item. Used for padding.
 				 */
 				$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
 
@@ -212,7 +215,7 @@
 
 				$attributes = '';
 				foreach ( $atts as $attr => $value ) {
-					if ( !empty( $value ) ) {
+					if ( ! empty( $value ) ) {
 						$value      = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
 						$attributes .= ' ' . $attr . '="' . $value . '"';
 					}
@@ -240,7 +243,7 @@
 				}
 
 				if ( 0 < $depth ) {
-					$item_classes = array_diff( $item_classes, [ 'nav-link' ] );
+					$item_classes   = array_diff( $item_classes, [ 'nav-link' ] );
 					$item_classes[] = 'dropdown-item';
 				}
 
@@ -272,7 +275,7 @@
 			 *
 			 * @since 1.0.0
 			 *
-			 * @see Walker::end_el()
+			 * @see   Walker::end_el()
 			 *
 			 * @param string   $output Passed by reference. Used to append additional content.
 			 * @param WP_Post  $item   Page data object. Not used.
@@ -309,14 +312,14 @@
 						'menu_id'         => false,
 					);
 					$args     = wp_parse_args( $args, $defaults );
-					if ( !empty( $args['container'] ) ) {
+					if ( ! empty( $args['container'] ) ) {
 						echo sprintf( '<%s id="%s" class="%s">', $args['container'], $args['container_id'], $args['container_class'] );
 					}
 					echo sprintf( '<ul id="%s" class="%s">', $args['container_id'], $args['container_class'] ) .
 					     '<li class="nav-item">' .
 					     '<a href="' . admin_url( 'nav-menus.php' ) . '" class="nav-link">' . __( 'Add a menu' ) . '</a>' .
 					     '</li></ul>';
-					if ( !empty( $args['container'] ) ) {
+					if ( ! empty( $args['container'] ) ) {
 						echo sprintf( '</%s>', $args['container'] );
 					}
 				}

@@ -76,8 +76,21 @@
 
 
 .offcanvaswrap{
+  padding: 10px;
+  position: relative;
+  .js-offcanvas-close{
+    color: @white;
+    //background: @brand-color;
+    //position: absolute;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    .font-size(25);
+    line-height: 1;
+  }
+
   .navbar-brand{
-    padding: 20px !important;
+    padding: 10px !important;
   }
 
   .offcanvaswrap_menus{
@@ -146,11 +159,7 @@
   }
 }
 
-.js-offcanvas-close{
-  color: @white;
-  background: @brand-color;
-  //position: absolute;
-}
+
 
 
 /*--== Hedaer Area End ==--*/

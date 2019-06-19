@@ -204,90 +204,90 @@
 				</div>
 			</div>
 			<div class="technology-use-wrap">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-3 col-sm-6 text-center">
-								<div class="single-technology">
-									<div class="technology-thumb">
-										<a href="#"><img src="/assets/img/html.png" alt="Themeboxr"/></a>
-									</div>
-
-									<h3>HTML5</h3>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-sm-6 text-center">
+							<div class="single-technology">
+								<div class="technology-thumb">
+									<a href="#"><img src="/assets/img/html.png" alt="Themeboxr" /></a>
 								</div>
+
+								<h3>HTML5</h3>
 							</div>
+						</div>
 
-							<div class="col-lg-3 col-sm-6 text-center">
-								<div class="single-technology">
-									<div class="technology-thumb">
-										<a href="#"><img src="/assets/img/less.png" alt="Themeboxr"></a>
-									</div>
-
-									<h3>Less</h3>
+						<div class="col-lg-3 col-sm-6 text-center">
+							<div class="single-technology">
+								<div class="technology-thumb">
+									<a href="#"><img src="/assets/img/less.png" alt="Themeboxr"></a>
 								</div>
+
+								<h3>Less</h3>
 							</div>
+						</div>
 
-							<div class="col-lg-3 col-sm-6 text-center">
-								<div class="single-technology">
-									<div class="technology-thumb">
-										<a href="#"><img src="/assets/img/gulp.png" alt="Themeboxr"></a>
-									</div>
-
-									<h3>gulp</h3>
+						<div class="col-lg-3 col-sm-6 text-center">
+							<div class="single-technology">
+								<div class="technology-thumb">
+									<a href="#"><img src="/assets/img/gulp.png" alt="Themeboxr"></a>
 								</div>
+
+								<h3>gulp</h3>
 							</div>
+						</div>
 
-							<div class="col-lg-3 col-sm-6 text-center">
-								<div class="single-technology">
-									<div class="technology-thumb">
-										<a href="#"><img src="/assets/img/bootstrap.png" alt="Themeboxr"></a>
-									</div>
-
-									<h3>bootstrap</h3>
+						<div class="col-lg-3 col-sm-6 text-center">
+							<div class="single-technology">
+								<div class="technology-thumb">
+									<a href="#"><img src="/assets/img/bootstrap.png" alt="Themeboxr"></a>
 								</div>
+
+								<h3>bootstrap</h3>
 							</div>
+						</div>
 
-							<div class="col-lg-3 col-sm-6 text-center">
-								<div class="single-technology">
-									<div class="technology-thumb">
-										<a href="#"><img src="/assets/img/bootstrap.png" alt="Themeboxr"></a>
-									</div>
-
-									<h3>bootstrap</h3>
+						<div class="col-lg-3 col-sm-6 text-center">
+							<div class="single-technology">
+								<div class="technology-thumb">
+									<a href="#"><img src="/assets/img/bootstrap.png" alt="Themeboxr"></a>
 								</div>
+
+								<h3>bootstrap</h3>
 							</div>
+						</div>
 
-							<div class="col-lg-3 col-sm-6 text-center">
-								<div class="single-technology">
-									<div class="technology-thumb">
-										<a href="#"><img src="/assets/img/html.png" alt="Themeboxr"></a>
-									</div>
-
-									<h3>HTML5</h3>
+						<div class="col-lg-3 col-sm-6 text-center">
+							<div class="single-technology">
+								<div class="technology-thumb">
+									<a href="#"><img src="/assets/img/html.png" alt="Themeboxr"></a>
 								</div>
+
+								<h3>HTML5</h3>
 							</div>
+						</div>
 
-							<div class="col-lg-3 col-sm-6 text-center">
-								<div class="single-technology">
-									<div class="technology-thumb">
-										<a href="#"><img src="/assets/img/less.png" alt="Themeboxr"></a>
-									</div>
-
-									<h3>Less</h3>
+						<div class="col-lg-3 col-sm-6 text-center">
+							<div class="single-technology">
+								<div class="technology-thumb">
+									<a href="#"><img src="/assets/img/less.png" alt="Themeboxr"></a>
 								</div>
+
+								<h3>Less</h3>
 							</div>
+						</div>
 
-							<div class="col-lg-3 col-sm-6 text-center">
-								<div class="single-technology">
-									<div class="technology-thumb">
-										<a href="#"><img src="/assets/img/gulp.png" alt="Themeboxr"></a>
-									</div>
-
-									<h3>gulp</h3>
+						<div class="col-lg-3 col-sm-6 text-center">
+							<div class="single-technology">
+								<div class="technology-thumb">
+									<a href="#"><img src="/assets/img/gulp.png" alt="Themeboxr"></a>
 								</div>
+
+								<h3>gulp</h3>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
 		</div>
 	</div>
 	<!--== Single Product Page End ===-->

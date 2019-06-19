@@ -1,24 +1,24 @@
 <?php
-/**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package DownloadClub
- */
+	/**
+	 * The template for displaying archive pages
+	 *
+	 * @link    https://developer.wordpress.org/themes/basics/template-hierarchy/
+	 *
+	 * @package DownloadClub
+	 */
 
-get_header();
+	get_header();
 ?>
 	<div class="entry-header-cover entry-header" id="banner-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<div class="banner-content-wrap">
-						<h1 class="page-title"><?php esc_html_e('All Themes', 'downloadclub'); ?></h1>
-						<h2 class="archive-description"><?php esc_html_e('Here will be some amazing text', 'downloadclub'); ?></h2>
+						<h1 class="page-title"><?php esc_html_e( 'All Themes', 'downloadclub' ); ?></h1>
+						<h2 class="archive-description"><?php esc_html_e( 'Here will be some amazing text', 'downloadclub' ); ?></h2>
 						<?php //the_title( '<h1 class="entry-title">', '</h1>' );
-						//the_archive_title( '<h1 class="page-title">', '</h1>' );
-						//the_archive_description( '<h2 class="archive-description">', '</h2>' );
+							//the_archive_title( '<h1 class="page-title">', '</h1>' );
+							//the_archive_description( '<h2 class="archive-description">', '</h2>' );
 						?>
 					</div>
 				</div>
@@ -48,7 +48,7 @@ get_header();
 											<figure class="product-thumb">
 												<a href="#"><img
 														src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-1.jpg"
-														alt="Home" class="img-fluid"/></a>
+														alt="Home" class="img-fluid" /></a>
 											</figure>
 
 											<div class="product-meta">
@@ -65,7 +65,7 @@ get_header();
 										</div>
 									</div>
 									<!-- Single Product End -->
-									<?php
+								<?php
 
 
 									//get_template_part( 'template-parts/content', get_post_type() );
@@ -88,4 +88,4 @@ get_header();
 	</div>
 <?php
 	downloadclub_page_wrapper_end();
-get_footer();
+	get_footer();

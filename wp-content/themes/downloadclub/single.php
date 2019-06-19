@@ -1,13 +1,13 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package DownloadClub
- */
+	/**
+	 * The template for displaying all single posts
+	 *
+	 * @link    https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+	 *
+	 * @package DownloadClub
+	 */
 
-get_header();
+	get_header();
 ?>
 	<div class="entry-header-cover entry-header" id="banner-area">
 		<div class="container">
@@ -23,7 +23,7 @@ get_header();
 	</div><!-- .entry-header -->
 <?php
 	downloadclub_page_wrapper_start();
-	$main_col_x = is_active_sidebar( 'sidebar-1' ) ? 'col-md-8':'col-md-12';
+	$main_col_x = is_active_sidebar( 'sidebar-1' ) ? 'col-md-8' : 'col-md-12';
 ?>
 	<div class="container">
 		<div id="primary" class="content-area row">
@@ -46,9 +46,9 @@ get_header();
 				?>
 
 			</main><!-- #main -->
-			<?php if(is_active_sidebar( 'sidebar-1' )): ?>
+			<?php if ( is_active_sidebar( 'sidebar-1' ) ): ?>
 				<div class="col-md-4">
-					<?php get_sidebar();  ?>
+					<?php get_sidebar(); ?>
 				</div>
 			<?php endif; ?>
 		</div><!-- #primary -->

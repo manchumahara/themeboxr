@@ -4,7 +4,7 @@
 	*/
 ?>
 <?php
-get_header();
+	get_header();
 ?>
 	<div class="entry-header-cover entry-header" id="banner-area">
 		<div class="container">
@@ -18,8 +18,8 @@ get_header();
 			</div>
 		</div>
 	</div><!-- .entry-header -->
-	<?php
-downloadclub_page_wrapper_start();
+<?php
+	downloadclub_page_wrapper_start();
 ?>
 	<div class="container-fluid">
 		<div id="primary" class="content-area row">
@@ -43,4 +43,4 @@ downloadclub_page_wrapper_start();
 	</div>
 <?php
 	downloadclub_page_wrapper_end();
-get_footer();
+	get_footer();

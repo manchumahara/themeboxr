@@ -2,7 +2,7 @@
 	/**
 	 * Partial template part for displaying section  "we are featured"
 	 *
-	 * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+	 * @link    https://developer.wordpress.org/themes/basics/template-hierarchy/
 	 *
 	 * @package DownloadClub
 	 */
@@ -22,28 +22,21 @@
 			<div class="col-lg-12">
 				<div id="featuredCarousel" class="owl-carousel">
 					<a href="#" class="single-feature-item">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-1.png" alt="Themeboxr" class="img-fluid"/>
-					</a>
-					<a href="#" class="single-feature-item">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-2.png" alt="Themeboxr" class="img-fluid"/>
-					</a>
-					<a href="#" class="single-feature-item">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-3.png" alt="Themeboxr" class="img-fluid"/>
-					</a>
-					<a href="#" class="single-feature-item">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-1.png" alt="Themeboxr" class="img-fluid"/>
-					</a>
-					<a href="#" class="single-feature-item">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-2.png" alt="Themeboxr" class="img-fluid"/>
-					</a>
-					<a href="#" class="single-feature-item">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-3.png" alt="Themeboxr" class="img-fluid"/>
-					</a>
-					<a href="#" class="single-feature-item">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-2.png" alt="Themeboxr" class="img-fluid"/>
-					</a>
-					<a href="#" class="single-feature-item">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-3.png" alt="Themeboxr" class="img-fluid"/>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-1.png" alt="Themeboxr" class="img-fluid" />
+					</a> <a href="#" class="single-feature-item">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-2.png" alt="Themeboxr" class="img-fluid" />
+					</a> <a href="#" class="single-feature-item">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-3.png" alt="Themeboxr" class="img-fluid" />
+					</a> <a href="#" class="single-feature-item">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-1.png" alt="Themeboxr" class="img-fluid" />
+					</a> <a href="#" class="single-feature-item">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-2.png" alt="Themeboxr" class="img-fluid" />
+					</a> <a href="#" class="single-feature-item">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-3.png" alt="Themeboxr" class="img-fluid" />
+					</a> <a href="#" class="single-feature-item">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-2.png" alt="Themeboxr" class="img-fluid" />
+					</a> <a href="#" class="single-feature-item">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner-logo-3.png" alt="Themeboxr" class="img-fluid" />
 					</a>
 				</div>
 			</div>

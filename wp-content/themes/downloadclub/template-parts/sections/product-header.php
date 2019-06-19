@@ -4,8 +4,7 @@
 			<div class="col-lg-12 text-center">
 				<div class="product-header-content">
 					<h1 class="h2">EventZ – Conference & Event Html Template</h1>
-					<p>Design these templete thinking about categories, color, typography and latest treand.
-						Previos templete thinking about categories, color, typography and latest.</p>
+					<p>Design these templete thinking about categories, color, typography and latest treand. Previos templete thinking about categories, color, typography and latest.</p>
 
 					<div class="brand-btn-group">
 						<a href="#" class="btn btn-brand btn-green">$59.00</a>
@@ -19,20 +18,17 @@
 						<div class="single-thumbnail-product">
 							<a href="#" class="d-block">
 								<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-1.jpg"
-								     alt="Feature Product" class="img-fluid"/>
-							</a>
+									 alt="Feature Product" class="img-fluid" /> </a>
 						</div>
 						<div class="single-thumbnail-product">
 							<a href="#" class="d-block">
 								<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-2.jpg"
-								     alt="Feature Product" class="img-fluid"/>
-							</a>
+									 alt="Feature Product" class="img-fluid" /> </a>
 						</div>
 						<div class="single-thumbnail-product">
 							<a href="#" class="d-block">
 								<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-3.jpg"
-								     alt="Feature Product" class="img-fluid"/>
-							</a>
+									 alt="Feature Product" class="img-fluid" /> </a>
 						</div>
 					</div>
 				</div>
