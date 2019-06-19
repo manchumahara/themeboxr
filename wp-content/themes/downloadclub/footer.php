@@ -115,9 +115,10 @@
 						<nav class="footer-menu">
 							<ul>
 								<li><a href="<?php echo esc_url(get_home_url()); ?>">Home</a></li>
-								<li><a href="#">Privacy</a></li>
-								<li><a href="#">Terms</a></li>
-								<li><a href="#">Contact</a></li>
+								<li><a href="https://themeboxr.com/privacy/">Privacy</a></li>
+								<li><a href="https://themeboxr.com/tos/">Terms</a></li>
+								<li><a href="https://themeboxr.com/contact-us/">Contact</a></li>
+								<li><a href="<?php echo esc_url($shop_page_url); ?>">Themes</a></li>
 							</ul>
 						</nav>
 					</div>
