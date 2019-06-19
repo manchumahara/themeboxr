@@ -1,0 +1,141 @@
+=== EU Cookies Bar for WordPress===
+Contributors: villatheme, mrt3vn
+Donate link: https://www.villatheme.com/donate
+Tags: eu cookies bar, eu cookie law, eu cookie banner, cookies gdpr, cookie consent, cookie popup, cookie policy generator, for wordpress
+Requires at least: 4.4
+Tested up to: 5.2
+Stable tag: 1.0.3.3
+License: GPLv2 or later
+
+== Description ==
+
+EU Cookies Bar is a very simple plugin which helps your website comply with Cookie Law.
+
+>[Try the Demo](http://new2new.com/?item=eu-cookies-bar "Demo") | [Documents](http://docs.villatheme.com/?item=eu-cookies-bar "Documents")
+
+### FEATURES
+
+&#9658; **General**:
+
+- **Agreement duration**: Set expiry date for an agreement after a user accepts
+
+- **Block until accepting**: An option to enable cookies only after visitor accepts to use, for those who want their website comply with the new EU Cookies Law-GDPR
+
+- **Strictly necessary cookies**: Specify very important cookies that can not be disabled by your visitors
+
+- **Strictly necessary cookies prefix**: Cookies whose names start with these prefixes can not be disable by your visitors too
+
+- **Your privacy policy**: This is to let your visitors know what your website uses cookies for beside a list of cookies that your website uses
+
+&#9658; **Cookies bar**:
+
+- **Message**: Easy to change/edit front-end message with WordPress editor
+
+- **Button decline**: Let your visitors able to accept or decline your privacy policy, this is one of what GDPR requires
+
+- **Button close**: Just another option
+
+- **Cookies bar position**: Can be top, bottom, bottom left or bottom right, not many but enough
+
+- **Implicit behaviors**: Close cookies bar, accept or decline when your visitors hit close button, scroll their mouse wheel or refresh the browser. Depending on which cookies/privacy law you have to comply with, use this option flexibly to make the cookies bar less annoyed
+
+- **Cookies bar design**: You can change cookies bar font-size, text color, background color or opacity to make it in harmony with your theme, and a custom css field is available for your own customization
+
+&#9658; **Visitor cookies settings**:
+
+- GDPR requires your website to have this
+
+- This is a small popup box that show your privacy and cookies policy and a list of available cookies that your website uses
+
+- Visitors can view and edit to accept which cookies on the list whenever they want, even before or after they accept to use cookies
+
+- A very small bar on the bottom which will show the visitors cookies settings when they click on it, and also a helpful shortcode [eucookiesbar_settings]"your text"[/eucookiesbar_settings] to call the cookies settings which you can place wherever you want in case you don't want the small bar to be there
+
+### MAY BE YOU NEED
+
+[Import Shopify to WooCommerce](http://bit.ly/import-shopify-to-woocommerce): Import Shopify to WooCommerce plugin help you import all products from your Shopify store to WooCommerce
+
+[Customer Coupons for WooCommerce](http://bit.ly/woo-customer-coupons): Display coupons on your website
+
+[Custom Email Blocks for WooCommerce](http://bit.ly/woo-custom-email-blocks): Create your own professional email design & content for all your outgoing emails
+
+[Virtual Reviews for WooCommerce](http://bit.ly/woo-virtual-reviews): Virtual Reviews for WooCommerce helps generate virtual reviews, display canned reviews for newly created store
+
+[Thank You Page Customizer for WooCommerce](http://bit.ly/woo-thank-you-page-customizer): Customize your “Thank You” page and give coupons to customers after a successful order
+
+[Sales Countdown Timer](http://bit.ly/sales-countdown-timer): Create a sense of urgency with a countdown to the beginning or end of sales, store launch or other events
+
+[Lucky Wheel for WooCommerce](http://bit.ly/woo-lucky-wheel): Offer customers to spin for coupons by entering their emails.
+
+[WordPress Lucky Wheel](http://bit.ly/wp-lucky-wheel): WordPress Lucky Wheel gives you the best solution to get emails address from visitors of your WordPress website
+
+[Advanced Product Information for WooCommerce](http://bit.ly/woo-advanced-product-information): Display more intuitive information of products such as sale countdown, sale badges, who recently bought products, rank of products in their categories, available payment methods...
+
+[LookBook for WooCommerce](http://bit.ly/woo-lookbook): Create beautiful Lookbooks, shop by Instagram.
+
+[Photo Reviews for WooCommerce](http://bit.ly/woo-photo-reviews): Allow posting reviews include product pictures, review reminder, review for coupons.
+
+[Product Builder for WooCommerce](http://bit.ly/woo-product-builder): Allows your customers to build a full product set from small parts step by step. The plugin works base on WooCommerce with many useful features like compatible, email completed product, attributes filters.
+
+[Boost Sales for WooCommerce](http://bit.ly/woo-boost-sales): Increase profit on every single order with Up-selling and Cross-selling
+
+[Free Shipping Bar for WooCommerce](http://bit.ly/woo-free-shipping-bar): Use free shipping as a marketing tool, encourage customers to pay more for free shipping.
+
+[Notification for WooCommerce](http://bit.ly/woo-notification): Social Proof Marketing plugin. Live recent order on the front-end of your site.
+
+[Multi Currency for WooCommerce](http://bit.ly/woo-multi-currency): Switches to different currencies easily and accepts payment with only one currency or all currencies.
+
+[Coupon Box for WooCommerce](http://bit.ly/woo-coupon-box-free): Subscribe emails for discount coupons
+
+### Documentation
+
+- [Getting Started](http://docs.villatheme.com/?item=)
+
+### Plugin Links
+
+- [Project Page](https://villatheme.com)
+- [Documentation](http://docs.villatheme.com/?item=eu-cookies-bar)
+- [Report Bugs/Issues](https://villatheme.com/supports)
+
+== Frequently Asked Questions ==
+
+== Upgrade Notice ==
+
+== Installation ==
+
+1. Unzip the download package
+1. Upload `eu-cookies-bar` to the `/wp-content/plugins/` directory
+1. Activate the plugin through the 'Plugins' menu in WordPress
+
+== Frequently Asked Questions ==
+
+== Screenshots ==
+1. Backend with live preview
+2. Frontend cookies bar with position botton
+3. Frontend cookies bar with position botton left
+4. Responsive on mobile
+5. Visitors can views cookies list and change their mind whenever they want
+
+== Changelog ==
+/*1.0.3.3 - 2019.04.03*/
+- Updated: Add dismiss button for admin notices
+
+/*1.0.3.2 - 2018.11.21*/
+- Updated: Class support
+
+/*1.0.3.1 - 2018.11.10*/
+- Updated: Class support
+
+/*1.0.3 - 2018.10.17*/
+- Updated: Class support
+
+/*1.0.2 - 2018.10.15*/
+- Fixed: Class support
+
+/*1.0.1 - 2018..*/
+- Added: Screenshort
+- Added: Option to customize cookies bar border radius, margin, padding; button accept and button decline title, color, background color, border radius; user cookies form heading and button "Save settings" design
+- Updated: Privacy page url
+
+**v1.0.0 - 2018.06.27**
+- First release.

@@ -13,7 +13,7 @@ get_header();
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="banner-content-wrap">
-                        <h1>2700+ <span>Premium</span> Theme & Templete for Websites <br>
+                        <h1><span>Free</span> and Premium Themes & Templates for Websites <br>
                             That Perfectly Fit Your Business</h1>
                         <a href="<?php echo esc_url($shop_page_url); ?>" class="btn btn-brand"><?php esc_html_e( 'Buy a theme', 'downloadclub' ); ?></a>
 

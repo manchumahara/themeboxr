@@ -1,0 +1,284 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress EU Cookies Bar\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-22 10:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:354
+#: D:/Git/VillaTheme
+#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:222
+msgid "Accept"
+msgstr ""
+
+#: D:/Git/VillaTheme
+#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:273
+msgid "Active"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:254
+msgid "Agree"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:226
+msgid "Agree and close"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:240
+msgid "Agree and hide bar"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:76
+msgid "Agreement expires after(days)"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:283
+msgid "Background color"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:69
+msgid ""
+"Block all cookies(except strictly necessary cookies) until the visitor "
+"accepts to use."
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:67
+msgid "Block cookies until accepting"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:175
+msgid "Bottom"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:191
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:325
+msgid "Bottom left"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:207
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:326
+msgid "Bottom right"
+msgstr ""
+
+#: D:/Git/VillaTheme
+#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:272
+msgid "Cookie name"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:36
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:53
+msgid "Cookies bar"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:145
+msgid "Cookies bar position"
+msgstr ""
+
+#: D:/Git/VillaTheme
+#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:266
+msgid "Cookies list"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:95
+msgid ""
+"Cookies name started with one of these cannot be disabled. Enter cookies "
+"names separated with commas(,)"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:350
+#: D:/Git/VillaTheme
+#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:215
+#: D:/Git/VillaTheme
+#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:463
+msgid "Cookies settings"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:317
+msgid "Cookies settings bar position"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:299
+msgid "Custom css"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:255
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:358
+#: D:/Git/VillaTheme
+#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:229
+msgid "Decline"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:227
+msgid "Decline and close"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:241
+msgid "Decline and hide bar"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:263
+msgid "Design"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:242
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:256
+msgid "Do nothing"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:60
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:308
+msgid "Enable"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:126
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:310
+msgid "Enable to make it GDPR compliant."
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:268
+msgid "Font size(px)"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:51
+msgid "General"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:324
+msgid "Hide"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:219
+msgid "Hit button close"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "http://villatheme.com"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:214
+msgid "Implicit behaviors"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:228
+msgid "Just close"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:110
+msgid "Message"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:291
+msgid "Opacity"
+msgstr ""
+
+#: D:/Git/VillaTheme
+#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:264
+msgid "Privacy & Cookies policy"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:247
+msgid "Refresh/go to other page"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:335
+msgid "Save"
+msgstr ""
+
+#: D:/Git/VillaTheme
+#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:451
+msgid "Save settings"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:233
+msgid "Scroll mouse"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:235
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:249
+msgid "Select \"Do nothing\" to make it GDPR compliant."
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:221
+msgid "Select \"Just close\" to make it GDPR compliant."
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:30
+msgid "Settings"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:120
+msgid "Show button \"accept\""
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:140
+msgid "Show button \"close\""
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:131
+msgid "Show button \"decline\""
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Simple cookie bar to make your website GDPR(General Data Protection "
+"Regulation) compliant(EU Cookie Law) and more."
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:83
+msgid "Strictly necessary cookies"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:93
+msgid "Strictly necessary cookies prefix"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:275
+msgid "Text color"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:85
+msgid ""
+"These are very important cookies that users can not disable them. Enter "
+"cookies names separated with commas(,)"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:159
+msgid "Top"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:55
+msgid "Users cookies settings"
+msgstr ""
+
+#. Author of the plugin
+msgid "VillaTheme"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:36
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:46
+msgid "WordPress EU Cookies"
+msgstr ""
+
+#. Name of the plugin
+msgid "WordPress EU Cookies Bar"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:319
+msgid ""
+"You need to either show this bar or use shortcode [eucookiesbar_settings] to "
+"make it GDPR compliant"
+msgstr ""
+
+#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:103
+msgid "Your privacy policy"
+msgstr ""

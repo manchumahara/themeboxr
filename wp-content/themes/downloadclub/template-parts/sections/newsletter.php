@@ -21,8 +21,9 @@
 					<div class="col-lg-7 col-md-6 mt-5 mt-md-0">
 						<div class="newsletter-form">
 							<form action="#" id="newslettersubs" method="post">
-								<input type="email" placeholder="<?php esc_html_e('My Email Address', 'downloadclub'); ?>" required/>
-								<button class="btn"><?php esc_html_e('Send me updates', 'downloadclub'); ?></button>
+								<input type="name" name="name" placeholder="<?php esc_html_e('Name', 'downloadclub'); ?>" required />
+								<input type="email" name="email" placeholder="<?php esc_html_e('Email', 'downloadclub'); ?>" required />
+								<button class="btn submit-btn"><?php esc_html_e('Send', 'downloadclub'); ?></button>
 							</form>
 						</div>
 					</div>
