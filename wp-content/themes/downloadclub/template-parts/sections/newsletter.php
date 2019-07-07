@@ -12,21 +12,25 @@
 <section id="newsletter-area">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-9 m-auto">
-				<div class="row">
-					<div class="col-lg-5 col-md-6 m-auto text-center text-md-left">
-						<h2 class="h4"><?php esc_html_e( 'SPAM Free Newsletter', 'downloadclub' ); ?></h2>
-					</div>
-
-					<div class="col-lg-7 col-md-6 mt-5 mt-md-0">
-						<div class="newsletter-form">
-							<form action="#" id="newslettersubs" method="post">
-								<input type="name" name="name" placeholder="<?php esc_html_e( 'Name', 'downloadclub' ); ?>" required />
-								<input type="email" name="email" placeholder="<?php esc_html_e( 'Email', 'downloadclub' ); ?>" required />
-								<button class="btn submit-btn"><?php esc_html_e( 'Send', 'downloadclub' ); ?></button>
-							</form>
-						</div>
-					</div>
+			<div class="col-lg-12 text-center">
+				<div class="section-title-wrap">
+					<h2>Newsletter Subscription</h2>
+					<p>SPAM Free Newsletter!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-12 m-auto">
+				<div class="newsletter-form">
+					<form class="form-inline" action="#" id="newslettersubs" method="post">
+						<label class="sr-only" for="name">Name</label>
+						<input type="name" id="name" class="form-control" name="name" placeholder="<?php esc_html_e( 'Name', 'downloadclub' ); ?>" required />
+						<label class="sr-only" for="email">Email</label>
+						<input type="email" id="email" class="form-control " name="email" placeholder="<?php esc_html_e( 'Email', 'downloadclub' ); ?>" required />
+						<button class="btn submit-btn"><?php esc_html_e( 'Send', 'downloadclub' ); ?></button>
+					</form>
 				</div>
 			</div>
 		</div>

@@ -7,6 +7,12 @@ $price        = isset( $cbxthemeinfo['price'] ) ? intval( $cbxthemeinfo['price']
 $last_update  = isset( $cbxthemeinfo['lastupdate'] ) ? esc_attr( $cbxthemeinfo['lastupdate'] ) : '';
 $demo_url      = isset( $cbxthemeinfo['demourl'] ) ? esc_url( $cbxthemeinfo['demourl'] ) : '#';
 $cms_type      = isset( $cbxthemeinfo['cmstype'] ) ? esc_attr( $cbxthemeinfo['cmstype'] ) : '';
+if(class_exists('CBXThemeinfoHelper')){
+	$cms_type = CBXThemeinfoHelper::getCmsType($cms_type);
+}
+
+	$sub_title  = isset( $cbxthemeinfo['subtitle'] ) ? esc_attr( $cbxthemeinfo['subtitle'] ) : '';
+
 ?>
 <div class="products-header-wrap">
     <div class="container">
@@ -14,14 +20,14 @@ $cms_type      = isset( $cbxthemeinfo['cmstype'] ) ? esc_attr( $cbxthemeinfo['cm
             <div class="col-lg-12 text-center">
                 <div class="product-header-content">
                     <h1 class="h2"><?php echo get_the_title(); ?></h1>
-                    <p>Design these templete thinking about categories, color, typography and latest treand. Previos
-                        templete thinking about categories, color, typography and latest.</p>
+					<?php if($sub_title != ''): ?>
+                    <p><?php echo $sub_title; ?></p>
+					<?php endif; ?>
 
                     <div class="brand-btn-group">
                         <a href="#" class="btn btn-brand btn-green">$<?php echo $price; ?></a>
-                        <a href="#" class="btn btn-brand">Buy Now</a>
-                        <a target="_blank" href="<?php echo $demo_url; ?>" class="btn btn-brand btn-brand-rev">Live
-                            Demo</a>
+                        <a href="#" class="btn btn-brand"><?php esc_html_e('Buy Now', 'downloadclub'); ?></a>
+                        <a target="_blank" href="<?php echo $demo_url; ?>" class="btn btn-brand btn-brand-rev">Live Demo</a>
                     </div>
                 </div>
 
@@ -29,18 +35,15 @@ $cms_type      = isset( $cbxthemeinfo['cmstype'] ) ? esc_attr( $cbxthemeinfo['cm
                     <div class="feature-slider-warp owl-carousel">
                         <div class="single-thumbnail-product">
                             <a href="#" class="d-block">
-                                <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-1.jpg"
-                                     alt="Feature Product" class="img-fluid"/> </a>
+                                <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-1.jpg" alt="Feature Product" class="img-fluid" /> </a>
                         </div>
                         <div class="single-thumbnail-product">
                             <a href="#" class="d-block">
-                                <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-2.jpg"
-                                     alt="Feature Product" class="img-fluid"/> </a>
+                                <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-2.jpg" alt="Feature Product" class="img-fluid" /> </a>
                         </div>
                         <div class="single-thumbnail-product">
                             <a href="#" class="d-block">
-                                <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-3.jpg"
-                                     alt="Feature Product" class="img-fluid"/> </a>
+                                <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-3.jpg" alt="Feature Product" class="img-fluid" /> </a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +64,7 @@ $cms_type      = isset( $cbxthemeinfo['cmstype'] ) ? esc_attr( $cbxthemeinfo['cm
 
                     <div class="information-item">
                         <p>CMS</p>
-                        <strong>Wordpress</strong>
+                        <strong><?php echo $cms_type; ?></strong>
                     </div>
 
                     <div class="information-item">

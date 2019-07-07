@@ -95,7 +95,7 @@
         var selectedClass = '',
             filItem = '.fil-cat';
 
-        $(filItem).click(function () {
+        $(filItem).on('click', function () {
             $(filItem).removeClass('current');
             $(this).addClass('current');
 
