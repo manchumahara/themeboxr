@@ -1,25 +1,38 @@
-//help https://scotch.io/tutorials/using-laravel-mix-with-webpack-for-all-your-assets
+//in case error
+/*
+ rm -r node_modules/
+ rm package-lock.json
+ npm cache clean -f
+ npm install
+ */
 
-process.env.DISABLE_NOTIFIER = true;
-
-var elixir = require('laravel-elixir'); // Require Elixier
+var mix = require('laravel-mix');
+mix.disableNotifications();
 
 var templatedir = "./wp-content/themes/downloadclub/";
-var asset_path = templatedir + 'assets/';
+var asset_path  = templatedir + 'assets/';
+
+mix.setPublicPath(asset_path);
 
 
-elixir.config.assetsPath = asset_path;
-elixir.config.publicPath = asset_path;
+//console.log(asset_path);
 
 //browser sync config
 var appConfig = {
 	"proxy": 'http://themeboxr.local'
 };
 
+mix.options({
+	processCssUrls  : false,
+	imgLoaderOptions: {
+		enabled: false,
+	}
+});
 
-
-elixir((mix) => {
-	mix.less(asset_path + 'less/style-default.less', asset_path+'css/style-default.css')
+mix.less(asset_path + 'less/style-default.less', asset_path + 'css/')
+	.options({
+		processCssUrls: false
+	})
 	.styles([
 		asset_path + 'vendors/js-offcanvas/css/js-offcanvas.css',
 		//asset_path + 'vendors/font-awesome5/css/all.min.css',
@@ -32,15 +45,13 @@ elixir((mix) => {
 		//asset_path + 'css/woocommerce.css',
 		asset_path + 'css/style-default.css'
 	], asset_path + 'css/downloadclub.css')
-	.scripts([
+	.combine([
 		asset_path + 'vendors/modernizr/modernizr-custom.js',
-		asset_path + 'vendors/bootstrap/js/bootstrap.bundle.min.js',
-		asset_path + 'vendors/owl-carousel2/owl.carousel.min.js',
-		asset_path + 'vendors/jquery-smooth-scroll/jquery.smooth-scroll.min.js',
-		asset_path + 'vendors/magnific-popup/jquery.magnific-popup.min.js',
-		//asset_path + 'js/skip-link-focus-fix.js',
-		asset_path + 'vendors/js-offcanvas/js/js-offcanvas.pkgd.min.js',
+		asset_path + 'vendors/bootstrap/js/bootstrap.bundle.js',
+		asset_path + 'vendors/owl-carousel2/owl.carousel.js',
+		asset_path + 'vendors/jquery-smooth-scroll/jquery.smooth-scroll.js',
+		asset_path + 'vendors/magnific-popup/jquery.magnific-popup.js',
+		asset_path + 'vendors/js-offcanvas/js/js-offcanvas.pkgd.js',
 		asset_path + 'js/theme-main.js'
 	], asset_path + 'js/downloadclub.js')
-	.browserSync({proxy          : appConfig.proxy })
-});
+.browserSync({proxy          : appConfig.proxy })
