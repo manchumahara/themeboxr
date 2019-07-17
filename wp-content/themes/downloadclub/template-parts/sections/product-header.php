@@ -35,15 +35,15 @@ if(class_exists('CBXThemeinfoHelper')){
                     <div class="feature-slider-warp owl-carousel">
                         <div class="single-thumbnail-product">
                             <a href="#" class="d-block">
-                                <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-1.jpg" alt="Feature Product" class="img-fluid" /> </a>
+                                <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/feature-product/feature-product-1.jpg" alt="Feature Product" class="img-fluid" /> </a>
                         </div>
                         <div class="single-thumbnail-product">
                             <a href="#" class="d-block">
-                                <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-2.jpg" alt="Feature Product" class="img-fluid" /> </a>
+                                <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/feature-product/feature-product-2.jpg" alt="Feature Product" class="img-fluid" /> </a>
                         </div>
                         <div class="single-thumbnail-product">
                             <a href="#" class="d-block">
-                                <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-3.jpg" alt="Feature Product" class="img-fluid" /> </a>
+                                <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/feature-product/feature-product-3.jpg" alt="Feature Product" class="img-fluid" /> </a>
                         </div>
                     </div>
                 </div>

@@ -66,7 +66,7 @@
 
 							} else {
 								//$thumburl = $content_url . '/uploads/productshots/profile.png';
-								$thumburl = get_template_directory_uri() . '/assets/img/blog/blog-1.jpg';
+								$thumburl = get_template_directory_uri() . '/assets/images/blog/blog-1.jpg';
 							}
 
 							?>
@@ -74,10 +74,10 @@
 								<article class="single-blog-item">
 									<header class="blog-header">
 										<figure class="blog-thumb">
-											<a href="<?php echo esc_url( $post_link ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/blog-1.jpg" alt="Themeboxr" /></a>
+											<a href="<?php echo esc_url( $post_link ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/blog-1.jpg" alt="Themeboxr" /></a>
 										</figure>
 
-										<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" class="post-author"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/author.jpg" alt="Themeboxr" /></a>
+										<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" class="post-author"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/author.jpg" alt="Themeboxr" /></a>
 									</header>
 
 									<section class="blog-content">

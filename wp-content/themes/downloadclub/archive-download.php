@@ -47,7 +47,7 @@
 										<div class="single-product-wrap ">
 											<figure class="product-thumb">
 												<a href="#"><img
-														src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-1.jpg"
+														src="<?php echo get_template_directory_uri(); ?>/assets/images/products/products-1.jpg"
 														alt="Home" class="img-fluid" /></a>
 											</figure>
 

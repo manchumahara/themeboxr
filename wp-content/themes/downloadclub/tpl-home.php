@@ -22,17 +22,17 @@
 							<div class="feature-slider-warp owl-carousel">
 								<div class="single-feature-product">
 									<a href="#" class="d-block">
-										<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-1.jpg"
+										<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/feature-product/feature-product-1.jpg"
 											 alt="Feature Product" class="img-fluid" /> </a>
 								</div>
 								<div class="single-feature-product">
 									<a href="#" class="d-block">
-										<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-2.jpg"
+										<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/feature-product/feature-product-2.jpg"
 											 alt="Feature Product" class="img-fluid" /> </a>
 								</div>
 								<div class="single-feature-product">
 									<a href="#" class="d-block">
-										<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-3.jpg"
+										<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/feature-product/feature-product-3.jpg"
 											 alt="Feature Product" class="img-fluid" /> </a>
 								</div>
 							</div>
@@ -74,7 +74,7 @@
 						<div class="single-product-wrap ">
 							<figure class="product-thumb">
 								<a href="#"><img
-										src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-1.jpg"
+										src="<?php echo get_template_directory_uri(); ?>/assets/images/products/products-1.jpg"
 										alt="Home" class="img-fluid" /></a>
 							</figure>
 
@@ -95,7 +95,7 @@
 						<div class="single-product-wrap">
 							<figure class="product-thumb">
 								<a href="#"><img
-										src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-2.jpg"
+										src="<?php echo get_template_directory_uri(); ?>/assets/images/products/products-2.jpg"
 										alt="Home" class="img-fluid" /></a>
 							</figure>
 
@@ -116,7 +116,7 @@
 						<div class="single-product-wrap">
 							<figure class="product-thumb">
 								<a href="#"><img
-										src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-3.jpg"
+										src="<?php echo get_template_directory_uri(); ?>/assets/images/products/products-3.jpg"
 										alt="Home" class="img-fluid" /></a>
 							</figure>
 
@@ -137,7 +137,7 @@
 						<div class="single-product-wrap">
 							<figure class="product-thumb">
 								<a href="#"><img
-										src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-2.jpg"
+										src="<?php echo get_template_directory_uri(); ?>/assets/images/products/products-2.jpg"
 										alt="Home" class="img-fluid" /></a>
 							</figure>
 
@@ -158,7 +158,7 @@
 						<div class="single-product-wrap">
 							<figure class="product-thumb">
 								<a href="#"><img
-										src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-3.jpg"
+										src="<?php echo get_template_directory_uri(); ?>/assets/images/products/products-3.jpg"
 										alt="Home" class="img-fluid" /></a>
 							</figure>
 
@@ -179,7 +179,7 @@
 						<div class="single-product-wrap">
 							<figure class="product-thumb">
 								<a href="#"><img
-										src="<?php echo get_template_directory_uri(); ?>/assets/img/products/products-1.jpg"
+										src="<?php echo get_template_directory_uri(); ?>/assets/images/products/products-1.jpg"
 										alt="Home" class="img-fluid" /></a>
 							</figure>
 

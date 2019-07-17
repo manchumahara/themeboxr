@@ -383,7 +383,7 @@ if ( ! function_exists( 'downloadclub_woocommerce_header_cart' ) ) {
 
 	add_filter('woocommerce_placeholder_img_src', 'downloadclub_woocommerce_placeholder_img_src', 10, 1);
 	function downloadclub_woocommerce_placeholder_img_src( $src ) {
-		return get_template_directory_uri() . '/assets/img/default_thumb.png';
+		return get_template_directory_uri() . '/assets/images/default_thumb.png';
 	}
 
 	add_filter('woocommerce_placeholder_img', 'downloadclub_woocommerce_placeholder_img', 10, 3);

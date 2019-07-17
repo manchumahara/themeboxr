@@ -41,7 +41,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<figure class="about-video-wrap">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/about-video.jpg" alt="Themeboxr" />
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-video.jpg" alt="Themeboxr" />
 
 						<figcaption class="video-content">
 							<a href="https://player.vimeo.com/video/166335897?title=0&portrait=0&byline=0&autoplay=1&loop=1"
@@ -87,7 +87,7 @@
 						<p>Theay are ready to provide you batter service, if you nedd any kind of help or if you feel you are in a problem, just feel free to noticed us, you get 100% premium support from them. happy web designing</p>
 
 						<a href="#" class="btn btn-brand">Get Premium Support</a>
-						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/demo-team.png"
+						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/demo-team.png"
 										 alt="Themeboxr" class="img-fluid" /></a>
 					</div>
 				</div>
@@ -116,7 +116,7 @@
 								<p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
 								<div class="client-area d-flex">
 									<a href="#" class="client-pro-pic"><img
-											src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg"
+											src="<?php echo get_template_directory_uri(); ?>/assets/images/feedback.jpg"
 											class="img-fluid" alt="Themeboxr" /></a>
 									<div class="client-info">
 										<h3 class="h6">Prischilla Chan</h3>
@@ -130,7 +130,7 @@
 								<p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
 								<div class="client-area d-flex">
 									<a href="#" class="client-pro-pic"><img
-											src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg"
+											src="<?php echo get_template_directory_uri(); ?>/assets/images/feedback.jpg"
 											class="img-fluid" alt="Themeboxr" /></a>
 									<div class="client-info">
 										<h3 class="h6">Prischilla Chan</h3>
@@ -144,7 +144,7 @@
 								<p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
 								<div class="client-area d-flex">
 									<a href="#" class="client-pro-pic"><img
-											src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg"
+											src="<?php echo get_template_directory_uri(); ?>/assets/images/feedback.jpg"
 											class="img-fluid" alt="Themeboxr" /></a>
 									<div class="client-info">
 										<h3 class="h6">Prischilla Chan</h3>
@@ -158,7 +158,7 @@
 								<p>Lorem ipsum dolor sit a, consectetur adipisicing elit, sed do eiuod tempor incididunt ut bore et dolore na aliqua. Ut enim ad minim veniaguis nostrud exercitf to nisi ut aliquip</p>
 								<div class="client-area d-flex">
 									<a href="#" class="client-pro-pic"><img
-											src="<?php echo get_template_directory_uri(); ?>/assets/img/feedback.jpg"
+											src="<?php echo get_template_directory_uri(); ?>/assets/images/feedback.jpg"
 											class="img-fluid" alt="Themeboxr" /></a>
 									<div class="client-info">
 										<h3 class="h6">Prischilla Chan</h3>

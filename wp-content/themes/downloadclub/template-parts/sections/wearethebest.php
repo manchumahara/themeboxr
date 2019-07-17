@@ -24,7 +24,7 @@
 				<div class="col-md-4 text-center">
 					<div class="single-we-best-item">
 						<figure class="feature-logo">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/satisfication.png" alt="Themeboxr" />
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/we-best/satisfication.png" alt="Themeboxr" />
 						</figure>
 
 						<h3 class="h4">30 Days Money Back</h3>
@@ -35,7 +35,7 @@
 				<div class="col-md-4 text-center">
 					<div class="single-we-best-item">
 						<figure class="feature-logo">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/support.png" alt="Themeboxr" />
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/we-best/support.png" alt="Themeboxr" />
 						</figure>
 
 						<h3 class="h4">Faster Support</h3>
@@ -46,7 +46,7 @@
 				<div class="col-md-4 text-center">
 					<div class="single-we-best-item">
 						<figure class="feature-logo">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/we-best/square.png" alt="Themeboxr" />
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/we-best/square.png" alt="Themeboxr" />
 						</figure>
 
 						<h3 class="h4">Secured Transaction</h3>

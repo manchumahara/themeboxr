@@ -9,6 +9,8 @@
 var mix = require('laravel-mix');
 mix.disableNotifications();
 
+console.log(mix);
+
 var templatedir = "./wp-content/themes/downloadclub/";
 var asset_path  = templatedir + 'assets/';
 
@@ -29,11 +31,12 @@ mix.options({
 	}
 });
 
-mix.less(asset_path + 'less/style-default.less', asset_path + 'css/')
+/*mix.less(asset_path + 'less/style-default.less', asset_path + 'css/')
 	.options({
 		processCssUrls: false
-	})
-	.styles([
+	});*/
+
+	mix.styles([
 		asset_path + 'vendors/js-offcanvas/css/js-offcanvas.css',
 		//asset_path + 'vendors/font-awesome5/css/all.min.css',
 		asset_path + 'vendors/line-awesome/css/line-awesome-font-awesome.min.css',

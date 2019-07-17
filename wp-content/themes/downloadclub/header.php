@@ -28,13 +28,13 @@
 		$logo_url = wp_get_attachment_image_src( $custom_logo_id, 'full', false );
 
 		if ( $logo_url === false ) {
-			$logo_url = get_stylesheet_directory_uri() . '/assets/img/logo.png';
+			$logo_url = get_stylesheet_directory_uri() . '/assets/images/logo.png';
 		} else {
 			$logo_url = $logo_url[0];
 		}
 
 	} else {
-		$logo_url = get_stylesheet_directory_uri() . '/assets/img/logo.png';
+		$logo_url = get_stylesheet_directory_uri() . '/assets/images/logo.png';
 	}
 
 	$is_admin_bar_showing = is_admin_bar_showing() ? 'is_admin_bar_showing' : '';
@@ -77,7 +77,7 @@
 	<div class="offcanvaswrap">
 		<a href="#" class="js-offcanvas-close" data-button-options='{"modifiers":"blue,hard,close-right"}'><i class="fa fa-times" aria-hidden="true"></i></a>
 		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<img class="brandlogo" src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-color.png" alt="Home" />
+			<img class="brandlogo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-color.png" alt="Home" />
 		</a>
 		<div class="offcanvaswrap_menus">
 

@@ -37,7 +37,7 @@
 					<div class="single-footer-widgets">
 						<div class="widgets-body about-widgets">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="d-block footer-logo">
-								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-black.png" alt="Themeboxr Logo" title="Themeboxr Logo" class="img-fluid" />
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo-black.png" alt="Themeboxr Logo" title="Themeboxr Logo" class="img-fluid" />
 							</a>
 							<p>Themeboxr creates useful themes as PSD, Html and WordPress. Themeboxr is
 								<a href="https://codeboxr.com/" target="_blank">Codeboxr</a>'s initiative. Follow us on social media to keep connected for updates.

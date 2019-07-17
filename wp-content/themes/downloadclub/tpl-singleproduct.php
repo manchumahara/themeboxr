@@ -29,17 +29,17 @@
 						<div class="feature-slider-warp owl-carousel">
 							<div class="single-thumbnail-product">
 								<a href="#" class="d-block">
-									<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-1.jpg"
+									<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/feature-product/feature-product-1.jpg"
 										 alt="Feature Product" class="img-fluid" /> </a>
 							</div>
 							<div class="single-thumbnail-product">
 								<a href="#" class="d-block">
-									<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-2.jpg"
+									<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/feature-product/feature-product-2.jpg"
 										 alt="Feature Product" class="img-fluid" /> </a>
 							</div>
 							<div class="single-thumbnail-product">
 								<a href="#" class="d-block">
-									<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/img/feature-product/feature-product-3.jpg"
+									<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/feature-product/feature-product-3.jpg"
 										 alt="Feature Product" class="img-fluid" /> </a>
 							</div>
 						</div>
@@ -209,7 +209,7 @@
 						<div class="col-lg-3 col-sm-6 text-center">
 							<div class="single-technology">
 								<div class="technology-thumb">
-									<a href="#"><img src="/assets/img/html.png" alt="Themeboxr" /></a>
+									<a href="#"><img src="/assets/images/html.png" alt="Themeboxr" /></a>
 								</div>
 
 								<h3>HTML5</h3>
@@ -219,7 +219,7 @@
 						<div class="col-lg-3 col-sm-6 text-center">
 							<div class="single-technology">
 								<div class="technology-thumb">
-									<a href="#"><img src="/assets/img/less.png" alt="Themeboxr"></a>
+									<a href="#"><img src="/assets/images/less.png" alt="Themeboxr"></a>
 								</div>
 
 								<h3>Less</h3>
@@ -229,7 +229,7 @@
 						<div class="col-lg-3 col-sm-6 text-center">
 							<div class="single-technology">
 								<div class="technology-thumb">
-									<a href="#"><img src="/assets/img/gulp.png" alt="Themeboxr"></a>
+									<a href="#"><img src="/assets/images/gulp.png" alt="Themeboxr"></a>
 								</div>
 
 								<h3>gulp</h3>
@@ -239,7 +239,7 @@
 						<div class="col-lg-3 col-sm-6 text-center">
 							<div class="single-technology">
 								<div class="technology-thumb">
-									<a href="#"><img src="/assets/img/bootstrap.png" alt="Themeboxr"></a>
+									<a href="#"><img src="/assets/images/bootstrap.png" alt="Themeboxr"></a>
 								</div>
 
 								<h3>bootstrap</h3>
@@ -249,7 +249,7 @@
 						<div class="col-lg-3 col-sm-6 text-center">
 							<div class="single-technology">
 								<div class="technology-thumb">
-									<a href="#"><img src="/assets/img/bootstrap.png" alt="Themeboxr"></a>
+									<a href="#"><img src="/assets/images/bootstrap.png" alt="Themeboxr"></a>
 								</div>
 
 								<h3>bootstrap</h3>
@@ -259,7 +259,7 @@
 						<div class="col-lg-3 col-sm-6 text-center">
 							<div class="single-technology">
 								<div class="technology-thumb">
-									<a href="#"><img src="/assets/img/html.png" alt="Themeboxr"></a>
+									<a href="#"><img src="/assets/images/html.png" alt="Themeboxr"></a>
 								</div>
 
 								<h3>HTML5</h3>
@@ -269,7 +269,7 @@
 						<div class="col-lg-3 col-sm-6 text-center">
 							<div class="single-technology">
 								<div class="technology-thumb">
-									<a href="#"><img src="/assets/img/less.png" alt="Themeboxr"></a>
+									<a href="#"><img src="/assets/images/less.png" alt="Themeboxr"></a>
 								</div>
 
 								<h3>Less</h3>
@@ -279,7 +279,7 @@
 						<div class="col-lg-3 col-sm-6 text-center">
 							<div class="single-technology">
 								<div class="technology-thumb">
-									<a href="#"><img src="/assets/img/gulp.png" alt="Themeboxr"></a>
+									<a href="#"><img src="/assets/images/gulp.png" alt="Themeboxr"></a>
 								</div>
 
 								<h3>gulp</h3>

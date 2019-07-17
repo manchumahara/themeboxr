@@ -12635,12 +12635,12 @@
     function bootstrapHoverMenu(bp) {
 
         // close all dropdowns that are open
-        $('body').click(function (e) {
+        $('body').on('click', function (e) {
             $('.dropdown-menu.show').removeClass('show');
         });
 
         // show dropdown for the link clicked
-        $('.nav-item').hover(function (e) {
+        $('.nav-item').on('hover', function (e) {
             $('.dropdown-menu.show').removeClass('show');
             if (($(window).width() >= bp)) {
                 var $dd = $(this).find('.dropdown-menu');
@@ -12649,7 +12649,7 @@
         });
 
         // get href for top level link if clicked and open
-        $('.dropdown').click(function (e) {
+        $('.dropdown').on('click', function (e) {
             if ($(window).width() < bp) {
                 $('.dropdown-menu').css({'display': 'none'});
             }
