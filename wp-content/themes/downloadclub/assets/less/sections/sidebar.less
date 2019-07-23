@@ -39,7 +39,7 @@
 }
 
 .widget_search {
-  form {
+  /*form {
     position: relative;
     
     label{
@@ -80,6 +80,24 @@
       top: 50%;
       .transform(translateY(-50%));
       width: 50px;
+    }
+  }*/
+}
+
+.search-form{
+  input {
+    .font-size(14);
+    border: 1px solid @ash-color;
+    width: 100%;
+    .border-radius(5px);
+    padding: 15px 20px;
+    transition: 0.4s;
+    padding-right: 65px;
+
+    &:focus, &:active {
+      outline: none;
+      .box-shadow(none);
+      border-color: @brand-color;
     }
   }
 }

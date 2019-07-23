@@ -50,7 +50,7 @@
 						<img src="<?php echo esc_url( $logo_url ); ?>" alt="Themeboxr" class="img-fluid white-logo" />
 					</a>
 
-					<button class="navbar-toggler js-offcanvas-trigger" type="button" data-toggle="collapse" data-target="#navMian" aria-controls="navMian" aria-expanded="false" aria-label="Toggle navigation" data-offcanvas-trigger="off-canvas">
+					<button class="navbar-toggler js-offcanvas-trigger" type="button" data-toggle="collapse" data-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation" data-offcanvas-trigger="off-canvas">
 						<i class="fa fa-bars"></i>
 					</button>
 
@@ -61,7 +61,7 @@
 								'depth'           => 2,
 								'container'       => 'div',
 								'container_class' => 'collapse navbar-collapse',
-								'container_id'    => 'navMian',
+								'container_id'    => 'navMain',
 								'menu_class'      => 'nav navbar-nav ml-auto',
 								'fallback_cb'     => 'Downloadclub_Bootstrap_Navwalker::fallback',
 								'walker'          => new Downloadclub_Bootstrap_Navwalker()
@@ -73,15 +73,21 @@
 		</div>
 	</div>
 </header>
-<aside class="js-offcanvas" data-offcanvas-options='{ "modifiers": "right,overlay", "closeButtonClass": "js-offcanvas-close" }' id="off-canvas" style="display: none;">
+
+<aside class="js-offcanvas" data-offcanvas-options='{ "modifiers": "right,overlay", "closeButtonClass": "js-offcanvas-close" }' id="off-canvas" style="display: none">
 	<div class="offcanvaswrap">
-		<a href="#" class="js-offcanvas-close" data-button-options='{"modifiers":"blue,hard,close-right"}'><i class="fa fa-times" aria-hidden="true"></i></a>
-		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<img class="brandlogo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-color.png" alt="Home" />
-		</a>
-		<div class="offcanvaswrap_menus">
-
+		<div class="js-offcanvas-header">
+			<a class="offcanvaslogo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img class="brandlogo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php esc_html_e( 'Themeboxr Logo', 'downloadclub' ); ?>" />
+			</a>
+			<span class="js-offcanvas-close" title="<?php esc_html_e( 'Close', 'downloadclub' ); ?>"><i class="fa fa-times" aria-hidden="true"></i></span>
+			<div class="clearfix"></div>
 		</div>
+		<div class="offcanvaswrap_menus">
+		</div>
+		<?php
+			get_search_form();
+		?>
+		<div class="clearfix"></div>
 	</div>
-
 </aside>

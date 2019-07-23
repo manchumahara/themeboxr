@@ -61,10 +61,10 @@
 
         //add the off canvas
 
-        $(".navbar-nav").clone().prependTo("#off-canvas .offcanvaswrap_menus");
-        $(function () {
-            $(document).trigger("enhance");
-        });
+        $('#navMain').find('.navbar-nav').clone().prependTo('#off-canvas .offcanvaswrap_menus');
+        //$(function () {
+        $(document).trigger("enhance");
+        //});
 		$('#off-canvas').attr('style', '');
         //end add offcanvas
 

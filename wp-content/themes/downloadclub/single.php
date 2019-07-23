@@ -15,7 +15,6 @@
 				<div class="col-lg-12 text-center">
 					<div class="banner-content-wrap">
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-						<h2>Sub title here</h2>
 					</div>
 				</div>
 			</div>
@@ -25,33 +24,35 @@
 	downloadclub_page_wrapper_start();
 	$main_col_x = is_active_sidebar( 'sidebar-1' ) ? 'col-md-8' : 'col-md-12';
 ?>
-	<div class="container">
-		<div id="primary" class="content-area row">
-			<main id="main" class="site-main col-md-8">
+	<div class="section-padding">
+		<div class="container">
+			<div id="primary" class="content-area row">
+				<main id="main" class="site-main col-md-8">
 
-				<?php
-					while ( have_posts() ) :
-						the_post();
+					<?php
+						while ( have_posts() ) :
+							the_post();
 
-						get_template_part( 'template-parts/content', get_post_type() );
+							get_template_part( 'template-parts/content', get_post_type() );
 
-						the_post_navigation();
+							//the_post_navigation();
 
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
+							// If comments are open or we have at least one comment, load up the comment template.
+							/*if ( comments_open() || get_comments_number() ) :
+								comments_template();
+							endif;*/
 
-					endwhile; // End of the loop.
-				?>
+						endwhile; // End of the loop.
+					?>
 
-			</main><!-- #main -->
-			<?php if ( is_active_sidebar( 'sidebar-1' ) ): ?>
-				<div class="col-md-4">
-					<?php get_sidebar(); ?>
-				</div>
-			<?php endif; ?>
-		</div><!-- #primary -->
+				</main><!-- #main -->
+				<?php if ( is_active_sidebar( 'sidebar-1' ) ): ?>
+					<div class="col-md-4">
+						<?php get_sidebar(); ?>
+					</div>
+				<?php endif; ?>
+			</div><!-- #primary -->
+		</div>
 	</div>
 <?php
 	downloadclub_page_wrapper_end();

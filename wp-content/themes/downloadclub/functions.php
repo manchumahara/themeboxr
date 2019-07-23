@@ -7,6 +7,55 @@
 	 * @package DownloadClub
 	 */
 
+	if (! function_exists('mix')) {
+		/**
+		 * Get the path to a versioned Mix file.
+		 *
+		 * @param  string  $path
+		 * @param  string  $manifestDirectory
+		 * @return \Illuminate\Support\HtmlString
+		 *
+		 * @throws \Exception
+		 */
+		function mix($path, $manifestDirectory = '')
+		{
+			static $manifests = [];
+
+			if (! starts_with($path, '/')) {
+				$path = "/{$path}";
+			}
+
+			if ($manifestDirectory && ! starts_with($manifestDirectory, '/')) {
+				$manifestDirectory = "/{$manifestDirectory}";
+			}
+
+			if (file_exists(public_path($manifestDirectory.'/hot'))) {
+				return new HtmlString("//localhost:8080{$path}");
+			}
+
+			$manifestPath = public_path($manifestDirectory.'/mix-manifest.json');
+
+			if (! isset($manifests[$manifestPath])) {
+				if (! file_exists($manifestPath)) {
+					throw new Exception('The Mix manifest does not exist.');
+				}
+
+				$manifests[$manifestPath] = json_decode(file_get_contents($manifestPath), true);
+			}
+
+			$manifest = $manifests[$manifestPath];
+
+			if (! isset($manifest[$path])) {
+				throw new Exception(
+					"Unable to locate Mix file: {$path}. Please check your ".
+					'webpack.mix.js output paths and try again.'
+				);
+			}
+
+			return new HtmlString($manifestDirectory.$manifest[$path]);
+		}
+	}
+
 	if ( ! function_exists( 'downloadclub_setup' ) ) :
 		/**
 		 * Sets up theme defaults and registers support for various WordPress features.
@@ -182,6 +231,70 @@
 	}
 
 	add_action( 'wp_enqueue_scripts', 'downloadclub_scripts' );
+
+	// Numeric Page Navi (built into the theme by default)
+	function downloadclub_page_navi( $before = '', $after = '' ) {
+		global $wpdb, $wp_query;
+		$request        = $wp_query->request;
+		$posts_per_page = intval( get_query_var( 'posts_per_page' ) );
+		$paged          = intval( get_query_var( 'paged' ) );
+		$numposts       = $wp_query->found_posts;
+		$max_page       = $wp_query->max_num_pages;
+		if ( $numposts <= $posts_per_page ) {
+			return;
+		}
+		if ( empty( $paged ) || $paged == 0 ) {
+			$paged = 1;
+		}
+		$pages_to_show         = 7;
+		$pages_to_show_minus_1 = $pages_to_show - 1;
+		$half_page_start       = floor( $pages_to_show_minus_1 / 2 );
+		$half_page_end         = ceil( $pages_to_show_minus_1 / 2 );
+		$start_page            = $paged - $half_page_start;
+		if ( $start_page <= 0 ) {
+			$start_page = 1;
+		}
+		$end_page = $paged + $half_page_end;
+		if ( ( $end_page - $start_page ) != $pages_to_show_minus_1 ) {
+			$end_page = $start_page + $pages_to_show_minus_1;
+		}
+		if ( $end_page > $max_page ) {
+			$start_page = $max_page - $pages_to_show_minus_1;
+			$end_page   = $max_page;
+		}
+		if ( $start_page <= 0 ) {
+			$start_page = 1;
+		}
+
+		echo $before . '<ul class="pagination">' . "";
+		if ( $paged > 1 ) {
+			$first_page_text = "&laquo";
+			echo '<li class="page-item prev"><a class="page-link" href="' . get_pagenum_link() . '" title="First">' . $first_page_text . '</a></li>';
+		}
+
+		$prevposts = get_previous_posts_link( '&larr; Previous' );
+		if ( $prevposts ) {
+			echo '<li>' . $prevposts . '</li>';
+		} else {
+			echo '<li class="page-item disabled"><a class="page-link" href="#">&larr; Previous</a></li>';
+		}
+
+		for ( $i = $start_page; $i <= $end_page; $i ++ ) {
+			if ( $i == $paged ) {
+				echo '<li class="page-item active"><a class="page-link" href="#">' . $i . '</a></li>';
+			} else {
+				echo '<li class="page-item"><a class="page-link" href="' . get_pagenum_link( $i ) . '">' . $i . '</a></li>';
+			}
+		}
+		echo '<li class="page-item">';
+		next_posts_link( 'Next &rarr;' );
+		echo '</li>';
+		if ( $end_page < $max_page ) {
+			$last_page_text = "&raquo;";
+			echo '<li class="page-item next"><a class="page-link" href="' . get_pagenum_link( $max_page ) . '" title="Last">' . $last_page_text . '</a></li>';
+		}
+		echo '</ul>' . $after . "";
+	}
 
 	if ( ! file_exists( get_template_directory() . '/inc/wp-bootstrap-navwalker.php' ) ) {
 		// file does not exist... return an error.

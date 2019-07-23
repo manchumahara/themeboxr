@@ -64,7 +64,9 @@
 								$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'medium' );
 								$thumburl        = isset( $large_image_url[0] ) ? $large_image_url[0] : '';
 
-							} else {
+							}
+
+							if($thumburl == '') {
 								//$thumburl = $content_url . '/uploads/productshots/profile.png';
 								$thumburl = get_template_directory_uri() . '/assets/images/blog/blog-1.jpg';
 							}

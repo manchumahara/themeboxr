@@ -89,6 +89,18 @@
   box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
 }
 
+.drop-shadow-color(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alphacolor: rgba(0, 0, 0, .1)) {
+  -webkit-box-shadow: @x-axis @y-axis @blur @alphacolor;
+  -moz-box-shadow: @x-axis @y-axis @blur @alphacolor;
+  box-shadow: @x-axis @y-axis @blur @alphacolor;
+}
+
+.drop-shadow-spread(@x-axis: 0, @y-axis: 1px, @blur: 2px, @spread: -1px, @alpha: 0.1) {
+  -webkit-box-shadow: @x-axis @y-axis @blur @spread rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x-axis @y-axis @blur @spread rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur @spread rgba(0, 0, 0, @alpha);
+}
+
 .box-sizing(@sizing: border-box) {
   -ms-box-sizing: @sizing;
   -moz-box-sizing: @sizing;

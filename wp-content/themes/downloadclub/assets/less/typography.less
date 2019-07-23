@@ -200,6 +200,10 @@ ul {
   }
 }
 
+.btn{
+  .font-size(16);
+}
+
 // Buttons Style
 .btn-brand {
   background-color: @offwhite;
@@ -229,6 +233,11 @@ ul {
   @media screen and (min-width: 992px) {
     padding: 15px 55px;
   }
+}
+
+.btn-default-brand{
+  background-color: @brand-color;
+  color: @white;
 }
 
 .btn-brand-rev{
@@ -321,4 +330,16 @@ ul {
 
 .grecaptcha-badge{
   visibility: collapse !important;
+}
+
+.pagination_wrap{
+  margin: 20px 0;
+}
+
+.page-link{
+  color: @brand-color;
+}
+.page-item.active .page-link{
+  background-color: @brand-color;
+  border-color: @brand-color;
 }

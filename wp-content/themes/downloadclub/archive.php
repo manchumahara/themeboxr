@@ -28,43 +28,62 @@
 	downloadclub_page_wrapper_start();
 	$main_col_x = is_active_sidebar( 'sidebar-1' ) ? 'col-md-8' : 'col-md-12';
 ?>
-	<div class="container">
-		<div id="primary" class="content-area row">
-			<main id="main" class="site-main <?php echo esc_attr( $main_col_x ); ?>">
+	<div class="section-padding">
+		<div class="container">
+			<div id="primary" class="content-area row">
+				<main id="main" class="site-main <?php echo esc_attr( $main_col_x ); ?>">
 
-				<?php if ( have_posts() ) : ?>
+					<?php if ( have_posts() ) : ?>
 
-					<?php
-					/* Start the Loop */
-					while ( have_posts() ) :
-						the_post();
+						<?php
+						/* Start the Loop */
+						while ( have_posts() ) :
+							the_post();
 
-						/*
-						 * Include the Post-Type-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-						 */
-						get_template_part( 'template-parts/content', get_post_type() );
+							/*
+							 * Include the Post-Type-specific template for the content.
+							 * If you want to override this in a child theme, then include a file
+							 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+							 */
+							get_template_part( 'template-parts/content', get_post_type() );
 
-					endwhile;
+						endwhile;
 
-					the_posts_navigation();
+						the_posts_navigation();
+						?>
+						<?php if ( function_exists( 'downloadclub_page_navi' ) ) { // if expirimental feature is active ?>
+							<div class="pagination_wrap">
+								<?php downloadclub_page_navi(); // use the page navi function ?>
+							</div>
+						<?php } else { // if it is disabled, display regular wp prev & next links ?>
+							<div class="pagination_wrap">
+								<nav class="wp-prev-next">
+									<ul class="pager">
+										<li class="previous"><?php next_posts_link( _e( '&laquo; Older Entries', 'downloadclub' ) ) ?></li>
+										<li class="next"><?php previous_posts_link( _e( 'Newer Entries &raquo;', 'downloadclub' ) ) ?></li>
+									</ul>
+								</nav>
+							</div>
 
-				else :
+						<?php }
 
-					get_template_part( 'template-parts/content', 'none' );
+					else :
 
-				endif;
-				?>
+						get_template_part( 'template-parts/content', 'none' );
 
-			</main><!-- #main -->
-			<?php if ( is_active_sidebar( 'sidebar-1' ) ): ?>
-				<div class="col-md-4">
-					<?php get_sidebar(); ?>
-				</div>
-			<?php endif; ?>
-		</div><!-- #primary -->
+					endif;
+					?>
+
+				</main><!-- #main -->
+				<?php if ( is_active_sidebar( 'sidebar-1' ) ): ?>
+					<div class="col-md-4">
+						<?php get_sidebar(); ?>
+					</div>
+				<?php endif; ?>
+			</div><!-- #primary -->
+		</div>
 	</div>
+
 <?php
 	downloadclub_page_wrapper_end();
 	get_footer();

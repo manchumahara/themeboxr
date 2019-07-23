@@ -9,47 +9,81 @@
 
 	get_header();
 ?>
+	<div class="entry-header-cover entry-header" id="banner-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<div class="banner-content-wrap">
+						<?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+						<h1 class="entry-title">
+							<?php
+								/* translators: %s: search query. */
+								printf( esc_html__( 'Search Results for: %s', 'downloadclub' ), '<span>' . get_search_query() . '</span>' );
+							?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- .entry-header -->
+<?php
+	downloadclub_page_wrapper_start();
+	$main_col_x = is_active_sidebar( 'sidebar-1' ) ? 'col-md-8' : 'col-md-12';
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-			<?php if ( have_posts() ) : ?>
-
-				<header class="page-header">
-					<h1 class="page-title">
+?>
+	<div class="section-padding">
+		<div class="container">
+			<div id="primary" class="content-area row">
+				<main id="main" class="site-main <?php echo esc_attr( $main_col_x ); ?>">
+					<?php if ( have_posts() ) : ?>
 						<?php
-							/* translators: %s: search query. */
-							printf( esc_html__( 'Search Results for: %s', 'downloadclub' ), '<span>' . get_search_query() . '</span>' );
+						/* Start the Loop */
+						while ( have_posts() ) :
+							the_post();
+
+							/**
+							 * Run the loop for the search to output the results.
+							 * If you want to overload this in a child theme then include a file
+							 * called content-search.php and that will be used instead.
+							 */
+							get_template_part( 'template-parts/content', 'search' );
+
+						endwhile;
+
+						//the_posts_navigation();
 						?>
-					</h1>
-				</header><!-- .page-header -->
+						<?php if ( function_exists( 'downloadclub_page_navi' ) ) { // if expirimental feature is active ?>
+							<div class="pagination_wrap">
+								<?php downloadclub_page_navi(); // use the page navi function ?>
+							</div>
+						<?php } else { // if it is disabled, display regular wp prev & next links ?>
+							<div class="pagination_wrap">
+								<nav class="wp-prev-next">
+									<ul class="pager">
+										<li class="previous"><?php next_posts_link( _e( '&laquo; Older Entries', 'downloadclub' ) ) ?></li>
+										<li class="next"><?php previous_posts_link( _e( 'Newer Entries &raquo;', 'downloadclub' ) ) ?></li>
+									</ul>
+								</nav>
+							</div>
 
-				<?php
-				/* Start the Loop */
-				while ( have_posts() ) :
-					the_post();
+						<?php }
 
-					/**
-					 * Run the loop for the search to output the results.
-					 * If you want to overload this in a child theme then include a file
-					 * called content-search.php and that will be used instead.
-					 */
-					get_template_part( 'template-parts/content', 'search' );
+					else :
 
-				endwhile;
+						get_template_part( 'template-parts/content', 'none' );
 
-				the_posts_navigation();
+					endif;
+					?>
 
-			else :
-
-				get_template_part( 'template-parts/content', 'none' );
-
-			endif;
-			?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
+				</main><!-- #main -->
+				<?php if ( is_active_sidebar( 'sidebar-1' ) ): ?>
+					<div class="col-md-4">
+						<?php get_sidebar(); ?>
+					</div>
+				<?php endif; ?>
+			</div><!-- #primary -->
+		</div>
+	</div>
 
 <?php
-	get_sidebar();
+	downloadclub_page_wrapper_end();
 	get_footer();

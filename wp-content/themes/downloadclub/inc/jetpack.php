@@ -26,7 +26,7 @@
 		add_theme_support( 'jetpack-responsive-videos' );
 
 		// Add theme support for Content Options.
-		add_theme_support( 'jetpack-content-options', array(
+		/*add_theme_support( 'jetpack-content-options', array(
 			'post-details'    => array(
 				'stylesheet' => 'downloadclub-style',
 				'date'       => '.posted-on',
@@ -40,7 +40,7 @@
 				'post'    => true,
 				'page'    => true,
 			),
-		) );
+		) );*/
 	}
 
 	add_action( 'after_setup_theme', 'downloadclub_jetpack_setup' );

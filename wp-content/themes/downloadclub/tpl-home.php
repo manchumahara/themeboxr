@@ -18,31 +18,32 @@
 						<a href="<?php echo esc_url( $shop_page_url ); ?>" class="btn btn-brand"><?php esc_html_e( 'Buy a theme', 'downloadclub' ); ?></a>
 
 						<!-- Feature Product Area Start -->
-						<div class="featured-products-area">
+						<!--<div class="featured-products-area">
 							<div class="feature-slider-warp owl-carousel">
 								<div class="single-feature-product">
 									<a href="#" class="d-block">
-										<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/feature-product/feature-product-1.jpg"
+										<img src="<?php /*echo esc_url( get_stylesheet_directory_uri() ) */?>/assets/images/feature-product/feature-product-1.jpg"
 											 alt="Feature Product" class="img-fluid" /> </a>
 								</div>
 								<div class="single-feature-product">
 									<a href="#" class="d-block">
-										<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/feature-product/feature-product-2.jpg"
+										<img src="<?php /*echo esc_url( get_stylesheet_directory_uri() ) */?>/assets/images/feature-product/feature-product-2.jpg"
 											 alt="Feature Product" class="img-fluid" /> </a>
 								</div>
 								<div class="single-feature-product">
 									<a href="#" class="d-block">
-										<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/feature-product/feature-product-3.jpg"
+										<img src="<?php /*echo esc_url( get_stylesheet_directory_uri() ) */?>/assets/images/feature-product/feature-product-3.jpg"
 											 alt="Feature Product" class="img-fluid" /> </a>
 								</div>
 							</div>
-						</div>
+						</div>-->
 						<!-- Feature Product Area End -->
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	<div class="clerafix"></div>
 
 	<!--== Products Area Start ==-->
 	<section id="products-area">
@@ -53,10 +54,9 @@
 					<div class="col-lg-12">
 						<nav class="filter-navbar">
 							<ul class="d-flex">
-								<li class="fil-cat current" data-rel="all">New Released</li>
-								<li class="fil-cat" data-rel="wordpress">WordPress</li>
-								<li class="fil-cat" data-rel="html">Html</li>
-								<li class="fil-cat" data-rel="feature">Featured</li>
+								<li class="fil-cat current" data-rel="all">Featured</li>
+								<li class="fil-cat" data-rel="wordpress-themes">WordPress</li>
+								<li class="fil-cat" data-rel="html-themes">Html</li>
 							</ul>
 						</nav>
 					</div>
@@ -69,131 +69,120 @@
 		<div class="products-content-wrap section-padding">
 			<div class="container">
 				<div id="productsContent" class="row">
-					<!-- Single Product Start -->
-					<div class="product-item scale-amn col-lg-4 col-md-6 all pop trend">
-						<div class="single-product-wrap ">
-							<figure class="product-thumb">
-								<a href="#"><img
-										src="<?php echo get_template_directory_uri(); ?>/assets/images/products/products-1.jpg"
-										alt="Home" class="img-fluid" /></a>
-							</figure>
+					<?php
+						$featured_products_arr = array(
 
-							<div class="product-meta">
-								<h2 class="h6"><a href="#">Landingz – One Page App and Product</a></h2>
+						);
 
-								<div class="product-sub-meta d-flex justify-content-between">
-									<a href="#"><i class="fa fa-tags"></i> HTML</a>
-									<span class="product-price">$19.00</span>
+						$featured_products     = array();
+
+						$paged     = 1;
+						$lbarg     = array(
+							'post_type'      => 'product',
+							'post_status'    => 'publish',
+							'paged'          => $paged,
+							'posts_per_page' => 9,
+							//'post__in'       => $featured_products_arr
+
+						);
+
+						$posts_array = get_posts( $lbarg );
+
+
+
+						// The Loop
+						if (sizeof($posts_array) == 0): ?>
+							<div class="clearfix row">
+								<div class="col-md-12">
+									<p>Nothing found</p>
 								</div>
 							</div>
-						</div>
-					</div>
-					<!-- Single Product End -->
+						<?php
+						else:
+							$i = 1;
 
-					<!-- Single Product Start -->
-					<div class="product-item scale-amn col-lg-4 col-md-6 all wp new feature">
-						<div class="single-product-wrap">
-							<figure class="product-thumb">
-								<a href="#"><img
-										src="<?php echo get_template_directory_uri(); ?>/assets/images/products/products-2.jpg"
-										alt="Home" class="img-fluid" /></a>
-							</figure>
+							foreach ( $posts_array as $post ) : setup_postdata( $post );
 
-							<div class="product-meta">
-								<h2 class="h6"><a href="#">Landingz – One Page App and Product</a></h2>
+								$id        = $post->ID;
+								$blogtitle = get_the_title( $id );
+								$bloglink  = get_permalink( $id );
+								$content_url         = content_url();
+								$featured_products[] = $id;
+								$thumburl            = '';
 
-								<div class="product-sub-meta d-flex justify-content-between">
-									<a href="#"><i class="fa fa-tags"></i> HTML</a>
-									<span class="product-price">$19.00</span>
+								if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $id . '-profile.png' ) ) {
+									$thumburl = $content_url . '/uploads/productshots/' . $id . '-profile.png';
+
+								} else if ( has_post_thumbnail() ) {
+
+									$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'medium' );
+									$thumburl        = isset( $large_image_url[0] ) ? $large_image_url[0] : '';
+
+								}
+
+								if($thumburl == ''){
+									$thumburl = get_template_directory_uri() . '/assets/images/default_thumb.png';
+
+								}
+
+								$_pf       = new WC_Product_Factory();
+								$product   = $_pf->get_product( $id );
+								$price_val = $product->get_price();
+								$price     = ( $price_val ) ? $product->get_price() : 'Free';
+
+								/*$fieldValues = get_post_meta( $id, '_cbxproductinfo', true );
+								$demourl     = isset( $fieldValues['demourl'] ) ? esc_attr( $fieldValues['demourl'] ) : ''; //demo url
+
+								$cbdemourl_html_link = ( $demourl != '' ) ? '<a target="_blank" href="' . $demourl . '" class="btn-cbxphover btn-codeboxr2">Demo</a>' : '';*/
+
+								$terms = get_the_terms( $id, 'product_cat' );
+
+								$links = array();
+								$term_slug = '';
+								if ( !is_wp_error( $terms )  && !empty($terms)) {
+									foreach ( $terms as $term ) {
+										$link = get_term_link( $term, 'product_cat' );
+										if ( is_wp_error( $link ) ) {
+											return '';
+										}
+
+										$term_slug .= ' '.$term->slug;
+
+										$links[] = '<a href="' . esc_url( $link ) . '" rel="tag">' . $term->name . '</a>';
+										break;
+									}
+								}
+
+								$category_link =  '<span class="posted_in"><i class="fa fa-tags"></i>' . join( ',', $links ) . '</span>';
+
+
+								?>
+								<div class="product-item scale-amn col-lg-4 col-md-6 all <?php echo esc_attr($term_slug); ?>">
+									<div class="single-product-wrap ">
+										<figure class="product-thumb">
+											<a href="<?php echo esc_url($bloglink); ?>"><img
+													src="<?php echo esc_url($thumburl); ?>"
+													alt="Home" class="img-fluid" /></a>
+										</figure>
+
+										<div class="product-meta">
+											<h2 class="h6"><a href="<?php echo esc_url($bloglink); ?>"><?php echo $blogtitle; ?></a></h2>
+
+											<div class="product-sub-meta d-flex justify-content-between">
+												<!--<a href="#"><i class="fa fa-tags"></i> HTML</a>-->
+												<?php echo $category_link; ?>
+												<span class="product-price">$<?php echo $price; ?></span>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Single Product End -->
+								<?php
+								$i ++;
+							endforeach;
+							wp_reset_postdata();
+						endif;
+					?>
 
-					<!-- Single Product Start -->
-					<div class="product-item scale-amn col-lg-4 col-md-6 all pop">
-						<div class="single-product-wrap">
-							<figure class="product-thumb">
-								<a href="#"><img
-										src="<?php echo get_template_directory_uri(); ?>/assets/images/products/products-3.jpg"
-										alt="Home" class="img-fluid" /></a>
-							</figure>
-
-							<div class="product-meta">
-								<h2 class="h6"><a href="#">Landingz – One Page App and Product</a></h2>
-
-								<div class="product-sub-meta d-flex justify-content-between">
-									<a href="#"><i class="fa fa-tags"></i> HTML</a>
-									<span class="product-price">$19.00</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Single Product End -->
-
-					<!-- Single Product Start -->
-					<div class="product-item scale-amn col-lg-4 col-md-6 all trend wp">
-						<div class="single-product-wrap">
-							<figure class="product-thumb">
-								<a href="#"><img
-										src="<?php echo get_template_directory_uri(); ?>/assets/images/products/products-2.jpg"
-										alt="Home" class="img-fluid" /></a>
-							</figure>
-
-							<div class="product-meta">
-								<h2 class="h6"><a href="#">Landingz – One Page App and Product</a></h2>
-
-								<div class="product-sub-meta d-flex justify-content-between">
-									<a href="#"><i class="fa fa-tags"></i> HTML</a>
-									<span class="product-price">$19.00</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Single Product End -->
-
-					<!-- Single Product Start -->
-					<div class="product-item scale-amn col-lg-4 col-md-6 all pop new">
-						<div class="single-product-wrap">
-							<figure class="product-thumb">
-								<a href="#"><img
-										src="<?php echo get_template_directory_uri(); ?>/assets/images/products/products-3.jpg"
-										alt="Home" class="img-fluid" /></a>
-							</figure>
-
-							<div class="product-meta">
-								<h2 class="h6"><a href="#">Landingz – One Page App and Product</a></h2>
-
-								<div class="product-sub-meta d-flex justify-content-between">
-									<a href="#"><i class="fa fa-tags"></i> HTML</a>
-									<span class="product-price">$19.00</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Single Product End -->
-
-					<!-- Single Product Start -->
-					<div class="product-item scale-amn col-lg-4 col-md-6 all pop wp">
-						<div class="single-product-wrap">
-							<figure class="product-thumb">
-								<a href="#"><img
-										src="<?php echo get_template_directory_uri(); ?>/assets/images/products/products-1.jpg"
-										alt="Home" class="img-fluid" /></a>
-							</figure>
-
-							<div class="product-meta">
-								<h2 class="h6"><a href="#">Landingz – One Page App and Product</a></h2>
-
-								<div class="product-sub-meta d-flex justify-content-between">
-									<a href="#"><i class="fa fa-tags"></i> HTML</a>
-									<span class="product-price">$19.00</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Single Product End -->
 				</div>
 
 				<div class="row">

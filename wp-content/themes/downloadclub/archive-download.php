@@ -72,7 +72,23 @@
 
 								endwhile;
 
-								the_posts_navigation();
+								//the_posts_navigation();
+								?>
+								<?php if ( function_exists( 'downloadclub_page_navi' ) ) { // if expirimental feature is active ?>
+									<div class="pagination_wrap">
+										<?php downloadclub_page_navi(); // use the page navi function ?>
+									</div>
+								<?php } else { // if it is disabled, display regular wp prev & next links ?>
+									<div class="pagination_wrap">
+										<nav class="wp-prev-next">
+											<ul class="pager">
+												<li class="previous"><?php next_posts_link( _e( '&laquo; Older Entries', 'downloadclub' ) ) ?></li>
+												<li class="next"><?php previous_posts_link( _e( 'Newer Entries &raquo;', 'downloadclub' ) ) ?></li>
+											</ul>
+										</nav>
+									</div>
+
+								<?php }
 
 							else :
 

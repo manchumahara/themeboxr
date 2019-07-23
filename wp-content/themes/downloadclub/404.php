@@ -9,52 +9,51 @@
 
 	get_header();
 ?>
+	<div class="entry-header-cover entry-header" id="banner-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<div class="banner-content-wrap">
+						<?php
+							//the_archive_title( '<h1 class="page-title">', '</h1>' );
+							//the_archive_description( '<h2 class="archive-description">', '</h2>' );
+						?>
+						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'downloadclub' ); ?></h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- .entry-header -->
+<?php
+	downloadclub_page_wrapper_start();
+	$main_col_x = is_active_sidebar( 'sidebar-1' ) ? 'col-md-8' : 'col-md-12';
+?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div class="section-padding">
+		<div class="container">
+			<div id="primary" class="content-area row">
+				<main id="main" class="site-main <?php echo esc_attr( $main_col_x ); ?>">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'downloadclub' ); ?></h1>
-				</header><!-- .page-header -->
+					<section class="error-404 not-found">
+						<div class="page-content">
+							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'downloadclub' ); ?></p>
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'downloadclub' ); ?></p>
-
-					<?php
-						get_search_form();
-
-						the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'downloadclub' ); ?></h2>
-						<ul>
 							<?php
-								wp_list_categories( array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								) );
+								get_search_form();
 							?>
-						</ul>
-					</div><!-- .widget -->
+						</div><!-- .page-content -->
+					</section><!-- .error-404 -->
 
-					<?php
-						/* translators: %1$s: smiley */
-						$downloadclub_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'downloadclub' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$downloadclub_archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+				</main><!-- #main -->
+				<?php if ( is_active_sidebar( 'sidebar-1' ) ): ?>
+					<div class="col-md-4">
+						<?php get_sidebar(); ?>
+					</div>
+				<?php endif; ?>
+			</div><!-- #primary -->
+		</div>
+	</div>
 
 <?php
+	downloadclub_page_wrapper_end();
 	get_footer();

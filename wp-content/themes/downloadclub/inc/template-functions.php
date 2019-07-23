@@ -52,3 +52,10 @@
 	}
 
 	add_filter( 'show_admin_bar', '__return_false' );
+
+	add_filter('next_posts_link_attributes', 'next_posts_link_attributes_bs');
+	add_filter('previous_posts_link_attributes', 'next_posts_link_attributes_bs');
+
+	function next_posts_link_attributes_bs(){
+		return ' class="page-link" ';
+	}
