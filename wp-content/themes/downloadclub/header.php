@@ -83,11 +83,17 @@
 			<span class="js-offcanvas-close" title="<?php esc_html_e( 'Close', 'downloadclub' ); ?>"><i class="fa fa-times" aria-hidden="true"></i></span>
 			<div class="clearfix"></div>
 		</div>
-		<div class="offcanvaswrap_menus">
+		<div class="js-offcanvas-body">
+			<div class="js-offcanvas-section">
+				<div class="offcanvaswrap_menus">
+				</div>
+			</div>
+			<div class="js-offcanvas-section">
+				<?php
+					get_search_form();
+				?>
+			</div>
 		</div>
-		<?php
-			get_search_form();
-		?>
 		<div class="clearfix"></div>
 	</div>
 </aside>

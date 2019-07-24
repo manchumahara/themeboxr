@@ -21,10 +21,10 @@
 <?php
 	downloadclub_page_wrapper_start();
 ?>
-	<div class="container">
-		<div id="primary" class="content-area row">
-			<div id="main" class="site-main col-md-12">
-				<div id="page-content-wrap" class="section-padding">
+	<div class="section-padding">
+		<div class="container">
+			<div id="primary" class="content-area row">
+				<div id="main" class="site-main col-md-12">
 					<?php
 						while ( have_posts() ) :
 							the_post();
@@ -38,10 +38,12 @@
 
 						endwhile; // End of the loop.
 					?>
-				</div>
-			</div><!-- #main -->
-		</div><!-- #primary -->
+
+				</div><!-- #main -->
+			</div><!-- #primary -->
+		</div>
 	</div>
+
 <?php
 	downloadclub_page_wrapper_end();
 	get_footer();

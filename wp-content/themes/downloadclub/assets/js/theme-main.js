@@ -53,6 +53,11 @@
 		$('p:empty').remove();
 
 
+		$('.add_to_cart_button').addClass('btn btn-default-brand');
+        $('.col2-set').addClass('row');
+        $('.col-1').addClass('col-md-6 col-sm-12');
+        $('.col-2').addClass('col-md-6 col-sm-12');
+
 
         var is_admin_bar_showing = 0;
         if ($('#wpadminbar').length > 0) {

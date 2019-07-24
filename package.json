@@ -23,6 +23,7 @@
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "parse-filepath": "^1.0.2",
+    "replace-in-file-webpack-plugin": "^1.0.6",
     "vue-template-compiler": "^2.6.10"
   }
 }
