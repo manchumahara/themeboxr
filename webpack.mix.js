@@ -73,9 +73,10 @@ mix.less(asset_path + 'less/style-default.less', asset_path + 'css/')
 		asset_path + 'vendors/modernizr/modernizr-custom.js',
 		asset_path + 'vendors/bootstrap/js/bootstrap.bundle.js',
 		asset_path + 'vendors/owl-carousel2/owl.carousel.js',
-		asset_path + 'vendors/jquery-smooth-scroll/jquery.smooth-scroll.js',
+		asset_path + 'vendors/smooth-scroll/jquery.smooth-scroll.js',
 		asset_path + 'vendors/magnific-popup/jquery.magnific-popup.js',
 		asset_path + 'vendors/js-offcanvas/js/js-offcanvas.pkgd.min.js',
+		//asset_path + 'vendors/bootstrap-4-navbar.js',
 		asset_path + 'js/theme-main.js'
 	], asset_path + 'js/downloadclub.js')
 	.version(

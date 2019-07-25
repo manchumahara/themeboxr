@@ -1,0 +1,22 @@
+2019-07-25T13:41:08+00:00 CRITICAL Uncaught Error: Call to undefined function themeboxr_custom_nav_menu_item() in C:\xampp\htdocs\themeboxr\site\wp-content\themes\downloadclub\inc\woocommerce.php:486
+Stack trace:
+#0 C:\xampp\htdocs\themeboxr\site\wp-includes\class-wp-hook.php(288): downloadclub_custom_nav_menu_items(Array, Object(WP_Term))
+#1 C:\xampp\htdocs\themeboxr\site\wp-includes\plugin.php(208): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\themeboxr\site\wp-includes\nav-menu.php(765): apply_filters('wp_get_nav_menu...', Array, Object(WP_Term), Array)
+#3 C:\xampp\htdocs\themeboxr\site\wp-includes\nav-menu-template.php(140): wp_get_nav_menu_items(Object(WP_Term), Array)
+#4 C:\xampp\htdocs\themeboxr\site\wp-content\themes\downloadclub\header.php(67): wp_nav_menu(Object(stdClass))
+#5 C:\xampp\htdocs\themeboxr\site\wp-includes\template.php(722): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\themeboxr\site\wp-includes\template.php(671): load_template('C:\\xampp\\htdocs...', true)
+#7 C:\xampp\htdocs\themeboxr\site\wp-includ in C:\xampp\htdocs\themeboxr\site\wp-content\themes\downloadclub\inc\woocommerce.php on line 486
+
+2019-07-25T13:41:09+00:00 CRITICAL Uncaught Error: Call to undefined function themeboxr_custom_nav_menu_item() in C:\xampp\htdocs\themeboxr\site\wp-content\themes\downloadclub\inc\woocommerce.php:486
+Stack trace:
+#0 C:\xampp\htdocs\themeboxr\site\wp-includes\class-wp-hook.php(288): downloadclub_custom_nav_menu_items(Array, Object(WP_Term))
+#1 C:\xampp\htdocs\themeboxr\site\wp-includes\plugin.php(208): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\themeboxr\site\wp-includes\nav-menu.php(765): apply_filters('wp_get_nav_menu...', Array, Object(WP_Term), Array)
+#3 C:\xampp\htdocs\themeboxr\site\wp-includes\nav-menu-template.php(140): wp_get_nav_menu_items(Object(WP_Term), Array)
+#4 C:\xampp\htdocs\themeboxr\site\wp-content\themes\downloadclub\header.php(67): wp_nav_menu(Object(stdClass))
+#5 C:\xampp\htdocs\themeboxr\site\wp-includes\template.php(722): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\themeboxr\site\wp-includes\template.php(671): load_template('C:\\xampp\\htdocs...', true)
+#7 C:\xampp\htdocs\themeboxr\site\wp-includ in C:\xampp\htdocs\themeboxr\site\wp-content\themes\downloadclub\inc\woocommerce.php on line 486
+

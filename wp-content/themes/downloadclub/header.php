@@ -16,7 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Roboto:300,400,400i,500,700" rel="stylesheet" />
 	<?php wp_head(); ?>
 </head>
 
@@ -63,8 +63,10 @@
 								'container_class' => 'collapse navbar-collapse',
 								'container_id'    => 'navMain',
 								'menu_class'      => 'nav navbar-nav ml-auto',
-								'fallback_cb'     => 'Downloadclub_Bootstrap_Navwalker::fallback',
-								'walker'          => new Downloadclub_Bootstrap_Navwalker()
+								//'fallback_cb'     => 'Downloadclub_Bootstrap_Navwalker::fallback',
+								//'walker'          => new Downloadclub_Bootstrap_Navwalker(),
+								'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+								'walker'          => new WP_Bootstrap_Navwalker()
 							) );
 						?>
 					</div>

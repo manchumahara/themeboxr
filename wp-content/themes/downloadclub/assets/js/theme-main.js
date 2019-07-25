@@ -29,6 +29,68 @@
     }
 
     $(document).ready(function ($) {
+        var $windowhash 		= window.location.hash;
+        if($windowhash != ''){
+            $(window).stop(true);
+            $.smoothScroll(
+                {
+                    scrollTarget: $windowhash,
+                    speed : 2000,
+                    offset: -70,
+                    afterScroll  : function (settings) {
+                        //console.log(settings);
+                    }
+                }
+            );
+        }
+
+
+        $('.gotome').on('click', function (e) {
+            e.preventDefault();
+
+            var $this = $(this);
+            var $target = $this.attr('href');
+
+            $.smoothScroll(
+                {
+                    scrollTarget: $target,
+                    speed : 2000,
+                    offset: -70,
+                    afterScroll  : function (settings) {
+                        //console.log(settings);
+                    }
+
+                }
+            );
+
+        });
+
+        /*$( '.dropdown-menu a.dropdown-toggle' ).on( 'click', function ( e ) {
+            var $el = $( this );
+            $el.toggleClass('active-dropdown');
+            var $parent = $( this ).offsetParent( ".dropdown-menu" );
+            if ( !$( this ).next().hasClass( 'show' ) ) {
+                $( this ).parents( '.dropdown-menu' ).first().find( '.show' ).removeClass( "show" );
+            }
+            var $subMenu = $( this ).next( ".dropdown-menu" );
+            $subMenu.toggleClass( 'show' );
+
+            $( this ).parent( "li" ).toggleClass( 'show' );
+
+            $( this ).parents( 'li.nav-item.dropdown.show' ).on( 'hidden.bs.dropdown', function ( e ) {
+                $( '.dropdown-menu .show' ).removeClass( "show" );
+                $el.removeClass('active-dropdown');
+            } );
+
+            if ( !$parent.parent().hasClass( 'navbar-nav' ) ) {
+                $el.next().css( { "top": $el[0].offsetTop, "left": $parent.outerWidth() - 4 } );
+            }
+
+            return false;
+        } );*/
+
+
+
         $('.woocommerce-products-header').remove();
         $('.woocommerce-products-wrapper').each(function (index, element) {
            var $element = $(element);
@@ -57,6 +119,7 @@
         $('.col2-set').addClass('row');
         $('.col-1').addClass('col-md-6 col-sm-12');
         $('.col-2').addClass('col-md-6 col-sm-12');
+        $('.add_to_cart_inline').attr('style', '');
 
 
         var is_admin_bar_showing = 0;

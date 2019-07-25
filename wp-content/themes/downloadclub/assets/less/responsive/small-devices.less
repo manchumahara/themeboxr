@@ -13,7 +13,7 @@
 
     .banner-content-wrap {
       .btn-brand {
-        margin: 20px 0 0;
+        //margin: 20px 0 0;
       }
     }
   }
@@ -23,8 +23,8 @@
       padding: 10px 0;
       .filter-navbar {
         ul {
-          justify-content: center;
-          flex-wrap: wrap;
+          //justify-content: center;
+          //flex-wrap: wrap;
           li {
             .font-size(12);
             padding: 5px 10px;
@@ -104,6 +104,32 @@
         position: static;
         height: 350px;
         width: 100%;
+      }
+    }
+  }
+
+  .js-offcanvas {
+
+    .offcanvaswrap {
+      #menu-main-menu {
+        li{
+          ul.dropdown-menu{
+            position: static !important;
+            transform: none !important;
+            background: transparent;
+            li{
+              a{
+                color: @white;
+                .font-weight(400);
+                .font-size(16);
+                &:hover {
+                  color: @white;
+                  background: transparent;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

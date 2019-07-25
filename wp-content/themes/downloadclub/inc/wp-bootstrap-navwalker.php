@@ -7,6 +7,10 @@
 		die( 'Direct access is forbidden.' );
 	}
 
+	if ( ! defined( 'BS_DROPDOWN_MANUAL_DEPTH' ) ) {
+		define('BS_DROPDOWN_MANUAL_DEPTH', 1);
+	}
+
 	/**
 	 * Class Name: WP_Bootstrap_Navwalker
 	 * Plugin Name: WP Bootstrap4 Navwalker
@@ -43,6 +47,9 @@
 			 */
 			private $dropdown = false;
 
+			//public const BS_MAX_DEPTH = 2;
+			//public const BS_DROPDOWN_MANUAL_DEPTH = 1;
+
 			/**
 			 * Starts the list before the elements are added.
 			 *
@@ -54,7 +61,7 @@
 			 * @param int      $depth  Depth of menu item. Used for padding.
 			 * @param stdClass $args   An object of wp_nav_menu() arguments.
 			 */
-			public function start_lvl( &$output, $depth = 0, $args = array() ) {
+			/*public function start_lvl( &$output, $depth = 0, $args = array() ) {
 				if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
 					$t = '';
 					$n = '';
@@ -65,6 +72,23 @@
 
 				$this->dropdown = true;
 				$output         .= $n . str_repeat( $t, $depth ) . '<div class="dropdown-menu" role="menu">' . $n;
+			}*/
+			public function start_lvl( &$output, $depth = 0, $args = array() ) {
+				if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+					$t = '';
+					$n = '';
+				} else {
+					$t = "\t";
+					$n = "\n";
+				}
+
+				//if ($depth >= BS_DROPDOWN_MANUAL_DEPTH) {
+					$output         .= $n . str_repeat( $t, $depth ) . '<ul class="dropdown-menu" role="menu">' . $n;
+				//}
+				/*else {
+					$this->dropdown = true;
+					$output         .= $n . str_repeat( $t, $depth ) . '<div class="dropdown-menu" role="menu">' . $n;
+				}*/
 			}
 
 			/**
@@ -78,7 +102,7 @@
 			 * @param int      $depth  Depth of menu item. Used for padding.
 			 * @param stdClass $args   An object of wp_nav_menu() arguments.
 			 */
-			public function end_lvl( &$output, $depth = 0, $args = array() ) {
+			/*public function end_lvl( &$output, $depth = 0, $args = array() ) {
 				if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
 					$t = '';
 					$n = '';
@@ -89,6 +113,23 @@
 
 				$this->dropdown = false;
 				$output         .= $n . str_repeat( $t, $depth ) . '</div>' . $n;
+			}*/
+			public function end_lvl( &$output, $depth = 0, $args = array() ) {
+				if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+					$t = '';
+					$n = '';
+				} else {
+					$t = "\t";
+					$n = "\n";
+				}
+
+				//if ($depth >= BS_DROPDOWN_MANUAL_DEPTH) {
+					$output         .= $n . str_repeat( $t, $depth ) . '</ul>' . $n;
+				//}
+				/*else {
+					$this->dropdown = false;
+					$output         .= $n . str_repeat( $t, $depth ) . '</div>' . $n;
+				}*/
 			}
 
 			/**

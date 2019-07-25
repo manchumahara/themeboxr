@@ -25,8 +25,8 @@ if(class_exists('CBXThemeinfoHelper')){
 					<?php endif; ?>
 
                     <div class="brand-btn-group">
-                        <a href="#" class="btn btn-brand btn-green">$<?php echo $price; ?></a>
-                        <a href="#" class="btn btn-brand"><?php esc_html_e('Buy Now', 'downloadclub'); ?></a>
+                        <a href="#downloadarea" class="gotome btn btn-brand btn-green">$<?php echo $price; ?></a>
+                        <a href="#downloadarea" class="gotome btn btn-brand"><?php esc_html_e('Buy Now', 'downloadclub'); ?></a>
                         <a target="_blank" href="<?php echo $demo_url; ?>" class="btn btn-brand btn-brand-rev">Live Demo</a>
                     </div>
                 </div>

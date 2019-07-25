@@ -427,3 +427,119 @@ if ( ! function_exists( 'downloadclub_woocommerce_header_cart' ) ) {
 		}
 		return $classes;
 	}
+
+	add_action( 'admin_menu', 'downloadclub_thismonth_reports_menu', 20 );
+
+	/**
+	 * Add monthly sales report
+	 */
+	function downloadclub_thismonth_reports_menu() {
+		if ( current_user_can( 'manage_woocommerce' ) ) {
+			global $submenu;
+			$permalink              = admin_url( 'admin.php?page=wc-reports&range=month' );
+			$submenu['index.php'][] = array( 'Monthly Sales', 'manage_woocommerce', $permalink );
+		}
+	}
+
+	add_filter( 'wp_get_nav_menu_items', 'downloadclub_custom_nav_menu_items', 20, 2 );
+
+	function downloadclub_custom_nav_menu_items( $items, $menu ) {
+
+
+		if ( $menu->slug == 'main-menu' && ! is_admin() ) {
+
+			$checkout_url       = '';
+			$cart_url           = '';
+			$logout_url         = '';
+			$myaccount_edit_url = '';
+			$myaccount_page_url = '';
+			$my_download_url    = '';
+
+
+			if ( class_exists( 'WooCommerce' ) ) {
+				global $woocommerce;
+
+				$checkout_url = wc_get_checkout_url();
+
+				$cart_url        = wc_get_cart_url();
+				$my_download_url = wc_get_account_endpoint_url( get_option( 'woocommerce_myaccount_downloads_endpoint', 'downloads' ) );
+			}
+
+			$myaccount_page_id = get_option( 'woocommerce_myaccount_page_id' );
+
+			if ( $myaccount_page_id ) {
+
+				$logout_url = wp_logout_url( get_permalink( $myaccount_page_id ) );
+
+				if ( get_option( 'woocommerce_force_ssl_checkout' ) == 'yes' ) {
+					$logout_url = str_replace( 'http:', 'https:', $logout_url );
+				}
+			}
+			$myaccount_page_url = get_permalink( $myaccount_page_id );
+
+
+			if ( function_exists( 'wc_customer_edit_account_url' ) ) {
+				$myaccount_edit_url = wc_customer_edit_account_url();
+			}
+
+
+			$top = downloadclub_custom_nav_menu_item( esc_html__( 'Account', 'downloadclub' ), '#', 100 );
+
+			$items[] = $top;
+
+			if ( is_user_logged_in() ) {
+				$items[] = downloadclub_custom_nav_menu_item( esc_html__( 'My Account', 'downloadclub' ), esc_url( $myaccount_page_url ), 101, $top->ID );
+				$items[] = downloadclub_custom_nav_menu_item( esc_html__( 'My Downloads', 'downloadclub' ), esc_url( $my_download_url ), 102, $top->ID );
+				$items[] = downloadclub_custom_nav_menu_item( esc_html__( 'Edit Account', 'downloadclub' ), esc_url( $myaccount_edit_url ), 103, $top->ID );
+				$items[] = downloadclub_custom_nav_menu_item( esc_html__( 'Checkout Page', 'downloadclub' ), $checkout_url, 104, $top->ID );
+				$items[] = downloadclub_custom_nav_menu_item( esc_html__( 'Cart Page', 'downloadclub' ), $cart_url, 105, $top->ID );
+				$items[] = downloadclub_custom_nav_menu_item( esc_html__( 'Log Out', 'downloadclub' ), esc_url( $logout_url ), 106, $top->ID );
+			} else {
+
+				$login_url    = get_permalink( get_option( 'woocommerce_myaccount_page_id' ) );
+				$lostpass_url = wc_lostpassword_url();
+
+				$items[] = downloadclub_custom_nav_menu_item( esc_html__( 'Login', 'downloadclub' ), esc_url( $login_url ), 101, $top->ID );
+				$items[] = downloadclub_custom_nav_menu_item( esc_html__( 'Lost your password?', 'downloadclub' ), esc_url( $lostpass_url ), 103, $top->ID );
+				$items[] = downloadclub_custom_nav_menu_item( esc_html__( 'Checkout Page', 'downloadclub' ), $checkout_url, 104, $top->ID );
+				$items[] = downloadclub_custom_nav_menu_item( esc_html__( 'Cart Page', 'downloadclub' ), $cart_url, 105, $top->ID );
+
+			}
+
+		}
+
+		return $items;
+	}
+	
+	/**
+	 * Simple helper function for make menu item objects
+	 *
+	 * @param     $title  - menu item title
+	 * @param     $url    - menu item url
+	 * @param     $order  - where the item should appear in the menu
+	 * @param int $parent - the item's parent item
+	 *
+	 * @return \stdClass
+	 */
+	function downloadclub_custom_nav_menu_item( $title, $url, $order, $parent = 0 ) {
+		$item                   = new stdClass();
+		$item->ID               = 1000000 + $order + $parent;
+		$item->db_id            = $item->ID;
+		$item->title            = $title;
+		$item->url              = $url;
+		$item->menu_order       = $order;
+		$item->menu_item_parent = $parent;
+		$item->type             = '';
+		$item->object           = '';
+		$item->object_id        = '';
+		$item->classes          = array();
+		$item->target           = '';
+		$item->attr_title       = '';
+		$item->description      = '';
+		$item->xfn              = '';
+		$item->status           = '';
+		$item->post_excerpt     = '';
+		$item->type_label       = '';
+
+		return $item;
+	}
