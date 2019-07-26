@@ -42,6 +42,7 @@
 							<p>Themeboxr creates useful themes as PSD, Html and WordPress. Themeboxr is
 								<a href="https://codeboxr.com/" target="_blank">Codeboxr</a>'s initiative. Follow us on social media to keep connected for updates.
 							</p>
+                            <p>Address: Apartment 6H, Dilara Tower, 77 Bir Uttam C.R. Dutta Road, Dhaka 1205, Bangladesh </p>
 							<div class="social-icons">
 								<a href="https://twitter.com/themeboxr" target="_blank" rel="external"><i class="fa fa-twitter"></i></a>
 								<a href="https://facebook.com/codeboxr" target="_blank"><i class="fa fa-facebook"></i></a>

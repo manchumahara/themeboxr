@@ -855,20 +855,22 @@ table.shop_table_responsive tr td.download-actions .button {
 /**
  * Checkout
  */
-@media screen and (min-width: 768px) {
+/*@media screen and (min-width: 768px) {
   .col2-set .form-row-first {
     float: left !important;
     margin-right: 3.8% !important;
   }
+
   .col2-set .form-row-last {
     float: right !important;
     margin-right: 0 !important;
   }
+
   .col2-set .form-row-first,
   .col2-set .form-row-last {
     width: 48.1% !important;
   }
-}
+}*/
 /**
  * General WooCommerce components
  */
@@ -1047,8 +1049,8 @@ p.no-comments {
 }
 @media screen and (min-width: 48em) {
   /**
-	 * Header cart
-	 */
+   * Header cart
+   */
   .site-header-cart .widget_shopping_cart {
     position: absolute;
     top: 100%;
@@ -1577,6 +1579,11 @@ ul {
 .woocommerce-Price-amount.amount {
   margin-right: 5px;
 }
+.form-control {
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
 /*--== Hedaer Area Start ==--*/
 #header-area {
   padding: 30px 0;
@@ -1667,6 +1674,7 @@ ul {
   box-shadow: 0 1px 3px rgba(50, 50, 50, 0.4);
 }
 .js-offcanvas .offcanvaswrap .js-offcanvas-header .js-offcanvas-close {
+  color: #fff;
   margin-top: 0px;
   float: right;
   display: inline-block;
@@ -1696,6 +1704,14 @@ ul {
 }
 .js-offcanvas .offcanvaswrap .js-offcanvas-section {
   margin-bottom: 10px;
+  color: #fff;
+}
+.js-offcanvas .offcanvaswrap .js-offcanvas-section h2 {
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #fff;
 }
 .js-offcanvas .offcanvaswrap .offcanvaswrap_menus {
   background: #000;
@@ -2491,35 +2507,8 @@ ul {
 .product-description .product-description-wrap {
   position: relative;
 }
-.product-description .product-description-wrap:after {
-  background-size: 100% 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  content: '';
-  display: block;
-  left: 0;
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 50%;
-}
-.product-description .product-description-wrap.pro-img-1:after {
-  background-image: url('../images/pro-desc-1.png');
-}
-.product-description .product-description-wrap.pro-img-2:after {
-  background-image: url('../images/pro-desc-2.png');
-  right: 0;
-  left: auto;
-}
-.product-description .product-description-wrap.pro-img-3:after {
-  background-image: url('../images/pro-desc-3.png');
-  background-size: contain;
-}
-.product-description .product-description-wrap.pro-img-4:after {
-  background-image: url('../images/pro-desc-4.png');
-  background-size: contain;
-  right: 0;
-  left: auto;
+.product-description .product-description-wrap .zebra-img {
+  margin: 30px 0;
 }
 .description-content {
   font-size: 16px;

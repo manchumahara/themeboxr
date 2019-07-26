@@ -86,6 +86,12 @@
 			<div class="clearfix"></div>
 		</div>
 		<div class="js-offcanvas-body">
+            <?php if(function_exists('woocommerce_mini_cart')): ?>
+            <div class="js-offcanvas-section">
+                <h2>Cart</h2>
+                <?php woocommerce_mini_cart(); ?>
+            </div>
+            <?php endif; ?>
 			<div class="js-offcanvas-section">
 				<div class="offcanvaswrap_menus">
 				</div>
