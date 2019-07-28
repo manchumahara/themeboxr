@@ -1,4 +1,4 @@
-.products-header-wrap{
+.products-header-wrap {
   background-image: url("../images/banner-bg.jpg");
   background-size: cover;
   background-position: center center;
@@ -31,57 +31,57 @@
     z-index: -1;
   }
 
-  .product-header-content{
+  .product-header-content {
     .font-size(16);
 
-    h2, h1.h2{
+    h2, h1.h2 {
       color: @white;
       margin-bottom: 17px;
     }
 
-    p{
+    p {
       max-width: 60%;
       margin: auto;
     }
 
-    .brand-btn-group{
+    .brand-btn-group {
       margin-top: 36px;
 
-      .btn-brand{
+      .btn-brand {
         .box-shadow(5px 19px 40px 0px rgba(0, 0, 0, 0.5));
         padding: 15px 40px;
         margin-right: 20px;
         .transition(0.4s);
 
-        &:hover{
+        &:hover {
           background-color: @black-soft;
         }
 
-        &:last-child{
+        &:last-child {
           margin-right: 0;
         }
       }
     }
   }
 
-  .product-thumbnail-carousel{
+  .product-thumbnail-carousel {
     margin-top: 80px;
 
-    .owl-stage-outer{
+    .owl-stage-outer {
       padding-top: 90px;
 
-      .owl-item{
-        .single-thumbnail-product{
+      .owl-item {
+        .single-thumbnail-product {
           position: relative;
 
-          img{
+          img {
             .border-radius(10px 10px 0 0);
           }
         }
 
-        &.center{
+        &.center {
           z-index: 2;
-          .single-thumbnail-product{
+          .single-thumbnail-product {
             .transform(scale(1.6));
           }
         }
@@ -90,21 +90,21 @@
   }
 }
 
-.single-product-info{
+.single-product-info {
   background-color: @brand-color;
   color: @white;
   padding: 25px 0;
 
-  .product-information{
+  .product-information {
     justify-content: space-between;
 
-    .information-item{
+    .information-item {
       text-align: center;
-      p{
+      p {
         margin-bottom: 3px;
       }
 
-      strong{
+      strong {
         .font-size(16);
         line-height: 1.2;
       }
@@ -112,58 +112,20 @@
   }
 }
 
-.product-description{
-  &.colored{
+.product-description {
+  &.colored {
     background-color: @section-bg;
   }
-  .product-description-wrap{
+  .product-description-wrap {
     position: relative;
-    &:after{
-      background-size: 100% 100%;
-      background-position: center center;
-      background-repeat: no-repeat;
-      content: '';
-      display: block;
-      left: 0;
-      position: absolute;
-      top: 0;
-      height: 100%;
-      width: 50%;
-    }
 
-    &.pro-img-1{
-      &:after{
-        background-image: url('../images/pro-desc-1.png');
-      }
-    }
-
-    &.pro-img-2{
-      &:after{
-        background-image: url('../images/pro-desc-2.png');
-        right: 0;
-        left: auto;
-      }
-    }
-
-    &.pro-img-3{
-      &:after{
-        background-image: url('../images/pro-desc-3.png');
-        background-size: contain;
-      }
-    }
-
-    &.pro-img-4{
-      &:after{
-        background-image: url('../images/pro-desc-4.png');
-        background-size: contain;
-        right: 0;
-        left: auto;
-      }
+    .zebra-img {
+      margin: 30px 0;
     }
   }
 }
 
-.description-content{
+.description-content {
   .font-size(16);
 
   h2 {
@@ -182,32 +144,32 @@
   }
 }
 
-.technology-use-wrap{
+.technology-use-wrap {
   margin-top: -30px;
-  .single-technology{
+  .single-technology {
     .box-shadow(0px 1px 6px 0px rgba(0, 0, 0, 0.1));
     .border-radius(10px);
     padding: 50px;
     margin-top: 30px;
     .transition(0.4s);
 
-    &:hover{
+    &:hover {
       .transform(translateY(-5px));
     }
 
-    .technology-thumb{
+    .technology-thumb {
       height: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
 
-      img{
+      img {
         width: 110px;
         margin: auto;
       }
     }
 
-    h3{
+    h3 {
       margin-bottom: 0;
       margin-top: 20px;
       .font-noline(18);
@@ -216,10 +178,8 @@
   }
 }
 
-
-
-#single-product-page{
-  #we-are-best-area{
+#single-product-page {
+  #we-are-best-area {
     background-color: @section-bg;
   }
 }

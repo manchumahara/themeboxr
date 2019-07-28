@@ -11,83 +11,90 @@
 .js-offcanvas {
 
   .offcanvaswrap {
-	background: @black;
-	padding: 0 0 20px 0;
+    background: @black;
+    padding: 0 0 20px 0;
 
-	.js-offcanvas-header {
-	  border: 0 none;
-	  padding: 10px 15px;
-	  background: @black;
-	  .drop-shadow-color(0, 1px, 3px, rgba(50,50,50,.4));
+    .js-offcanvas-header {
+      border: 0 none;
+      padding: 10px 15px;
+      background: @black;
+      .drop-shadow-color(0, 1px, 3px, rgba(50, 50, 50, .4));
 
-	  .js-offcanvas-close {
-		margin-top: 0px;
-		float: right;
-		display: inline-block;
-		cursor: pointer;
-		.c-button__text{
-		  width: 36px;
-		  height: 36px;
-		  .font-size(36);
-		  line-height: 1;
-		}
-	  }
+      .js-offcanvas-close {
+        color: @white;
+        margin-top: 0px;
+        float: right;
+        display: inline-block;
+        cursor: pointer;
+        .c-button__text {
+          width: 36px;
+          height: 36px;
+          .font-size(36);
+          line-height: 1;
+        }
+      }
 
-	  .offcanvaslogo {
-		//width: 64px;
-		//height: 64px;
-		display: inline-block;
-		max-width: 130px;
-		&:focus {
-		  outline: none;
-		}
-		img {
-		  max-width: 100%;
-		  height: auto;
-		}
-	  }
-	}
+      .offcanvaslogo {
+        //width: 64px;
+        //height: 64px;
+        display: inline-block;
+        max-width: 130px;
+        &:focus {
+          outline: none;
+        }
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
 
-	.js-offcanvas-body{
-	  padding: 15px;
-	}
+    .js-offcanvas-body {
+      padding: 15px;
+    }
 
-	.js-offcanvas-section{
-	  margin-bottom: 10px;
-	}
+    .js-offcanvas-section {
+      margin-bottom: 10px;
+      color: @white;
+      h2{
+        .font-size(24);
+        font-weight: 700;
+        color: @white;
+      }
+    }
 
-	.offcanvaswrap_menus {
-	  background: @black;
-	  color: @white;
-	  //padding: 15px;
-	  #menu-main-menu {
-		padding: 0px;
-		margin: 0px;
-		margin-bottom: 20px;
-		li {
-		  a {
-			display: block;
-			padding: 5px;
+    .offcanvaswrap_menus {
+      background: @black;
+      color: @white;
+      //padding: 15px;
+      #menu-main-menu {
+        padding: 0px;
+        margin: 0px;
+        margin-bottom: 20px;
+        li {
+          a {
+            display: block;
+            padding: 5px;
 
-			border-bottom: 1px solid @white;
-			.font-size(19);
-			//color: @black;
-			.caret{
-			  float: right;
-			  margin-right: 10px;
-			  margin-top: 10px;
-			}
+            border-bottom: 1px solid @white;
+            .font-size(19);
+            //color: @black;
+            .caret {
+              float: right;
+              margin-right: 10px;
+              margin-top: 10px;
+            }
 
-			&:hover{
-			  //color: @black;
-			}
-		  }
-		  a:visited {
-			//color: @black;
-		  }
-		}
-	  }
-	}
+            &:hover {
+              //color: @black;
+            }
+          }
+          a:visited {
+            //color: @black;
+          }
+        }
+      }
+    }
   }
 
 }
