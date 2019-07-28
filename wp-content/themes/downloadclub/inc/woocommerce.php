@@ -543,3 +543,30 @@ if ( ! function_exists( 'downloadclub_woocommerce_header_cart' ) ) {
 
 		return $item;
 	}
+
+	add_filter('woocommerce_product_get_image', 'downloadclub_woocommerce_product_get_image', 10, 6);
+
+	function downloadclub_woocommerce_product_get_image($image, $wc_product_obj, $size, $attr, $placeholder, $image2){
+
+		if ( $wc_product_obj->get_image_id() ) {
+			$product_id = $wc_product_obj->get_id();
+
+			$content_url         = content_url();
+			$thumb_url = '';
+
+			if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $product_id . '-profile.png' ) ) {
+				$thumb_url = $content_url . '/uploads/productshots/' . $product_id . '-profile.png';
+			}
+			else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $product_id . '-profile.jpg' ) ) {
+				$thumb_url = $content_url . '/uploads/productshots/' . $product_id . '-profile.jpg';
+			}
+
+			if($thumb_url != ''){
+				$image = '<img  src="'.esc_url($thumb_url).'" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" />';
+			}
+
+		}
+
+		return $image;
+
+	}

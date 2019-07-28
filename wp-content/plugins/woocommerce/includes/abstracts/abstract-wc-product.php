@@ -1841,6 +1841,7 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 			}
 		}
 
+
 		if ( ! $image && $placeholder ) {
 			$image = wc_placeholder_img( $size );
 		}

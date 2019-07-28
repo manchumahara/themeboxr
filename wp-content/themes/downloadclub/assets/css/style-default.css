@@ -1841,11 +1841,10 @@ ul {
   transform: translateY(-5px);
 }
 #products-area .products-content-wrap #productsContent .single-product-wrap .product-thumb {
-  height: 250px;
   overflow: hidden;
 }
 #products-area .products-content-wrap #productsContent .single-product-wrap .product-thumb img {
-  height: 100%;
+  max-width: 100%;
 }
 #products-area .products-content-wrap #productsContent .single-product-wrap .product-meta {
   padding: 16px 20px 17px;

@@ -113,7 +113,12 @@
 								if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $id . '-profile.png' ) ) {
 									$thumburl = $content_url . '/uploads/productshots/' . $id . '-profile.png';
 
-								} else if ( has_post_thumbnail() ) {
+								}
+								else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $id . '-profile.jpg' ) ) {
+									$thumburl = $content_url . '/uploads/productshots/' . $id . '-profile.jpg';
+
+								}
+								else if ( has_post_thumbnail() ) {
 
 									$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'medium' );
 									$thumburl        = isset( $large_image_url[0] ) ? $large_image_url[0] : '';
