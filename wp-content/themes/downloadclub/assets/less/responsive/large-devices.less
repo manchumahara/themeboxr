@@ -73,6 +73,8 @@
       }
     }
   }
+
+
 }
 
 //end media quaries
@@ -96,6 +98,35 @@
       width: 100%;
     }
   }
+}
+
+/*Extra Large Devices (Desktops, 992px and up) */
+@media only screen and (max-width: 1400px) {
+  .js-offcanvas {
+
+    .offcanvaswrap {
+      #menu-main-menu {
+        li {
+          ul.dropdown-menu {
+            position: static !important;
+            transform: none !important;
+            background: transparent;
+            li {
+              a {
+                color: @white;
+                .font-weight(400);
+                .font-size(16);
+                &:hover {
+                  color: @white;
+                  background: transparent;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }//end .js-offcanvas
 }
 
 //end media quaries

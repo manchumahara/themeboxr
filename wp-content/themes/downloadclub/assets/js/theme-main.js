@@ -101,7 +101,7 @@
 			    var $class = $(element).attr('class');
 
 			    //col-md-4 col-sm-6 col-xs-12
-				$(element).wrap('<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><div class="'+$class+'"></div></div>').contents().unwrap();
+				$(element).wrap('<div class="col-md-4 col-sm-6 col-xs-12"><div class="'+$class+'"></div></div>').contents().unwrap();
 			});
 
 
@@ -117,11 +117,12 @@
 
 
 		$('.add_to_cart_button').addClass('btn btn-default-brand');
-        $('.add_to_cart_inline').attr('style', '');
+		$('.wpcf7-form-control.wpcf7-submit').addClass('btn btn-block');
+        //$('.add_to_cart_inline').attr('style', '');
 
-        $('.col2-set').addClass('row').removeClass('col2-set');
-        $('.col-1').addClass('col-md-6 col-sm-12').removeClass('col-1');
-        $('.col-2').addClass('col-md-6 col-sm-12').removeClass('col-2');
+        //$('.col2-set').addClass('row').removeClass('col2-set');
+        //$('.col-1').addClass('col-md-6 col-sm-12').removeClass('col-1');
+        //$('.col-2').addClass('col-md-6 col-sm-12').removeClass('col-2');
 
 
         var is_admin_bar_showing = 0;

@@ -11762,6 +11762,13 @@ p.no-comments {
 #place_order {
   width: 100%;
 }
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea {
+  padding: 3px 10px;
+}
+.add_to_cart_inline {
+  border: 0 none !important;
+}
 /* importing mixing and variables */
 html {
   font-size: 62.5%;
@@ -12179,8 +12186,8 @@ ul {
   margin-right: 5px;
 }
 .form-control {
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 1.5;
 }
 /*--== Hedaer Area Start ==--*/
@@ -12306,10 +12313,10 @@ ul {
   color: #fff;
 }
 .js-offcanvas .offcanvaswrap .js-offcanvas-section h2 {
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.5;
-  font-weight: 700;
+  font-weight: 500;
   color: #fff;
 }
 .js-offcanvas .offcanvaswrap .offcanvaswrap_menus {
@@ -13048,6 +13055,7 @@ ul {
 }
 .products-header-wrap .product-header-content .brand-btn-group {
   margin-top: 36px;
+  margin-bottom: 50px;
 }
 .products-header-wrap .product-header-content .brand-btn-group .btn-brand {
   box-shadow: 5px 19px 40px 0px rgba(0, 0, 0, 0.5);
@@ -13225,30 +13233,36 @@ ul {
     height: 350px;
     width: 100%;
   }
-  .js-offcanvas .offcanvaswrap #menu-main-menu li ul.dropdown-menu {
-    position: static !important;
-    transform: none !important;
-    background: transparent;
-  }
-  .js-offcanvas .offcanvaswrap #menu-main-menu li ul.dropdown-menu li a {
-    color: #fff;
-    font-weight: 400;
-    font-size: 16px;
-    font-size: 1.6rem;
-    line-height: 1.5;
-  }
-  .js-offcanvas .offcanvaswrap #menu-main-menu li ul.dropdown-menu li a:hover {
-    color: #fff;
-    background: transparent;
-  }
+  /*.js-offcanvas {
+
+    .offcanvaswrap {
+      #menu-main-menu {
+        li {
+          ul.dropdown-menu {
+            position: static !important;
+            transform: none !important;
+            background: transparent;
+            li {
+              a {
+                color: @white;
+                .font-weight(400);
+                .font-size(16);
+                &:hover {
+                  color: @white;
+                  background: transparent;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }//end .js-offcanvas*/
 }
 /* Small Devices (Landscape Phones, 576px and up) */
 @media only screen and (min-width: 576px) {
   #banner-area {
     padding-top: 150px;
-  }
-  #banner-area .banner-content-wrap .btn-brand {
-    margin: 20px 0 0;
   }
   #products-area .products-filter-menu .filter-navbar ul {
     justify-content: center;
@@ -13380,5 +13394,24 @@ ul {
     bottom: 0;
     left: 0;
     width: 100%;
+  }
+}
+/*Extra Large Devices (Desktops, 992px and up) */
+@media only screen and (max-width: 1400px) {
+  .js-offcanvas .offcanvaswrap #menu-main-menu li ul.dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    background: transparent;
+  }
+  .js-offcanvas .offcanvaswrap #menu-main-menu li ul.dropdown-menu li a {
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+  .js-offcanvas .offcanvaswrap #menu-main-menu li ul.dropdown-menu li a:hover {
+    color: #fff;
+    background: transparent;
   }
 }

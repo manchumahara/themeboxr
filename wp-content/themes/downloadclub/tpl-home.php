@@ -108,25 +108,25 @@
 								$bloglink  = get_permalink( $id );
 								$content_url         = content_url();
 								$featured_products[] = $id;
-								$thumburl            = '';
+								$thumb_url            = '';
 
 								if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $id . '-profile.png' ) ) {
-									$thumburl = $content_url . '/uploads/productshots/' . $id . '-profile.png';
+									$thumb_url = $content_url . '/uploads/productshots/' . $id . '-profile.png';
 
 								}
 								else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $id . '-profile.jpg' ) ) {
-									$thumburl = $content_url . '/uploads/productshots/' . $id . '-profile.jpg';
+									$thumb_url = $content_url . '/uploads/productshots/' . $id . '-profile.jpg';
 
 								}
 								else if ( has_post_thumbnail() ) {
 
 									$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'medium' );
-									$thumburl        = isset( $large_image_url[0] ) ? $large_image_url[0] : '';
+									$thumb_url        = isset( $large_image_url[0] ) ? $large_image_url[0] : '';
 
 								}
 
-								if($thumburl == ''){
-									$thumburl = get_template_directory_uri() . '/assets/images/default_thumb.png';
+								if($thumb_url == ''){
+									$thumb_url = get_template_directory_uri() . '/assets/images/default_thumb.png';
 
 								}
 
@@ -166,7 +166,7 @@
 									<div class="single-product-wrap ">
 										<figure class="product-thumb">
 											<a href="<?php echo esc_url($bloglink); ?>"><img
-													src="<?php echo esc_url($thumburl); ?>"
+													src="<?php echo esc_url($thumb_url); ?>"
 													alt="Home" class="img-fluid" /></a>
 										</figure>
 
