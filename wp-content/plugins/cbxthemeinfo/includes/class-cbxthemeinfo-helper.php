@@ -32,6 +32,9 @@
 				case 'html':
 					$cms_type_text = esc_html__('Html', 'cbxthemeinfo');
 					break;
+				case 'psd':
+					$cms_type_text = esc_html__('PSD', 'cbxthemeinfo');
+					break;
 				case 'creative':
 					$cms_type_text = esc_html__('Creative', 'cbxthemeinfo');
 					break;

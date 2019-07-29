@@ -42,7 +42,7 @@
 						$i = 1;
 						foreach ( $posts_array as $post ) : setup_postdata( $post );
 
-							$post_id    = $post->ID;
+							$post_id    = $id = $post->ID;
 							$post_title = get_the_title( $post_id );
 							$post_link  = get_permalink( $post_id );
 
@@ -56,15 +56,15 @@
 
 							$thumburl = '';
 
-							if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $post_id . '-profile.png' ) ) {
-								$thumburl = $content_url . '/uploads/productshots/' . $post_id . '-profile.png';
+							if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/'.$id.'/' . $id . '-profile.png' ) ) {
+								$thumburl = $content_url . '/uploads/productshots/'.$id.'/' . $id . '-profile.png';
 							}
-							else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $post_id . '-profile.jpg' ) ) {
-								$thumburl = $content_url . '/uploads/productshots/' . $post_id . '-profile.jpg';
+							else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/'.$id.'/' . $id . '-profile.jpg' ) ) {
+								$thumburl = $content_url . '/uploads/productshots/'.$id.'/' . $id . '-profile.jpg';
 							}
 							else if ( has_post_thumbnail() ) {
 
-								$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'medium' );
+								$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'medium' );
 								$thumburl        = isset( $large_image_url[0] ) ? $large_image_url[0] : '';
 
 							}

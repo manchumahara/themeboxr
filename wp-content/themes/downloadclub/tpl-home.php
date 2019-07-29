@@ -57,6 +57,7 @@
 								<li class="fil-cat current" data-rel="all">Featured</li>
 								<li class="fil-cat" data-rel="wordpress-themes">WordPress</li>
 								<li class="fil-cat" data-rel="html-themes">Html</li>
+								<li class="fil-cat" data-rel="psd-themes">PSD</li>
 							</ul>
 						</nav>
 					</div>
@@ -110,19 +111,16 @@
 								$featured_products[] = $id;
 								$thumb_url            = '';
 
-								if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $id . '-profile.png' ) ) {
-									$thumb_url = $content_url . '/uploads/productshots/' . $id . '-profile.png';
+								if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/'.$id.'/' . $id . '-profile.png' ) ) {
+									$thumb_url = $content_url . '/uploads/productshots/'.$id.'/' . $id . '-profile.png';
 
 								}
-								else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $id . '-profile.jpg' ) ) {
-									$thumb_url = $content_url . '/uploads/productshots/' . $id . '-profile.jpg';
-
+								else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/'.$id.'/' . $id . '-profile.jpg' ) ) {
+									$thumb_url = $content_url . '/uploads/productshots/'.$id.'/' . $id . '-profile.jpg';
 								}
 								else if ( has_post_thumbnail() ) {
-
 									$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'medium' );
 									$thumb_url        = isset( $large_image_url[0] ) ? $large_image_url[0] : '';
-
 								}
 
 								if($thumb_url == ''){

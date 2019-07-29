@@ -549,16 +549,16 @@ if ( ! function_exists( 'downloadclub_woocommerce_header_cart' ) ) {
 	function downloadclub_woocommerce_product_get_image($image, $wc_product_obj, $size, $attr, $placeholder, $image2){
 
 		if ( $wc_product_obj->get_image_id() ) {
-			$product_id = $wc_product_obj->get_id();
+			$id = $wc_product_obj->get_id();
 
 			$content_url         = content_url();
 			$thumb_url = '';
 
-			if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $product_id . '-profile.png' ) ) {
-				$thumb_url = $content_url . '/uploads/productshots/' . $product_id . '-profile.png';
+			if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/'.$id.'/' . $id . '-profile.png' ) ) {
+				$thumb_url = $content_url . '/uploads/productshots/'.$id.'/' . $id . '-profile.png';
 			}
-			else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $product_id . '-profile.jpg' ) ) {
-				$thumb_url = $content_url . '/uploads/productshots/' . $product_id . '-profile.jpg';
+			else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/'.$id.'/' . $id . '-profile.jpg' ) ) {
+				$thumb_url = $content_url . '/uploads/productshots/'.$id.'/' . $id . '-profile.jpg';
 			}
 
 			if($thumb_url != ''){

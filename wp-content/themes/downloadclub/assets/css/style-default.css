@@ -2534,6 +2534,17 @@ ul {
 .description-content .btn-brand:hover {
   background-color: #0a1825;
 }
+.product-screenshots-wrap a {
+  height: 200px;
+  background-size: cover;
+  display: block;
+  margin-bottom: 30px;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.product-screenshots-wrap a:hover {
+  transform: translateY(-5px);
+}
 .technology-use-wrap {
   margin-top: -30px;
 }

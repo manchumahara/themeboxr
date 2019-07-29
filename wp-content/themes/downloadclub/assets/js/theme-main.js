@@ -181,9 +181,9 @@
         });
 
         // 04. Video Popup
-        $('.video-popup').magnificPopup({
+        /*$('.video-popup').magnificPopup({
             type: 'iframe'
-        });
+        });*/
 
         // 05. Owl Carousel testimonial
         $('#testimonialContent').owlCarousel({
@@ -234,6 +234,10 @@
                 }
             }
         });
+
+        $('.venobox').venobox();
+        $('.product-screenshots').find('br').remove();
+
 
     });
 

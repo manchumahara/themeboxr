@@ -1,6 +1,6 @@
 <?php
 	global $post;
-	$product_id   = intval( $post->ID );
+	$product_id   = $id = intval( $post->ID );
 	$cbxthemeinfo = get_post_meta( $product_id, '_cbxthemeinfo', true );
 	$version      = isset( $cbxthemeinfo['version'] ) ? esc_attr( $cbxthemeinfo['version'] ) : '';
 	$price        = isset( $cbxthemeinfo['price'] ) ? intval( $cbxthemeinfo['price'] ) : '';
@@ -12,6 +12,8 @@
 	}
 
 	$sub_title = isset( $cbxthemeinfo['subtitle'] ) ? esc_attr( $cbxthemeinfo['subtitle'] ) : '';
+
+	$demo_show_blank = (filter_var($demo_url, FILTER_VALIDATE_URL) === FALSE)? false: true;
 
 ?>
 <div class="products-header-wrap">
@@ -27,7 +29,7 @@
 					<div class="brand-btn-group">
 						<a href="#downloadarea" class="gotome btn btn-brand btn-green">$<?php echo $price; ?></a>
 						<a href="#downloadarea" class="gotome btn btn-brand"><?php esc_html_e( 'Buy Now', 'downloadclub' ); ?></a>
-						<a target="_blank" href="<?php echo $demo_url; ?>" class="btn btn-brand btn-brand-rev">Live Demo</a>
+						<a <?php echo ($demo_show_blank)? ' target="_blank" ': ''; ?> href="<?php echo $demo_url; ?>" class="btn btn-brand btn-brand-rev <?php echo (!$demo_show_blank)? ' gotome ': ''; ?>">Live Demo</a>
 					</div>
 				</div>
 
@@ -36,11 +38,11 @@
 					/*$content_url         = content_url();
 					$thumb_urls = array();
 
-					if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $product_id . '-profile.png' ) ) {
-						$thumb_urls[] = $content_url . '/uploads/productshots/' . $product_id . '-profile.png';
+					if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/'.$id.'/' . $id . '-profile.png' ) ) {
+						$thumb_urls[] = $content_url . '/uploads/productshots/'.$id.'/' . $id . '-profile.png';
 
-					} else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $product_id . '-profile.jpg' ) ) {
-						$thumb_urls[] = $content_url . '/uploads/productshots/' . $product_id . '-profile.jpg';
+					} else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/'.$id.'/' . $id . '-profile.jpg' ) ) {
+						$thumb_urls[] = $content_url . '/uploads/productshots/'.$id.'/' . $id . '-profile.jpg';
 
 					}
 
@@ -49,11 +51,11 @@
 					for ( $i = 0; $i < 2; $i ++ ) {
 						$thumb_url = '';
 
-						if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $product_id . '-featured.png' ) ) {
-							$thumb_url = $content_url . '/uploads/productshots/' . $product_id . '-featured.png';
+						if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/'.$id.'/' . $id . '-featured.png' ) ) {
+							$thumb_url = $content_url . '/uploads/productshots/'.$id.'/' . $id . '-featured.png';
 
-						} else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/' . $product_id . '-featured.jpg' ) ) {
-							$thumb_url = $content_url . '/uploads/productshots/' . $product_id . '-featured.jpg';
+						} else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/'.$id.'/' . $id . '-featured.jpg' ) ) {
+							$thumb_url = $content_url . '/uploads/productshots/'.$id.'/' . $id . '-featured.jpg';
 
 						}
 

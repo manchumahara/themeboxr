@@ -155,6 +155,9 @@
 							</label><br> <label title='g:i a'> <input
 									type="radio" <?php checked( $cmstype, 'theme', true ) ?>
 									name="cbxthemeinfo[cmstype]" value="theme" /> <span>Theme</span> </label><br>
+							<label title='g:i a'> <input type="radio" <?php checked( $cmstype, 'psd', true ) ?>
+														 name="cbxthemeinfo[cmstype]" value="psd" />
+								<span><?php esc_html_e( 'PSD', 'cbxthemeinfo' ); ?></span> </label><br>
 							<label title='g:i a'> <input type="radio" <?php checked( $cmstype, 'creative', true ) ?>
 														 name="cbxthemeinfo[cmstype]" value="creative" />
 								<span><?php esc_html_e( 'Creative', 'cbxthemeinfo' ); ?></span> </label><br>
