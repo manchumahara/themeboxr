@@ -234,10 +234,10 @@
                 }
             }
         });
+        
 
         $('.venobox').venobox();
         $('.product-screenshots').find('br').remove();
-
 
     });
 
