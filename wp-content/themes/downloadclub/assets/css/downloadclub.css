@@ -12090,7 +12090,7 @@ ul {
 }
 /*--== Banner Area Start ==--*/
 #banner-area {
-  background-image: url("../images/banner-bg.jpg");
+  background-image: url("./images/banner-bg.jpg");
   background-size: cover;
   background-position: center center;
   color: #fff;
@@ -12472,7 +12472,7 @@ ul {
       border-radius: 0;
       border-left: 1px solid @ash-color;
       background-color: transparent;
-      background-image: url('.../images/search-icon.png');
+      background-image: url('../images/search-icon.png');
       background-size: 20px 20px;
       background-position: center center;
       background-repeat: no-repeat;
@@ -12744,7 +12744,7 @@ ul {
 }
 /*== About Page End ==*/
 .products-header-wrap {
-  background-image: url("../images/banner-bg.jpg");
+  background-image: url("./images/banner-bg.jpg");
   background-size: cover;
   background-position: center center;
   color: #fff;
