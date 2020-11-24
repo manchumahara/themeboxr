@@ -68,8 +68,8 @@
 	define( 'CBXWPWRITELOG_EMAIL_SENT', false );
 	define( 'CBXWPWRITELOG_EMAIL_FAILED', false );
 
-	define( 'WP_HOME', 'http://themeboxr.local/' );
-	define( 'WP_SITEURL', 'http://themeboxr.local/' );
+	define( 'WP_HOME', 'http://themeboxr.devops/' );
+	define( 'WP_SITEURL', 'http://themeboxr.devops/' );
 
 	/* That's all, stop editing! Happy blogging. */
 
