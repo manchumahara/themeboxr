@@ -15,6 +15,7 @@ class EU_COOKIES_BAR_Admin_Admin {
 
 	function __construct() {
 		$this->settings = new EU_COOKIES_BAR_Data();
+		add_action( 'init', array( $this, 'init' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'admin_init', array( $this, 'save_settings' ) );
@@ -24,6 +25,25 @@ class EU_COOKIES_BAR_Admin_Admin {
 				'settings_link'
 			)
 		);
+	}
+
+	public function init() {
+		$this->load_plugin_textdomain();
+		if ( class_exists( 'VillaTheme_Support' ) ) {
+			new VillaTheme_Support(
+				array(
+					'support'   => 'https://wordpress.org/support/plugin/eu-cookies-bar/',
+					'docs'      => 'http://docs.villatheme.com/?item=eu-cookies-bar',
+					'review'    => 'https://wordpress.org/support/plugin/eu-cookies-bar/reviews/?rate=5#rate-response',
+					'pro_url'   => '',
+					'css'       => EU_COOKIES_BAR_CSS,
+					'image'     => EU_COOKIES_BAR_IMAGES,
+					'slug'      => 'eu-cookies-bar',
+					'menu_slug' => 'eu-cookies-bar',
+					'version'   => EU_COOKIES_BAR_VERSION
+				)
+			);
+		}
 	}
 
 	public function settings_link( $links ) {
@@ -668,15 +688,27 @@ class EU_COOKIES_BAR_Admin_Admin {
 		$page = isset( $_REQUEST['page'] ) ? $_REQUEST['page'] : '';
 		if ( $page == 'eu-cookies-bar' ) {
 			global $wp_scripts;
+			if ( isset( $wp_scripts->registered['jquery-ui-accordion'] ) ) {
+				unset( $wp_scripts->registered['jquery-ui-accordion'] );
+				wp_dequeue_script( 'jquery-ui-accordion' );
+			}
+			if ( isset( $wp_scripts->registered['accordion'] ) ) {
+				unset( $wp_scripts->registered['accordion'] );
+				wp_dequeue_script( 'accordion' );
+			}
 			$scripts = $wp_scripts->registered;
-			//			print_r($scripts);
 			foreach ( $scripts as $k => $script ) {
-				preg_match( '/^\/wp-/i', $script->src, $result );
-				if ( count( array_filter( $result ) ) < 1 ) {
+				preg_match( '/select2/i', $k, $result );
+				if ( count( array_filter( $result ) ) ) {
+					unset( $wp_scripts->registered[ $k ] );
+					wp_dequeue_script( $script->handle );
+				}
+				preg_match( '/bootstrap/i', $k, $result );
+				if ( count( array_filter( $result ) ) ) {
+					unset( $wp_scripts->registered[ $k ] );
 					wp_dequeue_script( $script->handle );
 				}
 			}
-
 			/*Stylesheet*/
 			wp_enqueue_style( 'eu-cookies-bar-semantic', EU_COOKIES_BAR_CSS . 'semantic.min.css' );
 			wp_enqueue_style( 'eu-cookies-bar-admin-css', EU_COOKIES_BAR_CSS . 'eu-cookies-bar-admin.css' );
@@ -759,8 +791,6 @@ class EU_COOKIES_BAR_Admin_Admin {
 			);
 
 		}
-
-
 	}
 
 	/**
@@ -773,5 +803,3 @@ class EU_COOKIES_BAR_Admin_Admin {
 		load_plugin_textdomain( 'eu-cookies-bar', false, EU_COOKIES_BAR_LANGUAGES );
 	}
 }
-
-?>

@@ -7,9 +7,11 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 
 	/**
 	 * Class VillaTheme_Support
-	 * 1.0.5
+	 * 1.0.8
 	 */
 	class VillaTheme_Support {
+		protected $plugin_base_name;
+
 		public function __construct( $data ) {
 			$this->data               = array();
 			$this->data['support']    = $data['support'];
@@ -21,12 +23,14 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 			$this->data['menu_slug']  = $data['menu_slug'];
 			$this->data['version']    = isset( $data['version'] ) ? $data['version'] : '1.0.0';
 			$this->data['pro_url']    = isset( $data['pro_url'] ) ? $data['pro_url'] : '';
+			$this->plugin_base_name   = "{$this->data['slug']}/{$this->data['slug']}.php";
 			add_action( 'villatheme_support_' . $this->data['slug'], array( $this, 'villatheme_support' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'scripts' ) );
 			add_action( 'admin_notices', array( $this, 'review_notice' ) );
 			add_action( 'admin_init', array( $this, 'hide_review_notice' ) );
 			add_action( 'admin_menu', array( $this, 'admin_menu' ), 9999 );
-
+			add_filter( 'plugin_action_links_' . $this->plugin_base_name, array( $this, 'link_to_pro' ) );
+			add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
 			/*Admin notices*/
 			if ( ! get_transient( 'villatheme_call' ) || get_transient( 'villatheme_call' ) == $this->data['slug'] ) {
 				set_transient( 'villatheme_call', $this->data['slug'], 86400 );
@@ -38,6 +42,73 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 				/*Admin dashboard*/
 				add_action( 'wp_dashboard_setup', array( $this, 'dashboard' ) );
 			}
+		}
+
+		/**Add link to Documentation, Support and Reviews
+		 *
+		 * @param $links
+		 * @param $file
+		 *
+		 * @return array
+		 */
+		public function plugin_row_meta( $links, $file ) {
+			if ( $this->plugin_base_name === $file ) {
+				$row_meta = array(
+					'support' => '<a href="' . $this->data['support'] . '" target="_blank" title="' . esc_attr__( 'VillaTheme Support', $this->data['slug'] ) . '">' . esc_html__( 'Support', $this->data['slug'] ) . '</a>',
+					'review'  => '<a href="' . $this->data['review'] . '" target="_blank" title="' . esc_attr__( 'Rate this plugin', $this->data['slug'] ) . '">' . esc_html__( 'Reviews', $this->data['slug'] ) . '</a>',
+				);
+				if ( ! empty( $this->data['docs'] ) ) {
+					$row_meta['docs'] = '<a href="' . $this->data['docs'] . '" target="_blank" title="' . esc_attr__( 'Plugin Documentation', $this->data['slug'] ) . '">' . esc_html__( 'Docs', $this->data['slug'] ) . '</a>';
+				}
+
+				return array_merge( $links, $row_meta );
+			}
+
+			return (array) $links;
+		}
+
+		/**
+		 * @param $links
+		 *
+		 * @return mixed
+		 */
+		public function link_to_pro( $links ) {
+			if ( ! empty( $this->data['pro_url'] ) ) {
+				$link = '<a class="villatheme-button-upgrade" href="' . $this->data['pro_url'] . '" target="_blank" title="' . esc_attr__( 'Upgrade plugin to premium version', $this->data['slug'] ) . '">' . esc_html__( 'Upgrade', $this->data['slug'] ) . '</a>';
+				array_unshift( $links, $link );
+			}
+
+			return $links;
+		}
+
+		/**wp_remote_get
+		 *
+		 * @param $url
+		 *
+		 * @return array
+		 */
+		public function wp_remote_get( $url ) {
+			$return  = array(
+				'status' => '',
+				'data'   => '',
+			);
+			$request = wp_remote_get(
+				$url,
+				array(
+					'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+					'timeout'    => 1000,
+				)
+			);
+
+			if ( ! is_wp_error( $request ) || wp_remote_retrieve_response_code( $request ) === 200 ) {
+				$return['status'] = 'success';
+				$return['data']   = $request['body'];
+			} else {
+				$return['status'] = 'error';
+				$return['data']   = $request->get_error_message();
+			}
+
+			return $return;
 		}
 
 		/**
@@ -65,16 +136,20 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 		 * @return bool
 		 */
 		public function page_callback() { ?>
-            <div class="villatheme-extension-page">
-                <div class="villatheme-extension-top">
-                    <h2><?php echo esc_html__( 'THE BEST PLUGINS FOR WOOCOMMERCE', $this->data['slug'] ) ?></h2>
-                    <p><?php echo esc_html__( 'Our plugins are constantly updated and thanks to your feedback. We add new features on a daily basis. Try our live demo and start increasing the conversions on your ecommerce right away.', $this->data['slug'] ) ?></p>
-                </div>
-                <div class="villatheme-extension-content">
+			<div class="villatheme-extension-page">
+				<div class="villatheme-extension-top">
+					<h2><?php echo esc_html__( 'THE BEST PLUGINS FOR WOOCOMMERCE', $this->data['slug'] ) ?></h2>
+					<p><?php echo esc_html__( 'Our plugins are constantly updated and thanks to your feedback. We add new features on a daily basis. Try our live demo and start increasing the conversions on your ecommerce right away.', $this->data['slug'] ) ?></p>
+				</div>
+				<div class="villatheme-extension-content villatheme-dashboad">
 					<?php
 					$feeds = get_transient( 'villatheme_ads' );
+					$ads   = '';
 					if ( ! $feeds ) {
-						@$ads = file_get_contents( 'https://villatheme.com/wp-json/info/v1' );
+						$request_data = $this->wp_remote_get( 'https://villatheme.com/wp-json/info/v1' );
+						if ( $request_data['status'] === 'success' ) {
+							$ads = $request_data['data'];
+						}
 						set_transient( 'villatheme_ads', $ads, 86400 );
 					} else {
 						$ads = $feeds;
@@ -88,54 +163,47 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 					if ( is_array( $ads ) && count( $ads ) ) {
 						foreach ( $ads as $ad ) {
 							?>
-                            <div class="villatheme-col-4">
+							<div class="villatheme-col-3">
 								<?php if ( $ad->image ) { ?>
-                                    <div class="villatheme-item-image">
-                                        <img src="<?php echo esc_url( $ad->image ) ?>">
-                                        <div class="villatheme-item-controls">
-                                            <div class="villatheme-item-controls-inner">
-												<?php if ( @$ad->link ) { ?>
-                                                    <a class="villatheme-button villatheme-primary" target="_blank"
-                                                       href="<?php echo esc_url( $ad->link ) ?>"><?php echo esc_html__( 'Download', $this->data['slug'] ) ?></a>
-												<?php }
-												if ( @$ad->demo_url ) { ?>
-                                                    <a class="villatheme-button" target="_blank"
-                                                       href="<?php echo esc_url( $ad->demo_url ) ?>"><?php echo esc_html__( 'Demo', $this->data['slug'] ) ?></a>
-												<?php }
-												if ( @$ad->free_url ) { ?>
-                                                    <a class="villatheme-button" target="_blank"
-                                                       href="<?php echo esc_url( $ad->free_url ) ?>"><?php echo esc_html__( 'Trial', $this->data['slug'] ) ?></a>
-												<?php } ?>
-                                            </div>
-                                        </div>
-                                    </div>
+									<div class="villatheme-item-image">
+										<img src="<?php echo esc_url( $ad->image ) ?>">
+
+									</div>
 								<?php } ?>
 								<?php if ( $ad->title ) { ?>
-                                    <div class="villatheme-item-title">
-                                        <h3>
+									<div class="villatheme-item-title">
+										<?php if ( @$ad->link ) { ?>
+										<a target="_blank"
+										   href="<?php echo esc_url( $ad->link ) ?>">
+											<?php } ?>
+											<?php echo esc_html( $ad->title ) ?>
 											<?php if ( @$ad->link ) { ?>
-                                            <a class="villatheme-primary-color" target="_blank"
-                                               href="<?php echo esc_url( $ad->link ) ?>">
-												<?php } ?>
-												<?php echo esc_html( $ad->title ) ?>
-												<?php if ( @$ad->link ) { ?>
-                                            </a>
-										<?php } ?>
-                                        </h3>
-                                    </div>
-                                    <div class="villatheme-item-rating">
-                                        &#x2606;&#x2606;&#x2606;&#x2606;&#x2606;
-                                    </div>
-								<?php }
-								if ( @$ad->description ) { ?>
-                                    <div class="villatheme-item-description"><?php echo strip_tags( $ad->description ) ?></div>
-								<?php } ?>
+										</a>
+									<?php } ?>
 
-                            </div>
+									</div>
+								<?php } ?>
+								<div class="villatheme-item-controls">
+									<div class="villatheme-item-controls-inner">
+										<?php if ( @$ad->link ) { ?>
+											<a class="button button-primary" target="_blank"
+											   href="<?php echo esc_url( $ad->link ) ?>"><?php echo esc_html__( 'Download', $this->data['slug'] ) ?></a>
+										<?php }
+										if ( @$ad->demo_url ) { ?>
+											<a class="button" target="_blank"
+											   href="<?php echo esc_url( $ad->demo_url ) ?>"><?php echo esc_html__( 'Demo', $this->data['slug'] ) ?></a>
+										<?php }
+										if ( @$ad->free_url ) { ?>
+											<a class="button" target="_blank"
+											   href="<?php echo esc_url( $ad->free_url ) ?>"><?php echo esc_html__( 'Trial', $this->data['slug'] ) ?></a>
+										<?php } ?>
+									</div>
+								</div>
+							</div>
 						<?php }
 					} ?>
-                </div>
-            </div>
+				</div>
+			</div>
 		<?php }
 
 		/**
@@ -146,16 +214,17 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 			if ( ! current_user_can( 'manage_options' ) ) {
 				return;
 			}
-			if ( ! isset( $_GET['_villatheme_nonce'] ) ) {
+			$_villatheme_nonce = isset( $_GET['_villatheme_nonce'] ) ? wp_unslash( sanitize_text_field( $_GET['_villatheme_nonce'] ) ) : '';
+			if ( empty( $_villatheme_nonce ) ) {
 				return;
 			}
-			if ( wp_verify_nonce( $_GET['_villatheme_nonce'], $this->data['slug'] . '_dismiss_notices' ) ) {
+			if ( wp_verify_nonce( $_villatheme_nonce, $this->data['slug'] . '_dismiss_notices' ) ) {
 				update_option( $this->data['slug'] . '_dismiss_notices', 1 );
 			}
-			if ( wp_verify_nonce( $_GET['_villatheme_nonce'], $this->data['slug'] . '_hide_notices' ) ) {
+			if ( wp_verify_nonce( $_villatheme_nonce, $this->data['slug'] . '_hide_notices' ) ) {
 				set_transient( $this->data['slug'] . $this->data['version'] . '_hide_notices', 1, 2592000 );
 			}
-			if ( wp_verify_nonce( $_GET['_villatheme_nonce'], $this->data['slug'] . '_wp_reviewed' ) ) {
+			if ( wp_verify_nonce( $_villatheme_nonce, $this->data['slug'] . '_wp_reviewed' ) ) {
 				set_transient( $this->data['slug'] . $this->data['version'] . '_hide_notices', 1, 2592000 );
 				update_option( $this->data['slug'] . '_wp_reviewed', 1 );
 				ob_start();
@@ -190,33 +259,33 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 			}
 			?>
 
-            <div class="villatheme-dashboard updated" style="border-left: 4px solid #ffba00">
-                <div class="villatheme-content">
-                    <form action="" method="get">
+			<div class="villatheme-dashboard updated" style="border-left: 4px solid #ffba00">
+				<div class="villatheme-content">
+					<form action="" method="get">
 						<?php if ( ! $check_review ) { ?>
-                            <p><?php echo esc_html__( 'Hi there! You\'ve been using ', $this->data['slug'] ) . '<strong>' . $name . '</strong>' . esc_html__( ' on your site for a few days - I hope it\'s been helpful. If you\'re enjoying my plugin, would you mind rating it 5-stars to help spread the word?', $this->data['slug'] ) ?></p>
+							<p><?php echo esc_html__( 'Hi there! You\'ve been using ', $this->data['slug'] ) . '<strong>' . $name . '</strong>' . esc_html__( ' on your site for a few days - I hope it\'s been helpful. If you\'re enjoying my plugin, would you mind rating it 5-stars to help spread the word?', $this->data['slug'] ) ?></p>
 						<?php } else { ?>
-                            <p><?php echo esc_html__( 'Hi there! You\'ve been using ', $this->data['slug'] ) . '<strong>' . $name . '</strong>' . esc_html__( ' on your site for a few days - I hope it\'s been helpful. Would you want get more features?', $this->data['slug'] ) ?></p>
+							<p><?php echo esc_html__( 'Hi there! You\'ve been using ', $this->data['slug'] ) . '<strong>' . $name . '</strong>' . esc_html__( ' on your site for a few days - I hope it\'s been helpful. Would you want get more features?', $this->data['slug'] ) ?></p>
 						<?php } ?>
-                        <p>
-                            <a href="<?php echo esc_url( wp_nonce_url( @add_query_arg(), $this->data['slug'] . '_hide_notices', '_villatheme_nonce' ) ); ?>"
-                               class="button"><?php esc_html_e( 'Thanks, later', $this->data['slug'] ) ?></a>
+						<p>
+							<a href="<?php echo esc_url( wp_nonce_url( @add_query_arg(), $this->data['slug'] . '_hide_notices', '_villatheme_nonce' ) ); ?>"
+							   class="button"><?php esc_html_e( 'Thanks, later', $this->data['slug'] ) ?></a>
 							<?php if ( ! $check_review ) { ?>
-                                <button class="button button-primary"><?php esc_html_e( 'Rate now', $this->data['slug'] ) ?></button>
+								<button class="button button-primary"><?php esc_html_e( 'Rate Now', $this->data['slug'] ) ?></button>
 								<?php wp_nonce_field( $this->data['slug'] . '_wp_reviewed', '_villatheme_nonce' ) ?>
 							<?php } ?>
 							<?php if ( $this->data['pro_url'] ) { ?>
-                                <a target="_blank" href="<?php echo esc_url( $this->data['pro_url'] ); ?>"
-                                   class="button button-primary"><?php esc_html_e( 'Try Premium Version', $this->data['slug'] ) ?></a>
+								<a target="_blank" href="<?php echo esc_url( $this->data['pro_url'] ); ?>"
+								   class="button button-primary"><?php esc_html_e( 'Try Premium Version', $this->data['slug'] ) ?></a>
 							<?php } ?>
-                            <a target="_self"
-                               href="<?php echo esc_url( wp_nonce_url( @add_query_arg(), $this->data['slug'] . '_dismiss_notices', '_villatheme_nonce' ) ); ?>"
-                               class="button notice-dismiss vi-button-dismiss"><?php esc_html_e( 'Dismiss', $this->data['slug'] ) ?></a>
-                        </p>
-                    </form>
-                </div>
+							<a target="_self"
+							   href="<?php echo esc_url( wp_nonce_url( @add_query_arg(), $this->data['slug'] . '_dismiss_notices', '_villatheme_nonce' ) ); ?>"
+							   class="button notice-dismiss vi-button-dismiss"><?php esc_html_e( 'Dismiss', $this->data['slug'] ) ?></a>
+						</p>
+					</form>
+				</div>
 
-            </div>
+			</div>
 		<?php }
 
 		/**
@@ -227,7 +296,7 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 			if ( $hide ) {
 				return;
 			}
-			wp_add_dashboard_widget( 'villatheme_dashboard_status', __( 'VillaTheme Offer', $this->data['slug'] ), array(
+			wp_add_dashboard_widget( 'villatheme_dashboard_status', __( 'VillaTheme News', $this->data['slug'] ), array(
 				$this,
 				'widget'
 			) );
@@ -241,10 +310,16 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 				'link'        => ''
 			);
 			$data    = get_transient( 'villatheme_notices' );
+			$called  = get_transient( 'villatheme_called' );
 
-			if ( ! $data ) {
-				@$data = json_decode( file_get_contents( 'https://villatheme.com/notices.php' ), true );
+			if ( ! $data && ! $called ) {
+				$request_data = $this->wp_remote_get( 'https://villatheme.com/notices.php' );
+				if ( $request_data['status'] === 'success' ) {
+					@$data = json_decode( $request_data['data'], true );
+				}
 				set_transient( 'villatheme_notices', $data, 86400 );
+			} else {
+				set_transient( 'villatheme_called', 1, 86400 );
 			}
 			if ( ! is_array( $data ) ) {
 				return;
@@ -253,31 +328,25 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 			if ( ! $data['heading'] && ! $data['description'] ) {
 				return;
 			} ?>
-            <div class="villatheme-dashboard">
-                <div class="villatheme-content">
+			<div class="villatheme-dashboard">
+				<div class="villatheme-content">
 					<?php if ( $data['heading'] ) { ?>
-                        <div class="villatheme-left">
-							<?php echo $data['heading'] ?>
-                        </div>
+						<h3><?php echo $data['heading'] ?></h3>
 					<?php } ?>
-                    <div class="villatheme-right">
-						<?php if ( $data['description'] ) { ?>
-                            <div class="villatheme-description">
-								<?php echo $data['description']; ?>
-                            </div>
-						<?php } ?>
-                        <div class="villatheme-notification-controls">
-							<?php if ( $data['link'] ) { ?>
-                                <a target="_blank" href="<?php echo esc_url( $data['link'] ) ?>"
-                                   class="villatheme-button villatheme-primary"><?php esc_html_e( 'View', $this->data['slug'] ) ?></a>
-							<?php } ?>
-                            <a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'villatheme-hide-notice', '1' ), 'hide_notices', '_villatheme_nonce' ) ); ?>"
-                               class="villatheme-button"><?php esc_html_e( 'Skip', $this->data['slug'] ) ?></a>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
+					<?php if ( $data['description'] ) { ?>
+						<p><?php echo $data['description'] ?></p>
+					<?php } ?>
+					<p>
+						<?php if ( $data['link'] ) { ?>
+							<a target="_blank" href="<?php echo esc_url( $data['link'] ); ?>"
+							   class="button button-primary"><?php esc_html_e( 'Get Your Gift', $this->data['slug'] ) ?></a>
+						<?php } ?>
+
+					</p>
+				</div>
+
+			</div>
 
 		<?php }
 
@@ -288,11 +357,13 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 			if ( ! current_user_can( 'manage_options' ) ) {
 				return;
 			}
-			if ( ! isset( $_GET['villatheme-hide-notice'] ) && ! isset( $_GET['_villatheme_nonce'] ) ) {
+			$_villatheme_nonce = isset( $_GET['_villatheme_nonce'] ) ? wp_unslash( sanitize_text_field( $_GET['_villatheme_nonce'] ) ) : '';
+			$hide_notice       = isset( $_GET['villatheme-hide-notice'] ) ? wp_unslash( sanitize_text_field( $_GET['villatheme-hide-notice'] ) ) : '';
+			if ( empty( $_villatheme_nonce ) && empty( $hide_notice ) ) {
 				return;
 			}
-			if ( wp_verify_nonce( $_GET['_villatheme_nonce'], 'hide_notices' ) ) {
-				if ( $_GET['villatheme-hide-notice'] == 1 ) {
+			if ( wp_verify_nonce( $_villatheme_nonce, 'hide_notices' ) ) {
+				if ( $hide_notice == 1 ) {
 					set_transient( 'villatheme_hide_notices', 1, 86400 );
 				} else {
 					set_transient( 'villatheme_hide_notices', 1, 86400 * 30 );
@@ -314,12 +385,20 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 				'description' => '',
 				'link'        => ''
 			);
-			$data    = get_transient( 'villatheme_notices' );
 
-			if ( ! $data ) {
-				@$data = json_decode( file_get_contents( 'https://villatheme.com/notices.php' ), true );
+			$data   = get_transient( 'villatheme_notices' );
+			$called = get_transient( 'villatheme_called' );
+
+			if ( ! $data && ! $called ) {
+				$request_data = $this->wp_remote_get( 'https://villatheme.com/notices.php' );
+				if ( $request_data['status'] === 'success' ) {
+					@$data = json_decode( $request_data['data'], true );
+				}
 				set_transient( 'villatheme_notices', $data, 86400 );
+			} else {
+				set_transient( 'villatheme_called', 1, 86400 );
 			}
+
 			if ( ! is_array( $data ) ) {
 				return;
 			}
@@ -328,33 +407,33 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 				return;
 			}
 			ob_start(); ?>
-            <div class="villatheme-notification-wrapper notice">
-                <div class="villatheme-content">
-					<?php if ( $data['heading'] ) { ?>
-                        <div class="villatheme-left">
-							<?php echo $data['heading'] ?>
-                        </div>
-					<?php } ?>
-                    <div class="villatheme-right">
-						<?php if ( $data['description'] ) { ?>
-                            <div class="villatheme-description">
-								<?php echo $data['description']; ?>
-                            </div>
-						<?php } ?>
-                        <div class="villatheme-notification-controls">
-                            <a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'villatheme-hide-notice', '2' ), 'hide_notices', '_villatheme_nonce' ) ); ?>"
-                               class="villatheme-button"><?php esc_html_e( 'Dismiss', $this->data['slug'] ) ?></a>
-							<?php if ( $data['link'] ) { ?>
-                                <a target="_blank" href="<?php echo esc_url( $data['link'] ) ?>"
-                                   class="villatheme-button villatheme-primary"><?php esc_html_e( 'View', $this->data['slug'] ) ?></a>
-							<?php } ?>
-                            <a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'villatheme-hide-notice', '1' ), 'hide_notices', '_villatheme_nonce' ) ); ?>"
-                               class="villatheme-button"><?php esc_html_e( 'No, Thanks latter', $this->data['slug'] ) ?></a>
-                        </div>
-                    </div>
-                </div>
+			<div class="villatheme-dashboard updated">
+				<div class="villatheme-content">
 
-            </div>
+					<?php if ( $data['heading'] ) { ?>
+						<h3><?php echo $data['heading'] ?></h3>
+					<?php } ?>
+
+					<?php if ( $data['description'] ) { ?>
+						<p><?php echo $data['description'] ?></p>
+					<?php } ?>
+					<p>
+						<a target="_self"
+						   href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'villatheme-hide-notice', '2' ), 'hide_notices', '_villatheme_nonce' ) ); ?>"
+						   class="button notice-dismiss vi-button-dismiss"><?php esc_html_e( 'Dismiss', $this->data['slug'] ) ?></a>
+						<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'villatheme-hide-notice', '1' ), 'hide_notices', '_villatheme_nonce' ) ); ?>"
+						   class="button"><?php esc_html_e( 'Thanks, later.', $this->data['slug'] ) ?></a>
+						<?php if ( $data['link'] ) { ?>
+							<a target="_blank" href="<?php echo esc_url( $data['link'] ); ?>"
+							   class="button button-primary"><?php esc_html_e( 'Get Your Gift', $this->data['slug'] ) ?></a>
+						<?php } ?>
+
+					</p>
+
+				</div>
+
+			</div>
+
 			<?php $html = ob_get_clean();
 			$html       = apply_filters( 'form_ads_data', $html );
 			echo $html;
@@ -372,51 +451,46 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 		 */
 		public function villatheme_support() { ?>
 
-            <div id="villatheme-support" class="vi-ui form segment">
+			<div id="villatheme-support" class="vi-ui form segment">
+				<h3><?php echo esc_html__( 'MAYBE YOU LIKE', $this->data['slug'] ) ?>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a class="vi-ui button labeled icon" target="_blank"
+					   href="<?php echo esc_url( $this->data['docs'] ) ?>">
+						<i class="book icon"></i>
+						<?php esc_html_e( 'Documentation', $this->data['slug'] ) ?>
+					</a>
+					<a class="vi-ui button inverted labeled icon orange" target="_blank"
+					   href="<?php echo esc_url( $this->data['review'] ) ?>">
+						<i class="star icon"></i>
+						<?php esc_html_e( 'Review', $this->data['slug'] ) ?>
+					</a>
+					<a class="vi-ui  button labeled icon green" target="_blank"
+					   href="<?php echo esc_url( $this->data['support'] ) ?>">
+						<i class="users icon"></i>
+						<?php esc_html_e( 'Request Support', $this->data['slug'] ) ?>
+					</a>
+				</h3>
+				<div class="fields">
 
-                <div class="fields">
-                    <div class="four wide field ">
-                        <h3><?php echo esc_html__( 'HELP CENTER', $this->data['slug'] ) ?></h3>
-                        <div class="villatheme-support-area">
-                            <a target="_blank" href="<?php echo esc_url( $this->data['support'] ) ?>">
-                                <img src="<?php echo $this->data['images_url'] . 'support.jpg' ?>">
-                            </a>
-                        </div>
-                        <div class="villatheme-docs-area">
-                            <a target="_blank" href="<?php echo esc_url( $this->data['docs'] ) ?>">
-                                <img src="<?php echo $this->data['images_url'] . 'docs.jpg' ?>">
-                            </a>
-                        </div>
-                        <div class="villatheme-review-area">
-                            <a target="_blank" href="<?php echo esc_url( $this->data['review'] ) ?>">
-                                <img src="<?php echo $this->data['images_url'] . 'reviews.jpg' ?>">
-                            </a>
-                        </div>
-                    </div>
 					<?php $items = $this->get_data( $this->data['slug'] );
 					if ( is_array( $items ) && count( $items ) ) {
 						shuffle( $items );
-						$items = array_slice( $items, 0, 2 );
+						$items = array_slice( $items, 0, 4 );
 						foreach ( $items as $k => $item ) { ?>
-                            <div class="six wide field">
-								<?php if ( $k == 0 ) { ?>
-                                    <h3><?php echo esc_html__( 'MAYBE YOU LIKE', $this->data['slug'] ) ?></h3>
-								<?php } else { ?>
-                                    <h3>&nbsp;</h3>
-								<?php } ?>
-                                <div class="villatheme-item">
-                                    <a target="_blank" href="<?php echo esc_url( $item->link ) ?>">
-                                        <img src="<?php echo esc_url( $item->image ) ?>"/>
-                                    </a>
-                                </div>
-                            </div>
+							<div class="four wide field">
+								<div class="villatheme-item">
+									<a target="_blank" href="<?php echo esc_url( $item->link ) ?>">
+										<img src="<?php echo esc_url( $item->image ) ?>" />
+									</a>
+								</div>
+							</div>
 						<?php }
 						?>
 
 					<?php } ?>
-                </div>
+				</div>
 
-            </div>
+			</div>
 		<?php }
 
 		/**
@@ -426,8 +500,12 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 		protected function get_data( $slug = false ) {
 			$feeds   = get_transient( 'villatheme_ads' );
 			$results = array();
+			$ads     = '';
 			if ( ! $feeds ) {
-				@$ads = file_get_contents( 'https://villatheme.com/wp-json/info/v1' );
+				$request_data = $this->wp_remote_get( 'https://villatheme.com/wp-json/info/v1' );
+				if ( $request_data['status'] === 'success' ) {
+					@$ads = $request_data['data'];
+				}
 				set_transient( 'villatheme_ads', $ads, 86400 );
 			} else {
 				$ads = $feeds;
@@ -465,16 +543,3 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 		}
 	}
 }
-new VillaTheme_Support(
-	array(
-		'support'   => 'https://wordpress.org/support/plugin/eu-cookies-bar/',
-		'docs'      => 'http://docs.villatheme.com/?item=eu-cookies-bar',
-		'review'    => 'https://wordpress.org/support/plugin/eu-cookies-bar/reviews/?rate=5#rate-response',
-		'pro_url'   => '',
-		'css'       => EU_COOKIES_BAR_CSS,
-		'image'     => EU_COOKIES_BAR_IMAGES,
-		'slug'      => 'eu-cookies-bar',
-		'menu_slug' => 'eu-cookies-bar',
-		'version'   => EU_COOKIES_BAR_VERSION
-	)
-);

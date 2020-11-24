@@ -1,3 +1,17 @@
+/*1.0.3.7 - 2020.08.18*/
+- Updated: Compatible with WP 5.5
+
+/*1.0.3.6 - 2020.04.23*/
+- Updated: Language file
+- Updated: Class support
+
+/*1.0.3.5 - 2020.03.23*/
+- Updated: Compatible with WP 5.4
+- Updated: Class support
+
+/*1.0.3.4 - 2019.11.16*/
+- Updated: Compatible with WP 5.3
+
 /*1.0.3.3 - 2019.04.03*/
 - Updated: Add dismiss button for admin notices
 

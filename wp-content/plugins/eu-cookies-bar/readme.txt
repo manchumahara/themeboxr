@@ -3,15 +3,15 @@ Contributors: villatheme, mrt3vn
 Donate link: https://www.villatheme.com/donate
 Tags: eu cookies bar, eu cookie law, eu cookie banner, cookies gdpr, cookie consent, cookie popup, cookie policy generator, for wordpress
 Requires at least: 4.4
-Tested up to: 5.2
-Stable tag: 1.0.3.3
+Tested up to: 5.5
+Stable tag: 1.0.3.7
 License: GPLv2 or later
 
 == Description ==
 
-EU Cookies Bar is a very simple plugin which helps your website comply with Cookie Law.
+Eu Cookies Bar is a WordPress plugin that helps website owners to meet the obligations and rights enacted under the GDPR. The plugin allows visitors to accept a website to use their cookies, and also allow visitors to configure their cookies settings.  General Data Protection Regulation - (GDPR) is a European regulation to strengthen and unify the data protection of EU citizens.
 
->[Try the Demo](http://new2new.com/?item=eu-cookies-bar "Demo") | [Documents](http://docs.villatheme.com/?item=eu-cookies-bar "Documents")
+>[Try the Demo](http://new2new.com/?item=eu-cookies-bar "Demo") | [Documents](http://docs.villatheme.com/?item=eu-cookies-bar "Documents") | [Facebook group](https://www.facebook.com/groups/villatheme "VillaTheme")
 
 ### FEATURES
 
@@ -53,6 +53,14 @@ EU Cookies Bar is a very simple plugin which helps your website comply with Cook
 
 ### MAY BE YOU NEED
 
+[Product Variations Swatches for WooCommerce](http://bit.ly/product-variations-swatches-for-woocommerce): Professional and beautiful colors, buttons, images, variation images and radio variations swatches
+
+[Dropshipping and Fulfillment for AliExpress and WooCommerce](http://bit.ly/woo-aliexpress-dropshipping): Free dropshipping solution - Transfer data from AliExpress products to WooCommerce effortlessly and fulfill AliExpress orders automatically
+
+[Orders Tracking for WooCommerce](http://bit.ly/woo-orders-tracking): Import orders tracking number and send tracking info to customers
+
+[Abandoned Cart Recovery For WooCommerce](http://bit.ly/woo-abandoned-cart-recovery): Capture abandoned carts & send reminder emails to customers.
+
 [Import Shopify to WooCommerce](http://bit.ly/import-shopify-to-woocommerce): Import Shopify to WooCommerce plugin help you import all products from your Shopify store to WooCommerce
 
 [Customer Coupons for WooCommerce](http://bit.ly/woo-customer-coupons): Display coupons on your website
@@ -71,7 +79,7 @@ EU Cookies Bar is a very simple plugin which helps your website comply with Cook
 
 [Advanced Product Information for WooCommerce](http://bit.ly/woo-advanced-product-information): Display more intuitive information of products such as sale countdown, sale badges, who recently bought products, rank of products in their categories, available payment methods...
 
-[LookBook for WooCommerce](http://bit.ly/woo-lookbook): Create beautiful Lookbooks, shop by Instagram.
+[LookBook for WooCommerce](http://bit.ly/woo-lookbook): Create beautiful Lookbooks, Shoppable with Product Tags
 
 [Photo Reviews for WooCommerce](http://bit.ly/woo-photo-reviews): Allow posting reviews include product pictures, review reminder, review for coupons.
 
@@ -117,6 +125,20 @@ EU Cookies Bar is a very simple plugin which helps your website comply with Cook
 5. Visitors can views cookies list and change their mind whenever they want
 
 == Changelog ==
+/*1.0.3.7 - 2020.08.18*/
+- Updated: Compatible with WP 5.5
+
+/*1.0.3.6 - 2020.04.23*/
+- Updated: Language file
+- Updated: Class support
+
+/*1.0.3.5 - 2020.03.23*/
+- Updated: Compatible with WP 5.4
+- Updated: Class support
+
+/*1.0.3.4 - 2019.11.16*/
+- Updated: Compatible with WP 5.3
+
 /*1.0.3.3 - 2019.04.03*/
 - Updated: Add dismiss button for admin notices
 

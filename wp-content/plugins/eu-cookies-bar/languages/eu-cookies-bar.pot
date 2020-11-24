@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress EU Cookies Bar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-22 10:48+0000\n"
+"POT-Creation-Date: 2020-04-17 02:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,218 +14,550 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:354
-#: D:/Git/VillaTheme
-#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:222
-msgid "Accept"
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:50
+msgid "Settings"
 msgstr ""
 
-#: D:/Git/VillaTheme
-#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:273
-msgid "Active"
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:57
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:67
+msgid "WordPress EU Cookies"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:254
-msgid "Agree"
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:57
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:74
+msgid "Cookies bar"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:226
-msgid "Agree and close"
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:72
+msgid "General"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:240
-msgid "Agree and hide bar"
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:76
+msgid "Users cookies settings"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:76
-msgid "Agreement expires after(days)"
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:81
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:433
+msgid "Enable"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:283
-msgid "Background color"
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:88
+msgid "Block cookies until accepting"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:69
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:90
 msgid ""
 "Block all cookies(except strictly necessary cookies) until the visitor "
 "accepts to use."
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:67
-msgid "Block cookies until accepting"
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:97
+msgid "Agreement expires after(days)"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:175
-msgid "Bottom"
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:104
+msgid "Strictly necessary cookies"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:191
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:325
-msgid "Bottom left"
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:106
+msgid ""
+"These are very important cookies that users can not disable them. Enter "
+"cookies names separated with commas(,)"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:207
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:326
-msgid "Bottom right"
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:114
+msgid "Strictly necessary cookies prefix"
 msgstr ""
 
-#: D:/Git/VillaTheme
-#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:272
-msgid "Cookie name"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:36
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:53
-msgid "Cookies bar"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:145
-msgid "Cookies bar position"
-msgstr ""
-
-#: D:/Git/VillaTheme
-#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:266
-msgid "Cookies list"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:95
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:116
 msgid ""
 "Cookies name started with one of these cannot be disabled. Enter cookies "
 "names separated with commas(,)"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:350
-#: D:/Git/VillaTheme
-#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:215
-#: D:/Git/VillaTheme
-#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:463
-msgid "Cookies settings"
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:124
+msgid "Privacy page url"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:317
-msgid "Cookies settings bar position"
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:130
+msgid "Your privacy policy"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:299
-msgid "Custom css"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:255
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:358
-#: D:/Git/VillaTheme
-#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:229
-msgid "Decline"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:227
-msgid "Decline and close"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:241
-msgid "Decline and hide bar"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:263
-msgid "Design"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:242
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:256
-msgid "Do nothing"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:60
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:308
-msgid "Enable"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:126
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:310
-msgid "Enable to make it GDPR compliant."
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:268
-msgid "Font size(px)"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:51
-msgid "General"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:324
-msgid "Hide"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:219
-msgid "Hit button close"
-msgstr ""
-
-#. URI of the plugin
-#. Author URI of the plugin
-msgid "http://villatheme.com"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:214
-msgid "Implicit behaviors"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:228
-msgid "Just close"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:110
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:137
 msgid "Message"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:291
-msgid "Opacity"
-msgstr ""
-
-#: D:/Git/VillaTheme
-#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:264
-msgid "Privacy & Cookies policy"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:247
-msgid "Refresh/go to other page"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:335
-msgid "Save"
-msgstr ""
-
-#: D:/Git/VillaTheme
-#: 2017/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:451
-msgid "Save settings"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:233
-msgid "Scroll mouse"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:235
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:249
-msgid "Select \"Do nothing\" to make it GDPR compliant."
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:221
-msgid "Select \"Just close\" to make it GDPR compliant."
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:30
-msgid "Settings"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:120
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:147
 msgid "Show button \"accept\""
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:140
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:153
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:435
+msgid "Enable to make it GDPR compliant."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:158
+msgid "Show button \"decline\""
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:167
 msgid "Show button \"close\""
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:131
-msgid "Show button \"decline\""
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:172
+msgid "Cookies bar position"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:186
+msgid "Top"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:202
+msgid "Bottom"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:218
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:450
+msgid "Bottom left"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:234
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:451
+msgid "Bottom right"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:241
+msgid "Implicit behaviors"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:246
+msgid "Hit button close"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:248
+msgid "Select \"Just close\" to make it GDPR compliant."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:253
+msgid "Agree and close"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:254
+msgid "Decline and close"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:255
+msgid "Just close"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:260
+msgid "Scroll mouse"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:262
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:276
+msgid "Select \"Do nothing\" to make it GDPR compliant."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:267
+msgid "Agree and hide bar"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:268
+msgid "Decline and hide bar"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:269
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:283
+msgid "Do nothing"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:274
+msgid "Refresh/go to other page"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:281
+msgid "Agree"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:282
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:111
+msgid "Decline"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:290
+msgid "Cookies bar design"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:294
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:378
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:417
+msgid "Border radius(px)"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:300
+msgid "Margin(px)"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:306
+msgid "Padding(px)"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:312
+msgid "Font size(px)"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:321
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:358
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:397
+msgid "Text color"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:329
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:368
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:407
+msgid "Background color"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:337
+msgid "Opacity"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:347
+msgid "Button \"Accept\" design"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:352
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:391
+msgid "Title"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:386
+msgid "Button \"Decline\" design"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:424
+msgid "Custom css"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:442
+msgid "Cookies settings nav bar position"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:444
+msgid ""
+"You need to either show this bar or use shortcode [eucookiesbar_settings] to "
+"make it GDPR compliant"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:449
+msgid "Hide"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:461
+msgid "Heading"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:470
+msgid "Heading color"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:482
+msgid "Heading background color"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:494
+msgid "Button \"save settings\" color"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:506
+msgid "Button \"save settings\" background color"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:532
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:331
+msgid "Privacy & Cookies policy"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:534
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:333
+msgid "Cookies list"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:540
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:339
+msgid "Cookie name"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:541
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:340
+msgid "Active"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:563
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:518
+msgid "Save settings"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:575
+msgid "Save"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:587
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:592
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:264
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:269
+msgid "View more"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:604
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/admin/admin.php:629
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:282
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/frontend/frontend.php:530
+msgid "Cookies settings"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:25
+msgid "Privacy Policy"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:28
+msgid "What information do we collect?"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:29
+msgid ""
+"We collect information from you when you register on our site or place an "
+"order.\n"
+"\n"
+"When ordering or registering on our site, as appropriate, you may be asked "
+"to enter your: name, e-mail address or mailing address."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:32
+msgid "What do we use your information for?"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:33
+msgid ""
+"Any of the information we collect from you may be used in one of the "
+"following ways:\n"
+"\n"
+"To personalize your experience\n"
+"(your information helps us to better respond to your individual needs)\n"
+"To improve our website\n"
+"(we continually strive to improve our website offerings based on the "
+"information and feedback we receive from you)\n"
+"To improve customer service\n"
+"(your information helps us to more effectively respond to your customer "
+"service requests and support needs)\n"
+"\n"
+"To process transactions\n"
+"Your information, whether public or private, will not be sold, exchanged, "
+"transferred, or given to any other company for any reason whatsoever, "
+"without your consent, other than for the express purpose of delivering the "
+"purchased product or service requested.\n"
+"\n"
+"To administer a contest, promotion, survey or other site feature\n"
+"\n"
+"To send periodic emails\n"
+"The email address you provide for order processing, will only be used to "
+"send you information and updates pertaining to your order."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:49
+msgid "How do we protect your information?"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:50
+msgid ""
+"We implement a variety of security measures to maintain the safety of your "
+"personal information when you place an order or enter, submit, or access "
+"your personal information.\n"
+"\n"
+"We offer the use of a secure server. All supplied sensitive/credit "
+"information is transmitted via Secure Socket Layer (SSL) technology and then "
+"encrypted into our Payment gateway providers database only to be accessible "
+"by those authorized with special access rights to such systems, and are "
+"required to?keep the information confidential.\n"
+"\n"
+"After a transaction, your private information (credit cards, social security "
+"numbers, financials, etc.) will not be kept on file for more than 60 days."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:55
+msgid "Do we use cookies?"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:56
+msgid ""
+"Yes (Cookies are small files that a site or its service provider transfers "
+"to your computers hard drive through your Web browser (if you allow) that "
+"enables the sites or service providers systems to recognize your browser and "
+"capture and remember certain information\n"
+"\n"
+"We use cookies to help us remember and process the items in your shopping "
+"cart, understand and save your preferences for future visits, keep track of "
+"advertisements and compile aggregate data about site traffic and site "
+"interaction so that we can offer better site experiences and tools in the "
+"future. We may contract with third-party service providers to assist us in "
+"better understanding our site visitors. These service providers are not "
+"permitted to use the information collected on our behalf except to help us "
+"conduct and improve our business.\n"
+"\n"
+"If you prefer, you can choose to have your computer warn you each time a "
+"cookie is being sent, or you can choose to turn off all cookies via your "
+"browser settings. Like most websites, if you turn your cookies off, some of "
+"our services may not function properly. However, you can still place orders "
+"by contacting customer service."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:62
+msgid "Google Analytics"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:64
+msgid ""
+"We use Google Analytics on our sites for anonymous reporting of site usage "
+"and for advertising on the site. If you would like to opt-out of Google "
+"Analytics monitoring your behaviour on our sites please use this link"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:65
+msgid "Do we disclose any information to outside parties?"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:66
+msgid ""
+"We do not sell, trade, or otherwise transfer to outside parties your "
+"personally identifiable information. This does not include trusted third "
+"parties who assist us in operating our website, conducting our business, or "
+"servicing you, so long as those parties agree to keep this information "
+"confidential. We may also release your information when we believe release "
+"is appropriate to comply with the law, enforce our site policies, or protect "
+"ours or others rights, property, or safety. However, non-personally "
+"identifiable visitor information may be provided to other parties for "
+"marketing, advertising, or other uses."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:67
+msgid "Registration"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:68
+msgid ""
+"The minimum information we need to register you is your name, email address "
+"and a password. We will ask you more questions for different services, "
+"including sales promotions. Unless we say otherwise, you have to answer all "
+"the registration questions.\n"
+"\n"
+"We may also ask some other, voluntary questions during registration for "
+"certain services (for example, professional networks) so we can gain a "
+"clearer understanding of who you are. This also allows us to personalise "
+"services for you.\n"
+"\n"
+"To assist us in our marketing, in addition to the data that you provide to "
+"us if you register, we may also obtain data from trusted third parties to "
+"help us understand what you might be interested in. This ‘profiling’ "
+"information is produced from a variety of sources, including publicly "
+"available data (such as the electoral roll) or from sources such as surveys "
+"and polls where you have given your permission for your data to be shared. "
+"You can choose not to have such data shared with the Guardian from these "
+"sources by logging into your account and changing the settings in the "
+"privacy section.\n"
+"\n"
+"After you have registered, and with your permission, we may send you emails "
+"we think may interest you. Newsletters may be personalised based on what you "
+"have been reading on theguardian.com. At any time you can decide not to "
+"receive these emails and will be able to ‘unsubscribe’."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:76
+msgid "Logging in using social networking credentials"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:78
+msgid ""
+"If you log-in to our sites using a Facebook log-in, you are granting "
+"permission to Facebook to share your user details with us. This will include "
+"your name, email address, date of birth and location which will then be used "
+"to form a Guardian identity. You can also use your picture from Facebook as "
+"part of your profile. This will also allow us and Facebook to share your, "
+"networks, user ID and any other information you choose to share according to "
+"your Facebook account settings. If you remove the Guardian app from your "
+"Facebook settings, we will no longer have access to this information.\n"
+"\n"
+"If you log-in to our sites using a Google log-in, you grant permission to "
+"Google to share your user details with us. This will include your name, "
+"email address, date of birth, sex and location which we will then use to "
+"form a Guardian identity. You may use your picture from Google as part of "
+"your profile. This also allows us to share your networks, user ID and any "
+"other information you choose to share according to your Google account "
+"settings. If you remove the Guardian from your Google settings, we will no "
+"longer have access to this information.\n"
+"\n"
+"If you log-in to our sites using a twitter log-in, we receive your avatar "
+"(the small picture that appears next to your tweets) and twitter username."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:83
+msgid "Children’s Online Privacy Protection Act Compliance"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:84
+msgid ""
+"We are in compliance with the requirements of COPPA (Childrens Online "
+"Privacy Protection Act), we do not collect any information from anyone under "
+"13 years of age. Our website, products and services are all directed to "
+"people who are at least 13 years old or older."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:85
+msgid "Updating your personal information"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:86
+msgid ""
+"We offer a ‘My details’ page (also known as Dashboard), where you can update "
+"your personal information at any time, and change your marketing preferences."
+" You can get to this page from most pages on the site – simply click on the "
+"‘My details’ link at the top of the screen when you are signed in."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:87
+msgid "Online Privacy Policy Only"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:88
+msgid ""
+"This online privacy policy applies only to information collected through our "
+"website and not to information collected offline."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:89
+msgid "Your Consent"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:90
+msgid "By using our site, you consent to our privacy policy."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:91
+msgid "Changes to our Privacy Policy"
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:92
+msgid ""
+"If we decide to change our privacy policy, we will post those changes on "
+"this page."
+msgstr ""
+
+#: E:/Git/master/free-version/eu-cookies-bar/eu-cookies-bar/includes/data.php:106
+msgid "Accept"
+msgstr ""
+
+#. Name of the plugin
+msgid "EU Cookies Bar"
 msgstr ""
 
 #. Description of the plugin
@@ -234,51 +566,15 @@ msgid ""
 "Regulation) compliant(EU Cookie Law) and more."
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:83
-msgid "Strictly necessary cookies"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:93
-msgid "Strictly necessary cookies prefix"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:275
-msgid "Text color"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:85
-msgid ""
-"These are very important cookies that users can not disable them. Enter "
-"cookies names separated with commas(,)"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:159
-msgid "Top"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:55
-msgid "Users cookies settings"
+#. URI of the plugin
+msgid "https://villatheme.com/extensions/eu-cookies-bar"
 msgstr ""
 
 #. Author of the plugin
 msgid "VillaTheme"
 msgstr ""
 
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:36
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:46
-msgid "WordPress EU Cookies"
-msgstr ""
-
-#. Name of the plugin
-msgid "WordPress EU Cookies Bar"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:319
-msgid ""
-"You need to either show this bar or use shortcode [eucookiesbar_settings] to "
-"make it GDPR compliant"
-msgstr ""
-
-#: D:/Git/VillaTheme 2017/eu-cookies-bar/eu-cookies-bar/admin/admin.php:103
-msgid "Your privacy policy"
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "http://villatheme.com"
 msgstr ""
