@@ -7,6 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<h3>
 		<a href="#" class="remove_row delete"><?php esc_html_e( 'Remove', 'woocommerce' ); ?></a>
 		<div class="handlediv" title="<?php esc_attr_e( 'Click to toggle', 'woocommerce' ); ?>"></div>
+		<div class="tips sort" data-tip="<?php esc_attr_e( 'Drag and drop to set admin attribute order', 'woocommerce' ); ?>"></div>			
 		<strong class="attribute_name"><?php echo wc_attribute_label( $attribute->get_name() ); ?></strong>
 	</h3>
 	<div class="woocommerce_attribute_data wc-metabox-content hidden">
@@ -48,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 										foreach ( $all_terms as $term ) {
 											$options = $attribute->get_options();
 											$options = ! empty( $options ) ? $options : array();
-											echo '<option value="' . esc_attr( $term->term_id ) . '"' . wc_selected( $term->term_id, $options ) . '>' . esc_attr( apply_filters( 'woocommerce_product_attribute_term_name', $term->name, $term ) ) . '</option>';
+											echo '<option value="' . esc_attr( $term->term_id ) . '"' . wc_selected( $term->term_id, $options ) . '>' . esc_html( apply_filters( 'woocommerce_product_attribute_term_name', $term->name, $term ) ) . '</option>';
 										}
 									}
 									?>
