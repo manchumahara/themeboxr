@@ -12895,7 +12895,7 @@ ul {
   margin-top: -30px;
 }
 .technology-use-wrap .single-technology {
-  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px 0 #f2f2f2;
   border-radius: 10px;
   padding: 50px;
   margin-top: 30px;
