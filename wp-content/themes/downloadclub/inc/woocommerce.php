@@ -548,6 +548,7 @@ if ( ! function_exists( 'downloadclub_woocommerce_header_cart' ) ) {
 
 	function downloadclub_woocommerce_product_get_image($image, $wc_product_obj, $size, $attr, $placeholder, $image2){
 
+	    //write_log($image);
 		if ( $wc_product_obj->get_image_id() ) {
 			$id = $wc_product_obj->get_id();
 

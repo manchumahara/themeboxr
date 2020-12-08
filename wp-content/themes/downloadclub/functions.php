@@ -312,6 +312,161 @@
 		require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 	}
 
+add_action( 'admin_bar_menu', 'themeboxr_thismonth_reports_menu_bar', 999 );
+function themeboxr_thismonth_reports_menu_bar( $wp_admin_bar ) {
+	if ( current_user_can( 'manage_options' ) ) {
+		$wp_admin_bar->add_node(
+			array(
+				'id'    => 'cbxmanagement',
+				'title' => 'Office Management',
+				'href'  => admin_url( 'admin.php?page=wc-reports&range=month' ),
+				'meta'  => array( 'class' => 'cbxmanagement' ),
+			)
+		);
+
+		$wp_admin_bar->add_node(
+			array(
+				'parent' => 'cbxmanagement',
+				'id'     => 'cbxmanagement_plugins',
+				'title'  => 'Codeboxr Plugins',
+				'href'   => 'https://profiles.wordpress.org/manchumahara/#content-plugins',
+				'meta'   => array( 'target' => '_blank', 'class' => 'cbxmanagement_plugins' ),
+			)
+		);
+
+		$wp_admin_bar->add_node(
+			array(
+				'parent' => 'cbxmanagement',
+				'id'     => 'cbxmanagement_themeboxr',
+				'title'  => 'Codeboxr',
+				'href'   => 'https://codeboxr.com/wp-admin/',
+				'meta'   => array( 'target' => '_blank', 'class' => 'cbxmanagement_themeboxr' ),
+			)
+		);
+
+		$wp_admin_bar->add_node(
+			array(
+				'parent' => 'cbxmanagement',
+				'id'     => 'cbxmanagement_themeforest',
+				'title'  => 'Themeforest',
+				'href'   => 'https://themeforest.net/user/codeboxr/portfolio',
+				'meta'   => array( 'class' => 'cbxmanagement_themeforest', 'target' => '_blank' ),
+			)
+		);
+
+		$wp_admin_bar->add_node(
+			array(
+				'id'    => 'visitsite',
+				'title' => 'Visit Site',
+				'href'  => site_url(),
+				'meta'  => array( 'class' => 'visitsite_adminbar', 'target' => '_blank' ),
+
+			)
+		);
+	}
+}
+
+
+/**
+ * Add a widget to the dashboard.
+ *
+ * This function is hooked into the 'wp_dashboard_setup' action below.
+ */
+function themeboxr_lmpt_add_dashboard_widgets() {
+
+	wp_add_dashboard_widget(
+		'themeboxr_lmpt_dashboard_widget',         // Widget slug.
+		esc_html__( 'Last Modified Post Types', 'themeboxr' ),         // Title.
+		'themeboxr_lmpt_dashboard_widget_function' // Display function.
+	);
+}
+
+add_action( 'wp_dashboard_setup', 'themeboxr_lmpt_add_dashboard_widgets' );
+
+/**
+ * Create the function to output the contents of our Dashboard Widget.
+ */
+function themeboxr_lmpt_dashboard_widget_function() {
+
+	global $post;
+	// Display whatever it is you want to show.
+	$args          = array(
+
+		'post_type'      => array( 'post', 'page', 'product' ),
+		'posts_per_page' => 10,
+		'post_status'    => array( 'publish', 'draft' ),
+		'order'          => 'DESC',
+		'orderby'        => 'modified',
+
+	);
+	$related_posts = get_posts( $args );
+	echo '<ul>';
+	if ( $related_posts ) {
+		foreach ( $related_posts as $post ) : setup_admin_postdata( $post ); ?>
+			<li class="related_post">
+				<a target="_blank" href="<?php the_permalink() ?>"
+				   title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+			</li>
+			<li>[<?php echo get_post_status(); ?>] - <?php echo get_post_type(); ?> - <a target="_blank" href="<?php echo get_edit_post_link(); ?>">Edit</a></li>
+		<?php endforeach;
+		wp_reset_admin_postdata();
+	} else { ?>
+		<li class="no_related_post">No Recent Edits</li>
+	<?php }
+
+	echo '</ul>';
+}
+
+/**
+ * Setup a post object and store the original loop item so we can reset it later
+ *
+ * @param obj $post_to_setup The post that we want to use from our custom loop
+ */
+function setup_admin_postdata( $post_to_setup ) {
+
+	//only on the admin side
+	if ( is_admin() ) {
+
+		//get the post for both setup_postdata() and to be cached
+		global $post;
+
+		//only cache $post the first time through the loop
+		if ( ! isset( $GLOBALS['post_cache'] ) ) {
+			$GLOBALS['post_cache'] = $post;
+		}
+
+		//setup the post data as usual
+		$post = $post_to_setup;
+		setup_postdata( $post );
+	} else {
+		setup_postdata( $post_to_setup );
+	}
+}//end method setup_admin_postdata
+
+
+/**
+ * Reset $post back to the original item
+ *
+ */
+function wp_reset_admin_postdata() {
+
+	//only on the admin and if post_cache is set
+	if ( is_admin() && ! empty( $GLOBALS['post_cache'] ) ) {
+
+		//globalize post as usual
+		global $post;
+
+		//set $post back to the cached version and set it up
+		$post = $GLOBALS['post_cache'];
+		setup_postdata( $post );
+
+		//cleanup
+		unset( $GLOBALS['post_cache'] );
+	} else {
+		wp_reset_postdata();
+	}
+}//end method wp_reset_admin_postdata
+
 	/**
 	 * Implement the Custom Header feature.
 	 */

@@ -53,9 +53,17 @@
 
 	add_filter( 'show_admin_bar', '__return_false' );
 
-	add_filter('next_posts_link_attributes', 'next_posts_link_attributes_bs');
-	add_filter('previous_posts_link_attributes', 'next_posts_link_attributes_bs');
+	add_filter('next_posts_link_attributes', 'downloadclub_next_posts_link_attributes_bs');
+	add_filter('previous_posts_link_attributes', 'downloadclub_next_posts_link_attributes_bs');
 
-	function next_posts_link_attributes_bs(){
+	function downloadclub_next_posts_link_attributes_bs(){
 		return ' class="page-link" ';
 	}
+
+	/*add_filter('woocommerce_product_get_image', 'downloadclub_woocommerce_product_get_image', 10, 6);
+	function downloadclub_woocommerce_product_get_image($image, $ref, $size, $attr, $placeholder, $image_main){
+
+		write_log($size);
+
+		return $image;
+	}*/

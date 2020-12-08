@@ -29,7 +29,7 @@
 	define( 'DB_PASSWORD', '' );
 
 	/** MySQL hostname */
-	define( 'DB_HOST', 'localhost' );
+	define( 'DB_HOST', '127.0.0.1' );
 
 	/** Database Charset to use in creating database tables. */
 	define( 'DB_CHARSET', 'utf8mb4' );
@@ -68,8 +68,8 @@
 	define( 'CBXWPWRITELOG_EMAIL_SENT', false );
 	define( 'CBXWPWRITELOG_EMAIL_FAILED', false );
 
-	define( 'WP_HOME', 'http://themeboxr.devops/' );
-	define( 'WP_SITEURL', 'http://themeboxr.devops/' );
+	define( 'WP_HOME', 'http://themeboxr.local/' );
+	define( 'WP_SITEURL', 'http://themeboxr.local/' );
 
 	/* That's all, stop editing! Happy blogging. */
 
