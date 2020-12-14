@@ -44,20 +44,7 @@ mix.less(asset_path + 'less/style-default.less', asset_path + 'css/')
 	.options({
 		processCssUrls: false
 	})
-	.webpackConfig({
-		plugins: [
-			new ReplaceInFileWebpackPlugin([{
-				dir: asset_path + 'css',
-				files: ['style-default.css'],
-				rules: [{
-					search: /\.\/images/gi,
-					replace: '../images'
-				}]
-			}])
-		]
-	})
 	.styles([
-
 		//asset_path + 'vendors/font-awesome5/css/all.min.css',
 		asset_path + 'vendors/line-awesome/css/line-awesome-font-awesome.css',
 		asset_path + 'vendors/bootstrap/css/bootstrap.css',
@@ -81,9 +68,21 @@ mix.less(asset_path + 'less/style-default.less', asset_path + 'css/')
 		//asset_path + 'vendors/bootstrap-4-navbar.js',
 		asset_path + 'js/theme-main.js'
 	], asset_path + 'js/downloadclub.js')
-	.version(
+	.webpackConfig({
+		plugins: [
+			new ReplaceInFileWebpackPlugin([{
+				dir: asset_path + 'css',
+				files: ['downloadclub.css'],
+				rules: [{
+					search: /\.\/images/gi,
+					replace: '../images'
+				}]
+			}])
+		]
+	})
+	/*.version(
 		[
 			asset_path + 'js/downloadclub.js',
 			asset_path + 'css/downloadclub.css'
-		])
+		])*/
 	.browserSync({proxy: appConfig.proxy})

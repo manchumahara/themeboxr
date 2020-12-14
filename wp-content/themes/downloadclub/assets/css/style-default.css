@@ -661,6 +661,11 @@ object {
 .gallery-caption {
   display: block;
 }
+body.single-post .site-main {
+  padding-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+}
 /*
 Theme Name: DownloadClub
 
@@ -753,8 +758,8 @@ table.shop_table_responsive tr td.download-actions .button {
   padding-bottom: 40px;
   height: 100%;
   background-color: #fff;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
 }
 .woocommerce-products-wrapper .products .product .woocommerce-loop-product__title {
   padding: 10px;
@@ -1750,7 +1755,7 @@ ul {
 }
 /*--== Banner Area Start ==--*/
 #banner-area {
-  background-image: url("../images/banner-bg.jpg");
+  background-image: url("./images/banner-bg.jpg");
   background-size: cover;
   background-position: center center;
   color: #fff;
@@ -1852,6 +1857,7 @@ ul {
   margin-top: -30px;
 }
 #products-area .products-content-wrap #productsContent .product-item {
+  margin-bottom: 30px;
   transform: scale(0);
   transition: all 0.4s ease;
 }
@@ -1860,9 +1866,9 @@ ul {
 }
 #products-area .products-content-wrap #productsContent .single-product-wrap {
   background-color: #fff;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  margin-top: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  height: 100%;
   transition: all 0.3s ease-out;
   overflow: hidden;
 }
@@ -2069,7 +2075,8 @@ ul {
 }
 /*== Newsletter Area End ==*/
 .widget-area .widget {
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
   padding: 30px;
   margin-bottom: 30px;
 }
@@ -2132,7 +2139,7 @@ ul {
       border-radius: 0;
       border-left: 1px solid @ash-color;
       background-color: transparent;
-      background-image: url('.../images/search-icon.png');
+      background-image: url('../images/search-icon.png');
       background-size: 20px 20px;
       background-position: center center;
       background-repeat: no-repeat;
@@ -2404,7 +2411,7 @@ ul {
 }
 /*== About Page End ==*/
 .products-header-wrap {
-  background-image: url("../images/banner-bg.jpg");
+  background-image: url("./images/banner-bg.jpg");
   background-size: cover;
   background-position: center center;
   color: #fff;
