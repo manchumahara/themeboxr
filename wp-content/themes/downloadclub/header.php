@@ -47,13 +47,13 @@
 		$logo_url = wp_get_attachment_image_src( $custom_logo_id, 'full', false );
 
 		if ( $logo_url === false ) {
-			$logo_url = get_stylesheet_directory_uri() . '/assets/images/logo.png';
+			$logo_url = get_stylesheet_directory_uri() . '/assets/images/logo-color.png';
 		} else {
 			$logo_url = $logo_url[0];
 		}
 
 	} else {
-		$logo_url = get_stylesheet_directory_uri() . '/assets/images/logo.png';
+		$logo_url = get_stylesheet_directory_uri() . '/assets/images/logo-color.png';
 	}
 
 	$is_admin_bar_showing = is_admin_bar_showing() ? 'is_admin_bar_showing' : '';
@@ -99,7 +99,7 @@
 	<div class="offcanvaswrap">
 		<div class="js-offcanvas-header">
 			<a class="offcanvaslogo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<img class="brandlogo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php esc_html_e( 'Themeboxr Logo', 'downloadclub' ); ?>" />
+				<img class="brandlogo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-color.png" alt="<?php esc_html_e( 'Themeboxr Logo', 'downloadclub' ); ?>" />
 			</a>
 			<span class="js-offcanvas-close" title="<?php esc_html_e( 'Close', 'downloadclub' ); ?>"><i class="fa fa-times" aria-hidden="true"></i></span>
 			<div class="clearfix"></div>
