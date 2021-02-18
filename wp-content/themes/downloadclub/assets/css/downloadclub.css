@@ -16567,6 +16567,9 @@ ul {
     background-position: center;
     padding:90px 0px;
 }
+#newsletter-area form#sib_signup_form_1 input[type=email]{
+    border: none !important;
+}
 
 #newsletter-area h2 {
     color: #fff;
@@ -16577,6 +16580,7 @@ ul {
     position: relative;
     text-align: center;
 }
+
 
 #newsletter-area .newsletter-form form input {
     background-color: #fff;
@@ -16613,11 +16617,17 @@ ul {
 #newsletter-area form#sib_signup_form_1 .sib-default-btn{
     padding: 15px 40px !important;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
 }
 
 #newsletter-area .newsletter-form form .submit-btn:hover {
-    background-color: #0a1825;
+    background-color: #ffffff;
     color: #fff;
+
+}
+#newsletter-area form#sib_signup_form_1 .sib-default-btn:hover {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
 }
 
 #newsletter-area ::-webkit-input-placeholder {
