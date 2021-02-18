@@ -16418,7 +16418,12 @@ ul {
 /*== Products Area End ==*/
 /*== We Are Best Area Start ==*/
 #we-are-best-area {
-    background-color: #f1f5fa;
+    background-color: #ffffff;
+    background-image: url(../../assets/images/home/why-section-illustration.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding:90px 0px;
 }
 
 #we-are-best-area .we-best-content-wrap {
@@ -16444,6 +16449,11 @@ ul {
 /*== Latest Blog Area Start ==*/
 #latest-blog-area {
     background-color: #fff;
+    background-image: url(../../assets/images/home/blog-section-illustration.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding:90px 0px;
 }
 
 #latest-blog-area .latest-blog-container {
@@ -16452,8 +16462,9 @@ ul {
 
 #latest-blog-area .latest-blog-container .single-blog-item {
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease-out;
     margin-top: 30px;
     color: #0a1825;
