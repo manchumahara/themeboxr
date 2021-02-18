@@ -9,7 +9,8 @@
 
 ?>
 <!--== Newsletter Area Start ==-->
-<section id="newsletter-area">
+<section id="newsletter-area" >
+    <div class="newsletter-bg">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -25,7 +26,7 @@
 			<div class="col-lg-6 col-md-12 m-auto">
 				<div class="newsletter-form">
 					<p class="text-center">
-						Coming soon!
+						<?php echo do_shortcode('[sibwp_form id=1]') ?>
 					</p>
 					<!--<form class="form-inline" action="#" id="newslettersubs" method="post">
 						<label class="sr-only" for="name">Name</label>
@@ -38,5 +39,6 @@
 			</div>
 		</div>
 	</div>
+    </div>
 </section>
 <!--== Newsletter Area End ==-->
