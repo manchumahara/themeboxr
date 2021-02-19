@@ -29,6 +29,56 @@
 	$checkout_url       = get_permalink( wc_get_page_id( 'checkout' ) );
 ?>
 <footer id="footer-area" class="site-footer">
+    <div id="guarantee" class="home-sections">
+        <div class="container">
+            <div class="cbxinner cbxinnerlite">
+                <div class="row">
+                    <!--<div class="col-12">
+						<div class="guarantee-line">
+							<div class="col-sm-4"></div>
+						</div>
+					</div>-->
+                    <div class="col-sm-4 single-area-1">
+                        <div class="single-area  text-center">
+                            <img src="<?php echo home_url(); ?>/wp-content/themes/downloadclub/assets/images/home/guarantee.png?v=4"
+                                 alt="guarantee" />
+                            <p>
+                                <span class="guarantee-title clearfix">30 Days Money Back</span>
+                                <span class="guarantee-subtitle">Guarantee</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 single-area-2">
+                        <div class="single-area  text-center">
+                            <img src="<?php echo home_url(); ?>/wp-content/themes/downloadclub/assets/images/home/faster.png?v=4" alt="guarantee" />
+                            <p>
+									<span class="guarantee-title clearfix">
+										Faster Support
+									</span> <span class="guarantee-subtitle">
+										By Real Developer
+									</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 single-area-3">
+                        <div class="single-area single-area-3 text-center">
+                            <img src="<?php echo home_url(); ?>/wp-content/themes/downloadclub/assets/images/home/paypal_creditcard.png?v=4" alt="guarantee" />
+                            <p>
+									<span class="guarantee-title clearfix">
+										Secured Transaction
+									</span> <span class="guarantee-subtitle">
+										By Paypal
+									</span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 	<div class="footer-widgets-area section-padding">
 		<div class="container">
 			<div class="row">
