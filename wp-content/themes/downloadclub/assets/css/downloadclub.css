@@ -17899,6 +17899,56 @@ ul {
     box-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
 }
 
+#customer_login {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+}
+
+#customer_login .u-column1 {
+    box-shadow: 0 20px 60px 0 rgb(62 62 62 / 16%) !important;
+    background: #ffffff;
+    border-radius: 8px ;
+    margin: 20px ;
+    display: flex ;
+    flex-direction: column ;
+    flex-basis: 100% ;
+    flex: 1 ;
+}
+#customer_login .u-column2 {
+    box-shadow: 0 20px 60px 0 rgb(62 62 62 / 16%) !important;
+    background: #ffffff;
+    border-radius: 8px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1 ;
+}
+#customer_login h2 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 4rem;
+    color: #000;
+    letter-spacing: 0.36px;
+    padding-top: 20px;
+}
+.woocommerce form.login, .woocommerce form.register {
+    border: none !important;
+}
+.register input[type=email], .register input[type=password], .register input[type=text], .woocommerce-form-login input[type=email], .woocommerce-form-login input[type=password], .woocommerce-form-login input[type=text], .woocommerce-form-register input[type=email], .woocommerce-form-register input[type=password], .woocommerce-form-register input[type=text] {
+    border: 1px solid #e4e6e6!important;
+    background-color: #eceeef!important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2)!important;
+    font-weight: 700!important;
+    padding: 10px 5px!important;
+    border-radius: 5px!important;
+}
+.woocommerce form .form-row {
+    flex-direction: column;
+}
+
 
 
 
