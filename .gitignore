@@ -58,4 +58,4 @@ wp-content/debug.log
 .clpprj
 *.clpprj
 *.csprj
-wp-config.php
+/wp-config.php
