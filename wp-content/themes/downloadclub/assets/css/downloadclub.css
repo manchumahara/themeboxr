@@ -17968,7 +17968,7 @@ ul {
     transition: 0.5s;
     background-size: 200% auto!important;
     color: #ffffff!important;
-    border-radius: 5px!important;
+    border-radius: 10px!important;
     display: block;
 }
 .woocommerce button.button:hover{
@@ -18170,6 +18170,21 @@ blockquote p{
 }
 .testi-heading .cbxsec_head {
     font-weight: 900;
+}
+#testimonial .btn-cbx{
+    margin-top: 30px;
+    background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 51%, #1FA2FF 100%) !important;
+    box-shadow: 0 10px 20px 0 rgb(130 210 248 / 45%);
+    padding: 10px 25px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto!important;
+    color: #ffffff!important;
+    border-radius: 10px!important;
+}
+#testimonial .btn-cbx:hover{
+    background-position: right center;
+    color: #fff;
 }
 
 

@@ -386,7 +386,7 @@ function themeboxr_lmpt_add_dashboard_widgets() {
 
 	wp_add_dashboard_widget(
 		'themeboxr_lmpt_dashboard_widget',         // Widget slug.
-		esc_html__( 'Last Modified Post Types', 'themeboxr' ),         // Title.
+		esc_html__( 'Last Modified Post Types', 'downloadclub' ),         // Title.
 		'themeboxr_lmpt_dashboard_widget_function' // Display function.
 	);
 }
