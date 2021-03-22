@@ -187,6 +187,163 @@ $shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
         <!-- Products Content End -->
     </section>
     <!--== Products Area End ==-->
+    <section>
+        <div id="testimonial" class="home-sections">
+            <div class="cbxinner cbxinnerwhite">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="cbxsectitle">
+                                <span class="cbxsecicon"></span> <span class="cbxsec_headblock">
+									<strong class="cbxsec_subhead">Reviews by Customers & Clients</strong>
+									<strong class="cbxsec_head">Testimonials</strong>
+								</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div id="archive-testimonial">
+                        <div class="row">
+							<?php
+							$count_posts = wp_count_posts( 'testimonial' );
+							if ( $count_posts ) {
+								$count_posts = intval( $count_posts->publish );
+							}
+
+							$lbarg = array(
+								'post_type'      => 'testimonial',
+								'post_status'    => 'publish',
+								'paged'          => 1,
+								'posts_per_page' => 6,
+								//'meta_key'       => '_cbxtestimonial_featured',
+								//'orderby'        => 'meta_value_num',
+								//'orderby'        => 'random',
+								'order'          => 'random',
+								/*'tax_query'      => array(
+									array(
+										'taxonomy' => 'testimonial_type',
+										'field'    => 'id',
+										'terms'    => '955' //service
+									)
+								),*/
+
+							);
+
+
+							$posts_array = wp_cache_get( 'codeboxr_home_testimonials' );
+							if ( false === $posts_array ) {
+								$posts_array = get_posts( $lbarg );
+								wp_cache_set( 'codeboxr_home_testimonials', maybe_serialize( $posts_array ) );
+							} else {
+								$posts_array = maybe_unserialize( $posts_array );
+							}
+
+							if ( sizeof( $posts_array ) == 0 ): ?>
+
+                                <div class="col-md-12">
+                                    <p class="center">
+                                        Sorry currently there is no products here </p>
+                                </div>
+
+							<?php
+							else:
+								$i = 1;
+								foreach ( $posts_array as $post ) : setup_postdata( $post );
+									$post_id    = $post->ID;
+									$post_title = get_the_title( $post_id );
+									$post_link  = get_permalink( $post_id );
+
+									$content_url = content_url();
+									$content     = get_the_content( $post_id );
+
+
+									//$custom = get_post_custom($post_id);
+									$fieldValues = get_post_meta( $post_id, '_cbxtestimonial', true );
+									$name        = isset( $fieldValues['name'] ) ? esc_attr( $fieldValues['name'] ) : ''; //customer name
+									$designation = isset( $fieldValues['designation'] ) ? esc_attr( $fieldValues['designation'] ) : ''; //custom designation
+
+									$photo    = isset( $fieldValues['photo'] ) ? esc_attr( $fieldValues['photo'] ) : ''; //custom photo
+									$referene = isset( $fieldValues['referene'] ) ? esc_attr( $fieldValues['referene'] ) : ''; //where the testimonial was given
+
+									//for customer and service type testimonial
+									$website   = isset( $fieldValues['website'] ) ? esc_attr( $fieldValues['website'] ) : ''; //customer website
+									$brandname = isset( $fieldValues['brandname'] ) ? esc_attr( $fieldValues['brandname'] ) : ''; //brand name
+
+
+									$featured = intval( get_post_meta( $post->ID, '_cbxtestimonial_featured', true ) );
+									$product  = intval( get_post_meta( $post->ID, '_cbxtestimonial_product', true ) );
+									//write_log($product);
+
+									//old compatibility
+									if ( isset( $fieldValues['featured'] ) ) {
+										$featured = isset( $fieldValues['featured'] ) ? intval( $fieldValues['featured'] ) : 0;
+									}
+
+
+									if ( isset( $fieldValues['product'] ) ) {
+										$product = isset( $fieldValues['product'] ) ? intval( $fieldValues['product'] ) : 0;
+										//write_log($product);
+									}
+									//end old compatibility
+
+
+									if ( $website == '' ) {
+										$website = '#';
+									}
+									if ( $referene == '' ) {
+										$referene = '#';
+									}
+
+
+									$via      = '';
+									$tsources = get_the_terms( $post_id, 'testimonial_source' );
+									if ( $tsources ) {
+										foreach ( $tsources as $tsource ) {
+											$via = $tsource->name;
+										}
+									}
+
+									$product_link = ( $product > 0 ) ? get_permalink( $product ) : '#';
+
+
+									?>
+                                    <div class="col-12 col-sm-6 col-md-4 testimonial-box-col">
+                                        <div class="testimonial-box">
+                                            <h2 class="h1"><a
+                                                        href="<?php echo $product_link; ?>"><?php the_title(); ?></a>
+                                            </h2>
+
+                                            <!--<blockquote>
+												<?php /* the_content(); */ ?>
+											</blockquote>-->
+											<?php if ( $name != '' ): ?>
+                                                <p class="testimonial-box-name h3">By <?php echo $name; ?></p>
+											<?php endif; ?>
+                                            <p class="testimonial-box-ref">via <cite title="<?php echo $via; ?>"><a
+                                                            href="<?php echo $referene; ?>"
+                                                            target="_blank"><?php echo $via; ?></a></cite></p>
+                                        </div>
+                                    </div>
+									<?php
+									$i ++;
+								endforeach;
+								wp_reset_postdata();
+
+							endif;
+							?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="cbx-loadmore text-center">
+                                <a href="<?php echo esc_url( home_url( '/testimonial' ) ); ?>"
+                                   class="btn btn-cbx"><?php echo sprintf( esc_html__( 'View All %d Reviews', 'themeboxr' ), $count_posts ); ?></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <?php
 //include the template section "we are featured"

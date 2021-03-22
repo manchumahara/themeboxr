@@ -7,6 +7,10 @@
 	 * @package DownloadClub
 	 */
 
+
+require_once( 'inc/class-tbtestimonial.php' );
+
+
 	if (! function_exists('mix')) {
 		/**
 		 * Get the path to a versioned Mix file.
@@ -123,6 +127,12 @@
 				'flex-width'  => true,
 				'flex-height' => true,
 			) );
+
+			//additional testimonial info
+			if ( class_exists( 'CBXTestimonial' ) ) {
+				new CBXTestimonial;
+
+			}
 		}
 	endif;
 	add_action( 'after_setup_theme', 'downloadclub_setup' );
@@ -481,6 +491,11 @@ function wp_reset_admin_postdata() {
 	 * Functions which enhance the theme by hooking into WordPress.
 	 */
 	require get_template_directory() . '/inc/template-functions.php';
+
+	/**
+	 * Functions which enhance the theme by hooking into WordPress.
+	 */
+	require get_template_directory() . '/inc/customfunctions.php';
 
 	/**
 	 * Load WooCommerce compatibility file.
