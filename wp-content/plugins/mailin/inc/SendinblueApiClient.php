@@ -14,7 +14,7 @@ class SendinblueApiClient
     const RESPONSE_CODE_CREATED = 201;
     const RESPONSE_CODE_ACCEPTED = 202;
     const RESPONSE_CODE_UNAUTHORIZED = 401;
-    const PLUGIN_VERSION = '3.1.4';
+    const PLUGIN_VERSION = '3.1.7';
 
     private $apiKey;
     private $lastResponseCode;
@@ -165,6 +165,24 @@ class SendinblueApiClient
      * @param $data
      * @return mixed
      */
+    public function createInstallationInfo($data)
+    {
+        return $this->post("/account/partner/information", $data);
+    }
+
+    /**
+     * @param $installationId ,$data
+     * @return mixed
+     */
+    public function updateInstallationInfo($installationId, $data)
+    {
+        return $this->put("/account/partner/information/" . $installationId, $data);
+    }
+
+    /**
+     * @param $data
+     * @return mixed
+     */
     public function createList($data)
     {
         return $this->post("/contacts/lists", $data);
@@ -249,15 +267,6 @@ class SendinblueApiClient
     }
 
     /**
-     * @param $data
-     * @return mixed
-     */
-    public function setPartner($data)
-    {
-        return $this->post('/account/partner',$data);
-    }
-
-    /**
      * @param $endpoint
      * @param array $parameters
      * @return mixed
@@ -323,6 +332,13 @@ class SendinblueApiClient
             }
             if (isset($body['unlinkListIds'])) {
                 $body['unlinkListIds'] = $this->getListsIds($body['unlinkListIds']);
+            }
+            if(is_array($body)) {
+                foreach($body as $key => $val) {
+                    if(empty($val) && $val!==false && $val!==0) {
+                        unset($body[$key]);
+                    }
+                }
             }
             $args['body'] = wp_json_encode($body);
         }

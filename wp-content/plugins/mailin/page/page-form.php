@@ -863,10 +863,15 @@ For your information, you cannot select a template with the tag [DOUBLEOPTIN].',
 			// Check secret through hidden referrer field.
 			check_admin_referer( 'sib_setting_subscription' );
 
+			//Handling of backslash added by WP because magic quotes are enabled by default
+			array_walk_recursive( $_POST, function(&$value) {
+				$value = stripslashes($value);
+			});
+			
 			// Subscription form.
 			$formID = isset( $_POST['sib_form_id'] ) ? sanitize_text_field( $_POST['sib_form_id'] ) : '';
 			$form_name = isset( $_POST['sib_form_name'] ) ? sanitize_text_field( $_POST['sib_form_name'] ) : '';
-			$form_html = isset( $_POST['sib_form_html'] ) ? stripslashes( $_POST['sib_form_html'] ): '';
+			$form_html = isset( $_POST['sib_form_html'] ) ? $_POST['sib_form_html'] : '';
 			$list_ids = isset( $_POST['list_id'] ) ? maybe_serialize( $_POST['list_id'] ) : '';
 			$dependTheme = isset( $_POST['sib_css_type'] ) ? sanitize_text_field( $_POST['sib_css_type'] ) : '';
 			$customCss = isset( $_POST['sib_form_css'] ) ? $_POST['sib_form_css'] : '';

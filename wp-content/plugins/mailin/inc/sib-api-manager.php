@@ -548,7 +548,16 @@ if ( ! class_exists( 'SIB_API_Manager' ) ) {
 			$attachment = array();
 
 			// get info from SIB template.
-			if ( intval( $template_id ) > 0 ) {
+			if ( 'yes' == $home_settings['activate_email'] && intval( $template_id ) > 0 && ( 'confirm' == $type ) ) {
+				$data = array(
+					'replyTo' => array('email' => $sender_email),
+					'to' => array(array('email' => $to_email)),
+				);
+				$data["templateId"] = intval( $template_id );
+				$mailin->sendEmail( $data );
+				return;
+			}
+			else if ( intval( $template_id ) > 0 ) {
 				$data = array(
 					'id' => $template_id,
 				);
@@ -604,27 +613,15 @@ if ( ! class_exists( 'SIB_API_Manager' ) ) {
 				), $html_content
 			);
 
-			$home_settings = get_option( SIB_Manager::HOME_OPTION_NAME );
 			if ( 'yes' == $home_settings['activate_email'] ) {
 
-				$data = [
-                    'replyTo' => [
-                        'email' => $from[0],
-                    ],
-                    'to' => [
-                        [
-                            'email' => $to_email
-                        ]
-                    ]
-                ];
-
-				if ( intval( $template_id ) > 0 && ( 'confirm' == $type ) ) {
-					$data["templateId"] = intval( $template_id );
-				} else {
-					$data['sender'] = [ 'email' => $from[0], 'name' => $from[1] ];
-                    $data['htmlContent'] = $html_content;
-                    $data['subject'] = $subject;
-				}
+				$data = array(
+					'replyTo' => array('email' => $from[0]),
+					'to' => array(array('email' => $to_email)),
+				);
+				$data['sender'] = [ 'email' => $from[0], 'name' => $from[1] ];
+				$data['htmlContent'] = $html_content;
+				$data['subject'] = $subject;
 
 				$res = $mailin->sendEmail( $data );
 

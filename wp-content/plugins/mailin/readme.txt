@@ -115,6 +115,22 @@ In order to create a signup form, you need to:
 
 == Changelog ==
 
+= 3.1.7 =
+**Improvements**
+
+* Improved technical performance of the plugin
+
+= 3.1.6 =
+**Bug fixes**
+
+* Fixed the unwanted backslash issue when adding apostrophe in text field at forms or at forms settings.
+
+= 3.1.5 =
+**Bug fixes**
+
+* Fixed the unwanted backslash issue when adding apostrophe in text field at forms or at forms settings.
+* Fixed the Missing/Invalid Parameter errors in response from API when sending transactional.
+
 = 3.1.4 =
 **Bug fixes**
 

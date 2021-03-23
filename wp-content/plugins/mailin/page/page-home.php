@@ -568,8 +568,7 @@ if ( ! class_exists( 'SIB_Page_Home' ) ) {
 			    $apiClient = new SendinblueApiClient();
 			    $response = $apiClient->getAccount();
                 if ( $apiClient->getLastResponseCode() === SendinblueApiClient::RESPONSE_CODE_OK ) {
-                    $data["partnerName"] = "WORDPRESS";
-                    $apiClient->setPartner($data);
+                    self::processInstallationInfo("login");
                     // create tables for users and forms.
                     SIB_Model_Users::createTable();
                     SIB_Forms::createTable(); // create default form also
@@ -761,6 +760,7 @@ if ( ! class_exists( 'SIB_Page_Home' ) ) {
 
 		/** Logout process */
 		function logout() {
+			self::processInstallationInfo("logout");
 			$setting = array();
 			update_option( SIB_Manager::MAIN_OPTION_NAME, $setting );
 			delete_option(SIB_Manager::API_KEY_V3_OPTION_NAME);
@@ -784,6 +784,46 @@ if ( ! class_exists( 'SIB_Page_Home' ) ) {
 			exit();
 		}
 
+		public static function processInstallationInfo($action)
+		{
+			global $wp_version;
+
+			if($action == "login")
+			{
+				$apiClient = new SendinblueApiClient();
+
+				$params["partnerName"] = "WORDPRESS";
+				$params["active"] = true;
+				$params["plugin_version"] = SendinblueApiClient::PLUGIN_VERSION;
+				if(!empty($wp_version))
+				{
+					$params["shop_version"] = $wp_version;
+				}
+				$params["shop_url"] = get_home_url();
+				$params["created_at"] = gmdate("Y-m-d\TH:i:s.v\Z");
+				$params["activated_at"] = gmdate("Y-m-d\TH:i:s.v\Z");
+				$params["type"] = "sib";
+				$response = $apiClient->createInstallationInfo($params);
+				if ( $apiClient->getLastResponseCode() === SendinblueApiClient::RESPONSE_CODE_CREATED )
+				{
+					if(!empty($response["id"]))
+					{
+						update_option(SIB_Manager::INSTALLATION_ID, $response["id"]);
+					}
+				}
+			}
+			elseif($action == "logout")
+			{
+				$installationId = get_option( SIB_Manager::INSTALLATION_ID );
+				if(!empty($installationId))
+				{
+					$apiClient = new SendinblueApiClient();
+					$params["active"] = false;
+					$params["deactivated_at"] = gmdate("Y-m-d\TH:i:s.v\Z");
+					$apiClient->updateInstallationInfo($installationId, $params);
+				}
+			}
+		}
 	}
 
 }

@@ -3,7 +3,7 @@
  * Plugin Name: Newsletter, SMTP, Email marketing and Subscribe forms by Sendinblue
  * Plugin URI: https://www.sendinblue.com/?r=wporg
  * Description: Manage your contact lists, subscription forms and all email and marketing-related topics from your wp panel, within one single plugin
- * Version: 3.1.4
+ * Version: 3.1.7
  * Author: Sendinblue
  * Author URI: https://www.sendinblue.com/?r=wporg
  * License: GPLv2 or later
@@ -81,7 +81,10 @@ if ( ! class_exists( 'SIB_Manager' ) ) {
 
         const API_KEY_V3_OPTION_NAME = 'sib_api_key_v3';
 
-        const RECAPTCHA_API_TEMPLATE = 'https://www.google.com/recaptcha/api/siteverify?%s';
+		const RECAPTCHA_API_TEMPLATE = 'https://www.google.com/recaptcha/api/siteverify?%s';
+		
+		/** Installation id option name */
+		const INSTALLATION_ID = 'sib_installation_id';
 
         /**
 		 * API key
@@ -611,6 +614,11 @@ if ( ! class_exists( 'SIB_Manager' ) ) {
 		 * Sign up process
 		 */
 		function signup_process() {
+			//Handling of backslash added by WP because magic quotes are enabled by default
+			array_walk_recursive( $_POST, function(&$value) {
+				$value = stripslashes($value);
+			});
+			
 			if ( empty( $_POST['sib_security'] ) ) {
 				wp_send_json(
 					array(
@@ -836,8 +844,23 @@ if ( ! class_exists( 'SIB_Manager' ) ) {
 			$from_name = apply_filters( 'wp_mail_from_name', $from_name );
 
 			if ( !empty( $headers ) ) {
+			    if( is_array( $headers ) ){
+                    		foreach ($headers as $key => $val) {
+                        	    if( $val == "Content-Type: text/html" ){
+                            		unset( $headers[$key] );
+                        	    }
+                    		}
+                    		$headers = array_values( $headers );
+                    		if( count( $headers ) == 1 && $headers[0] == '' ) {
+                        	    unset( $headers[0] );
+                    		}
+                	    }
+			    if( is_string( $headers ) ){
 				$headers = str_replace("Content-Type: text/html", "", $headers);
-                		$data['headers'] = $headers;
+			    }
+			    if( !empty( $headers ) ){
+				$data['headers'] = $headers;
+			    }
 				if ( ! is_array( $headers ) ) {
 					// Explode the headers out, so this function can take both.
 					// string headers and an array of headers.
