@@ -336,7 +336,7 @@ $shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
                         <div class="col-12">
                             <div class="cbx-loadmore text-center">
                                 <a href="<?php echo esc_url( home_url( '/testimonial' ) ); ?>"
-                                   class="btn btn-cbx"><?php echo sprintf( esc_html__( 'View All %d Reviews', 'themeboxr' ), $count_posts ); ?></a>
+                                   class="btn btn-cbx"><?php echo esc_html__( 'View All Reviews', 'themeboxr' )/*echo sprintf( esc_html__( 'View All %d Reviews', 'themeboxr' ), $count_posts ); */?></a>
                             </div>
                         </div>
                     </div>
