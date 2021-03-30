@@ -15806,7 +15806,7 @@ ul {
 }
 
 #banner-area.entry-header {
-    padding: 180px 0 86px;
+    padding: 180px 0 50px;
     height: auto !important;
 }
 
@@ -18345,9 +18345,155 @@ blockquote p {
         padding: 50px 0px;
     }
 }
-
 .btn-brand {
     box-shadow: none !important;
+}
+
+.coupon{
+    margin-right: 10px !important;
+}
+.coupon input[type="text"]{
+    border: 1px solid #e6e6e6!important;
+    background-color: #ffffff!important;
+    box-shadow: 0 10px 20px 0 rgba(0,4,32,0.05)!important;
+    font-weight: 700!important;
+    padding: 10px 15px!important;
+    border-radius: 5px!important;
+    width: 300px !important;
+}
+.coupon input[type="text"]:focus{
+    outline: none;
+    border: 1px solid #12c9fe !important;
+}
+.woocommerce-cart-form__contents button.button{
+    padding: 12px 25px !important;
+}
+
+.woocommerce-cart-form, .cart-collaterals, .checkout {
+    background: #ffffff;
+    box-shadow: 0 20px 60px 0 rgba(62, 62, 62, .16);
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 20px;
+}
+
+.woocommerce table.shop_table_responsive tr.cart-subtotal td, .woocommerce table.shop_table_responsive tr.order-total td {
+    display: block;
+    text-align: right!important;
+}
+.woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals {
+    float: none !important;
+    width: 100% !important;
+    text-align: left !important;
+}
+.quantity input[type="number"]{
+    border: 1px solid #e6e6e6!important;
+    background-color: #ffffff!important;
+    box-shadow: 0 10px 20px 0 rgba(0,4,32,0.05)!important;
+    font-weight: 700!important;
+    padding: 10px 15px!important;
+    border-radius: 5px!important;
+    width: 100px !important;
+}
+.quantity input[type="number"]:focus{
+    outline: none;
+    border: 1px solid #12c9fe !important;
+}
+.woocommerce-checkout textarea{
+    border: 1px solid #e4e6e6!important;
+    background-color: #eceeef!important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2)!important;
+    font-weight: 700!important;
+    padding: 10px 15px!important;
+    border-radius: 5px!important;
+}
+.woocommerce-error, .woocommerce-info, .woocommerce-message {
+    box-shadow: 0 20px 60px 0 rgba(62, 62, 62, .16);
+    -webkit-border-bottom-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -moz-border-radius-bottomright: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+#payment{
+    background: #ffffff !important;
+}
+
+:root {
+    --blue: #12D8FA;
+    --white: #fff;
+    --green: #2ccf6d;
+}
+
+.page-404-warp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    padding: 200px 0px 200px 0px;
+}
+.page-404-warp svg {
+    width: 100%;
+}
+.page-404-warp h1 {
+    font-size: 7.5em;
+    margin: 15px 0px;
+    font-weight: bold;
+    color: var(--blue);
+}
+.page-404-warp h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+.page-404-warp p {
+    margin-bottom: 30px !important;
+}
+.page-404-warp fieldset {
+    width: 500px;
+}
+.page-404-warp .input-group {
+    flex-direction: column;
+}
+.page-404-warp .input-group input[type=text] {
+    border: 1px solid #e4e6e6 !important;
+    background-color: #eceeef !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    font-weight: 700 !important;
+    padding: 20px !important;
+    border-radius: 5px !important;
+    width: 100% !important;
+}
+.page-404-warp .input-group .input-group-btn button.btn {
+    background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 51%, #1FA2FF 100%) !important;;
+    box-shadow: 0 10px 30px 0 rgba(130, 210, 248, 0.45) !important;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto !important;
+    color: #ffffff !important;
+    border-radius: 5px !important;
+    display: block;
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 6px 15px;
+    font-weight: 700;
+}
+.page-404-warp .input-group .input-group-btn button.btn:hover {
+    background-position: right center !important;
+    color: #fff;
+}
+.page-404-warp .input-group .input-group-btn button.btn:focus {
+    outline: none !important;
+}
+
+@media screen and (max-width: 768px) {
+    .page-404-warp {
+        display: block;
+    }
+    .page-404-warp .container {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
 }
 
 
