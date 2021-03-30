@@ -12136,6 +12136,29 @@
         $('.venobox').venobox();
         $('.product-screenshots').find('br').remove();
 
+      //search popup
+      $('a[href="#cbxpopupsearch"]').on('click', function (event) {
+        event.preventDefault();
+
+        $('#cbxpopupsearch').addClass('open');
+        $('#cbxpopupsearch > form > input[type="text"]').focus();
+        $(document.body).addClass('cbxpopupsearch-active');
+      });
+
+      $('#cbxpopupsearch').on('click', '.close', function (e) {
+        e.preventDefault();
+
+        $(document.body).removeClass('cbxpopupsearch-active');
+        $('#cbxpopupsearch').removeClass('open');
+      });
+      //end search popup
+
+      $('[data-toggle="tooltipcodeboxr"]').tooltip({
+        'template': '<div class="tooltip tooltipcb" role="tooltip"><div class="tooltip-arrow tooltipcb-arrow"></div><div class="tooltip-inner tooltipcb-inner"></div></div>'
+      });
+
+      $('p.add_to_cart_inline').css({'border': '0px solid #ccc'});
+
     });
 
 }(jQuery));

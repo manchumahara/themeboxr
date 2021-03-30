@@ -59,7 +59,19 @@
 	$is_admin_bar_showing = is_admin_bar_showing() ? 'is_admin_bar_showing' : '';
 
 ?>
-
+    <a class="navbar-search" href="#cbxpopupsearch" >
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </a>
+    <div id="cbxpopupsearch" class="cbx-popup ">
+        <button type="button" class="close"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <form action="<?php echo home_url('/'); ?>" method="get">
+            <input autocomplete="off" type="text" name="s" placeholder="To search: Type and hit enter" value="<?php the_search_query();  ?>" />
+            <input type="hidden" name="post_type[]" value="product" />
+            <input type="hidden" name="post_type[]" value="page" />
+            <input type="hidden" name="post_type[]" value="post" />
+            <button type="submit" class="btn btn-cbx"><?php esc_html_e('Search','themeboxr') ?></button>
+        </form>
+    </div>
 <header id="header-area" class="fixed-top <?php echo esc_attr( $is_admin_bar_showing ); ?>">
 	<div class="container">
 		<div class="row">
