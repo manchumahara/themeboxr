@@ -8,7 +8,6 @@ $post_link = get_permalink($post_id);
 
 $content_url = content_url();
 $author = get_the_author();
-$time = get_the_time('jS M Y');
 
 $thumburl = '';
 
@@ -34,18 +33,12 @@ if ($thumburl == '') {
             <figure class="blog-thumb">
                 <a href="<?php echo esc_url($post_link); ?>"><img src="<?php echo $thumburl; ?>" alt="Themeboxr"/></a>
             </figure>
-
-            <a href="<?php echo get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename')); ?>"
-               class="post-author"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/author.jpg"
-                                        alt="Themeboxr"/></a>
         </header>
 
         <section class="blog-content">
             <h2 class="h6">
                 <a href="<?php echo esc_url($post_link); ?>"><?php echo esc_html($post_title); ?></a>
             </h2>
-            <a href="<?php echo esc_url($post_link); ?>" class="post-date"><?php echo $time; ?></a>
-
             <?php //echo $content_text; ?>
         </section>
     </article>
