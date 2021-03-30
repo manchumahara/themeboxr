@@ -27,62 +27,127 @@
 	</div><!-- .entry-header -->
 <?php
 	downloadclub_page_wrapper_start();
-	$main_col_x = is_active_sidebar( 'sidebar-1' ) ? 'col-md-8' : 'col-md-12';
-
 ?>
-	<div class="section-padding">
-		<div class="container">
-			<div id="primary" class="content-area row">
-				<main id="main" class="site-main <?php echo esc_attr( $main_col_x ); ?>">
-					<?php if ( have_posts() ) : ?>
-						<?php
-						/* Start the Loop */
-						while ( have_posts() ) :
-							the_post();
+                    <section id="latest-blog-area" class="section-padding">
+                        <div class="container">
+                            <div class="latest-blog-container">
+                                <div class="row">
+                                    <?php
+                                    $paged = 1;
+                                    $lbarg = array(
+                                        'post_type'      => array( 'post','product' ),
+                                        'post_status'    => 'publish',
+                                        'paged'          => $paged,
+                                        'posts_per_page' => 10
+                                    );
 
-							/**
-							 * Run the loop for the search to output the results.
-							 * If you want to overload this in a child theme then include a file
-							 * called content-search.php and that will be used instead.
-							 */
-							get_template_part( 'template-parts/content', 'search' );
+                                    $posts_array = wp_cache_get( 'themeboxr_home_blogs' );
+                                    if ( false === $posts_array ) {
+                                        $posts_array = get_posts( $lbarg );
+                                        wp_cache_set( 'themeboxr_home_blogs', maybe_serialize( $posts_array ) );
+                                    } else {
+                                        $posts_array = maybe_unserialize( $posts_array );
+                                    }
+                                    if ( sizeof( $posts_array ) == 0 ): ?>
+                                        <div class="row clearfix">
+                                            <div class="col-md-12">
+                                                <div class="whatwecookbox">Sorry currently there is no blogs post here, but you can explore our
+                                                    <a class="btn btn-large  btn-warning"
+                                                       href="https://www.facebook.com/codeboxr">Facebook Page</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php
+                                    else:
+                                        $i = 1;
+                                        foreach ( $posts_array as $post ) : setup_postdata( $post );
 
-						endwhile;
+                                            $post_id    = $id = $post->ID;
+                                            $post_title = get_the_title( $post_id );
+                                            $post_link  = get_permalink( $post_id );
 
-						//the_posts_navigation();
-						?>
-						<?php if ( function_exists( 'downloadclub_page_navi' ) ) { // if expirimental feature is active ?>
-							<div class="pagination_wrap">
-								<?php downloadclub_page_navi(); // use the page navi function ?>
-							</div>
-						<?php } else { // if it is disabled, display regular wp prev & next links ?>
-							<div class="pagination_wrap">
-								<nav class="wp-prev-next">
-									<ul class="pager">
-										<li class="previous"><?php next_posts_link( _e( '&laquo; Older Entries', 'downloadclub' ) ) ?></li>
-										<li class="next"><?php previous_posts_link( _e( 'Newer Entries &raquo;', 'downloadclub' ) ) ?></li>
-									</ul>
-								</nav>
-							</div>
 
-						<?php }
+                                            $content_url  = content_url();
+                                            //$content_text = downloadclub_ellipsis( remove_shortcode( get_the_content() ) );
+                                            $author       = get_the_author();
+                                            $time         = get_the_time( 'jS M Y' );
+                                            //write_log( $content_text );
 
-					else :
 
-						get_template_part( 'template-parts/content', 'none' );
+                                            $thumburl = '';
 
-					endif;
-					?>
+                                            if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/'.$id.'/' . $id . '-profile.png' ) ) {
+                                                $thumburl = $content_url . '/uploads/productshots/'.$id.'/' . $id . '-profile.png';
+                                            }
+                                            else if ( file_exists( WP_CONTENT_DIR . '/uploads/productshots/'.$id.'/' . $id . '-profile.jpg' ) ) {
+                                                $thumburl = $content_url . '/uploads/productshots/'.$id.'/' . $id . '-profile.jpg';
+                                            }
+                                            else if ( has_post_thumbnail() ) {
 
-				</main><!-- #main -->
-				<?php if ( is_active_sidebar( 'sidebar-1' ) ): ?>
-					<div class="col-md-4">
-						<?php get_sidebar(); ?>
-					</div>
-				<?php endif; ?>
-			</div><!-- #primary -->
-		</div>
-	</div>
+                                                $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'medium' );
+                                                $thumburl        = isset( $large_image_url[0] ) ? $large_image_url[0] : '';
+
+                                            }
+
+                                            if($thumburl == '') {
+                                                //$thumburl = $content_url . '/uploads/productshots/profile.png';
+                                                $thumburl = get_template_directory_uri() . '/assets/images/blog/blog-1.jpg';
+                                            }
+
+                                            ?>
+                                            <div class="col-lg-4 col-md-6">
+                                                <article class="single-blog-item">
+                                                    <header class="blog-header">
+                                                        <figure class="blog-thumb">
+                                                            <a href="<?php echo esc_url( $post_link ); ?>"><img src="<?php echo $thumburl; ?>" alt="Themeboxr" /></a>
+                                                        </figure>
+                                                    </header>
+                                                    <section class="blog-content">
+                                                        <h2 class="h6">
+                                                            <a href="<?php echo esc_url( $post_link ); ?>"><?php echo esc_html( $post_title ); ?></a>
+                                                        </h2>
+                                                        <a href="<?php echo esc_url( $post_link ); ?>" class="post-date"><?php echo $time; ?></a>
+
+                                                        <?php //echo $content_text; ?>
+                                                    </section>
+
+                                                    <!--<footer class="blog-footer">
+										<a href="<?php /*echo esc_url( $post_link ); */?>" class="btn-readmore">More</a>
+
+										<div class="blog-meta">
+											<a href="#"><i class="fa fa-comments"></i> 25</a>
+											<a href="#"><i class="fa fa-heart"></i> 125</a>
+										</div>
+									</footer>-->
+                                                </article>
+                                            </div>
+                                        <?php
+                                        endforeach;
+                                        wp_reset_postdata();
+                                    endif;
+                                    ?>
+
+                                </div>
+                            </div>
+                            <?php if ( function_exists( 'downloadclub_page_navi' ) ) { // if expirimental feature is active ?>
+                                <div class="pagination_wrap">
+                                    <?php downloadclub_page_navi(); // use the page navi function ?>
+                                </div>
+                            <?php } else { // if it is disabled, display regular wp prev & next links ?>
+                                <div class="pagination_wrap">
+                                    <nav class="wp-prev-next">
+                                        <ul class="pager">
+                                            <li class="previous"><?php next_posts_link( _e( '&laquo; Older Entries', 'downloadclub' ) ) ?></li>
+                                            <li class="next"><?php previous_posts_link( _e( 'Newer Entries &raquo;', 'downloadclub' ) ) ?></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+
+                            <?php }
+                            ?>
+                        </div>
+                    </section>
+
 
 <?php
 	downloadclub_page_wrapper_end();
