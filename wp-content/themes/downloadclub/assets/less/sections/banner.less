@@ -1,51 +1,110 @@
 /*--== Banner Area Start ==--*/
 #banner-area {
-  background-image: url("../images/banner-bg.jpg");
+  /*background-image: url("../images/banner-bg.jpg");
   background-size: cover;
   background-position: center center;
   color: @white;
   position: relative;
   padding-top: 235px;
-  z-index: 1;
+  z-index: 1;*/
+  background: #fcf5ff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fcf5ff), to(#fff));
+  background: linear-gradient(to bottom, #fcf5ff 0%, #fff 100%);
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 90px;
+  overflow: hidden;
 
-  &:after {
-    .bg-gradient();
-    content: '';
-    position: absolute;
-    height: 100%;
-    left: 0;
-    .opacity(0.9);
-    top: 0;
-    width: 100%;
-    z-index: -2;
-  }
+  /* &:after {
+     .bg-gradient();
+     content: '';
+     position: absolute;
+     height: 100%;
+     left: 0;
+     .opacity(0.9);
+     top: 0;
+     width: 100%;
+     z-index: -2;
+   }
 
-  &:before {
-    background-color: @black;
-    content: '';
-    position: absolute;
-    height: 100%;
-    left: 0;
-    .opacity(0.2);
-    top: 0;
-    width: 100%;
-    z-index: -1;
-  }
+   &:before {
+     background-color: @black;
+     content: '';
+     position: absolute;
+     height: 100%;
+     left: 0;
+     .opacity(0.2);
+     top: 0;
+     width: 100%;
+     z-index: -1;
+   }*/
 
   .banner-content-wrap {
     position: relative;
 
     h1 {
-      .font-weight(300);
-      color: @white;
+      .font-weight(500);
+      color: #151826;
+      line-height: 1.3;
+      margin-bottom: 26px;
 
       span {
         .font-weight(700);
       }
     }
 
+    p {
+      font-size: 20px;
+      line-height: 1.7;
+      margin-bottom: 35px;
+    }
+
     .btn-brand {
       margin: 60px 0 90px;
+    }
+
+    .color-blue {
+      color: #4353ff;
+    }
+
+    .color-green {
+      color: #35dc90;
+    }
+
+    .color-light {
+      color: #bcb2ce;
+    }
+
+    .color-indego {
+      color: #3F00FF !important;
+    }
+
+    .badge {
+      &.badge-wide {
+        padding: 13px 20px;
+      }
+
+      .digit {
+        font-weight: 600;
+      }
+    }
+
+    .badge {
+      display: inline-block;
+      font-weight: 400;
+      font-size: 14px;
+      border-radius: 21px;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: baseline;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+      -webkit-box-shadow: 0 0 50px rgba(161, 149, 191, 0.2) !important;
+      box-shadow: 0 0 50px rgba(161, 149, 191, 0.2) !important;
+    }
+
+    .mt-50 {
+      margin-top: 50px;
     }
 
     .featured-products-area {
@@ -64,6 +123,7 @@
 
             &.center {
               z-index: 2;
+
               .single-feature-product {
                 .transform(scale(1.7));
               }
@@ -72,6 +132,48 @@
         }
       }
     }
+  }
+
+  .hero-banner__img {
+    .shade-bg {
+      position: absolute;
+      right: -500px;
+      height: 160%;
+      width: 170%;
+      top: -280px;
+      z-index: 1;
+      background-image: url(/../../../assets/images/home/circle-shape-light.png);
+      background-size: cover;
+    }
+  }
+
+  .hero-banner__img {
+    &.grid--out {
+      img {
+        position: relative;
+        z-index: 2;
+        max-width: 136%;
+        margin-top: -25px;
+        width: 772px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1399px) {
+  .hero-banner__img.grid--out img {
+    max-width: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .hero-banner__img .shade-bg {
+    height: 190% !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #banner-area {
+    text-align: center;
   }
 }
 

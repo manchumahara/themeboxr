@@ -242,4 +242,21 @@
 
     });
 
+    //search popup
+    $('a[href="#cbxpopupsearch"]').on('click', function (event) {
+        event.preventDefault();
+
+        $('#cbxpopupsearch').addClass('open');
+        $('#cbxpopupsearch > form > input[type="text"]').focus();
+        $(document.body).addClass('cbxpopupsearch-active');
+    });
+
+    $('#cbxpopupsearch').on('click', '.close', function (e) {
+        e.preventDefault();
+
+        $(document.body).removeClass('cbxpopupsearch-active');
+        $('#cbxpopupsearch').removeClass('open');
+    });
+    //end search popup
+
 }(jQuery));

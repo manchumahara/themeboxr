@@ -12010,7 +12010,8 @@
         $('.woocommerce-ordering').find('.orderby').addClass('form-control form-control-lg');
 
         $('.single-product-page-wrapper').find('.summary.entry-summary').remove();
-		$('p:empty').remove();
+		//$('p:empty').remove();
+        $('p:empty').not('[role="status"]').remove();
 
 
 		$('.add_to_cart_button').addClass('btn btn-default-brand');
@@ -12136,29 +12137,23 @@
         $('.venobox').venobox();
         $('.product-screenshots').find('br').remove();
 
-      //search popup
-      $('a[href="#cbxpopupsearch"]').on('click', function (event) {
+    });
+
+    //search popup
+    $('a[href="#cbxpopupsearch"]').on('click', function (event) {
         event.preventDefault();
 
         $('#cbxpopupsearch').addClass('open');
         $('#cbxpopupsearch > form > input[type="text"]').focus();
         $(document.body).addClass('cbxpopupsearch-active');
-      });
+    });
 
-      $('#cbxpopupsearch').on('click', '.close', function (e) {
+    $('#cbxpopupsearch').on('click', '.close', function (e) {
         e.preventDefault();
 
         $(document.body).removeClass('cbxpopupsearch-active');
         $('#cbxpopupsearch').removeClass('open');
-      });
-      //end search popup
-
-      $('[data-toggle="tooltipcodeboxr"]').tooltip({
-        'template': '<div class="tooltip tooltipcb" role="tooltip"><div class="tooltip-arrow tooltipcb-arrow"></div><div class="tooltip-inner tooltipcb-inner"></div></div>'
-      });
-
-      $('p.add_to_cart_inline').css({'border': '0px solid #ccc'});
-
     });
+    //end search popup
 
 }(jQuery));
