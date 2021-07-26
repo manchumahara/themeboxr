@@ -15,7 +15,9 @@ if ( ! class_exists( 'SIB_API_Manager' ) ) {
 	class SIB_API_Manager {
 
 		/** Transient delay time */
-		const DELAYTIME = HOUR_IN_SECONDS;
+		const DELAYTIME = 900;
+		/** Constant for Plugin name */
+		const PLUGIN_NAME = 'wordpress';
 
 		/**
 		 * SIB_API_Manager constructor.
@@ -165,8 +167,6 @@ if ( ! class_exists( 'SIB_API_Manager' ) ) {
 				if (!empty($list_data['lists'])) {
                     foreach ( $list_data['lists'] as $value ) {
                         if ( 'Temp - DOUBLE OPTIN' == $value['name'] ) {
-                            $tempList = $value['id'];
-                            update_option( SIB_Manager::TEMPLIST_OPTION_NAME, $tempList );
                             continue;
                         }
                         $lists[] = array(
@@ -175,9 +175,10 @@ if ( ! class_exists( 'SIB_API_Manager' ) ) {
                         );
                     }
                 }
-			}
-			if ( count( $lists ) > 0 ) {
-				set_transient( 'sib_list_' . md5( SIB_Manager::$access_key ), $lists, self::DELAYTIME );
+
+				if ( count( $lists ) > 0 ) {
+					set_transient( 'sib_list_' . md5( SIB_Manager::$access_key ), $lists, self::DELAYTIME );
+				}
 			}
 			return $lists;
 		}
@@ -300,12 +301,10 @@ if ( ! class_exists( 'SIB_API_Manager' ) ) {
 
 			$isDopted = false;
 
-			$temp_dopt_list = get_option( SIB_Manager::TEMPLIST_OPTION_NAME );
-
 			$desired_lists = $list_id;
 
 			if ( 'double-optin' == $type ) {
-				$list_id = array( $temp_dopt_list );
+				$list_id = array();
 			}
 
 			// new user.
@@ -334,19 +333,12 @@ if ( ! class_exists( 'SIB_API_Manager' ) ) {
 			if ( isset( $attrs['DOUBLE_OPT-IN'] ) && '1' == $attrs['DOUBLE_OPT-IN'] ) {
 				$isDopted = true;
 			}
-			// remove dopt temp list from $listid.
-			if (($key = array_search($temp_dopt_list, $listid)) !== false) {
-                unset($listid[$key]);
-            }
 
 			$diff = array_diff( $desired_lists, $listid );
 			if ( ! empty( $diff ) ) {
 				$status = 'update';
 				if ( 'double-optin' != $type ) {
 					$listid = array_unique( array_merge( $listid, $list_id ) );
-				}
-				if ( ( 'double-optin' == $type && ! $isDopted) ) {
-					array_push( $listid, $temp_dopt_list );
 				}
 			} else {
 				if ( '1' == $res['emailBlacklisted'] ) {
@@ -449,11 +441,6 @@ if ( ! class_exists( 'SIB_API_Manager' ) ) {
 
 			if ($mailin->getLastResponseCode() === SendinblueApiClient::RESPONSE_CODE_OK && isset($user['email'])) {
                 unset($info["email"]);
-                if (isset($info["internalUserHistory"]) && is_array($info["internalUserHistory"])) {
-                      $info["internalUserHistory"][] = array("action"=>"SUBSCRIBE_BY_PLUGIN", "id"=> 1, "name"=>"wordpress");
-                } else {
-                      $info["internalUserHistory"] = array(array("action"=>"SUBSCRIBE_BY_PLUGIN", "id"=> 1, "name"=>"wordpress"));
-                }
                 if(!($type == 'double-optin')){
 					$data = [
 						'email' => $email,
@@ -487,7 +474,8 @@ if ( ! class_exists( 'SIB_API_Manager' ) ) {
                 $mailin->updateUser($email ,$data );
                 $exist = $mailin->getLastResponseCode() == 204 ? 'success' : '' ;
 			} else {
-                $info["internalUserHistory"] = array(array("action"=>"SUBSCRIBE_BY_PLUGIN", "id"=> 1, "name"=>"wordpress"));
+                $info['sibInternalSource'] = self::PLUGIN_NAME;
+                $info["internalUserHistory"] = array( array( "action" => "SUBSCRIBE_BY_PLUGIN", "id" => 1, "name" => self::PLUGIN_NAME ) );
 				$data = [
                     'email' => $email,
                     'attributes' => $info,
@@ -710,19 +698,14 @@ if ( ! class_exists( 'SIB_API_Manager' ) ) {
                 {
                     SIB_API_Manager::send_comfirm_email( 'confirm', $email, $current_form['confirmID'], $info );
                 }
-				// temp dopt list.
-				$temp_list = get_option( SIB_Manager::TEMPLIST_OPTION_NAME );
+
                 if( $unlinkedLists != null ) {
-                    $unlinkedLists[] = $temp_list;
                     self::create_subscriber( 'subscribe', $email, $list_id, $info, $unlinkedLists );
                 }
                 else {
-                    self::create_subscriber( 'subscribe', $email, $list_id, $info, array( $temp_list ) );
+                    self::create_subscriber( 'subscribe', $email, $list_id, $info );
                 }
 
-				// remove the record.
-				$id = $contact_info['id'];
-				SIB_Model_Users::remove_record( $id );
 			}
 
 			if ( '' != $contact_info['redirectUrl'] ) {
@@ -897,42 +880,7 @@ if ( ! class_exists( 'SIB_API_Manager' ) ) {
 		public static function create_default_dopt() {
 
 			$mailin = new SendinblueApiClient();
-
-			// get folder id
-			$folder_data = $mailin->getAllFolders();
-			foreach ( $folder_data['folders'] as $value ) {
-				if ( 'FORM' == $value['name'] ) {
-					$formFolderId = $value['id'];
-					break;
-				}
-			}
-			// create folder if not exists
-			if ( empty( $formFolderId ) ){
-				$data = ["name"=> "FORM"];
-				$folderCreated = $mailin->createFolder($data);
-				$formFolderId = $folderCreated['id'];
-			}
-
-			// add list.
-			$isEmpty = false;
-
-			$list_data = $mailin->getAllLists();
-			foreach ( $list_data['lists'] as $value ) {
-				if ( 'Temp - DOUBLE OPTIN' == $value['name'] ) {
-					$isEmpty = true;
-					break;
-				}
-			}
-
-			if(!$isEmpty) {
-				$data = array(
-					'name' => 'Temp - DOUBLE OPTIN',
-					'folderId' => $formFolderId,
-				);
-				$mailin->createList( $data );
-			}
 			
-
 			// add attribute.
 			$isEmpty = false;
 			$ret = $mailin->getAttributes();

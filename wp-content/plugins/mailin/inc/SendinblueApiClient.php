@@ -14,7 +14,8 @@ class SendinblueApiClient
     const RESPONSE_CODE_CREATED = 201;
     const RESPONSE_CODE_ACCEPTED = 202;
     const RESPONSE_CODE_UNAUTHORIZED = 401;
-    const PLUGIN_VERSION = '3.1.7';
+    const PLUGIN_VERSION = '3.1.15';
+    const USER_AGENT = 'sendinblue_plugins/wordpress';
 
     private $apiKey;
     private $lastResponseCode;
@@ -32,7 +33,22 @@ class SendinblueApiClient
      */
     public function getAccount()
     {
-        return $this->get('/account');
+        $sibAccObj = SendinblueAccount::getInstance();
+        if($sibAccObj->getSendinblueAccountData())
+        {
+            $this->lastResponseCode = $sibAccObj->getLastResponseCode();
+            return $sibAccObj->getSendinblueAccountData();
+        }
+        else
+        {
+            $accData = $this->get('/account');
+            if ($this->getLastResponseCode() === self::RESPONSE_CODE_OK)
+            {
+                $sibAccObj->setSendinblueAccountData($accData);
+                $sibAccObj->setLastResponseCode($this->lastResponseCode);
+            }
+            return $accData;
+        }
     }
 
     /**
@@ -322,7 +338,7 @@ class SendinblueApiClient
                 'api-key' => $this->apiKey,
                 'sib-plugin' => 'wp-'.self::PLUGIN_VERSION,
                 'Content-Type' => 'application/json',
-                'User-Agent' => 'sendinblue_plugins/wordpress'
+                'User-Agent' => self::USER_AGENT
             ],
         ];
 

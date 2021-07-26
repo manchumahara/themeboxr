@@ -7,7 +7,7 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 
 	/**
 	 * Class VillaTheme_Support
-	 * 1.0.8
+	 * 1.0.9
 	 */
 	class VillaTheme_Support {
 		protected $plugin_base_name;
@@ -92,13 +92,10 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 				'status' => '',
 				'data'   => '',
 			);
-			$request = wp_remote_get(
-				$url,
-				array(
-					'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
-					'timeout'    => 1000,
-				)
-			);
+			$request = wp_remote_get( $url, array(
+				'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+				'timeout'    => 10,
+			) );
 
 			if ( ! is_wp_error( $request ) || wp_remote_retrieve_response_code( $request ) === 200 ) {
 				$return['status'] = 'success';
@@ -115,12 +112,10 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 		 * Add Extension page
 		 */
 		function admin_menu() {
-			add_submenu_page(
-				$this->data['menu_slug'], esc_html__( 'Extensions', $this->data['slug'] ), esc_html__( 'Extensions', $this->data['slug'] ), 'manage_options', $this->data['slug'] . '-extensions', array(
-					$this,
-					'page_callback'
-				)
-			);
+			add_submenu_page( $this->data['menu_slug'], esc_html__( 'Extensions', $this->data['slug'] ), esc_html__( 'Extensions', $this->data['slug'] ), 'manage_options', $this->data['slug'] . '-extensions', array(
+				$this,
+				'page_callback'
+			) );
 			if ( $this->data['menu_slug'] && $this->data['pro_url'] ) {
 				global $submenu;
 				$submenu[ $this->data['menu_slug'] ][] = array(
@@ -268,7 +263,7 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 							<p><?php echo esc_html__( 'Hi there! You\'ve been using ', $this->data['slug'] ) . '<strong>' . $name . '</strong>' . esc_html__( ' on your site for a few days - I hope it\'s been helpful. Would you want get more features?', $this->data['slug'] ) ?></p>
 						<?php } ?>
 						<p>
-							<a href="<?php echo esc_url( wp_nonce_url( @add_query_arg(), $this->data['slug'] . '_hide_notices', '_villatheme_nonce' ) ); ?>"
+							<a href="<?php echo esc_url( wp_nonce_url( @add_query_arg(array()), $this->data['slug'] . '_hide_notices', '_villatheme_nonce' ) ); ?>"
 							   class="button"><?php esc_html_e( 'Thanks, later', $this->data['slug'] ) ?></a>
 							<?php if ( ! $check_review ) { ?>
 								<button class="button button-primary"><?php esc_html_e( 'Rate Now', $this->data['slug'] ) ?></button>
@@ -279,7 +274,7 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 								   class="button button-primary"><?php esc_html_e( 'Try Premium Version', $this->data['slug'] ) ?></a>
 							<?php } ?>
 							<a target="_self"
-							   href="<?php echo esc_url( wp_nonce_url( @add_query_arg(), $this->data['slug'] . '_dismiss_notices', '_villatheme_nonce' ) ); ?>"
+							   href="<?php echo esc_url( wp_nonce_url( @add_query_arg(array()), $this->data['slug'] . '_dismiss_notices', '_villatheme_nonce' ) ); ?>"
 							   class="button notice-dismiss vi-button-dismiss"><?php esc_html_e( 'Dismiss', $this->data['slug'] ) ?></a>
 						</p>
 					</form>
@@ -313,19 +308,23 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 			$called  = get_transient( 'villatheme_called' );
 
 			if ( ! $data && ! $called ) {
+
 				$request_data = $this->wp_remote_get( 'https://villatheme.com/notices.php' );
 				if ( $request_data['status'] === 'success' ) {
 					@$data = json_decode( $request_data['data'], true );
 				}
 				set_transient( 'villatheme_notices', $data, 86400 );
-			} else {
+			}
+			if ( ! $called ) {
 				set_transient( 'villatheme_called', 1, 86400 );
 			}
 			if ( ! is_array( $data ) ) {
+
 				return;
 			}
 			$data = wp_parse_args( $data, $default );
 			if ( ! $data['heading'] && ! $data['description'] ) {
+				echo esc_html_e( 'There are no events yet.', $this->data['slug'] );
 				return;
 			} ?>
 			<div class="villatheme-dashboard">
@@ -395,7 +394,8 @@ if ( ! class_exists( 'VillaTheme_Support' ) ) {
 					@$data = json_decode( $request_data['data'], true );
 				}
 				set_transient( 'villatheme_notices', $data, 86400 );
-			} else {
+			}
+			if ( ! $called ) {
 				set_transient( 'villatheme_called', 1, 86400 );
 			}
 

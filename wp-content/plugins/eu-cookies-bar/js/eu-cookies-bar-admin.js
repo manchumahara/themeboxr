@@ -1,72 +1,25 @@
-'use strict';
 jQuery(document).ready(function () {
+    'use strict';
+    if (window.location.hash === '#/cookies_bar' || window.location.hash === '#/user_cookies_settings') {
+        jQuery('.eu-cookies-bar-cookies-bar-wrap').fadeIn(500);
+    } else {
+        jQuery('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
+    }
     jQuery('.vi-ui.tabular.menu .item').tab({
         history: true,
         historyType: 'hash'
     }).on('click', function () {
-        if ((jQuery(this).html()) === 'General') {
+        if ((jQuery(this).data('tab')) === 'general') {
             jQuery('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
         } else {
             jQuery('.eu-cookies-bar-cookies-bar-wrap').fadeIn(500);
         }
     });
 
-    /*Setup tab*/
-    var tabs,
-        tabEvent = false,
-        initialTab = 'general',
-        navSelector = '.vi-ui.menu',
-        panelSelector = '.vi-ui.tab',
-        panelFilter = function () {
-            jQuery(panelSelector + ' a').filter(function () {
-                return jQuery(navSelector + ' a[title=' + jQuery(this).attr('title') + ']').size() !== 0;
-            }).each(function () {
-                jQuery(this).attr('href', '#' + $(this).attr('title').replace(/ /g, '_'));
-            });
-
-        };
-
-    // Initializes plugin features
-    jQuery.address.strict(false).wrap(true);
-
-    if (jQuery.address.value() === '') {
-        jQuery.address.history(false).value(initialTab).history(true);
-    }
-
-    // Address handler
-    jQuery.address.init(function () {
-
-        // Adds the ID in a lazy manner to prevent scrolling
-        jQuery(panelSelector).attr('id', initialTab);
-
-        // Enables the plugin for all the content links
-        jQuery(panelSelector + ' a').address(function () {
-            // return navFilter(this);
-        });
-
-        panelFilter();
-
-        // Tabs setup
-        tabs = jQuery('.vi-ui.menu')
-            .tab({
-                history: true,
-                historyType: 'hash'
-            });
-
-        // Enables the plugin for all the tabs
-        jQuery(navSelector + ' a').click(function () {
-            tabEvent = true;
-            tabEvent = false;
-            return false;
-        });
-
-    });
-
     function handleDropdown() {
         jQuery('.vi-ui.dropdown').not('#eu_cookies_bar_user_cookies_settings_bar_position').unbind().dropdown();
         jQuery('#eu_cookies_bar_user_cookies_settings_bar_position').dropdown({
             onChange: function (val) {
-                console.log(val);
                 switch (val) {
                     case 'hide':
                         jQuery('.eu-cookies-bar-cookies-settings-call-container').addClass('eu-cookies-bar-cookies-bar-button-hide');

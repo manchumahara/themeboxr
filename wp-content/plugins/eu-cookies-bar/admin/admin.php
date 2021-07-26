@@ -1,15 +1,12 @@
 <?php
 
-/*
-Class Name: EU_COOKIES_BAR_Admin
-Author: Andy Ha (support@villatheme.com)
-Author URI: http://villatheme.com
-Copyright 2018 villatheme.com. All rights reserved.
-*/
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Class EU_COOKIES_BAR_Admin_Admin
+ */
 class EU_COOKIES_BAR_Admin_Admin {
 	protected $settings;
 
@@ -174,7 +171,7 @@ class EU_COOKIES_BAR_Admin_Admin {
                         <div class="field">
                             <label for="eu_cookies_bar_cookies_bar_position_top">
                                 <div class="eu-cookies-bar-browser-mockup <?php if ( $this->settings->get_params( 'cookies_bar_position' ) == 'top' )
-									esc_attr_e( 'eu-cookies-bar-browser-mockup-selected' ) ?>">
+									echo esc_attr( 'eu-cookies-bar-browser-mockup-selected' ) ?>">
                                     <div class="eu-cookies-bar-browser-mockup-cookies-bar eu-cookies-bar-browser-mockup-cookies-bar-top">
                                     </div>
                                 </div>
@@ -190,7 +187,7 @@ class EU_COOKIES_BAR_Admin_Admin {
                         <div class="field">
                             <label for="eu_cookies_bar_cookies_bar_position_bottom">
                                 <div class="eu-cookies-bar-browser-mockup <?php if ( $this->settings->get_params( 'cookies_bar_position' ) == 'bottom' )
-									esc_attr_e( 'eu-cookies-bar-browser-mockup-selected' ) ?>">
+									echo esc_attr( 'eu-cookies-bar-browser-mockup-selected' ) ?>">
                                     <div class="eu-cookies-bar-browser-mockup-cookies-bar eu-cookies-bar-browser-mockup-cookies-bar-bottom">
                                     </div>
                                 </div>
@@ -206,7 +203,7 @@ class EU_COOKIES_BAR_Admin_Admin {
                         <div class="field">
                             <label for="eu_cookies_bar_cookies_bar_position_bottom_left">
                                 <div class="eu-cookies-bar-browser-mockup <?php if ( $this->settings->get_params( 'cookies_bar_position' ) == 'bottom_left' )
-									esc_attr_e( 'eu-cookies-bar-browser-mockup-selected' ) ?>">
+									echo esc_attr( 'eu-cookies-bar-browser-mockup-selected' ) ?>">
                                     <div class="eu-cookies-bar-browser-mockup-cookies-bar eu-cookies-bar-browser-mockup-cookies-bar-bottom-left">
                                     </div>
                                 </div>
@@ -222,7 +219,7 @@ class EU_COOKIES_BAR_Admin_Admin {
                         <div class="field">
                             <label for="eu_cookies_bar_cookies_bar_position_bottom_right">
                                 <div class="eu-cookies-bar-browser-mockup <?php if ( $this->settings->get_params( 'cookies_bar_position' ) == 'bottom_right' )
-									esc_attr_e( 'eu-cookies-bar-browser-mockup-selected' ) ?>">
+									echo esc_attr( 'eu-cookies-bar-browser-mockup-selected' ) ?>">
                                     <div class="eu-cookies-bar-browser-mockup-cookies-bar eu-cookies-bar-browser-mockup-cookies-bar-bottom-right">
                                     </div>
                                 </div>
@@ -600,22 +597,22 @@ class EU_COOKIES_BAR_Admin_Admin {
                     <div class="eu-cookies-bar-cookies-bar-button-wrap">
 
                         <div class="eu-cookies-bar-cookies-bar-button eu-cookies-bar-cookies-bar-button-settings <?php if ( ! $this->settings->get_params( 'user_cookies_settings_enable' ) )
-							esc_attr_e( 'eu-cookies-bar-cookies-bar-button-hide' ) ?>">
+							echo esc_attr( 'eu-cookies-bar-cookies-bar-button-hide' ) ?>">
                             <span><?php esc_html_e( 'Cookies settings', 'eu-cookies-bar' ); ?></span>
                         </div>
 
                         <div class="eu-cookies-bar-cookies-bar-button eu-cookies-bar-cookies-bar-button-accept <?php if ( ! $this->settings->get_params( 'cookies_bar_show_button_accept' ) )
-							esc_attr_e( 'eu-cookies-bar-cookies-bar-button-hide' ) ?>">
+							echo esc_attr( 'eu-cookies-bar-cookies-bar-button-hide' ) ?>">
                             <span class="eu-cookies-bar-tick"><?php echo $this->settings->get_params( 'cookies_bar_button_accept_title' ); ?></span>
                         </div>
 
                         <div class="eu-cookies-bar-cookies-bar-button eu-cookies-bar-cookies-bar-button-decline <?php if ( ! $this->settings->get_params( 'cookies_bar_show_button_decline' ) )
-							esc_attr_e( 'eu-cookies-bar-cookies-bar-button-hide' ) ?>">
+							echo esc_attr( 'eu-cookies-bar-cookies-bar-button-hide' ) ?>">
                             <span class="eu-cookies-bar-decline"><?php echo $this->settings->get_params( 'cookies_bar_button_decline_title' ); ?></span>
                         </div>
 
                         <div class="eu-cookies-bar-cookies-bar-button eu-cookies-bar-cookies-bar-button-close <?php if ( ! $this->settings->get_params( 'cookies_bar_show_button_close' ) )
-							esc_attr_e( 'eu-cookies-bar-cookies-bar-button-hide' ) ?>">
+							echo esc_attr( 'eu-cookies-bar-cookies-bar-button-hide' ) ?>">
                             <span class="eu-cookies-bar-close"></span>
                         </div>
 
@@ -624,7 +621,7 @@ class EU_COOKIES_BAR_Admin_Admin {
                 </div>
             </div>
         </div>
-        <div class="eu-cookies-bar-cookies-settings-call-container <?php esc_attr_e( ( $this->settings->get_params( 'user_cookies_settings_bar_position' ) === 'hide' ) ? 'eu-cookies-bar-cookies-bar-button-hide' : 'eu-cookies-bar-cookies-settings-call-position-' . $this->settings->get_params( 'user_cookies_settings_bar_position' ) ); ?>">
+        <div class="eu-cookies-bar-cookies-settings-call-container <?php echo esc_attr( ( $this->settings->get_params( 'user_cookies_settings_bar_position' ) === 'hide' ) ? 'eu-cookies-bar-cookies-bar-button-hide' : 'eu-cookies-bar-cookies-settings-call-position-' . $this->settings->get_params( 'user_cookies_settings_bar_position' ) ); ?>">
             <div class="eu-cookies-bar-cookies-settings-call-button eu-cookies-bar-cookies-bar-button-settings">
                 <span><?php esc_html_e( 'Cookies settings', 'eu-cookies-bar' ); ?></span>
             </div>
@@ -639,11 +636,11 @@ class EU_COOKIES_BAR_Admin_Admin {
 				'enable'                                     => isset( $_POST['eu_cookies_bar_enable'] ) ? sanitize_text_field( $_POST['eu_cookies_bar_enable'] ) : '',
 				'block_until_accept'                         => isset( $_POST['eu_cookies_bar_block_until_accept'] ) ? sanitize_text_field( $_POST['eu_cookies_bar_block_until_accept'] ) : '',
 				'expire'                                     => isset( $_POST['eu_cookies_bar_expire'] ) ? sanitize_text_field( $_POST['eu_cookies_bar_expire'] ) : '',
-				'privacy_policy'                             => isset( $_POST['eu_cookies_bar_privacy_policy'] ) ? wp_kses_post( $_POST['eu_cookies_bar_privacy_policy'] ) : '',
+				'privacy_policy'                             => isset( $_POST['eu_cookies_bar_privacy_policy'] ) ? wp_kses_post( stripslashes( $_POST['eu_cookies_bar_privacy_policy'] ) ) : '',
 				'privacy_policy_url'                         => isset( $_POST['eu_cookies_bar_privacy_policy_url'] ) ? stripslashes( sanitize_text_field( $_POST['eu_cookies_bar_privacy_policy_url'] ) ) : '',
 				'strictly_necessary'                         => isset( $_POST['eu_cookies_bar_strictly_necessary'] ) ? sanitize_text_field( $_POST['eu_cookies_bar_strictly_necessary'] ) : '',
 				'strictly_necessary_family'                  => isset( $_POST['eu_cookies_bar_strictly_necessary_family'] ) ? sanitize_text_field( $_POST['eu_cookies_bar_strictly_necessary_family'] ) : '',
-				'cookies_bar_message'                        => isset( $_POST['eu_cookies_bar_cookies_bar_message'] ) ? wp_kses_post( $_POST['eu_cookies_bar_cookies_bar_message'] ) : '',
+				'cookies_bar_message'                        => isset( $_POST['eu_cookies_bar_cookies_bar_message'] ) ? wp_kses_post( stripslashes( $_POST['eu_cookies_bar_cookies_bar_message'] ) ) : '',
 				'cookies_bar_position'                       => isset( $_POST['eu_cookies_bar_cookies_bar_position'] ) ? sanitize_text_field( $_POST['eu_cookies_bar_cookies_bar_position'] ) : '',
 				'cookies_bar_show_button_accept'             => isset( $_POST['eu_cookies_bar_cookies_bar_show_button_accept'] ) ? sanitize_text_field( $_POST['eu_cookies_bar_cookies_bar_show_button_accept'] ) : '',
 				'cookies_bar_button_accept_title'            => isset( $_POST['eu_cookies_bar_cookies_bar_button_accept_title'] ) ? stripslashes( sanitize_text_field( $_POST['eu_cookies_bar_cookies_bar_button_accept_title'] ) ) : '',
@@ -685,7 +682,7 @@ class EU_COOKIES_BAR_Admin_Admin {
 	 */
 	public function admin_enqueue_scripts() {
 		wp_enqueue_style( 'eu-cookies-bar-icons', EU_COOKIES_BAR_CSS . 'eu-cookies-bar-icons.css', array(), EU_COOKIES_BAR_VERSION );
-		$page = isset( $_REQUEST['page'] ) ? $_REQUEST['page'] : '';
+		$page = isset( $_REQUEST['page'] ) ? sanitize_text_field($_REQUEST['page']) : '';
 		if ( $page == 'eu-cookies-bar' ) {
 			global $wp_scripts;
 			if ( isset( $wp_scripts->registered['jquery-ui-accordion'] ) ) {

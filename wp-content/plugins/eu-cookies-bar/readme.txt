@@ -3,8 +3,9 @@ Contributors: villatheme, mrt3vn
 Donate link: https://www.villatheme.com/donate
 Tags: eu cookies bar, eu cookie law, eu cookie banner, cookies gdpr, cookie consent, cookie popup, cookie policy generator, for wordpress
 Requires at least: 4.4
-Tested up to: 5.5
-Stable tag: 1.0.3.7
+Tested up to: 5.7
+Requires PHP: 7.0
+Stable tag: trunk
 License: GPLv2 or later
 
 == Description ==
@@ -53,6 +54,14 @@ Eu Cookies Bar is a WordPress plugin that helps website owners to meet the oblig
 
 ### MAY BE YOU NEED
 
+[Product Size Chart For WooCommerce](http://bit.ly/woo-checkout-upsell-funnel): A simple but flexible solution to create size chart for your products
+
+[Checkout Upsell Funnel for WooCommerce](http://bit.ly/woo-checkout-upsell-funnel): Offer product suggestions and smart order bumps on checkout page
+
+[Cart All In One For WooCommerce](http://bit.ly/woo-cart-all-in-one): All cart features you need in one simple plugin
+
+[Email Template Customizer for WooCommerce](http://bit.ly/woo-email-template-customizer): Customize WooCommerce emails to make them more beautiful and professional after only several mouse clicks
+
 [Product Variations Swatches for WooCommerce](http://bit.ly/product-variations-swatches-for-woocommerce): Professional and beautiful colors, buttons, images, variation images and radio variations swatches
 
 [Dropshipping and Fulfillment for AliExpress and WooCommerce](http://bit.ly/woo-aliexpress-dropshipping): Free dropshipping solution - Transfer data from AliExpress products to WooCommerce effortlessly and fulfill AliExpress orders automatically
@@ -64,8 +73,6 @@ Eu Cookies Bar is a WordPress plugin that helps website owners to meet the oblig
 [Import Shopify to WooCommerce](http://bit.ly/import-shopify-to-woocommerce): Import Shopify to WooCommerce plugin help you import all products from your Shopify store to WooCommerce
 
 [Customer Coupons for WooCommerce](http://bit.ly/woo-customer-coupons): Display coupons on your website
-
-[Custom Email Blocks for WooCommerce](http://bit.ly/woo-custom-email-blocks): Create your own professional email design & content for all your outgoing emails
 
 [Virtual Reviews for WooCommerce](http://bit.ly/woo-virtual-reviews): Virtual Reviews for WooCommerce helps generate virtual reviews, display canned reviews for newly created store
 
@@ -125,6 +132,12 @@ Eu Cookies Bar is a WordPress plugin that helps website owners to meet the oblig
 5. Visitors can views cookies list and change their mind whenever they want
 
 == Changelog ==
+/*1.0.3.9 - 2021.06.16*/
+- Updated: Class support
+
+/*1.0.3.8 - 2021.04.08*/
+- Fixed: Slashes added when saving text
+
 /*1.0.3.7 - 2020.08.18*/
 - Updated: Compatible with WP 5.5
 

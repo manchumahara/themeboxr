@@ -1,5 +1,5 @@
-'use strict';
-jQuery(document).ready(function () {
+jQuery(document).ready(function ($) {
+    'use strict';
     var cookies_bar_on_close = eu_cookies_bar_params.cookies_bar_on_close,
         cookies_bar_on_scroll = eu_cookies_bar_params.cookies_bar_on_scroll,
         cookies_bar_on_page_redirect = eu_cookies_bar_params.cookies_bar_on_page_redirect,
@@ -37,7 +37,7 @@ jQuery(document).ready(function () {
     handleExplicitBehaviors();
 
     function handleExplicitBehaviors() {
-        jQuery('.eu-cookies-bar-cookies-bar-button-close').on('click', function () {
+        $('.eu-cookies-bar-cookies-bar-button-close').on('click', function () {
             if (!getCookie('eu_cookies_bar')) {
                 switch (cookies_bar_on_close) {
                     case 'yes':
@@ -50,37 +50,36 @@ jQuery(document).ready(function () {
                     default:
                 }
             }
-            jQuery('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
+            $('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
 
         });
-        jQuery(window).on('mousewheel', function () {
+        $(window).on('mousewheel', function () {
             if (!getCookie('eu_cookies_bar')) {
-                console.log(1232);
                 switch (cookies_bar_on_scroll) {
                     case 'yes':
                         handleCookies();
                         acceptCookiesHandle();
-                        jQuery('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
+                        $('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
                         break;
                     case 'no':
                         declineCookiesHandle();
-                        jQuery('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
+                        $('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
                         break;
                     default:
                 }
             }
         });
-        jQuery(window).on('unload', function () {
+        $(window).on('unload', function () {
             if (!getCookie('eu_cookies_bar')) {
                 switch (cookies_bar_on_page_redirect) {
                     case 'yes':
                         handleCookies();
                         acceptCookiesHandle();
-                        jQuery('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
+                        $('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
                         break;
                     case 'no':
                         declineCookiesHandle();
-                        jQuery('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
+                        $('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
                         break;
                     default:
                 }
@@ -92,19 +91,18 @@ jQuery(document).ready(function () {
 
     function cookiesBarPopup() {
         if (!getCookie('eu_cookies_bar')) {
-            jQuery('.eu-cookies-bar-cookies-bar-wrap').fadeIn(500);
+            $('.eu-cookies-bar-cookies-bar-wrap').fadeIn(500);
             if (block_until_accept) {
                 var cookies = document.cookie.split(";");
-                console.log(document.cookie.split(";"));
                 var keyFlag;
-                var j,k;
+                var j, k;
                 for (j = 0; j < cookies.length; j++) {
                     var cookie_name = cookies[j].split("=")[0].trim();
                     var cookie_value = cookies[j].split("=")[1];
-                    keyFlag=false;
-                    for(k=0;k<strictly_necessary_family.length;k++){
-                        if(cookie_name.match('^'+strictly_necessary_family[k]+'(|.+?)')){
-                            keyFlag=true;
+                    keyFlag = false;
+                    for (k = 0; k < strictly_necessary_family.length; k++) {
+                        if (cookie_name.match('^' + strictly_necessary_family[k] + '(|.+?)')) {
+                            keyFlag = true;
                             break;
                         }
                     }
@@ -113,34 +111,31 @@ jQuery(document).ready(function () {
                         setCookie(cookie_name, cookie_value, -1, cookiePath, window.location.hostname);
                     }
                 }
-                console.log(document.cookie.split(";"));
             }
         } else if (getCookie('eu_cookies_bar_block') !== '') {
             var myBlockCookies = getCookie('eu_cookies_bar_block').split(',');
             var blockCookieName;
             if (myBlockCookies.length > 0) {
                 // deleteSpecificCookies(myBlockCookies);
-                console.log(document.cookie.split(';'));
                 for (var i in myBlockCookies) {
-                    blockCookieName=myBlockCookies[i].trim();
+                    blockCookieName = myBlockCookies[i].trim();
                     if (getCookie(blockCookieName) && strictly_necessary.indexOf(blockCookieName) === -1) {
                         setCookie(blockCookieName, '', -1, '/', window.location.hostname);
-                        setCookie(blockCookieName, '', -1, cookiePath,window.location.hostname);
+                        setCookie(blockCookieName, '', -1, cookiePath, window.location.hostname);
 
                     }
                 }
-                console.log(document.cookie.split(';'));
             }
 
         }
     }
 
     function saveSettings() {
-        jQuery('.eu-cookies-bar-cookies-bar-settings-save-button').on('click', function () {
+        $('.eu-cookies-bar-cookies-bar-settings-save-button').on('click', function () {
             handleCookies();
             acceptCookiesHandle();
-            jQuery('.eu-cookies-bar-cookies-bar-settings-wrap').fadeOut(500);
-            jQuery('html').removeClass('eu-cookies-bar-cookies-bar-html-overflow');
+            $('.eu-cookies-bar-cookies-bar-settings-wrap').fadeOut(500);
+            vi_ecb_enable_scroll();
         })
     }
 
@@ -148,9 +143,9 @@ jQuery(document).ready(function () {
 
     function handleCookies() {
         blockCookies = [];
-        jQuery('.eu-cookies-bar-cookie-checkbox').map(function () {
-            if (jQuery(this).prop('checked') === false && jQuery(this).val() !== 'eu_cookies_bar' && jQuery(this).val() !== 'eu_cookies_bar_block') {
-                blockCookies.push(jQuery(this).val());
+        $('.eu-cookies-bar-cookie-checkbox').map(function () {
+            if ($(this).prop('checked') === false && $(this).val() !== 'eu_cookies_bar' && $(this).val() !== 'eu_cookies_bar_block') {
+                blockCookies.push($(this).val());
             }
         });
         if (blockCookies.length > 0) {
@@ -164,9 +159,9 @@ jQuery(document).ready(function () {
 
     function declineCookiesHandle() {
         blockCookies = [];
-        jQuery('.eu-cookies-bar-cookie-checkbox').map(function () {
-            if ( jQuery(this).val() !== 'eu_cookies_bar' && jQuery(this).val() !== 'eu_cookies_bar_block') {
-                blockCookies.push(jQuery(this).val());
+        $('.eu-cookies-bar-cookie-checkbox').map(function () {
+            if ($(this).val() !== 'eu_cookies_bar' && $(this).val() !== 'eu_cookies_bar_block') {
+                blockCookies.push($(this).val());
             }
         });
         if (blockCookies.length > 0) {
@@ -186,7 +181,7 @@ jQuery(document).ready(function () {
         if (!getCookie('eu_cookies_bar')) {
             expire = expire_time;
             setCookie('eu_cookies_bar', expire, expire, cookiePath);
-            jQuery('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
+            $('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
             setCookie('eu_cookies_bar_block', '', expire, cookiePath);
         } else {
             expire = parseInt(getCookie('eu_cookies_bar'));
@@ -198,28 +193,28 @@ jQuery(document).ready(function () {
     }
 
     function handleButton() {
-        jQuery('.eu-cookies-bar-cookies-bar-button-accept').on('click', function () {
+        $('.eu-cookies-bar-cookies-bar-button-accept').on('click', function () {
             handleCookies();
             acceptCookiesHandle();
-            jQuery('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
+            $('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
         });
 
     }
 
     function overLay() {
-        jQuery('.eu-cookies-bar-cookies-bar-settings-overlay').unbind();
-        jQuery('.eu-cookies-bar-cookies-bar-settings-overlay').on('click', function () {
-            jQuery('.eu-cookies-bar-cookies-bar-settings-wrap').fadeOut(500);
-            jQuery('html').removeClass('eu-cookies-bar-cookies-bar-html-overflow');
+        $('.eu-cookies-bar-cookies-bar-settings-overlay').unbind();
+        $('.eu-cookies-bar-cookies-bar-settings-overlay').on('click', function () {
+            $('.eu-cookies-bar-cookies-bar-settings-wrap').fadeOut(500);
+            vi_ecb_enable_scroll();
         })
     }
 
     function showSettings() {
-        if(user_cookies_settings_enable) {
-            jQuery('.eu-cookies-bar-cookies-bar-button-settings').unbind();
-            jQuery('.eu-cookies-bar-cookies-bar-button-settings').on('click', function () {
-                jQuery('.eu-cookies-bar-cookies-bar-settings-wrap').fadeIn(500);
-                jQuery('html').addClass('eu-cookies-bar-cookies-bar-html-overflow');
+        if (user_cookies_settings_enable) {
+            $('.eu-cookies-bar-cookies-bar-button-settings').unbind();
+            $('.eu-cookies-bar-cookies-bar-button-settings').on('click', function () {
+                $('.eu-cookies-bar-cookies-bar-settings-wrap').fadeIn(500);
+                vi_ecb_disable_scroll();
             })
         }
     }
@@ -230,23 +225,35 @@ jQuery(document).ready(function () {
     overLay();
 
     function userCookiesSettingsTab() {
-        jQuery('.eu-cookies-bar-cookies-bar-settings-nav div').on('click', function () {
-            jQuery('.eu-cookies-bar-cookies-bar-settings-nav div').toggleClass('eu-cookies-bar-cookies-bar-settings-nav-active');
-            jQuery('.eu-cookies-bar-cookies-bar-settings-content-child').toggleClass('eu-cookies-bar-cookies-bar-settings-content-child-inactive');
+        $('.eu-cookies-bar-cookies-bar-settings-nav div').on('click', function () {
+            $('.eu-cookies-bar-cookies-bar-settings-nav div').toggleClass('eu-cookies-bar-cookies-bar-settings-nav-active');
+            $('.eu-cookies-bar-cookies-bar-settings-content-child').toggleClass('eu-cookies-bar-cookies-bar-settings-content-child-inactive');
         })
     }
 
     userCookiesSettingsTab();
-    jQuery(document).keyup(function (e) {
+    $(document).on('keyup', function (e) {
         if (e.keyCode === 27) {
-            jQuery('.eu-cookies-bar-cookies-bar-settings-overlay').click();
+            $('.eu-cookies-bar-cookies-bar-settings-overlay').click();
         }
     });
-    jQuery('.eu-cookies-bar-cookies-bar-settings-close').on('click', function () {
-        jQuery('.eu-cookies-bar-cookies-bar-settings-overlay').click();
+    $('.eu-cookies-bar-cookies-bar-settings-close').on('click', function () {
+        $('.eu-cookies-bar-cookies-bar-settings-overlay').click();
     });
-    jQuery('.eu-cookies-bar-cookies-bar-button-decline').on('click', function () {
+    $('.eu-cookies-bar-cookies-bar-button-decline').on('click', function () {
         declineCookiesHandle();
-        jQuery('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
-    })
+        $('.eu-cookies-bar-cookies-bar-wrap').fadeOut(500);
+    });
+    function vi_ecb_enable_scroll() {
+        let scrollTop = parseInt($('html').css('top'));
+        $('html').removeClass('vi_ecb-noscroll');
+        $('html,body').scrollTop(-scrollTop);
+    }
+
+    function vi_ecb_disable_scroll() {
+        if ($(document).height() > $(window).height()) {
+            let scrollTop = ($('html').scrollTop()) ? $('html').scrollTop() : $('body').scrollTop(); // Works for Chrome, Firefox, IE...
+            $('html').addClass('vi_ecb-noscroll').css('top', -scrollTop);
+        }
+    }
 });

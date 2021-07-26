@@ -113,7 +113,8 @@
         $('.woocommerce-ordering').find('.orderby').addClass('form-control form-control-lg');
 
         $('.single-product-page-wrapper').find('.summary.entry-summary').remove();
-		$('p:empty').remove();
+		//$('p:empty').remove();
+        $('p:empty').not('[role="status"]').remove();
 
 
 		$('.add_to_cart_button').addClass('btn btn-default-brand');

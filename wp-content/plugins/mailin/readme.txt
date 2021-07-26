@@ -2,7 +2,7 @@
 Contributors: neeraj_slit
 Tags: sendinblue, marketing automation, email marketing, email campaign, newsletter, wordpress smtp, subscription form, phpmailer, SMTP, wp_mail, massive email, sendmail, ssl, tls, wp-phpmailer, mail smtp, mailchimp, newsletters, email plugin, signup form, email widget, widget, plugin, sidebar, shortcode
 Requires at least: 4.4
-Tested up to: 5.6
+Tested up to: 5.7.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -114,6 +114,48 @@ In order to create a signup form, you need to:
 2. Integrate the form in a sidebar using a widget from WP panel > Appearance > Widgets. The Sendinblue widget form should appear in your widgets list, you just to have to drag and drop the widget into the sidebar of your choice.
 
 == Changelog ==
+
+= 3.1.15 =
+**Improvements**
+
+* Fixed some minor issues related to double optin subscription
+* Removed legacy code corresponding double optin subscription
+
+= 3.1.14 =
+**Improvements**
+
+* Improve technical performance of the plugin
+
+= 3.1.13 =
+**Improvements**
+
+* The subscribed contact from a double optin form would be created or updated on Sendinblue platform only on clicking the double optin link in the confirmation email.
+* Removed the default message for Existing subscribers
+
+= 3.1.12 =
+**Improvements**
+
+* Improved technical performance of the plugin
+
+= 3.1.11 =
+**Improvements**
+
+* Improved technical performance of the plugin
+
+= 3.1.10 =
+**Improvements**
+
+* Fixed few minor bugs and notices
+
+= 3.1.9 =
+**Improvements**
+
+* Fixed an issue related to transactional email getting distorted.
+
+= 3.1.8 =
+**Improvements**
+
+* Fixed the issue of email not being sent to recipient in cc or bcc. 
 
 = 3.1.7 =
 **Improvements**

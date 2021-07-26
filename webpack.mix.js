@@ -26,7 +26,7 @@ mix.setPublicPath(asset_path);
 
 //browser sync config
 var appConfig = {
-	"proxy": 'http://themeboxr.local'
+	"proxy": 'http://themeboxr.test'
 };
 
 mix.options({

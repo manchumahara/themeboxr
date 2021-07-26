@@ -1,3 +1,10 @@
+/*html no scroll*/
+html.vi_ecb-noscroll {
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+}
+
 .eu-cookies-bar-cookies-bar-wrap,
 .eu-cookies-bar-cookies-bar-wrap *,
 .eu-cookies-bar-cookies-bar-settings-wrap,
@@ -208,10 +215,6 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-}
-
-.eu-cookies-bar-cookies-bar-html-overflow {
-    overflow: hidden;
 }
 
 .eu-cookies-bar-cookies-bar-settings-overlay {

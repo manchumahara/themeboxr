@@ -80,7 +80,7 @@ if ( ! class_exists( 'SIB_Page_Form' ) ) {
                     'compliance_note' => $this->defaultComplianceNote
 				)
 			);
-			wp_localize_script( 'sib-admin-js', 'sib_img_url', SIB_Manager::$plugin_url.'/img/flags/' );
+			wp_localize_script( 'sib-admin-js', 'sib_img_url', array(SIB_Manager::$plugin_url.'/img/flags/') );
 		}
 
 		/**
@@ -778,6 +778,7 @@ For your information, you cannot select a template with the tag [DOUBLEOPTIN].',
 										<?php echo esc_html( SIB_Page_Home::get_narration_script( __( 'General message error', 'sib_lang' ), __( 'Set up the message that will appear when an error occurs during the subscritpion process', 'sib_lang' ) ) ); ?>
 									</div>
 								</div>
+								<!--
 								<div class="row sib-small-content">
 									<span class="col-md-3"><?php esc_attr_e( 'Existing subscribers', 'sib_lang' ); ?></span>
 
@@ -787,6 +788,7 @@ For your information, you cannot select a template with the tag [DOUBLEOPTIN].',
 										<?php echo esc_html( SIB_Page_Home::get_narration_script( __( 'Existing Suscribers', 'sib_lang' ), __( 'Set up the message that will appear when a suscriber is already in your database', 'sib_lang' ) ) ); ?>
 									</div>
 								</div>
+								-->
 								<div class="row sib-small-content">
 									<span class="col-md-3"><?php esc_attr_e( 'Invalid email address', 'sib_lang' ); ?></span>
 

@@ -3,7 +3,7 @@
  * Plugin Name: Newsletter, SMTP, Email marketing and Subscribe forms by Sendinblue
  * Plugin URI: https://www.sendinblue.com/?r=wporg
  * Description: Manage your contact lists, subscription forms and all email and marketing-related topics from your wp panel, within one single plugin
- * Version: 3.1.7
+ * Version: 3.1.15
  * Author: Sendinblue
  * Author URI: https://www.sendinblue.com/?r=wporg
  * License: GPLv2 or later
@@ -33,6 +33,9 @@ if ( ! class_exists( 'Mailin' ) ) {
 }
 if ( ! class_exists( 'SendinblueApiClient' ) ) {
     require_once( 'inc/SendinblueApiClient.php' );
+}
+if ( ! class_exists( 'SendinblueAccount' ) ) {
+    require_once( 'inc/SendinblueAccount.php' );
 }
 // For marketing automation.
 if ( ! class_exists( 'Sendinblue' ) ) {
@@ -72,9 +75,6 @@ if ( ! class_exists( 'SIB_Manager' ) ) {
 
 		/** Plugin language notice option name */
 		const LANGUAGE_OPTION_NAME = 'sib_language_notice_option';
-
-		/** Temp list of Dopt option name */
-		const TEMPLIST_OPTION_NAME = 'sib_temp_list';
 
 		/** Form preview option name */
 		const PREVIEW_OPTION_NAME = 'sib_preview_form';
@@ -559,7 +559,7 @@ if ( ! class_exists( 'SIB_Manager' ) ) {
 			?>
 			<form id="sib_signup_form_<?php echo esc_attr( $frmID ); ?>" method="post" class="sib_signup_form">
 				<div class="sib_loader" style="display:none;"><img
-							src="<?php echo esc_url( includes_url() ); ?>/images/spinner.gif" alt="loader"></div>
+							src="<?php echo esc_url( includes_url() ); ?>images/spinner.gif" alt="loader"></div>
 				<input type="hidden" name="sib_form_action" value="subscribe_form_submit">
 				<input type="hidden" name="sib_form_id" value="<?php echo esc_attr( $frmID ); ?>">
                 <input type="hidden" name="sib_form_alert_notice" value="<?php echo esc_attr($formData['requiredMsg']); ?>">
@@ -724,12 +724,10 @@ if ( ! class_exists( 'SIB_Manager' ) ) {
 			if ( $isDoubleOptin ) {
 				/*
 				 * Double optin process
-                 * 1. add/update user in SIB contacts
-                 * 2. add record to db
-                 * 3. send confirmation email with activate code
+                 * 1. add record to db
+                 * 2. send confirmation email with activate code
                  */
-				// Create/updated subscriber.
-				$result = SIB_API_Manager::create_subscriber( 'double-optin', $email, $listID, $info, $unlinkedLists );
+				$result = "success";
 				// Send a double optin confirm email.
 				if ( 'success' == $result ) {
 					// Add a recode with activate code in db.
@@ -846,7 +844,7 @@ if ( ! class_exists( 'SIB_Manager' ) ) {
 			if ( !empty( $headers ) ) {
 			    if( is_array( $headers ) ){
                     		foreach ($headers as $key => $val) {
-                        	    if( $val == "Content-Type: text/html" ){
+                        	    if( stripos($val, "Content-Type: text/html") !== false ) {
                             		unset( $headers[$key] );
                         	    }
                     		}
@@ -912,43 +910,46 @@ if ( ! class_exists( 'SIB_Manager' ) ) {
 								break;
 
 							case 'bcc':
-							    if ( strpos( $content, '<') !== false )
-                                {
-                                    $bcc_content = substr( $content, strpos( $content, '<' ) + 1 );
-                                    $bcc_content = str_replace( '>', '', $bcc_content );
-                                    $bcc[ trim( $bcc_content ) ] = '';
-                                } else {
-
-							        if (!empty(trim( $content ))) {
-                                        $data['bcc'] = [
-                                                ['email' => trim( $content )]
-                                        ];
-                                    }
-                                }
+								if ( strpos( $content, '<') !== false )
+								{
+									$content = str_replace('<', '', $content);
+									$content = str_replace('>', '', $content);
+								}
+								$data['bcc'] = array();
+								$bcc_content = explode(',', $content);
+								foreach ($bcc_content as $key => $value) {
+									if ( ! empty( $value )) {
+										$data['bcc'][] = array('email' => $value);
+									}
+								}
 								break;
 							case 'cc':
-                                if ( strpos( $content, '<') !== false )
-                                {
-                                    $cc_content = substr( $content, strpos( $content, '<' ) + 1 );
-                                    $cc_content = str_replace( '>', '', $cc_content );
-                                    if (!empty(trim( $cc_content ))) {
-                                        $data['cc'] = ['email' =>  trim( $cc_content )];
-                                    }
-                                }
+								if ( strpos( $content, '<') !== false )
+								{
+									$content = str_replace('<', '', $content);
+									$content = str_replace('>', '', $content);
+								}
+								$data['cc'] = array();
+								$cc_content = explode(',', $content);
+								foreach ($cc_content as $key => $value) {
+									if ( ! empty( $value )) {
+										$data['cc'][] = array('email' => $value);
+									}
+								}
 								break;
 							case 'reply-to':
-                                if ( strpos( $content, '<') !== false )
-                                {
-                                    $reply_content = substr( $content, strpos( $content, '<' ) + 1 );
-                                    $reply_content = str_replace( '>', '', $reply_content );
-                                    $reply = trim( $reply_content );
-                                } else {
-                                    $reply = trim( $content );
-                                }
+								if ( strpos( $content, '<') !== false )
+								{
+									$reply_content = substr( $content, strpos( $content, '<' ) + 1 );
+									$reply_content = str_replace( '>', '', $reply_content );
+									$reply = trim( $reply_content );
+								} else {
+									$reply = trim( $content );
+								}
 
-                                if (!empty($reply)) {
-                                    $data['replyTo'] = ['email' =>  trim( $reply )];
-                                }
+								if (!empty($reply)) {
+									$data['replyTo'] = ['email' =>  trim( $reply )];
+								}
 								break;
 							default:
 								break;

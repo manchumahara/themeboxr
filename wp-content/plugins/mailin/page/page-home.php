@@ -681,7 +681,6 @@ if ( ! class_exists( 'SIB_Page_Home' ) ) {
 		/** Ajax module for remove all transient value */
 		public static function ajax_remove_cache() {
 			check_ajax_referer( 'ajax_sib_admin_nonce', 'security' );
-			SIB_API_Manager::remove_transients();
 			wp_send_json( 'success' );
 		}
 
@@ -800,8 +799,8 @@ if ( ! class_exists( 'SIB_Page_Home' ) ) {
 					$params["shop_version"] = $wp_version;
 				}
 				$params["shop_url"] = get_home_url();
-				$params["created_at"] = gmdate("Y-m-d\TH:i:s.v\Z");
-				$params["activated_at"] = gmdate("Y-m-d\TH:i:s.v\Z");
+				$params["created_at"] = gmdate("Y-m-d\TH:i:s\Z");
+				$params["activated_at"] = gmdate("Y-m-d\TH:i:s\Z");
 				$params["type"] = "sib";
 				$response = $apiClient->createInstallationInfo($params);
 				if ( $apiClient->getLastResponseCode() === SendinblueApiClient::RESPONSE_CODE_CREATED )
@@ -819,7 +818,7 @@ if ( ! class_exists( 'SIB_Page_Home' ) ) {
 				{
 					$apiClient = new SendinblueApiClient();
 					$params["active"] = false;
-					$params["deactivated_at"] = gmdate("Y-m-d\TH:i:s.v\Z");
+					$params["deactivated_at"] = gmdate("Y-m-d\TH:i:s\Z");
 					$apiClient->updateInstallationInfo($installationId, $params);
 				}
 			}
