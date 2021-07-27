@@ -1,14 +1,24 @@
 /*== Latest Blog Area Start ==*/
 #latest-blog-area {
   background-color: @white;
+  background-image: url(/../../../assets/images/home/blog-section-illustration.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 90px 0px;
 
+  .section-title-wrap {
+    margin-bottom: 0px;
+    .font-size(16);
+  }
   .latest-blog-container {
     margin-top: -30px;
 
     .single-blog-item {
       background-color: @white;
-      .border-radius(5px);
+      .border-radius(8px);
       overflow: hidden;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
       .transition(0.3s);
       margin-top: 30px;
       color: @black-soft;

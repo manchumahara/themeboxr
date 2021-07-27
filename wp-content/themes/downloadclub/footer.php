@@ -38,7 +38,7 @@
 							<div class="col-sm-4"></div>
 						</div>
 					</div>-->
-                    <div class="col-sm-4 single-area-1">
+                    <div class="col-md-4 single-area-1">
                         <div class="single-area  text-center">
                             <img src="<?php echo home_url(); ?>/wp-content/themes/downloadclub/assets/images/home/guarantee.png?v=4"
                                  alt="guarantee" />
@@ -48,7 +48,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-sm-4 single-area-2">
+                    <div class="col-md-4 single-area-2">
                         <div class="single-area  text-center">
                             <img src="<?php echo home_url(); ?>/wp-content/themes/downloadclub/assets/images/home/faster.png?v=4" alt="guarantee" />
                             <p>
@@ -60,7 +60,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-sm-4 single-area-3">
+                    <div class="col-md-4 single-area-3">
                         <div class="single-area single-area-3 text-center">
                             <img src="<?php echo home_url(); ?>/wp-content/themes/downloadclub/assets/images/home/paypal_creditcard.png?v=4" alt="guarantee" />
                             <p>

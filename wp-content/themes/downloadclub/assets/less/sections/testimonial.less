@@ -1,4 +1,4 @@
-#testimonial{
+#testimonial {
   &.home-sections {
     background-image: url(/../../../assets/images/testimonial/testi-section-illustration-01.svg);
     background-repeat: no-repeat;
@@ -8,17 +8,19 @@
   }
 
   &.home-sections {
-    .cbxinner{
+    .cbxinner {
       &.cbxinnerwhite {
         background: transparent;
       }
     }
   }
+
   .cbxsectitle {
     text-align: center;
     display: block;
     margin-bottom: 68px;
     margin-top: 0;
+
     .cbxsecicon {
       width: 80px;
       height: 60px;
@@ -27,10 +29,12 @@
       margin-right: 10px;
       display: none;
     }
+
     .cbxsec_headblock {
       display: inline-block;
       text-align: center;
     }
+
     .cbxsec_subhead {
       font-size: 16px;
       font-weight: 400;
@@ -40,12 +44,30 @@
       letter-spacing: 3px;
       margin-top: 1rem;
     }
+
     .cbxsec_head {
       font-size: 4.2rem;
       font-weight: 400;
       color: #1d2023;
       vertical-align: text-top;
       line-height: 1.4 !important;
+    }
+  }
+
+  .btn-cbx {
+    margin-top: 30px;
+    background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 51%, #1FA2FF 100%) !important;
+    box-shadow: 0 10px 20px 0 rgba(130, 210, 248, .45);
+    padding: 10px 25px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto !important;
+    color: #ffffff !important;
+    border-radius: 10px !important;
+
+    &:hover {
+      background-position: right center;
+      color: #fff;
     }
   }
 }

@@ -1,12 +1,25 @@
 /*== Newsletter Area Start ==*/
 #newsletter-area {
-  background-color: @brand-color;
+  background-color: #f9f9f9;
   color: @white;
-  padding: 60px 0;
+  //padding: 60px 0;
+  .newsletter-bg {
+    background-image: url(/../../../assets/images/home/newsletter.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 90px 0px;
+  }
 
   h2 {
-    color: @white;
+    color: #212120;
     margin: 0;
+  }
+
+  .section-title-wrap {
+    p {
+      color: #212120;
+    }
   }
 
   .newsletter-form {
@@ -16,14 +29,20 @@
       text-align: center;
 
       input {
-        background-color: @brand-color-dark;
+        background-color: @white;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
         border: none;
         .border-radius(150px);
         .font-noline(13);
-        color: @white;
-        padding: 20px 15px;
+        color: #1FA2FF;
+        padding: 15px 25px;
         outline: none;
         margin: 5px;
+
+        &::placeholder {
+          color: #1FA2FF;
+          opacity: .5;
+        }
       }
 
       .submit-btn {
@@ -36,6 +55,7 @@
         .font-weight(500);
         .transition(0.4s);
         margin: 5px auto;
+
         &:hover {
           background-color: @black-soft;
           color: @white;
@@ -44,16 +64,43 @@
     }
   }
 
+  form {
+    &#sib_signup_form_1 {
+      input[type=email] {
+        border: none !important;
+      }
+
+      .sib-default-btn {
+        padding: 15px 40px !important;
+        transition: all 0.3s ease-out;
+        background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 51%, #1FA2FF 100%) !important;
+        box-shadow: 0 10px 20px 0 rgba(130, 210, 248,.45) !important;
+        background-size: 200% auto !important;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 900;
+
+        &:hover {
+          background-position: right center !important;
+          color: #fff;
+        }
+      }
+    }
+  }
+
   ::-webkit-input-placeholder {
     color: @white;
   }
+
   :-ms-input-placeholder {
     color: @white;
   }
+
   ::-moz-placeholder {
     color: @white;
     opacity: 1;
   }
+
   :-moz-placeholder {
     color: @white;
     opacity: 1;
