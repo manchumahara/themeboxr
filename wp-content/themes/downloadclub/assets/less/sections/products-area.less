@@ -1,8 +1,13 @@
 /*== Products Area Start ==*/
 #products-area {
+  background-image: url(/../../../assets/images/home/product-section-illustration.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  padding: 90px 0px;
   .products-filter-menu {
-    background-color: @white;
-
+    //background-color: @white;
+    text-align: center;
     .filter-navbar {
       ul {
         justify-content: space-between;
@@ -17,11 +22,17 @@
           .transition(0.3s);
 
           &:hover {
-            .bg-rgba(@section-bg, 0.8);
+            background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 51%, #1FA2FF 100%) !important;
+            background-position: center center;
+            color: #fff;
+            border: 1px solid transparent;
           }
 
           &.current {
-            .bg-rgba(@section-bg, 0.8);
+            background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 51%, #1FA2FF 100%) !important;
+            background-position: center center;
+            color: #fff;
+            border: 1px solid transparent;
           }
         }
       }
@@ -29,7 +40,7 @@
   }
 
   .products-content-wrap {
-    background-color: @section-bg;
+    //background-color: @section-bg;
 
     #productsContent {
       margin-top: -30px;
